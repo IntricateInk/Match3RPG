@@ -138,6 +138,11 @@ namespace Match3.Game.Encounter
 
             return true;
         }
+        
+        private bool DoCheck(float value, int checkValue, EncounterObjectiveCondition.Condition condition)
+        {
+            return DoCheck((int)value, checkValue, condition);
+        }
 
         private bool DoCheck(int value, int checkValue, EncounterObjectiveCondition.Condition condition)
         {

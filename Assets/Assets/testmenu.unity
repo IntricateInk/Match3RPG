@@ -436,6 +436,8 @@ MonoBehaviour:
     type: 2}
   objectivePrefab: {fileID: 114317292483886978, guid: 7688e36af06313548a70591051663455,
     type: 2}
+  trophyPrefab: {fileID: 114144052390102238, guid: 2e317d2c2fbc7624aa75e59414a28095,
+    type: 2}
 --- !u!4 &1042215348
 Transform:
   m_ObjectHideFlags: 0

@@ -59,12 +59,7 @@ namespace Match3.Game
                 GameSkill skill = this.playerState.skillList[i];
                 UIAnimationManager.AddAnimation(new UIInstruction_AddSkillIcon(skill, i));
             }
-
-            foreach (TrophySheet trophy in this.characterSheet.trophies)
-            {
-                //UIAnimationManager.AddAnimation(new UIInstruction_AddTrophy(trophy));
-            }
-
+            
             foreach (EncounterObjective objective in this.encounterSheet.mainObjectives)
             {
                 UIAnimationManager.AddAnimation(new UIInstruction_AddObjective(objective, true));
@@ -93,9 +88,20 @@ namespace Match3.Game
             {
                 this.inputState.Reset();
             }
+
+            //foreach (...)
+            //{
+            //    if (buff is IOnTurnStart) ((IOnTurnStart)buff).OnTurnStart();
+            //}
         }
 
         // public to UI classes
+
+
+        public void TimeTick(float deltaTime)
+        {
+            this.playerState.Time += deltaTime;
+        }
 
         public void SelectToken(int x, int y)
         {

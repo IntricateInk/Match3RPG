@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.1f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -320,19 +318,21 @@
     <Compile Include="Assets\Script\Game\BoardState.cs" />
     <Compile Include="Assets\Script\Game\Encounters\EncounterObjective.cs" />
     <Compile Include="Assets\Script\Game\Encounters\EncounterSheet.cs" />
+    <Compile Include="Assets\Script\Game\Encounters\Reward.cs" />
     <Compile Include="Assets\Script\Game\EncounterState.cs" />
     <Compile Include="Assets\Script\Game\InputState.cs" />
+    <Compile Include="Assets\Script\Game\PlayerSheet.cs" />
     <Compile Include="Assets\Script\Game\PlayerState.cs" />
+    <Compile Include="Assets\Script\Game\Skills\Assets\GameSkill_Bash.cs" />
+    <Compile Include="Assets\Script\Game\Skills\Assets\GameSkill_Sleight.cs" />
     <Compile Include="Assets\Script\Game\Skills\GameSkill.cs" />
-    <Compile Include="Assets\Script\Game\Skills\GameSkill_Bash.cs" />
-    <Compile Include="Assets\Script\Game\Skills\GameSkill_Sleight.cs" />
     <Compile Include="Assets\Script\Game\TokenState.cs" />
+    <Compile Include="Assets\Script\Game\Trophies\Assets\TestTrophy.cs" />
+    <Compile Include="Assets\Script\Game\Trophies\Interface\IOnTurnStart.cs" />
+    <Compile Include="Assets\Script\Game\Trophies\TrophySheet.cs" />
     <Compile Include="Assets\Script\ITooltip.cs" />
-    <Compile Include="Assets\Script\PlayerSheet.cs" />
-    <Compile Include="Assets\Script\Reward.cs" />
     <Compile Include="Assets\Script\TestMenuScript.cs" />
     <Compile Include="Assets\Script\TokenType.cs" />
-    <Compile Include="Assets\Script\TrophySheet.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIAnimation_DropTokens.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIAnimation_InstructionWrapper.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIAnimation_MoveToken.cs" />
@@ -342,7 +342,6 @@
     <Compile Include="Assets\Script\UI\Animations\UIAnimationManager.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_AddObjective.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_AddSkillIcon.cs" />
-    <Compile Include="Assets\Script\UI\Animations\UIInstruction_AddTrophy.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_ShadeToken.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_UpdateResources.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_UpdateTurns.cs" />
@@ -354,6 +353,7 @@
     <Compile Include="Assets\Script\UI\UISkillBar.cs" />
     <Compile Include="Assets\Script\UI\UISkillIcon.cs" />
     <Compile Include="Assets\Script\UI\UITokenController.cs" />
+    <Compile Include="Assets\Script\UI\UITooltipController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyListController.cs" />
     <Compile Include="Assets\Script\Utility\List Extensions.cs" />

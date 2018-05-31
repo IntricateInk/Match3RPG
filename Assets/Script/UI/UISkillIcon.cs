@@ -34,11 +34,22 @@ namespace Match3.UI
             }
         }
         
+        [NonSerialized]
         public int index;
 
         public void OnButtonDown()
         {
             EncounterState.Current.SelectSkill(this.index);
-        } 
+        }
+
+        public void OnPointerEnter()
+        {
+            if (this.tooltip != null) this.tooltip.Show();
+        }
+
+        public void OnPointerExit()
+        {
+            if (this.tooltip != null) this.tooltip.Show(false);
+        }
     }
 }

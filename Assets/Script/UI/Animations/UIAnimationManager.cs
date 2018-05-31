@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Match3.Game;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,12 +53,11 @@ namespace Match3.UI.Animation
 
         [SerializeField]
         internal UIObjectiveListController bonusObjectives;
-
-        [SerializeField]
-        internal UITrophyListController trophies;
-
+        
         private void Update()
         {
+            EncounterState.Current.TimeTick(Time.deltaTime);
+
             while (UIAnimationManager.InstructionQueue.Count != 0)
                 UIAnimationManager.InstructionQueue.Dequeue().Run(this, Time.deltaTime);
 

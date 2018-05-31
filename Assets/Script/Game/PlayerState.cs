@@ -30,7 +30,7 @@ namespace Match3.Game
             }
         }
 
-        public int Time {
+        public float Time {
             get; internal set;
         }
 

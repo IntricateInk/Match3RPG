@@ -27,6 +27,8 @@ namespace Match3.UI
         {
             UITrophyController trophy = Instantiate(UIFactory.Instance.trophyPrefab);
 
+            trophy.tooltip = tooltip;
+            trophy.transform.SetParent(uiTrophyListController.transform);
 
             return trophy;
         }

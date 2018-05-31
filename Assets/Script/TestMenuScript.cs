@@ -36,16 +36,19 @@ public class TestMenuScript : MonoBehaviour {
             reward: null
         );
 
-        EncounterState.NewEncounter
-            ( 
-                new PlayerSheet(), 
-                new EncounterSheet
-                (
-                    name: "Brawl", 
-                    icon: "skills/bash", 
-                    mainObjectives: new List<EncounterObjective>() { obj1 }, 
-                    bonusObjectives: new List<EncounterObjective>() { obj2 }
-                ) 
+        EncounterSheet encounter = new EncounterSheet
+            (
+                name: "Brawl",
+                icon: "skills/bash",
+                mainObjectives: new List<EncounterObjective>() { obj1 },
+                bonusObjectives: new List<EncounterObjective>() { obj2 }
             );
+
+        TrophySheet trophy1 = TrophySheet.Create("test1");
+        TrophySheet trophy2 = TrophySheet.Create("test2");
+
+        PlayerSheet player = new PlayerSheet(new List<TrophySheet>() { trophy1, trophy2 });
+
+        EncounterState.NewEncounter(player, encounter);
     }
 }

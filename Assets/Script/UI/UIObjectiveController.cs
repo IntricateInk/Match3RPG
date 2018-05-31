@@ -24,9 +24,19 @@ namespace Match3.UI
                 if (this.tooltip != null)
                 {
                     this.label.text = this.tooltip.name;
-                    this.image.sprite = Resources.Load<Sprite>(this.tooltip.sprite); 
+                    this.image.sprite = this.tooltip.GetSprite(); 
                 }
             }
+        }
+
+        public void OnPointerEnter()
+        {
+            if (this.tooltip != null) this.tooltip.Show();
+        }
+
+        public void OnPointerExit()
+        {
+            if (this.tooltip != null) this.tooltip.Show(false);
         }
     }
 }
