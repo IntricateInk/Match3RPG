@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Match3.Game;
+using Match3.Encounter;
 using System;
 
 namespace Match3.UI

@@ -315,22 +315,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Game\BoardState.cs" />
-    <Compile Include="Assets\Script\Game\Encounters\EncounterObjective.cs" />
-    <Compile Include="Assets\Script\Game\Encounters\EncounterSheet.cs" />
-    <Compile Include="Assets\Script\Game\Encounters\Reward.cs" />
-    <Compile Include="Assets\Script\Game\EncounterState.cs" />
-    <Compile Include="Assets\Script\Game\InputState.cs" />
-    <Compile Include="Assets\Script\Game\PlayerSheet.cs" />
-    <Compile Include="Assets\Script\Game\PlayerState.cs" />
-    <Compile Include="Assets\Script\Game\Skills\Assets\GameSkill_Bash.cs" />
-    <Compile Include="Assets\Script\Game\Skills\Assets\GameSkill_Sleight.cs" />
-    <Compile Include="Assets\Script\Game\Skills\GameSkill.cs" />
-    <Compile Include="Assets\Script\Game\TokenState.cs" />
-    <Compile Include="Assets\Script\Game\Trophies\Assets\TestTrophy.cs" />
-    <Compile Include="Assets\Script\Game\Trophies\Interface\IOnTurnStart.cs" />
-    <Compile Include="Assets\Script\Game\Trophies\TrophySheet.cs" />
+    <Compile Include="Assets\Script\Encounter\BoardState.cs" />
+    <Compile Include="Assets\Script\Encounter\Encounters\EncounterObjective.cs" />
+    <Compile Include="Assets\Script\Encounter\Encounters\EncounterSheet.cs" />
+    <Compile Include="Assets\Script\Encounter\Encounters\IReward.cs" />
+    <Compile Include="Assets\Script\Encounter\EncounterState.cs" />
+    <Compile Include="Assets\Script\Encounter\InputState.cs" />
+    <Compile Include="Assets\Script\Encounter\Passives\Assets\GamePassive_GainTokenOnTurnStart.cs" />
+    <Compile Include="Assets\Script\Encounter\Passives\GamePassive.cs" />
+    <Compile Include="Assets\Script\Encounter\Passives\IPassive_OnTurnStart.cs" />
+    <Compile Include="Assets\Script\Encounter\PlayerSheet.cs" />
+    <Compile Include="Assets\Script\Encounter\PlayerState.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\Assets\GameSkill_Bash.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\Assets\GameSkill_Sleight.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\GameSkill.cs" />
+    <Compile Include="Assets\Script\Encounter\TokenState.cs" />
+    <Compile Include="Assets\Script\Encounter\Trophies\TrophySheet.cs" />
     <Compile Include="Assets\Script\ITooltip.cs" />
+    <Compile Include="Assets\Script\Overworld\OverworldState.cs" />
     <Compile Include="Assets\Script\TestMenuScript.cs" />
     <Compile Include="Assets\Script\TokenType.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIAnimation_DropTokens.cs" />
@@ -342,6 +344,9 @@
     <Compile Include="Assets\Script\UI\Animations\UIAnimationManager.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_AddObjective.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_AddSkillIcon.cs" />
+    <Compile Include="Assets\Script\UI\Animations\UIInstruction_SetEncounter.cs" />
+    <Compile Include="Assets\Script\UI\Animations\UIInstruction_SetPlayer.cs" />
+    <Compile Include="Assets\Script\UI\Animations\UIInstruction_SetTime.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_ShadeToken.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_UpdateResources.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_UpdateTurns.cs" />

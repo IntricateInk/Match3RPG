@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Match3.Game.Encounter;
+using Match3.Encounter.Encounter;
 using UnityEngine;
 
 namespace Match3.UI.Animation

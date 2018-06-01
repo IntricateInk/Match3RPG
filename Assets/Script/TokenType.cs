@@ -35,4 +35,9 @@ public static class TokenTypeExtensions
                 throw new ArgumentException("Token type of " + token + " not recognized.");
         }
     }
+
+    public static int AsInt(this TokenType token)
+    {
+        return (int)token;
+    }
 }

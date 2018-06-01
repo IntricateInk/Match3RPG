@@ -1,8 +1,9 @@
-﻿using Match3.Game;
+﻿using Match3.Encounter;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Match3.UI.Animation
 {
@@ -41,6 +42,12 @@ namespace Match3.UI.Animation
 
         [SerializeField]
         internal UIBoardController board;
+
+        [SerializeField]
+        internal Text encounterLabel;
+
+        [SerializeField]
+        internal Image encounterIcon;
 
         [SerializeField]
         internal UIPlayerStateController player;

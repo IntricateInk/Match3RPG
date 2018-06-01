@@ -407,6 +407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98890a054a424a4d892ef4e6d5a2915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameLabel: {fileID: 1936838870}
+  icon: {fileID: 831425286}
+  timeLabel: {fileID: 307125311}
   turnLabel: {fileID: 186403129}
   strLabel: {fileID: 275370924}
   agiLabel: {fileID: 904061434}
@@ -1275,8 +1278,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5bcabab3d5c14ba4d8aa38e218f5cf80, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1906,7 +1909,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Very Fierce Battle (tm)
+  m_Text: encounter name
 --- !u!222 &1014036957
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2443,6 +2446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 1888510902}
+  encounterLabel: {fileID: 1014036956}
+  encounterIcon: {fileID: 1987298860}
   player: {fileID: 117828386}
   skillbar: {fileID: 1237720904}
   mainObjectives: {fileID: 1527835284}
@@ -3751,7 +3756,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Thief
+  m_Text: name
 --- !u!222 &1936838871
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3848,8 +3853,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 19989b63989d72448ac0a638f91a3db0, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

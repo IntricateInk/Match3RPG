@@ -1,4 +1,4 @@
-﻿using Match3.Game;
+﻿using Match3.Encounter;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +9,15 @@ namespace Match3.UI
 {
     public class UIPlayerStateController : MonoBehaviour
     {
+        [SerializeField]
+        private Text nameLabel;
+
+        [SerializeField]
+        private Image icon;
+
+        [SerializeField]
+        private Text timeLabel;
+
         [SerializeField]
         private Text turnLabel;
 
@@ -27,6 +36,17 @@ namespace Match3.UI
         [SerializeField]
         private Text lukLabel;
         
+        internal void SetTooltip(ITooltip tooltip)
+        {
+            this.nameLabel.text = tooltip.name;
+            this.icon.sprite = tooltip.GetSprite();
+        }
+
+        internal void SetTimeLabel(float time)
+        {
+            this.timeLabel.text = time.ToString("00:00");
+        }
+
         internal void TurnLabelChange(int turn)
         {
             this.turnLabel.text = "Turns: " + turn.ToString();

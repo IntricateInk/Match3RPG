@@ -1,4 +1,4 @@
-﻿using Match3.Game;
+﻿using Match3.Encounter;
 using System;
 using System.Collections;
 using System.Collections.Generic;
