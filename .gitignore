@@ -1,3 +1,6 @@
 .vs
 Library/
 Library/metadata/
+.csproj
+.cs.meta
+.sln
