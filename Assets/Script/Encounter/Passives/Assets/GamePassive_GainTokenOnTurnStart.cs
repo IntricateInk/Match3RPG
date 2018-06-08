@@ -21,7 +21,7 @@ namespace Match3.Encounter.Passive
 
         public void OnTurnStart(EncounterState encounter)
         {
-            encounter.playerState.Resources[this.token.AsInt()] += this.amount;
+            encounter.playerState.GainResource(this.token, this.amount);
         }
     }
 }

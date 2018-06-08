@@ -15,6 +15,7 @@ public class TestMenuScript : MonoBehaviour {
     {
         GamePassive.Init();
         GameSkill.Init();
+        TrophySheet.Init();
     }
 
     public void Test()

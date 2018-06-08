@@ -11,6 +11,8 @@ namespace Match3.Encounter.Passive
         public string sprite { get; private set; }
         public string tooltip { get; private set; }
 
+        internal int level = 0;
+
         protected GamePassive(string name, string sprite, string tooltip)
         {
             this.name = name;
@@ -25,7 +27,7 @@ namespace Match3.Encounter.Passive
         public static void Init()
         {
             new GamePassive_GainTokenOnTurnState(
-                name: "Strong",
+                name:   "Strong",
                 sprite: "tokens/str",
                 tooltip: "Gain 1 Strength at the start of each turn.",
                 token: TokenType.STRENGTH,
@@ -33,7 +35,7 @@ namespace Match3.Encounter.Passive
             );
 
             new GamePassive_GainTokenOnTurnState(
-                name: "Agile",
+                name:   "Agile",
                 sprite: "tokens/agi",
                 tooltip: "Gain 1 Agility at the start of each turn.",
                 token: TokenType.AGILITY,
@@ -41,8 +43,8 @@ namespace Match3.Encounter.Passive
             );
 
             new GamePassive_GainTokenOnTurnState(
-                name: "Intelligent",
-                sprite: "tokens/int",
+                name:    "Intelligent",
+                sprite:  "tokens/int",
                 tooltip: "Gain 1 Intelligence at the start of each turn.",
                 token: TokenType.INTELLIGENCE,
                 amount: 1

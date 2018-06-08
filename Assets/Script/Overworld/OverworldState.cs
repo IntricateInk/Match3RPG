@@ -18,8 +18,8 @@ namespace Match3.Overworld
                 tooltip: "Swift and silent",
                 trophies: new string[]
                 {
-                    "test1",
-                    "test2"
+                    "Warrior's Blood",
+                    "Mark of the Thief",
                 }
             );
         }

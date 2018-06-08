@@ -1,4 +1,5 @@
-﻿using Match3.Encounter.Passive;
+﻿using Match3.Character;
+using Match3.Encounter.Passive;
 using Match3.Encounter.Skill;
 using Match3.UI.Animation;
 using System;
@@ -14,11 +15,7 @@ namespace Match3.Encounter
 
         public readonly List<TokenType> tokenList = new List<TokenType>();
         public readonly List<GamePassive> Passives = new List<GamePassive>();
-        public readonly List<GameSkill> Skills = 
-            new List<GameSkill>() {
-                GameSkill.GetSkill("Bash"),
-                GameSkill.GetSkill("Sleight"),
-            };
+        public readonly List<GameSkill> Skills = new List<GameSkill>();
 
         private int _Turn;
         public int Turn
@@ -45,6 +42,14 @@ namespace Match3.Encounter
 
         public PlayerState(EncounterState parent) : base(parent)
         {
+            foreach (TrophySheet trophy in parent.playerSheet.trophies)
+            {
+                foreach (string skill_name in trophy.skills)
+                    this.Skills.Add(GameSkill.GetSkill(skill_name));
+
+                foreach (string passive_name in trophy.passives)
+                    this.Passives.Add(GamePassive.GetPassive(passive_name));
+            }
         }
 
         public void ResetToken()
