@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Match3RPG", "Assembly-CSharp.csproj", "{BB2119B7-D1F7-47DB-958B-08FA5E483155}"
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Match3RPG", "Match3RPG.csproj", "{C61D2BED-BA54-E9AE-C3BE-25420FC3D643}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BB2119B7-D1F7-47DB-958B-08FA5E483155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB2119B7-D1F7-47DB-958B-08FA5E483155}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB2119B7-D1F7-47DB-958B-08FA5E483155}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB2119B7-D1F7-47DB-958B-08FA5E483155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61D2BED-BA54-E9AE-C3BE-25420FC3D643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61D2BED-BA54-E9AE-C3BE-25420FC3D643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61D2BED-BA54-E9AE-C3BE-25420FC3D643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61D2BED-BA54-E9AE-C3BE-25420FC3D643}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
