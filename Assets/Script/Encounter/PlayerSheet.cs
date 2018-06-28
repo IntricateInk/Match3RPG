@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Match3.Encounter.Encounter;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,12 +40,12 @@ namespace Match3.Character
             this.trophies = new List<TrophySheet>(TrophySheet.GetTrophy(trophies));
         }
 
-        public void GainReward(IReward reward)
+        public void GainReward(EncounterObjective objective)
         {
-            this.Gold += reward.GoldReward;
-            this.Experience += reward.ExperienceReward;
+            this.Gold       += objective.GoldReward;
+            this.Experience += objective.ExpReward;
 
-            foreach (string trophyName in reward.TrophiesReward)
+            foreach (string trophyName in objective.TrophyReward)
             {
                 this.trophies.Add(TrophySheet.GetTrophy(trophyName));
             }

@@ -435,7 +435,11 @@ MonoBehaviour:
     type: 2}
   skillIconPrefab: {fileID: 114998046633201212, guid: c2b0b3336f785cd4e90615d36e5f81fa,
     type: 2}
+  uiBuffIconPrefab: {fileID: 114687184931459446, guid: 4936c879f72a8664baa59e88abf67506,
+    type: 2}
   objectivePrefab: {fileID: 114317292483886978, guid: 7688e36af06313548a70591051663455,
+    type: 2}
+  resourceBarPrefab: {fileID: 114302430734981072, guid: 1d8147e48cf6e7046ab0ceba0f6b9805,
     type: 2}
   trophyPrefab: {fileID: 114144052390102238, guid: 2e317d2c2fbc7624aa75e59414a28095,
     type: 2}

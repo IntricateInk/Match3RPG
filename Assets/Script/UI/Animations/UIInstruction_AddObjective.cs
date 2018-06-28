@@ -9,21 +9,21 @@ namespace Match3.UI.Animation
     public class UIInstruction_AddObjective : UIInstruction
     {
 
-        public UIInstruction_AddObjective(ITooltip objective, bool isMain)
+        public UIInstruction_AddObjective(EncounterObjective objective, bool isMain)
         {
-            this.tooltip = objective;
+            this.objective = objective;
             this.isMain = isMain;
         }
         
         private readonly bool isMain;
-        private readonly ITooltip tooltip;
+        private readonly EncounterObjective objective;
 
         public void Run(UIAnimationManager manager, float dt)
         {
             if (isMain)
-                manager.mainObjectives.AddObjective(this.tooltip);
+                manager.mainObjectives.AddObjective(objective);
             else
-                manager.bonusObjectives.AddObjective(this.tooltip);
+                manager.bonusObjectives.AddObjective(objective);
         }
     }
 }

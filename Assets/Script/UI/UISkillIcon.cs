@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Match3.UI
 {
-    public class UISkillIcon : MonoBehaviour
+    internal class UISkillIcon : UITooltip
     {
         [SerializeField]
         private Image image;
@@ -22,7 +22,7 @@ namespace Match3.UI
         }
         
         private ITooltip _tooltip;
-        public ITooltip tooltip
+        internal override ITooltip tooltip
         {
             get { return this._tooltip; }
             set
@@ -40,16 +40,6 @@ namespace Match3.UI
         public void OnButtonDown()
         {
             EncounterState.Current.SelectSkill(this.index);
-        }
-
-        public void OnPointerEnter()
-        {
-            if (this.tooltip != null) this.tooltip.Show();
-        }
-
-        public void OnPointerExit()
-        {
-            if (this.tooltip != null) this.tooltip.Show(false);
         }
     }
 }

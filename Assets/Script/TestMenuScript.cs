@@ -25,25 +25,26 @@ public class TestMenuScript : MonoBehaviour {
             name: "Beat Up",
             sprite: "skills/bash",
             tooltip: "Beat up the bandits",
-            condition: new EncounterObjectiveCondition
-            (
-                Turn: 99999,
-                TurnCondition: EncounterObjectiveCondition.Condition.EQUAL
-            ),
-            reward: null
+
+            TrophyReward: new string[] { "Honor" },
+            
+            MinStrength: 30,
+            MaxStrength: 60
         );
 
         EncounterObjective obj2 = new EncounterObjective
         (
-            name: "Punch",
-            sprite: "skills/bash",
+            name:    "Punch",
+            sprite:  "skills/bash",
             tooltip: "A satisfying punch!",
-            condition: new EncounterObjectiveCondition
-            (
-                Strength: 5,
-                StrengthCondition: EncounterObjectiveCondition.Condition.EQUAL_AND_MORE
-            ),
-            reward: null
+
+            TrophyReward: new string[] { "Bloodthristy" },
+
+            MinAgility: 0,
+            MaxAgility: 20,
+
+            MinLuck: 10,
+            MaxLuck: 99
         );
 
         EncounterSheet encounter = new EncounterSheet
@@ -51,7 +52,7 @@ public class TestMenuScript : MonoBehaviour {
                 name: "Brawl",
                 icon: "skills/bash",
                 tooltip: "FISTS, LOTS AND LOTS OF FISTS",
-                mainObjectives: new List<EncounterObjective>() { obj1 },
+                mainObjectives:  new List<EncounterObjective>() { obj1 },
                 bonusObjectives: new List<EncounterObjective>() { obj2 }
             );
         

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Match3.UI.Animation;
 
 namespace Match3.UI
 {
@@ -35,6 +36,11 @@ namespace Match3.UI
 
         [SerializeField]
         private Text lukLabel;
+
+        private void Awake()
+        {
+            UIAnimationManager.OnResourceChange += this.OnResourceChange;
+        }
         
         internal void SetTooltip(ITooltip tooltip)
         {
@@ -52,7 +58,7 @@ namespace Match3.UI
             this.turnLabel.text = "Turns: " + turn.ToString();
         }
 
-        internal void ResourceLabelChange(TokenType token, int amount)
+        internal void OnResourceChange(TokenType token, int amount)
         {
             switch (token)
             {

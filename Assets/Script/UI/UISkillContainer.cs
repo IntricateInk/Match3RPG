@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Match3.UI
 {
-    public class UISkillBar : MonoBehaviour
+    public class UISkillContainer : MonoBehaviour
     {
 
         internal void AddSkill(ITooltip tooltip, int index)

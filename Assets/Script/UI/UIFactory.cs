@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Match3.Encounter;
 using System;
+using Match3.Encounter.Encounter;
 
 namespace Match3.UI
 {
@@ -10,7 +11,7 @@ namespace Match3.UI
     {
 
         private static UIFactory Instance;
-
+        
         [SerializeField]
         private UITokenController tokenControllerPrefab;
         
@@ -18,7 +19,13 @@ namespace Match3.UI
         private UISkillIcon skillIconPrefab;
 
         [SerializeField]
+        private UIBuffIcon uiBuffIconPrefab;
+
+        [SerializeField]
         private UIObjectiveController objectivePrefab;
+        
+        [SerializeField]
+        private UIResourceBarController resourceBarPrefab;
 
         [SerializeField]
         private UITrophyController trophyPrefab;
@@ -33,18 +40,18 @@ namespace Match3.UI
             return trophy;
         }
 
-        internal static UIObjectiveController Create(ITooltip tooltip, UIObjectiveListController uiObjectiveListController)
+        internal static UIObjectiveController Create(UIObjectiveListController uiObjectiveListController, EncounterObjective objective)
         {
-            UIObjectiveController objective = Instantiate(UIFactory.Instance.objectivePrefab);
-            objective.transform.SetParent(uiObjectiveListController.transform);
+            UIObjectiveController uiObjective = Instantiate(UIFactory.Instance.objectivePrefab);
+            uiObjective.transform.SetParent(uiObjectiveListController.transform);
 
-            objective.tooltip = tooltip;
+            uiObjective.objective = objective;
 
-            return objective;
+            return uiObjective;
         }
 
 
-        internal static UISkillIcon Create(ITooltip tooltip, int index, UISkillBar uISkillBar)
+        internal static UISkillIcon Create(ITooltip tooltip, int index, UISkillContainer uISkillBar)
         {
             UISkillIcon skillIcon = Instantiate(UIFactory.Instance.skillIconPrefab);
             skillIcon.transform.SetParent(uISkillBar.transform);
@@ -67,6 +74,26 @@ namespace Match3.UI
             return tokenController;
         }
 
+        internal static UIResourceBarController CreateResourceBar(UIObjectiveController controller, TokenType field, int min, int max)
+        {
+            UIResourceBarController resourceBar = Instantiate(UIFactory.Instance.resourceBarPrefab);
+
+            resourceBar.transform.SetParent(controller.transform);
+            resourceBar.field = field;
+            resourceBar.SetRange(min, max);
+
+            return resourceBar;
+        }
+
+        internal static UIBuffIcon Create(ITooltip buff, UIBuffContainer uiBuffContainer)
+        {
+            UIBuffIcon icon = Instantiate(UIFactory.Instance.uiBuffIconPrefab);
+
+            icon.transform.SetParent(uiBuffContainer.transform);
+            icon.tooltip = buff;
+
+            return icon;
+        }
 
         private void Awake()
         {

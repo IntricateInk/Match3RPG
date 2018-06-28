@@ -58,9 +58,14 @@ namespace Match3.Encounter
             for (int i = 0; i < this.playerState.Skills.Count; i++)
             {
                 GameSkill skill = this.playerState.Skills[i];
-                UIAnimationManager.AddAnimation(new UIInstruction_AddSkillIcon(skill, i));
+                UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, i));
             }
             
+            foreach (GamePassive passive in this.playerState.Passives)
+            {
+                UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(passive));
+            }
+
             foreach (EncounterObjective objective in this.encounterSheet.mainObjectives)
             {
                 UIAnimationManager.AddAnimation(new UIInstruction_AddObjective(objective, true));
@@ -83,7 +88,7 @@ namespace Match3.Encounter
 
             this.boardState.DoTurn();
 
-            this.encounterSheet.CheckBonusObjectives();
+            this.encounterSheet.CheckBonusObjectives(this);
 
             if (this.encounterSheet.MainObjectiveMet(this))
             {
