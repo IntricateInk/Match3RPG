@@ -318,7 +318,6 @@
     <Compile Include="Assets\Script\Encounter\BoardState.cs" />
     <Compile Include="Assets\Script\Encounter\Encounters\EncounterObjective.cs" />
     <Compile Include="Assets\Script\Encounter\Encounters\EncounterSheet.cs" />
-    <Compile Include="Assets\Script\Encounter\Encounters\IReward.cs" />
     <Compile Include="Assets\Script\Encounter\EncounterState.cs" />
     <Compile Include="Assets\Script\Encounter\InputState.cs" />
     <Compile Include="Assets\Script\Encounter\Passives\Assets\GamePassive_GainTokenOnTurnStart.cs" />
@@ -342,8 +341,9 @@
     <Compile Include="Assets\Script\UI\Animations\UIAnimation_RemoveTokens.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIAnimation_SwapTokens.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIAnimationManager.cs" />
+    <Compile Include="Assets\Script\UI\Animations\UIInstruction_AddBuff.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_AddObjective.cs" />
-    <Compile Include="Assets\Script\UI\Animations\UIInstruction_AddSkillIcon.cs" />
+    <Compile Include="Assets\Script\UI\Animations\UIInstruction_AddSkill.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_SetEncounter.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_SetPlayer.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_SetTime.cs" />
@@ -351,13 +351,17 @@
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_UpdateResources.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_UpdateTurns.cs" />
     <Compile Include="Assets\Script\UI\UIBoardController.cs" />
+    <Compile Include="Assets\Script\UI\UIBuffContainer.cs" />
+    <Compile Include="Assets\Script\UI\UIBuffIcon.cs" />
     <Compile Include="Assets\Script\UI\UIFactory.cs" />
     <Compile Include="Assets\Script\UI\UIObjectiveController.cs" />
     <Compile Include="Assets\Script\UI\UIObjectiveListController.cs" />
     <Compile Include="Assets\Script\UI\UIPlayerStateController.cs" />
-    <Compile Include="Assets\Script\UI\UISkillBar.cs" />
+    <Compile Include="Assets\Script\UI\UIResourceBarController.cs" />
+    <Compile Include="Assets\Script\UI\UISkillContainer.cs" />
     <Compile Include="Assets\Script\UI\UISkillIcon.cs" />
     <Compile Include="Assets\Script\UI\UITokenController.cs" />
+    <Compile Include="Assets\Script\UI\UITooltip.cs" />
     <Compile Include="Assets\Script\UI\UITooltipController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyListController.cs" />

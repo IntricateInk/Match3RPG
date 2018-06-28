@@ -18,7 +18,7 @@ namespace Match3.UI.Animation
 
         public void Run(UIAnimationManager manager, float dt)
         {
-            manager.player.ResourceLabelChange(type, amount);
+            manager.RaiseResourceChange(type, amount);
         }
     }
 }

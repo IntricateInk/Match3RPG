@@ -20,7 +20,7 @@ namespace Match3.UI.Animation
     public class UIAnimationManager : MonoBehaviour
     {
         // statics
-
+        
         private static readonly Queue<UIAnimation> AnimationQueue = new Queue<UIAnimation>();
         private static readonly Queue<UIInstruction> InstructionQueue = new Queue<UIInstruction>();
         private static UIAnimation Current = null;
@@ -53,14 +53,20 @@ namespace Match3.UI.Animation
         internal UIPlayerStateController player;
 
         [SerializeField]
-        internal UISkillBar skillbar;
+        internal UISkillContainer skillContainer;
+
+        [SerializeField]
+        internal UIBuffContainer buffContainer;
 
         [SerializeField]
         internal UIObjectiveListController mainObjectives;
 
         [SerializeField]
         internal UIObjectiveListController bonusObjectives;
-        
+
+        internal static event Action<TokenType, int> OnResourceChange;
+        internal void RaiseResourceChange(TokenType type, int amount) { if (OnResourceChange != null) OnResourceChange(type, amount); }
+
         private void Update()
         {
             EncounterState.Current.TimeTick(Time.deltaTime);

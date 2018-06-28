@@ -6,69 +6,6 @@ using Match3.Character;
 
 namespace Match3.Encounter.Encounter
 {
-
-    public struct EncounterObjectiveCondition
-    {
-        public int Strength;
-        public int Agility;
-        public int Intelligence;
-        public int Charisma;
-        public int Luck;
-        public int Time;
-        public int Turn;
-
-        public Condition StrengthCondition;
-        public Condition AgilityCondition;
-        public Condition IntelligenceCondition;
-        public Condition CharismaCondition;
-        public Condition LuckCondition;
-        public Condition TimeCondition;
-        public Condition TurnCondition;
-
-        public EncounterObjectiveCondition(
-            int Strength = 0,
-            int Agility = 0,
-            int Intelligence = 0,
-            int Charisma = 0,
-            int Luck = 0,
-            int Time = 0,
-            int Turn = 0,
-
-            Condition StrengthCondition = Condition.NONE,
-            Condition AgilityCondition = Condition.NONE,
-            Condition IntelligenceCondition = Condition.NONE,
-            Condition CharismaCondition = Condition.NONE,
-            Condition LuckCondition = Condition.NONE,
-            Condition TimeCondition = Condition.NONE,
-            Condition TurnCondition = Condition.NONE
-        )
-        {
-            this.Strength = Strength;
-            this.Agility = Agility;
-            this.Intelligence = Intelligence;
-            this.Charisma = Charisma;
-            this.Luck = Luck;
-            this.Time = Time;
-            this.Turn = Turn;
-
-            this.StrengthCondition = StrengthCondition;
-            this.AgilityCondition = AgilityCondition;
-            this.IntelligenceCondition = IntelligenceCondition;
-            this.CharismaCondition = CharismaCondition;
-            this.LuckCondition = LuckCondition;
-            this.TimeCondition = TimeCondition;
-            this.TurnCondition = TurnCondition;
-        }
-
-        public enum Condition
-        {
-            EQUAL_AND_LESS,
-            EQUAL_AND_MORE,
-            EQUAL,
-            NONE
-        }
-    }
-
     public sealed class EncounterObjective : ITooltip
     {
         public EncounterObjective
@@ -76,87 +13,139 @@ namespace Match3.Encounter.Encounter
             string name,
             string sprite,
             string tooltip,
-            EncounterObjectiveCondition condition,
-            IReward reward
+            
+            int GoldReward = 0,
+            int ExpReward  = 0,
+            string[] TrophyReward = null,
+
+            int MinStrength = -1,
+            int MaxStrength = 100,
+
+            int MinAgility = -1,
+            int MaxAgility = 100,
+
+            int MinIntelligence = -1,
+            int MaxIntelligence = 100,
+
+            int MinCharisma = -1,
+            int MaxCharisma = 100,
+
+            int MinLuck = -1,
+            int MaxLuck = 100,
+
+            int MinTime = -1,
+            int MaxTime = 301,
+
+            int MinTurn = -1,
+            int MaxTurn = 100
             )
         {
+            if (TrophyReward == null) TrophyReward = new string[0];
+
             this.name = name;
             this.sprite = sprite;
             this.tooltip = tooltip;
-            this.completion = condition;
-            this.reward = reward;
+
+            this.GoldReward   = GoldReward;
+            this.ExpReward    = ExpReward;
+            this.TrophyReward = TrophyReward;
+
+            this.MinStrength = MinStrength;
+            this.MaxStrength = MaxStrength;
+
+            this.MinAgility = MinAgility;
+            this.MaxAgility = MaxAgility;
+
+            this.MinIntelligence = MinIntelligence;
+            this.MaxIntelligence = MaxIntelligence;
+
+            this.MinCharisma = MinCharisma;
+            this.MaxCharisma = MaxCharisma;
+
+            this.MinLuck = MinLuck;
+            this.MaxLuck = MaxLuck;
+
+            this.MinTime = MinTime;
+            this.MaxTime = MaxTime;
+
+            this.MinTurn = MinTurn;
+            this.MaxTurn = MaxTurn;
         }
 
         public string name { get; private set; }
         public string sprite { get; private set; }
         public string tooltip { get; private set; }
-        public readonly IReward reward;
+        
+        public int MinStrength;
+        public int MaxStrength;
 
-        private readonly EncounterObjectiveCondition completion;
+        public int MinAgility;
+        public int MaxAgility;
+
+        public int MinIntelligence;
+        public int MaxIntelligence;
+
+        public int MinCharisma;
+        public int MaxCharisma;
+
+        public int MinLuck;
+        public int MaxLuck;
+
+        public int MinTime;
+        public int MaxTime;
+
+        public int MinTurn;
+        public int MaxTurn;
+
+        public readonly int GoldReward;
+        public readonly int ExpReward;
+        public readonly string[] TrophyReward;
 
         internal bool isCompleted(PlayerState player)
         {
             // str
-            if (!this.DoCheck(
-                player.Resources[(int)TokenType.STRENGTH],
-                completion.Strength, completion.StrengthCondition))
-                return false;
+            int str = player.Resources[(int)TokenType.STRENGTH];
+
+            if (str > this.MaxStrength) return false;
+            if (str < this.MinStrength) return false;
 
             // agi
-            if (!this.DoCheck(
-                player.Resources[(int)TokenType.AGILITY],
-                completion.Agility, completion.AgilityCondition))
-                return false;
+            int agi = player.Resources[(int)TokenType.AGILITY];
+
+            if (agi > this.MaxAgility) return false;
+            if (agi < this.MinAgility) return false;
 
             // int
-            if (!this.DoCheck(
-                player.Resources[(int)TokenType.INTELLIGENCE],
-                completion.Intelligence, completion.IntelligenceCondition))
-                return false;
+            int intl = player.Resources[(int)TokenType.INTELLIGENCE];
+
+            if (intl > this.MaxIntelligence) return false;
+            if (intl < this.MinIntelligence) return false;
 
             // cha
-            if (!this.DoCheck(
-                player.Resources[(int)TokenType.CHARISMA],
-                completion.Charisma, completion.CharismaCondition))
-                return false;
+            int cha = player.Resources[(int)TokenType.CHARISMA];
+
+            if (cha > this.MaxCharisma) return false;
+            if (cha < this.MinCharisma) return false;
 
             // luk
-            if (!this.DoCheck(
-                player.Resources[(int)TokenType.LUCK],
-                completion.Luck, completion.LuckCondition))
-                return false;
-            
+            int luck = player.Resources[(int)TokenType.LUCK];
+
+            if (luck > this.MaxLuck) return false;
+            if (luck < this.MinLuck) return false;
+
             // turn
-            if (!this.DoCheck(player.Turn,
-                completion.Turn, completion.TurnCondition))
-                return false;
+            int turn = player.Turn;
+
+            if (turn > this.MaxTurn) return false;
+            if (turn < this.MinTurn) return false;
 
             // time
-            if (!this.DoCheck(player.Time, 
-                completion.Time, completion.TimeCondition))
-                return false;
+            int time = (int)player.Time;
+
+            if (time > this.MaxTurn) return false;
+            if (time < this.MinTurn) return false;
 
             return true;
-        }
-        
-        private bool DoCheck(float value, int checkValue, EncounterObjectiveCondition.Condition condition)
-        {
-            return DoCheck((int)value, checkValue, condition);
-        }
-
-        private bool DoCheck(int value, int checkValue, EncounterObjectiveCondition.Condition condition)
-        {
-            switch (condition)
-            {
-                case EncounterObjectiveCondition.Condition.EQUAL:
-                    return value == checkValue;
-                case EncounterObjectiveCondition.Condition.EQUAL_AND_LESS:
-                    return value <= checkValue;
-                case EncounterObjectiveCondition.Condition.EQUAL_AND_MORE:
-                    return value >= checkValue;
-                default:
-                    return true;
-            }
         }
     }
 }

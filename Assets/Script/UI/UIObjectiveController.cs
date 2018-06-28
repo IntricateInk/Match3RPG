@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Match3.Encounter.Encounter;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,30 +14,46 @@ namespace Match3.UI
         [SerializeField]
         private Image image;
 
-        private ITooltip _tooltip;
-        internal ITooltip tooltip
+        private EncounterObjective _objective;
+        internal EncounterObjective objective
         {
-            get { return this._tooltip; }
+            get { return this._objective; }
             set
             {
-                this._tooltip = value;
+                this._objective = value;
 
-                if (this.tooltip != null)
+                if (this._objective != null)
                 {
-                    this.label.text = this.tooltip.name;
-                    this.image.sprite = this.tooltip.GetSprite(); 
+                    this.label.text = this.objective.name;
+                    this.image.sprite = this.objective.GetSprite();
+
+                    this.TryCreate(TokenType.STRENGTH, this.objective.MinStrength, this.objective.MaxStrength);
+                    this.TryCreate(TokenType.AGILITY, this.objective.MinAgility, this.objective.MaxAgility);
+                    this.TryCreate(TokenType.INTELLIGENCE, this.objective.MinIntelligence, this.objective.MaxIntelligence);
+                    this.TryCreate(TokenType.CHARISMA, this.objective.MinCharisma, this.objective.MaxCharisma);
+                    this.TryCreate(TokenType.LUCK, this.objective.MinLuck, this.objective.MaxLuck);
+                    this.TryCreate(TokenType.TIME, this.objective.MinTime, this.objective.MaxTime);
+                    this.TryCreate(TokenType.TURN, this.objective.MinTurn, this.objective.MaxTurn);
                 }
             }
         }
 
+        private void TryCreate(TokenType field, int min, int max)
+        {
+            if (min >= field.MinValue() && max <= field.MaxValue())
+                UIFactory.CreateResourceBar(this, field, min, max);
+        }
+        
+        // Unity API hooks
+
         public void OnPointerEnter()
         {
-            if (this.tooltip != null) this.tooltip.Show();
+            if (this.objective != null) this.objective.Show();
         }
 
         public void OnPointerExit()
         {
-            if (this.tooltip != null) this.tooltip.Show(false);
+            if (this.objective != null) this.objective.Show(false);
         }
     }
 }

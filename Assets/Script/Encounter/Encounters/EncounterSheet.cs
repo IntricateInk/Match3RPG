@@ -47,10 +47,13 @@ namespace Match3.Encounter.Encounter
             return false;
         }
 
-        internal void CheckBonusObjectives()
+        internal void CheckBonusObjectives(EncounterState encounter)
         {
             foreach (EncounterObjective objective in this.bonusObjectives)
             {
+                if (objective.isCompleted(encounter.playerState))
+                {
+                }
             }
         }
     }
