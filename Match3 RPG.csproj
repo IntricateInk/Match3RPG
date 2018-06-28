@@ -330,7 +330,13 @@
     <Compile Include="Assets\Script\Encounter\Skills\GameSkill.cs" />
     <Compile Include="Assets\Script\Encounter\TokenState.cs" />
     <Compile Include="Assets\Script\Encounter\Trophies\TrophySheet.cs" />
+    <Compile Include="Assets\Script\Generated\output\EncounterObjective.cs" />
+    <Compile Include="Assets\Script\Generated\output\EncounterSheet.cs" />
+    <Compile Include="Assets\Script\Generated\output\TrophySheet.cs" />
     <Compile Include="Assets\Script\ITooltip.cs" />
+    <Compile Include="Assets\Script\Overworld\OverworldManager.cs" />
+    <Compile Include="Assets\Script\Overworld\OverworldMap.cs" />
+    <Compile Include="Assets\Script\Overworld\OverworldNode.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldState.cs" />
     <Compile Include="Assets\Script\TestMenuScript.cs" />
     <Compile Include="Assets\Script\TokenType.cs" />
@@ -366,6 +372,14 @@
     <Compile Include="Assets\Script\UI\UITrophyController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyListController.cs" />
     <Compile Include="Assets\Script\Utility\List Extensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Script\Generated\EncounterObjective_item.txt" />
+    <None Include="Assets\Script\Generated\EncounterObjective_script.txt" />
+    <None Include="Assets\Script\Generated\EncounterSheet_item.txt" />
+    <None Include="Assets\Script\Generated\EncounterSheet_script.txt" />
+    <None Include="Assets\Script\Generated\TrophySheet_item.txt" />
+    <None Include="Assets\Script\Generated\TrophySheet_script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

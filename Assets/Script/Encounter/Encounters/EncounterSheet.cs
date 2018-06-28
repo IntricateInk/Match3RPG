@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Match3.Encounter.Encounter
 {
-    public sealed class EncounterSheet : ITooltip
+    public sealed partial class EncounterSheet : ITooltip
     {
         public string name    { get; private set; }
         public string sprite  { get; private set; }
@@ -13,24 +13,24 @@ namespace Match3.Encounter.Encounter
 
         public EncounterObjective mainObjectiveMet { get; private set; }
 
-        public readonly List<EncounterObjective> mainObjectives;
-        public readonly List<EncounterObjective> bonusObjectives;
+        public readonly EncounterObjective[] mainObjectives;
+        public readonly EncounterObjective[] bonusObjectives;
 
         public EncounterSheet
             (
                 string name,
                 string icon,
                 string tooltip,
-                List<EncounterObjective> mainObjectives,
-                List<EncounterObjective> bonusObjectives
+                string[] mainObjectives,
+                string[] bonusObjectives
             )
         {
             this.name    = name;
             this.sprite  = icon;
             this.tooltip = tooltip;
 
-            this.mainObjectives = mainObjectives;
-            this.bonusObjectives = bonusObjectives;
+            this.mainObjectives  = EncounterObjective.GetObjective(mainObjectives);
+            this.bonusObjectives = EncounterObjective.GetObjective(bonusObjectives);
         }
 
         internal bool MainObjectiveMet(EncounterState encounter)

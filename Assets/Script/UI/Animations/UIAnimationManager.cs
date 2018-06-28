@@ -38,6 +38,12 @@ namespace Match3.UI.Animation
             AnimationQueue.Enqueue(animation);
         }
 
+        public static void ClearAnimation()
+        {
+            Current = null;
+            AnimationQueue.Clear();
+        }
+
         // instance
 
         [SerializeField]

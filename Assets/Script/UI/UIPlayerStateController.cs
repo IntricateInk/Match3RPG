@@ -41,7 +41,12 @@ namespace Match3.UI
         {
             UIAnimationManager.OnResourceChange += this.OnResourceChange;
         }
-        
+
+        private void OnDestroy()
+        {
+            UIAnimationManager.OnResourceChange -= this.OnResourceChange;
+        }
+
         internal void SetTooltip(ITooltip tooltip)
         {
             this.nameLabel.text = tooltip.name;

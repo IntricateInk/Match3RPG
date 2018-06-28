@@ -41,7 +41,6 @@ namespace Match3.Encounter
         public static void NewEncounter(EncounterSheet encounterSheet)
         {
             EncounterState.Current = new EncounterState(OverworldState.Current.player, encounterSheet);
-            
             SceneManager.LoadScene("encounter");
         }
 
@@ -92,7 +91,7 @@ namespace Match3.Encounter
 
             if (this.encounterSheet.MainObjectiveMet(this))
             {
-                Debug.Log("Won");
+                this.DoEncounterEnd();
             } else
             {
                 this.inputState.Reset();
@@ -105,8 +104,13 @@ namespace Match3.Encounter
             }
         }
 
-        // public to UI classes
+        private void DoEncounterEnd()
+        {
+            UIAnimationManager.ClearAnimation();
+            OverworldState.Current.GoToOverworld();
+        }
 
+        // public to UI classes
 
         public void TimeTick(float deltaTime)
         {

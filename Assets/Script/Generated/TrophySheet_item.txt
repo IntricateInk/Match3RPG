@@ -1,0 +1,10 @@
+		public static TrophySheet {uid} = new TrophySheet(
+			name: "{name}",
+			sprite: "{sprite}",
+			tooltip: "{tooltip}",
+
+			skills: new string[] {{{lst_skills}}},
+
+			passives: new string[] {{ {lst_passives} }}
+
+		);

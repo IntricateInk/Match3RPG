@@ -1,0 +1,33 @@
+
+        public static EncounterObjective {uid} = new EncounterObjective
+        (
+			uid: "{uid}",
+            name: "{name}",
+            sprite: "{sprite}",
+            tooltip: "{tooltip}",
+			
+			GoldReward: {gold},
+            ExpReward: {exp},
+            TrophyReward: new string[] {{{lst_TrophyReward}}},
+            
+            MinStrength: {Str_Min},
+            MaxStrength: {Str_Max}, 
+			
+            MinAgility: {Agi_Min},
+            MaxAgility: {Agi_Max},
+
+            MinIntelligence: {Int_Min},
+            MaxIntelligence: {Int_Max},
+
+            MinCharisma: {Cha_Min},
+            MaxCharisma: {Cha_Max},
+
+            MinLuck: {Luk_Min},
+            MaxLuck: {Luk_Max},
+
+            MinTime: {Time_Min},
+            MaxTime: {Time_Max},
+
+            MinTurn: {Turn_Min},
+            MaxTurn: {Turn_Max}
+        );

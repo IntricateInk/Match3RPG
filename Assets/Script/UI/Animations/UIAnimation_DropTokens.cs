@@ -30,7 +30,7 @@ namespace Match3.UI.Animation
             if (t == 0f)
             {
                 this.uiTokens = manager.board.CreateToken(this.tokens);
-
+                
                 foreach (UITokenController uiToken in this.uiTokens)
                 {
                     if (uiToken == null) continue;

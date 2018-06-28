@@ -6,10 +6,11 @@ using Match3.Character;
 
 namespace Match3.Encounter.Encounter
 {
-    public sealed class EncounterObjective : ITooltip
+    public sealed partial class EncounterObjective : ITooltip
     {
         public EncounterObjective
             (
+            string uid,
             string name,
             string sprite,
             string tooltip,
@@ -70,6 +71,8 @@ namespace Match3.Encounter.Encounter
 
             this.MinTurn = MinTurn;
             this.MaxTurn = MaxTurn;
+
+            _AllObjectives.Add(uid, this);
         }
 
         public string name { get; private set; }
@@ -146,6 +149,20 @@ namespace Match3.Encounter.Encounter
             if (time < this.MinTurn) return false;
 
             return true;
+        }
+
+        // Factory Method
+        
+        private static Dictionary<string, EncounterObjective> _AllObjectives = new Dictionary<string, EncounterObjective>();
+
+        internal static EncounterObjective[] GetObjective(string[] uids)
+        {
+            return Array.ConvertAll<string, EncounterObjective>(uids, GetObjective);
+        }
+        
+        internal static EncounterObjective GetObjective(string uid)
+        {
+            return _AllObjectives[uid];
         }
     }
 }

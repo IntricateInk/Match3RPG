@@ -203,7 +203,7 @@ MonoBehaviour:
   bar: {fileID: 224793336339658174}
   icon: {fileID: 114400620029979964}
   rangeLabel: {fileID: 114322219712772606}
-  rangeHighlight: {fileID: 224382456803068128}
+  rangeHighlight: {fileID: 114135080666639304}
 --- !u!114 &114322219712772606
 MonoBehaviour:
   m_ObjectHideFlags: 1

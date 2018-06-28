@@ -3,6 +3,7 @@ using Match3.Encounter;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Match3.Overworld
 {
@@ -22,6 +23,11 @@ namespace Match3.Overworld
                     "Mark of the Thief",
                 }
             );
+        }
+        
+        public void GoToOverworld()
+        {
+            SceneManager.LoadScene("overworld");
         }
 
         public readonly PlayerSheet player;

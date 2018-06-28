@@ -22,7 +22,7 @@ namespace Match3.UI
         private Text rangeLabel;
 
         [SerializeField]
-        private RectTransform rangeHighlight;
+        private Image rangeHighlight;
 
         private int rangeLower;
         private int rangeUpper;
@@ -41,6 +41,11 @@ namespace Match3.UI
         private void Awake()
         {
             UIAnimationManager.OnResourceChange += this.OnResourceChange;
+        }
+
+        private void OnDestroy()
+        {
+            UIAnimationManager.OnResourceChange -= this.OnResourceChange;
         }
 
         private void Flip(int amount)
@@ -63,8 +68,15 @@ namespace Match3.UI
                 anchor2 = 1;
             } else
             {
+                this.rangeHighlight.color = Color.green;
+                this.rangeLabel.color = Color.green;
+                this.amountLabel.color = Color.green;
                 return;
             }
+
+            this.rangeHighlight.color = Color.white;
+            this.rangeLabel.color = Color.white;
+            this.amountLabel.color = Color.white;
 
             RectTransform rt = this.amountLabel.rectTransform;
             rt.anchorMin = new Vector2(anchor1, 0);
@@ -119,9 +131,9 @@ namespace Match3.UI
 
             this.rangeLabel.text = min.ToString() + " - " + max.ToString();
 
-            this.rangeHighlight.anchorMin = new Vector2((float)min / this.field.MaxValue(), 0);
-            this.rangeHighlight.anchorMax = new Vector2((float)max / this.field.MaxValue(), 1);
-            this.rangeHighlight.anchoredPosition = Vector2.zero;
+            this.rangeHighlight.rectTransform.anchorMin = new Vector2((float)min / this.field.MaxValue(), 0);
+            this.rangeHighlight.rectTransform.anchorMax = new Vector2((float)max / this.field.MaxValue(), 1);
+            this.rangeHighlight.rectTransform.anchoredPosition = Vector2.zero;
 
             this.OnResourceChange(this.field, 0);
         }

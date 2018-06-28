@@ -38,6 +38,11 @@ namespace Match3.UI
             UITooltipController.OnTooltipChange += Redraw;
         }
 
+        private void OnDestroy()
+        {
+            UITooltipController.OnTooltipChange -= Redraw;
+        }
+
         private void Redraw()
         {
             if (UITooltipController.Current == null)
