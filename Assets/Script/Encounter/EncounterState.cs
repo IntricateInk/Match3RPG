@@ -1,7 +1,7 @@
 ﻿using Match3.Character;
 using Match3.Encounter.Encounter;
-using Match3.Encounter.Passive;
-using Match3.Encounter.Skill;
+using Match3.Encounter.Effect.Passive;
+using Match3.Encounter.Effect.Skill;
 using Match3.Overworld;
 using Match3.UI.Animation;
 using System;
@@ -53,18 +53,7 @@ namespace Match3.Encounter
             this.playerState = new PlayerState(this);
             this.boardState  = new BoardState(this, 8, 8);
             this.inputState  = new InputState(this);
-
-            for (int i = 0; i < this.playerState.Skills.Count; i++)
-            {
-                GameSkill skill = this.playerState.Skills[i];
-                UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, i));
-            }
             
-            foreach (GamePassive passive in this.playerState.Passives)
-            {
-                UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(passive));
-            }
-
             foreach (EncounterObjective objective in this.encounterSheet.mainObjectives)
             {
                 UIAnimationManager.AddAnimation(new UIInstruction_AddObjective(objective, true));
@@ -77,9 +66,24 @@ namespace Match3.Encounter
 
             UIAnimationManager.AddAnimation(new UIInstruction_SetPlayer(this.playerSheet));
             UIAnimationManager.AddAnimation(new UIInstruction_SetEncounter(this.encounterSheet));
+
+            this.DoEncounterStart();
         }
 
         // private
+
+        private void DoEncounterStart ()
+        {
+            this.DoTurnStart();
+        }
+
+        private void DoTurnStart()
+        {
+            foreach (GamePassive passive in playerState.Passives)
+            {
+                passive.OnTurnStart(this);
+            }
+        }
 
         private void DoTurn()
         {
@@ -97,11 +101,7 @@ namespace Match3.Encounter
                 this.inputState.Reset();
             }
 
-            foreach (GamePassive passive in playerState.Passives)
-            {
-                if (passive is IPassive_OnTurnStart)
-                    ((IPassive_OnTurnStart)passive).OnTurnStart(this);
-            }
+            this.DoTurnStart();
         }
 
         private void DoEncounterEnd()
@@ -120,7 +120,9 @@ namespace Match3.Encounter
         public void SelectToken(int x, int y)
         {
             if (this.inputState.InputToken(this.boardState.tokens[x, y]))
+            {
                 this.DoTurn();
+            }
         }
 
         public void SelectSkill(int skill_index)

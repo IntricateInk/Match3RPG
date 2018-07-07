@@ -1,4 +1,4 @@
-﻿using Match3.Encounter.Skill;
+﻿using Match3.Encounter.Effect.Skill;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,8 +51,10 @@ namespace Match3.Encounter
 
         internal void SetSkill(int skill_index)
         {
-            this.Reset();
-            this.selectedSkillIndex = skill_index;
+            if (this.encounter.playerState.Skills[skill_index].CanPayCost(this.encounter)) {
+                this.Reset();
+                this.selectedSkillIndex = skill_index;
+            }
         }
     }
 }

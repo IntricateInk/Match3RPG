@@ -6,6 +6,7 @@ using UnityEngine;
 
 public enum TokenType : int
 {
+    NULL           = -1,
     STRENGTH       = 0,
     AGILITY        = 1,
     INTELLIGENCE   = 2,

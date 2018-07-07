@@ -59,8 +59,8 @@ namespace Match3.Encounter.Encounter
             MinStrength: -1,
             MaxStrength: 100, 
 			
-            MinAgility: 0,
-            MaxAgility: 20,
+            MinAgility: 20,
+            MaxAgility: 30,
 
             MinIntelligence: -1,
             MaxIntelligence: 100,

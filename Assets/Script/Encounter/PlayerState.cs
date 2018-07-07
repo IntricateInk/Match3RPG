@@ -1,17 +1,17 @@
 ﻿using Match3.Character;
-using Match3.Encounter.Passive;
-using Match3.Encounter.Skill;
+using Match3.Encounter.Effect.Skill;
 using Match3.UI.Animation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Match3.Encounter.Effect.Passive;
 
 namespace Match3.Encounter
 {
     internal class PlayerState : EncounterSubState
     {
-        public readonly int[] Resources = new int[(int)TokenType.COUNT];
+        private readonly int[] resources = new int[(int)TokenType.COUNT];
 
         public readonly List<TokenType> tokenList = new List<TokenType>();
         public readonly List<GamePassive> Passives = new List<GamePassive>();
@@ -42,13 +42,29 @@ namespace Match3.Encounter
 
         public PlayerState(EncounterState parent) : base(parent)
         {
+            int i = 0;
+
             foreach (TrophySheet trophy in parent.playerSheet.trophies)
             {
                 foreach (string skill_name in trophy.skills)
-                    this.Skills.Add(GameSkill.GetSkill(skill_name));
+                {
+                    GameSkill skill = GameSkill.GetSkill(skill_name);
+
+                    if (this.Skills.Contains(skill)) continue;
+
+                    this.Skills.Add(skill);
+                    UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, i));
+                    i++;
+                }
 
                 foreach (string passive_name in trophy.passives)
-                    this.Passives.Add(GamePassive.GetPassive(passive_name));
+                {
+                    GamePassive passive = GamePassive.GetPassive(passive_name);
+
+                    this.Passives.Add(passive);
+                    UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(passive));
+                }
+
             }
         }
 
@@ -67,11 +83,23 @@ namespace Match3.Encounter
             return token;
         }
         
+        public void ApplyBuff(string buff_name) { ApplyBuff(GamePassive.GetPassive(buff_name)); }
+
+        public void ApplyBuff(GamePassive buff)
+        {
+            this.Passives.Add(buff);
+        }
+
+        public int GetResource(TokenType type)
+        {
+            return this.resources[type.AsInt()];
+        }
+
         public void GainResource(TokenType type, int amount)
         {
-            this.Resources[(int)type] += amount;
+            this.resources[type.AsInt()] += amount;
 
-            UIAnimationManager.AddAnimation(new UIInstruction_UpdateResources(type, this.Resources[(int)type]), true);
+            UIAnimationManager.AddAnimation(new UIInstruction_UpdateResources(type, this.GetResource(type)), true);
         }
     }
 }

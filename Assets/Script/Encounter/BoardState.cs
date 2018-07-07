@@ -26,7 +26,7 @@ namespace Match3.Encounter
             
             foreach (TokenState token in this.GetMatching())
             {
-                this.Remove(token);
+                token.Destroy();
                 encounter.playerState.GainResource(token.type, 1);
             }
 
@@ -72,37 +72,7 @@ namespace Match3.Encounter
 
             return tokens_matched;
         }
-
-        internal void SwapToken(TokenState token1, TokenState token2)
-        {
-            UIAnimationManager.AddAnimation(new UIAnimation_SwapToken(token1.x, token1.y, token2.x, token2.y));
-
-            int tmp_x = token1.x;
-            int tmp_y = token1.y;
-
-            this.SetPosition(token1, token2.x, token2.y, false);
-            this.SetPosition(token2, tmp_x, tmp_y, false);
-        }
-
-        internal void SetPosition(TokenState token, int new_x, int new_y, bool doAnimate = true)
-        {
-            if (doAnimate)
-                UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(token.x, token.y, new_x, new_y));
-
-            token.x = new_x;
-            token.y = new_y;
-            
-            this.tokens[token.x, token.y] = token;
-        }
         
-        internal void Remove(int x, int y) { this.Remove(this.tokens[x, y]); }
-        internal void Remove(TokenState token)
-        {
-            this.tokens[token.x, token.y] = null;
-
-            UIAnimationManager.AddAnimation( new UIAnimation_RemoveTokens(token.x, token.y) );
-        }
-
         private void DoTokenFall()
         {
             TokenType?[,] types = new TokenType?[this.sizeX, this.sizeY];
@@ -125,7 +95,7 @@ namespace Match3.Encounter
                         {
                             drop_animations.Add(new UIAnimation_MoveToken(token.x, token.y, x, first_empty));
 
-                            this.SetPosition(token, x, first_empty, false);
+                            token.SetPosition(x, first_empty, false);
                             first_empty += 1;
                         }
                     }
