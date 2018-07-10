@@ -1,6 +1,6 @@
 uid,name,sprite,tooltip,gold,exp,lst_TrophyReward,Turn_Min,Turn_Max,Time_Min,Time_Max,Str_Min,Str_Max,Agi_Min,Agi_Max,Int_Min,Int_Max,Cha_Min,Cha_Max,Luk_Min,Luk_Max
-TEST_1,Beat Up,skills/bash,Beat up the bandits,0,0,Honor,-1,100,-1,301,30,60,-1,100,-1,100,-1,100,-1,100
-TEST_2,Punch,skills/bash,A satisfying punch!,0,0,Bloodthristy,-1,100,-1,301,-1,100,0,20,-1,100,-1,100,1,99
-TEST,sample,,You shouldn't be seeing this,0,0,,-1,100,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
-TEST_3,Turn Test,skills/bash,Efficiency!,0,0,,10,99,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
-TEST_4,Time Test,skills/bash,Your time is running out,0,0,,0,60,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
+TEST_1,Beat Up,skills/bash,Beat up the bandits,10,5,Honor,-1,100,-1,301,30,60,-1,100,-1,100,-1,100,-1,100
+TEST_2,Punch,skills/bash,A satisfying punch!,20,4,Bloodthristy,-1,100,-1,301,-1,100,0,20,-1,100,-1,100,1,99
+TEST,sample,,You shouldn't be seeing this,30,3,,-1,100,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
+TEST_3,Turn Test,skills/bash,Efficiency!,40,2,,10,99,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
+TEST_4,Time Test,skills/bash,Your time is running out,50,1,,0,60,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100

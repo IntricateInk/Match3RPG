@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Match3.Encounter.Effect.Passive;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -120,6 +121,54 @@ namespace Match3.Encounter.Effect.Skill
             }
         );
 
+        public static GameSkill MINE = new GameSkill
+        (
+            name: "Mine",
+            sprite: "skills/sleight",
+            tooltip: "Select a tile. Apply a buff that gains 1 Resource of that tile type at the start of each turn.",
+
+            intCost: 2,
+
+            selectBehavior: SelectBehavior.Single,
+
+            runEffects: new GameEffect.Action[]
+            {
+                GameEffect.ApplyTileBuff(TargetPassive.MINER_DRONE)
+            }
+        );
+
+        public static GameSkill PARASITIC_BURST = new GameSkill
+        (
+            name: "Parasitic Burst",
+            sprite: "skills/sleight",
+            tooltip: "Select a token. Gain 4 Resource of that type tile, then apply a buff that loses 1 Resource of that tile type at the start of each turn.",
+            
+            intCost: 1,
+
+            selectBehavior: SelectBehavior.Single,
+
+            runEffects: new GameEffect.Action[]
+            {
+                GameEffect.GainSelectedAsResource(4),
+                GameEffect.ApplyTokenBuff(TargetPassive.PARASITE)
+            }
+        );
+
+        public static GameSkill RAINBOW = new GameSkill
+        (
+            name: "Rainbow",
+            sprite: "skills/sleight",
+            tooltip: "Select a tile and apply a buff that randomly transforms it at the start of each turn. Gain 3 LUK Resource.",
+            
+            selectBehavior: SelectBehavior.Single,
+
+            runEffects: new GameEffect.Action[]
+            {
+                GameEffect.GainResource(TokenType.LUCK, 3),
+                GameEffect.ApplyTokenBuff(TargetPassive.RAINBOW)
+            }
+        );
+
         public static GameSkill RICOCHET = new GameSkill
         (
             name: "Ricochet",
@@ -137,22 +186,22 @@ namespace Match3.Encounter.Effect.Skill
                 GameEffect.DestroySelected,
             }
         );
+        
+        public static GameSkill LUCKY_FIND = new GameSkill
+        (
+            name: "Lucky Find",
+            sprite: "skills/sleight",
+            tooltip: "Gain a random Resource.",
+
+            selectBehavior: SelectBehavior.None,
+
+            runEffects: new GameEffect.Action[]
+            {
+                GameEffect.GainRandomResource(1)
+            }
+        );
 
         // TODO:
-
-        //public static GameSkill LUCKY_FIND = new GameSkill
-        //(
-        //    name: "Lucky Find",
-        //    sprite: "skills/sleight",
-        //    tooltip: "Gain a random Resource.",
-
-        //    selectBehavior: SelectBehavior.None,
-
-        //    runEffects: new GameEffect.Action[]
-        //    {
-        //        GameEffect.GainResource(1)
-        //    }
-        //);
 
         //public static GameSkill HEAVE = new GameSkill
         //(

@@ -1,4 +1,5 @@
-﻿using Match3.UI.Animation;
+﻿using Match3.Encounter.Effect.Passive;
+using Match3.UI.Animation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace Match3.Encounter
             {
                 if (type != value)
                 {
+                    if (type != TokenType.NULL) UIAnimationManager.AddAnimation(new UIInstruction_SetTokenSprite(x, y, value));
                     _type = value;
                 }
             }
@@ -37,6 +39,7 @@ namespace Match3.Encounter
                 this.Recolor();
             }
         }
+        
         public bool isMatching
         {
             get { return this._isMatching; }
@@ -45,6 +48,12 @@ namespace Match3.Encounter
                 this.Recolor();
             }
         }
+
+        internal TileState tile {
+            get { return this.board.tiles[x, y]; }
+        }
+
+        internal List<TargetPassive> Passives = new List<TargetPassive>();
 
         // constructor
 
@@ -67,7 +76,7 @@ namespace Match3.Encounter
             if (x < 0 || y < 0) return null;
             if (x >= board.sizeX || y >= board.sizeY) return null;
 
-            return board.tokens[x, y];
+            return board.tiles[x, y].token;
         }
         
         internal void Swap(TokenState other)
@@ -89,12 +98,18 @@ namespace Match3.Encounter
             this.x = new_x;
             this.y = new_y;
 
-            board.tokens[this.x, this.y] = this;
+            board.tiles[this.x, this.y].token = this;
         }
-        
+
+        internal void Match()
+        {
+            Destroy();
+            board.encounter.playerState.GainResource(this.type, 1);
+        }
+
         internal void Destroy()
         {
-            board.tokens[this.x, this.y] = null;
+            board.tiles[this.x, this.y].token = null;
 
             UIAnimationManager.AddAnimation(new UIAnimation_RemoveTokens(this.x, this.y));
         }
@@ -118,5 +133,8 @@ namespace Match3.Encounter
 
             UIAnimationManager.AddAnimation(new UIInstruction_ShadeToken(x, y, color), isQueued);
         }
+        
+        internal void ApplyBuff(string buff_name)  { ApplyBuff(TargetPassive.GetPassive(buff_name)); }
+        internal void ApplyBuff(TargetPassive buff) { this.Passives.Add(buff); }
     }
 }

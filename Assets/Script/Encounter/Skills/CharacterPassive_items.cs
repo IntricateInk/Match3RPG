@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace Match3.Encounter.Effect.Passive
 {
-    public sealed partial class GamePassive : ITooltip
+    public partial class CharacterPassive : ITooltip
     {
-        public static GamePassive STRONG = new GamePassive
+        public static CharacterPassive STRONG = new CharacterPassive
         (
             name: "Strong",
             sprite: "tokens/str",
@@ -18,7 +18,7 @@ namespace Match3.Encounter.Effect.Passive
             }
         );
 
-        public static GamePassive AGILE = new GamePassive
+        public static CharacterPassive AGILE = new CharacterPassive
         (
             name: "Agile",
             sprite: "tokens/agi",
@@ -29,7 +29,7 @@ namespace Match3.Encounter.Effect.Passive
             }
         );
 
-        public static GamePassive INTELLIGENT = new GamePassive
+        public static CharacterPassive INTELLIGENT = new CharacterPassive
         (
             name: "Intelligent",
             sprite: "tokens/int",
@@ -40,7 +40,7 @@ namespace Match3.Encounter.Effect.Passive
             }
         );
 
-        public static GamePassive CHARISMATIC = new GamePassive
+        public static CharacterPassive CHARISMATIC = new CharacterPassive
         (
             name: "Charismatic",
             sprite: "tokens/cha",
@@ -51,7 +51,7 @@ namespace Match3.Encounter.Effect.Passive
             }
         );
 
-        public static GamePassive LUCKY = new GamePassive
+        public static CharacterPassive LUCKY = new CharacterPassive
         (
             name: "Lucky",
             sprite: "tokens/luk",

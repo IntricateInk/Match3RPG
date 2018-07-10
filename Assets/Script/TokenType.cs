@@ -13,8 +13,18 @@ public enum TokenType : int
     CHARISMA       = 3,
     LUCK           = 4,
     TIME           = 5,
-    TURN           = 6,
-    COUNT          = 7
+    TURN           = 6
+}
+
+public static class TokenTypeHelper
+{
+    public static int ResourceCount() { return 5; }
+    public static int Count() { return 7; }
+
+    public static TokenType RandomResource()
+    {
+        return (TokenType) UnityEngine.Random.Range(0, ResourceCount());
+    }
 }
 
 public static class TokenTypeExtensions

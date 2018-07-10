@@ -11,14 +11,27 @@ namespace Match3.Encounter.Encounter
                 name: "Brawl",
                 icon: "skills/bash",
                 tooltip: "LOTS AND LOTS OF FISTS?",
-                mainObjectives: new string[] {
+                
+				mainObjectives: new string[] 
+				{
+				
 "TEST_2"
-},
-                bonusObjectives: new string[] {
+
+				},
+                
+				bonusObjectives: new string[] 
+				{
+				
 "TEST_1",
 "TEST_3",
 "TEST_4"
-}
+
+				},
+				
+				passives: new string[] 
+				{
+				
+				}
             );
 
 

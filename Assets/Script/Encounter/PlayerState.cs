@@ -11,10 +11,10 @@ namespace Match3.Encounter
 {
     internal class PlayerState : EncounterSubState
     {
-        private readonly int[] resources = new int[(int)TokenType.COUNT];
+        private readonly int[] resources = new int[TokenTypeHelper.ResourceCount()];
 
         public readonly List<TokenType> tokenList = new List<TokenType>();
-        public readonly List<GamePassive> Passives = new List<GamePassive>();
+        public readonly List<CharacterPassive> Passives = new List<CharacterPassive>();
         public readonly List<GameSkill> Skills = new List<GameSkill>();
 
         private int _Turn;
@@ -59,12 +59,19 @@ namespace Match3.Encounter
 
                 foreach (string passive_name in trophy.passives)
                 {
-                    GamePassive passive = GamePassive.GetPassive(passive_name);
+                    CharacterPassive passive = CharacterPassive.GetPassive(passive_name);
 
                     this.Passives.Add(passive);
                     UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(passive));
                 }
+            }
 
+            foreach (string passive_name in parent.encounterSheet.passives)
+            {
+                CharacterPassive passive = CharacterPassive.GetPassive(passive_name);
+
+                this.Passives.Add(passive);
+                UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(passive));
             }
         }
 
@@ -83,9 +90,9 @@ namespace Match3.Encounter
             return token;
         }
         
-        public void ApplyBuff(string buff_name) { ApplyBuff(GamePassive.GetPassive(buff_name)); }
+        public void ApplyBuff(string buff_name) { ApplyBuff(CharacterPassive.GetPassive(buff_name)); }
 
-        public void ApplyBuff(GamePassive buff)
+        public void ApplyBuff(CharacterPassive buff)
         {
             this.Passives.Add(buff);
         }

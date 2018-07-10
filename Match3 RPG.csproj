@@ -322,12 +322,16 @@
     <Compile Include="Assets\Script\Encounter\InputState.cs" />
     <Compile Include="Assets\Script\Encounter\PlayerSheet.cs" />
     <Compile Include="Assets\Script\Encounter\PlayerState.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\BasePassive.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\CharacterPassive.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\CharacterPassive_items.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\GameEffect.cs" />
-    <Compile Include="Assets\Script\Encounter\Skills\GamePassive.cs" />
-    <Compile Include="Assets\Script\Encounter\Skills\GamePassive_items.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\GameSkill.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\GameSkill_items.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\SelectBehavior.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\TargetPassive.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\TargetPassive_items.cs" />
+    <Compile Include="Assets\Script\Encounter\TileState.cs" />
     <Compile Include="Assets\Script\Encounter\TokenState.cs" />
     <Compile Include="Assets\Script\Encounter\Trophies\TrophySheet.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterObjective.cs" />
@@ -353,6 +357,7 @@
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_SetEncounter.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_SetPlayer.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_SetTime.cs" />
+    <Compile Include="Assets\Script\UI\Animations\UIInstruction_SetTokenSprite.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_ShadeToken.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_UpdateResources.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIInstruction_UpdateTurns.cs" />

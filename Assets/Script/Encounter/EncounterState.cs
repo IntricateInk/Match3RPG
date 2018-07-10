@@ -14,7 +14,7 @@ namespace Match3.Encounter
 {
     public abstract class EncounterSubState
     {
-        protected EncounterState encounter { get; private set; }
+        internal EncounterState encounter { get; private set; }
 
         public EncounterSubState(EncounterState parent)
         {
@@ -79,9 +79,25 @@ namespace Match3.Encounter
 
         private void DoTurnStart()
         {
-            foreach (GamePassive passive in playerState.Passives)
+            foreach (CharacterPassive passive in playerState.Passives)
             {
-                passive.OnTurnStart(this);
+                passive.OnTurnStart(this, null);
+            }
+
+            foreach (TileState tile in this.boardState.tiles)
+            {
+                List<TokenState> target = new List<TokenState>();
+                target.Add(tile.token);
+
+                foreach (TargetPassive passive in tile.Passives)
+                {
+                    passive.OnTurnStart(this, target);
+                }
+
+                foreach (TargetPassive passive in tile.token.Passives)
+                {
+                    passive.OnTurnStart(this, target);
+                }
             }
         }
 
@@ -107,6 +123,16 @@ namespace Match3.Encounter
         private void DoEncounterEnd()
         {
             UIAnimationManager.ClearAnimation();
+
+            foreach (EncounterObjective obj in encounterSheet.mainObjectives) {
+                if (obj.isCompleted(playerState)) playerSheet.GainReward(obj);
+            }
+
+            foreach (EncounterObjective obj in encounterSheet.bonusObjectives)
+            {
+                if (obj.isCompleted(playerState)) playerSheet.GainReward(obj);
+            }
+
             OverworldState.Current.GoToOverworld();
         }
 
@@ -119,7 +145,7 @@ namespace Match3.Encounter
 
         public void SelectToken(int x, int y)
         {
-            if (this.inputState.InputToken(this.boardState.tokens[x, y]))
+            if (this.inputState.InputToken(this.boardState.tiles[x, y].token))
             {
                 this.DoTurn();
             }

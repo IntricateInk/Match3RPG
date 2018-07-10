@@ -8,14 +8,23 @@ namespace Match3.Encounter
 {
     public class BoardState : EncounterSubState
     {
-        public TokenState[,] tokens;
-
-        public int sizeX { get { return this.tokens.GetLength(0); } }
-        public int sizeY { get { return this.tokens.GetLength(1); } }
+        public TileState[,] tiles;
+        
+        public int sizeX { get { return this.tiles.GetLength(0); } }
+        public int sizeY { get { return this.tiles.GetLength(1); } }
         
         internal BoardState(EncounterState parent, int size_x, int size_y) : base(parent)
         {
-            this.tokens = new TokenState[size_x, size_y];
+            this.tiles = new TileState[size_x, size_y];
+
+            for (int x = 0; x < size_x; x++)
+            {
+                for (int y = 0; y < size_y; y++)
+                {
+                    this.tiles[x, y] = new TileState(this, x, y);
+                }
+            }
+
             this.fillBoard();
             this.HighlightMatching();
         }
@@ -26,8 +35,7 @@ namespace Match3.Encounter
             
             foreach (TokenState token in this.GetMatching())
             {
-                token.Destroy();
-                encounter.playerState.GainResource(token.type, 1);
+                token.Match();
             }
 
             this.DoTokenFall();
@@ -50,23 +58,23 @@ namespace Match3.Encounter
         {
             List<TokenState> tokens_matched = new List<TokenState>();
 
-            for (int x = 0; x < this.tokens.GetLength(0); x++)
-                for (int y = 0; y < this.tokens.GetLength(1); y++)
+            for (int x = 0; x < this.sizeX; x++)
+                for (int y = 0; y < this.sizeY; y++)
                 {
-                    TokenState token = this.tokens[x, y];
-
-                    if (x >= 2 && token.type == tokens[x-1, y].type && token.type == tokens[x-2, y].type)
+                    TokenState token = this.tiles[x, y].token;
+                    
+                    if (x >= 2 && token.type == tiles[x-1, y].token.type && token.type == tiles[x-2, y].token.type)
                     {
                         if (!tokens_matched.Contains(token)) tokens_matched.Add(token);
-                        if (!tokens_matched.Contains(tokens[x-1, y])) tokens_matched.Add(tokens[x-1, y]);
-                        if (!tokens_matched.Contains(tokens[x-2, y])) tokens_matched.Add(tokens[x-2, y]);
+                        if (!tokens_matched.Contains(tiles[x-1, y].token)) tokens_matched.Add(tiles[x-1, y].token);
+                        if (!tokens_matched.Contains(tiles[x-2, y].token)) tokens_matched.Add(tiles[x-2, y].token);
                     }
 
-                    if (y >= 2 && token.type == tokens[x, y-1].type && token.type == tokens[x, y-2].type)
+                    if (y >= 2 && token.type == tiles[x, y-1].token.type && token.type == tiles[x, y-2].token.type)
                     {
                         if (!tokens_matched.Contains(token)) tokens_matched.Add(token);
-                        if (!tokens_matched.Contains(tokens[x, y-1])) tokens_matched.Add(tokens[x, y-1]);
-                        if (!tokens_matched.Contains(tokens[x, y-2])) tokens_matched.Add(tokens[x, y-2]);
+                        if (!tokens_matched.Contains(tiles[x, y-1].token)) tokens_matched.Add(tiles[x, y-1].token);
+                        if (!tokens_matched.Contains(tiles[x, y-2].token)) tokens_matched.Add(tiles[x, y-2].token);
                     }
                 }
 
@@ -86,10 +94,10 @@ namespace Match3.Encounter
                 {
                     if (first_empty == -1)
                     {
-                        if (this.tokens[x, y] == null) first_empty = y;
+                        if (this.tiles[x, y].token == null) first_empty = y;
                     } else
                     {
-                        TokenState token = this.tokens[x, y];
+                        TokenState token = this.tiles[x, y].token;
 
                         if (token != null)
                         {
@@ -105,8 +113,8 @@ namespace Match3.Encounter
 
                 while (first_empty < this.sizeY)
                 {
-                    this.tokens[x, first_empty] = new TokenState(this, this.encounter.playerState.DrawToken(), x, first_empty);
-                    types[x, first_empty] = this.tokens[x, first_empty].type;
+                    this.tiles[x, first_empty].token = new TokenState(this, this.encounter.playerState.DrawToken(), x, first_empty);
+                    types[x, first_empty] = this.tiles[x, first_empty].token.type;
                     first_empty++;
                 }
             }
@@ -122,8 +130,8 @@ namespace Match3.Encounter
             for (int x = 0; x < this.sizeX; x++)
                 for (int y = 0; y < this.sizeY; y++)
                 {
-                    this.tokens[x, y] = new TokenState(this, this.encounter.playerState.DrawToken(), x, y);
-                    types[x, y] = this.tokens[x, y].type;
+                    this.tiles[x, y].token = new TokenState(this, this.encounter.playerState.DrawToken(), x, y);
+                    types[x, y] = this.tiles[x, y].token.type;
                 }
 
             UIAnimationManager.AddAnimation( new UIAnimation_DropTokens(types) );

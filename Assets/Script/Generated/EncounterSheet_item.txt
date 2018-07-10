@@ -3,6 +3,19 @@
                 name: "{name}",
                 icon: "{icon}",
                 tooltip: "{tooltip}",
-                mainObjectives: new string[] {{{lst_mainObjectives}}},
-                bonusObjectives: new string[] {{{lst_bonusObjectives}}}
+                
+				mainObjectives: new string[] 
+				{{
+				{lst_mainObjectives}
+				}},
+                
+				bonusObjectives: new string[] 
+				{{
+				{lst_bonusObjectives}
+				}},
+				
+				passives: new string[] 
+				{{
+				{lst_passives}
+				}}
             );

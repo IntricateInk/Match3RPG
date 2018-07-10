@@ -78,6 +78,32 @@ namespace Match3.Character
 
 		);
 
+		public static TrophySheet HONOR = new TrophySheet(
+			name: "Honor",
+			sprite: "tokens/cha",
+			tooltip: "Glory and honor!",
+
+			skills: new string[] {
+"Socialize"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet BLOODTHRISTY = new TrophySheet(
+			name: "Bloodthristy",
+			sprite: "tokens/cha",
+			tooltip: "Blood for blood",
+
+			skills: new string[] {
+"Mass Influence"
+},
+
+			passives: new string[] {  }
+
+		);
+
 
     }
 }

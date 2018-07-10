@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Match3.Encounter.Effect.Passive;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,21 @@ namespace Match3.Encounter.Effect
 {
     internal class GameEffect
     {
+        // System Calls
+
         public delegate void Action(EncounterState encounter, List<TokenState> selectedTokens);
+
+        internal static void Invoke(Action[] actions, EncounterState encounter, List<TokenState> tokens)
+        {
+            if (actions == null) return;
+
+            foreach (GameEffect.Action action in actions)
+            {
+                action(encounter, tokens);
+            }
+        }
+
+        // Without Args
 
         public static void SelectSurrounding(EncounterState encounter, List<TokenState> selectedTokens)
         {
@@ -31,17 +46,14 @@ namespace Match3.Encounter.Effect
             }
         }
 
-        internal static void Invoke(Action[] actions, EncounterState encounter) { Invoke(actions, encounter, null); }
-        internal static void Invoke(Action[] actions, EncounterState encounter, List<TokenState> tokens)
+        internal static void TransformSelectedToRandom(EncounterState encounter, List<TokenState> selectedTokens)
         {
-            if (actions == null) return;
-
-            foreach (GameEffect.Action action in actions)
+            foreach (TokenState token in selectedTokens)
             {
-                action(encounter, tokens);
+                token.type = TokenTypeHelper.RandomResource();
             }
         }
-
+        
         public static void DestroySelected(EncounterState encounter, List<TokenState> selectedTokens)
         {
             foreach (TokenState token in selectedTokens)
@@ -65,37 +77,39 @@ namespace Match3.Encounter.Effect
 
         public static void ChainFromFirst(EncounterState encounter, List<TokenState> selectedTokens)
         {
-            foreach (TokenState token in selectedTokens) {
-                while (true)
-                {
-                    List<TokenState> adj_tokens = new List<TokenState>();
+            TokenState current = selectedTokens[0];
+            List<TokenState> adj_tokens = new List<TokenState>();
 
-                    TokenState adj_token = token.GetAdjacent(-1, 0);
-                    if (adj_token != null && adj_token.type == token.type && !selectedTokens.Contains(adj_token))
-                        adj_tokens.Add(adj_token);
+            while (true)
+            {
+                adj_tokens.Clear();
 
-                    adj_token = token.GetAdjacent(1, 0);
-                    if (adj_token != null && adj_token.type == token.type && !selectedTokens.Contains(adj_token))
-                        adj_tokens.Add(adj_token);
+                TokenState adj_token = current.GetAdjacent(-1, 0);
+                if (adj_token != null && adj_token.type == current.type && !selectedTokens.Contains(adj_token))
+                    adj_tokens.Add(adj_token);
 
-                    adj_token = token.GetAdjacent(0, 1);
-                    if (adj_token != null && adj_token.type == token.type && !selectedTokens.Contains(adj_token))
-                        adj_tokens.Add(adj_token);
+                adj_token = current.GetAdjacent(1, 0);
+                if (adj_token != null && adj_token.type == current.type && !selectedTokens.Contains(adj_token))
+                    adj_tokens.Add(adj_token);
 
-                    adj_token = token.GetAdjacent(0, -1);
-                    if (adj_token != null && adj_token.type == token.type && !selectedTokens.Contains(adj_token))
-                        adj_tokens.Add(adj_token);
+                adj_token = current.GetAdjacent(0, 1);
+                if (adj_token != null && adj_token.type == current.type && !selectedTokens.Contains(adj_token))
+                    adj_tokens.Add(adj_token);
 
-                    // no more tokens to chain to
-                    if (adj_tokens.Count == 0) break;
+                adj_token = current.GetAdjacent(0, -1);
+                if (adj_token != null && adj_token.type == current.type && !selectedTokens.Contains(adj_token))
+                    adj_tokens.Add(adj_token);
 
-                    selectedTokens.Add(adj_tokens.RandomChoice());
-                }
+                // no more tokens to chain to
+                if (adj_tokens.Count == 0) break;
+
+                current = adj_tokens.RandomChoice();
+                selectedTokens.Add(current);
             }
         }
 
         // With Args
-
+        
         internal static Action TransformSelectedToType(TokenType type)
         {
             return (EncounterState encounter, List<TokenState> selectedTokens) =>
@@ -104,6 +118,25 @@ namespace Match3.Encounter.Effect
                 {
                     token.type = type;
                 }
+            };
+        }
+
+        public static Action GainSelectedAsResource(int amount)
+        {
+            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            {
+                foreach (TokenState token in selectedTokens)
+                {
+                    encounter.playerState.GainResource(token.type, amount);
+                }
+            };
+        }
+
+        internal static Action GainRandomResource(int amount)
+        {
+            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            {
+                encounter.playerState.GainResource(TokenTypeHelper.RandomResource(), amount);
             };
         }
 
@@ -120,6 +153,30 @@ namespace Match3.Encounter.Effect
             return (EncounterState encounter, List<TokenState> selectedTokens) =>
             {
                 encounter.playerState.ApplyBuff(buff_name);
+            };
+        }
+
+        public static Action ApplyTileBuff(string buff_name) { return ApplyTileBuff(TargetPassive.GetPassive(buff_name)); }
+        public static Action ApplyTileBuff(TargetPassive buff)
+        {
+            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            {
+                foreach (TokenState token in selectedTokens)
+                {
+                    token.tile.ApplyBuff(buff);
+                }
+            };
+        }
+
+        public static Action ApplyTokenBuff(string buff_name) { return ApplyTileBuff(TargetPassive.GetPassive(buff_name)); }
+        public static Action ApplyTokenBuff(TargetPassive buff)
+        {
+            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            {
+                foreach (TokenState token in selectedTokens)
+                {
+                    token.ApplyBuff(buff);
+                }
             };
         }
     }

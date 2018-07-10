@@ -4,18 +4,16 @@ using UnityEngine;
 
 namespace Match3.Encounter.Effect.Passive
 {
-    public sealed partial class GamePassive : ITooltip
+    public abstract class BasePassive : ITooltip
     {
         public string name { get; private set; }
         public string sprite { get; private set; }
         public string tooltip { get; private set; }
 
-        internal int level = 0;
-
-        internal GamePassive
+        internal BasePassive
         (
-            string name, 
-            string sprite, 
+            string name,
+            string sprite,
             string tooltip,
 
             GameEffect.Action[] OnTurnStart = null
@@ -26,20 +24,12 @@ namespace Match3.Encounter.Effect.Passive
             this.tooltip = tooltip;
 
             this.actionsOnTurnStart = OnTurnStart;
-
-            _AllPassives.Add(name, this);
         }
-
-        // Factory Methods
-
-        private static Dictionary<string, GamePassive> _AllPassives = new Dictionary<string, GamePassive>();
-
+        
         private readonly GameEffect.Action[] actionsOnTurnStart;
-        internal void OnTurnStart(EncounterState encounter) { GameEffect.Invoke(actionsOnTurnStart, encounter); }
-
-        public static GamePassive GetPassive(string name)
+        internal void OnTurnStart(EncounterState encounter, List<TokenState> targets)
         {
-            return _AllPassives[name];
+            GameEffect.Invoke(actionsOnTurnStart, encounter, targets);
         }
     }
 }
