@@ -11,6 +11,10 @@ namespace Match3.UI
     {
         internal UITokenController[,] tokens;
         
+        public float token_size_x { get { return this.GetComponent<RectTransform>().sizeDelta[0] / sizeX; } }
+        public float token_size_y { get { return this.GetComponent<RectTransform>().sizeDelta[1] / sizeY; } }
+        public Vector2 token_size { get { return new Vector2(token_size_x, token_size_y); } }
+
         public int sizeX { get { return this.tokens.GetLength(0); } }
         public int sizeY { get { return this.tokens.GetLength(1); } }
 
@@ -61,13 +65,7 @@ namespace Match3.UI
 
             return uiTokens;
         }
-
-        internal void RemoveToken(int x, int y)
-        {
-            Destroy(this.tokens[x, y].gameObject);
-            this.tokens[x, y] = null;
-        }
-
+        
         private UITokenController CreateToken(int x, int y, TokenType type)
         {
             this.tokens[x, y] = UIFactory.Create(x, y, type, this);

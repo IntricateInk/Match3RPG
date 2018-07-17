@@ -15,11 +15,13 @@ namespace Match3.Character
 
 			skills: new string[] {
 "Bash",
-"Sleight"
+"Sleight",
+"Parasitic Burst"
 },
 
 			passives: new string[] { 
-"Strong"
+"Strong",
+"Intelligent"
  }
 
 		);

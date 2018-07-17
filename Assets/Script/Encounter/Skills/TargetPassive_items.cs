@@ -52,6 +52,16 @@ namespace Match3.Encounter.Effect.Passive
             sprite: "skills/bash",
             tooltip: "At the start of each turn, gain 1 Resource of the type of the token on this tile.",
 
+            OnApplyPassive: new GameEffect.Action[]
+            {
+                GameEffect.AddTokenAnimation("dust1"),
+            },
+
+            OnRemovePassive: new GameEffect.Action[]
+            {
+                GameEffect.RemoveTokenAnimation("dust1"),
+            },
+
             OnTurnStart: new GameEffect.Action[]
             {
                 GameEffect.GainSelectedAsResource(1),
@@ -65,6 +75,16 @@ namespace Match3.Encounter.Effect.Passive
             name: "Parasite",
             sprite: "skills/bash",
             tooltip: "At the start of each turn, lose 1 Resource of the type of this token.",
+
+            OnApplyPassive: new GameEffect.Action[]
+            {
+                GameEffect.AddTokenAnimation("sewer_splash"),
+            },
+
+            OnRemovePassive: new GameEffect.Action[]
+            {
+                GameEffect.RemoveTokenAnimation("sewer_splash"),
+            },
 
             OnTurnStart: new GameEffect.Action[]
             {

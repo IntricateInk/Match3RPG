@@ -30,6 +30,25 @@ public static class TokenTypeHelper
 public static class TokenTypeExtensions
 {
 
+    public static RuntimeAnimatorController GetAnimator(this TokenType token)
+    {
+        switch (token)
+        {
+            case TokenType.STRENGTH:
+                return Resources.Load<RuntimeAnimatorController>("animations/crystal_orange/animator");
+            case TokenType.AGILITY:
+                return Resources.Load<RuntimeAnimatorController>("animations/crystal_grey/animator");
+            case TokenType.INTELLIGENCE:
+                return Resources.Load<RuntimeAnimatorController>("animations/crystal_blue/animator");
+            case TokenType.CHARISMA:
+                return Resources.Load<RuntimeAnimatorController>("animations/crystal_pink/animator");
+            case TokenType.LUCK:
+                return Resources.Load<RuntimeAnimatorController>("animations/crystal_green/animator");
+            default:
+                throw new ArgumentException("Token type of " + token + " has no animator.");
+        }
+    }
+
     public static Sprite GetSprite(this TokenType token)
     {
         switch (token)

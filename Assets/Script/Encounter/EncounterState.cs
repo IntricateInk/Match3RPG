@@ -112,9 +112,6 @@ namespace Match3.Encounter
             if (this.encounterSheet.MainObjectiveMet(this))
             {
                 this.DoEncounterEnd();
-            } else
-            {
-                this.inputState.Reset();
             }
 
             this.DoTurnStart();

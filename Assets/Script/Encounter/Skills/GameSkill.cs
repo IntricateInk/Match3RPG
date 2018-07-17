@@ -9,8 +9,27 @@ namespace Match3.Encounter.Effect.Skill
     {
         public string name    { get; private set; }
         public string sprite  { get; private set; }
-        public string tooltip { get; private set; }
-        
+
+        private string _tooltip;
+        public string tooltip
+        {
+            get { return string.Format("Cost: {0}\n{1}", costString, _tooltip); }
+            private set
+            {
+                this._tooltip = value;
+            }
+        }
+
+        public string costString
+        {
+            get
+            {
+                return new string('S', strCost) + new string('A', agiCost) + 
+                    new string('I', intCost) + new string('C', chaCost) + 
+                    new string('L', lukCost);
+            }
+        }
+
         internal GameSkill(
                 string name, 
                 string sprite, 

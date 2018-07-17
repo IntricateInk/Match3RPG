@@ -1,4 +1,5 @@
 ﻿using Match3.Encounter.Effect.Passive;
+using Match3.UI.Animation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,6 +24,16 @@ namespace Match3.Encounter.Effect
         }
 
         // Without Args
+
+        internal static void BeginAnimationBatch(EncounterState encounter, List<TokenState> selectedTokens)
+        {
+            UIAnimationManager.AddAnimation(new UIAnimation_BeginBatch());
+        }
+
+        internal static void EndAnimationBatch(EncounterState encounter, List<TokenState> selectedTokens)
+        {
+            UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
+        }
 
         public static void SelectSurrounding(EncounterState encounter, List<TokenState> selectedTokens)
         {
@@ -109,7 +120,44 @@ namespace Match3.Encounter.Effect
         }
 
         // With Args
-        
+
+        internal static Action AddTileAnimation(string animation_name, float normalized_size = 1f)
+        {
+            return AddAnimation(animation_name, UIAnimation_AddAnimation.AnimationType.Tile_Add, normalized_size);
+        }
+
+        internal static Action RemoveTileAnimation(string animation_name, float normalized_size = 1f)
+        {
+            return AddAnimation(animation_name, UIAnimation_AddAnimation.AnimationType.Tile_Remove, normalized_size);
+        }
+
+        internal static Action AddTokenAnimation(string animation_name, float normalized_size = 1f)
+        {
+            return AddAnimation(animation_name, UIAnimation_AddAnimation.AnimationType.Token_Add, normalized_size);
+        }
+
+        internal static Action RemoveTokenAnimation(string animation_name, float normalized_size = 1f)
+        {
+            return AddAnimation(animation_name, UIAnimation_AddAnimation.AnimationType.Token_Remove, normalized_size);
+        }
+
+        internal static Action PlayAnimation(string animation_name, float normalized_size = 1f)
+        {
+            return AddAnimation(animation_name, UIAnimation_AddAnimation.AnimationType.None, normalized_size);
+        }
+
+        private static Action AddAnimation(string animation_name, UIAnimation_AddAnimation.AnimationType animation_type, float normalized_size)
+        {
+            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            {
+                foreach (TokenState token in selectedTokens)
+                {
+                    UIAnimation anim = new UIAnimation_AddAnimation(animation_name, token.x, token.y, animation_type, normalized_size);
+                    UIAnimationManager.AddAnimation(anim);
+                }
+            };
+        }
+
         internal static Action TransformSelectedToType(TokenType type)
         {
             return (EncounterState encounter, List<TokenState> selectedTokens) =>

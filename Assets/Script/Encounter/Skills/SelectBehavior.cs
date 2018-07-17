@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Match3.Encounter.Effect.Skill
     {
         public static SelectBehavior Single = new SelectBehavior_Single();
         public static SelectBehavior TwoAdjacent = new SelectBehavior_TwoAdjacent();
+        public static SelectBehavior None = new SelectBehavior_None();
 
         internal abstract void Select(InputState input, TokenState token);
         internal abstract bool ShouldRun(List<TokenState> selectedToken);
@@ -46,6 +48,18 @@ namespace Match3.Encounter.Effect.Skill
             internal override bool ShouldRun(List<TokenState> selectedToken)
             {
                 return selectedToken.Count == 2;
+            }
+        }
+
+        private class SelectBehavior_None : SelectBehavior
+        {
+            internal override void Select(InputState input, TokenState token)
+            {
+            }
+
+            internal override bool ShouldRun(List<TokenState> selectedToken)
+            {
+                return true;
             }
         }
     }

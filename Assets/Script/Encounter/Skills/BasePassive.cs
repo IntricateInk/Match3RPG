@@ -16,20 +16,37 @@ namespace Match3.Encounter.Effect.Passive
             string sprite,
             string tooltip,
 
-            GameEffect.Action[] OnTurnStart = null
+            GameEffect.Action[] OnTurnStart = null,
+            GameEffect.Action[] OnApplyPassive = null,
+            GameEffect.Action[] OnRemovePassive = null
+
         )
         {
             this.name = name;
             this.sprite = sprite;
             this.tooltip = tooltip;
 
-            this.actionsOnTurnStart = OnTurnStart;
+            this.actionsOnTurnStart     = OnTurnStart;
+            this.actionsOnApplyPassive  = OnApplyPassive;
+            this.actionsOnRemovePassive = OnRemovePassive;
         }
         
         private readonly GameEffect.Action[] actionsOnTurnStart;
         internal void OnTurnStart(EncounterState encounter, List<TokenState> targets)
         {
             GameEffect.Invoke(actionsOnTurnStart, encounter, targets);
+        }
+
+        private readonly GameEffect.Action[] actionsOnApplyPassive;
+        internal void OnApplyPassive(EncounterState encounter, List<TokenState> targets)
+        {
+            GameEffect.Invoke(actionsOnApplyPassive, encounter, targets);
+        }
+
+        private readonly GameEffect.Action[] actionsOnRemovePassive;
+        internal void OnRemovePassive(EncounterState encounter, List<TokenState> targets)
+        {
+            GameEffect.Invoke(actionsOnRemovePassive, encounter, targets);
         }
     }
 }

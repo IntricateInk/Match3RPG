@@ -19,8 +19,11 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: new GameEffect.Action[]
             {
+                GameEffect.BeginAnimationBatch,
                 GameEffect.SelectSurrounding,
+                GameEffect.PlayAnimation("spark1"),
                 GameEffect.DestroySelected,
+                GameEffect.EndAnimationBatch,
             }
         );
 
@@ -52,7 +55,10 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: new GameEffect.Action[]
             {
-                GameEffect.SwapFirstTwoSelected
+                GameEffect.BeginAnimationBatch,
+                GameEffect.PlayAnimation("stargate", normalized_size: 3f),
+                GameEffect.SwapFirstTwoSelected,
+                GameEffect.EndAnimationBatch,
             }
         );
         
@@ -70,7 +76,10 @@ namespace Match3.Encounter.Effect.Skill
             runEffects: new GameEffect.Action[]
             {
                 GameEffect.ChainFromFirst,
-                GameEffect.TransformSelectedToType(TokenType.CHARISMA)
+                GameEffect.BeginAnimationBatch,
+                GameEffect.PlayAnimation("glow_bubble", normalized_size: 3f),
+                GameEffect.TransformSelectedToType(TokenType.CHARISMA),
+                GameEffect.EndAnimationBatch,
             }
         );
 
@@ -86,6 +95,7 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: new GameEffect.Action[]
             {
+                GameEffect.PlayAnimation("glow_bubble"),
                 GameEffect.TransformSelectedToType(TokenType.CHARISMA)
             }
         );

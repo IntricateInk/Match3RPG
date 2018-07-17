@@ -173,11 +173,11 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
+            MinTime: 0,
+            MaxTime: 60,
 
-            MinTurn: 0,
-            MaxTurn: 60
+            MinTurn: -1,
+            MaxTurn: 100
         );
 
 

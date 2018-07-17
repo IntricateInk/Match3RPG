@@ -22,7 +22,7 @@ namespace Match3.Encounter
             {
                 if (type != value)
                 {
-                    if (type != TokenType.NULL) UIAnimationManager.AddAnimation(new UIInstruction_SetTokenSprite(x, y, value));
+                    if (type != TokenType.NULL) UIAnimationManager.AddAnimation(new UIInstruction_SetTokenSprite(x, y, value), true);
                     _type = value;
                 }
             }
@@ -36,7 +36,7 @@ namespace Match3.Encounter
             set
             {
                 this._isSelected = value;
-                this.Recolor();
+                UIAnimationManager.AddAnimation(new UIInstruction_SetTokenSelected(x, y, isSelected), true);
             }
         }
         
@@ -45,7 +45,7 @@ namespace Match3.Encounter
             get { return this._isMatching; }
             set {
                 this._isMatching = value;
-                this.Recolor();
+                UIAnimationManager.AddAnimation(new UIInstruction_SetTokenMatch(x, y, isMatching), true);
             }
         }
 
@@ -115,26 +115,19 @@ namespace Match3.Encounter
         }
 
         // Private UI methods
-
-        private void Recolor()
-        {
-            Color color = Color.white;
-            bool isQueued = true;
-
-            if (this.isSelected)
-            {
-                color = Color.yellow;
-                isQueued = false;
-            }
-            else if (this.isMatching)
-            {
-                color = Color.green;
-            }
-
-            UIAnimationManager.AddAnimation(new UIInstruction_ShadeToken(x, y, color), isQueued);
-        }
         
         internal void ApplyBuff(string buff_name)  { ApplyBuff(TargetPassive.GetPassive(buff_name)); }
-        internal void ApplyBuff(TargetPassive buff) { this.Passives.Add(buff); }
+        internal void ApplyBuff(TargetPassive buff)
+        {
+            this.Passives.Add(buff);
+            buff.OnApplyPassive(this.board.encounter, new List<TokenState>() { this });
+        }
+
+        internal void RemoveBuff(string buff_name) { RemoveBuff(TargetPassive.GetPassive(buff_name)); }
+        internal void RemoveBuff(TargetPassive buff)
+        {
+            buff.OnRemovePassive(this.board.encounter, new List<TokenState>() { this });
+            this.Passives.Remove(buff);
+        }
     }
 }

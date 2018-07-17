@@ -25,7 +25,7 @@ namespace Match3.Encounter
             {
                 this._Turn = value;
                 
-                UIAnimationManager.AddAnimation(new UIInstruction_UpdateTurns(this.Turn), true);
+                UIAnimationManager.AddAnimation(new UIInstruction_SetTurns(this.Turn), true);
             }
         }
 
@@ -53,7 +53,7 @@ namespace Match3.Encounter
                     if (this.Skills.Contains(skill)) continue;
 
                     this.Skills.Add(skill);
-                    UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, i));
+                    UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, skill.costString, i));
                     i++;
                 }
 

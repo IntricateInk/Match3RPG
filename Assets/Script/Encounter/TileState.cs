@@ -43,6 +43,17 @@ namespace Match3.Encounter
         // Private UI methods
         
         internal void ApplyBuff(string buff_name) { ApplyBuff(TargetPassive.GetPassive(buff_name)); }
-        internal void ApplyBuff(TargetPassive buff) { this.Passives.Add(buff); }
+        internal void ApplyBuff(TargetPassive buff)
+        {
+            this.Passives.Add(buff);
+            buff.OnApplyPassive(this.board.encounter, new List<TokenState>() { this.token });
+        }
+
+        internal void RemoveBuff(string buff_name) { RemoveBuff(TargetPassive.GetPassive(buff_name)); }
+        internal void RemoveBuff(TargetPassive buff)
+        {
+            buff.OnRemovePassive(this.board.encounter, new List<TokenState>() { this.token });
+            this.Passives.Remove(buff);
+        }
     }
 }

@@ -32,11 +32,13 @@ namespace Match3.Encounter
         internal void DoTurn()
         {
             this.DoTokenFall();
-            
+
+            UIAnimationManager.AddAnimation(new UIAnimation_BeginBatch());
             foreach (TokenState token in this.GetMatching())
             {
                 token.Match();
             }
+            UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
 
             this.DoTokenFall();
             this.HighlightMatching();
@@ -84,8 +86,8 @@ namespace Match3.Encounter
         private void DoTokenFall()
         {
             TokenType?[,] types = new TokenType?[this.sizeX, this.sizeY];
-            List<UIAnimation> drop_animations = new List<UIAnimation>();
 
+            UIAnimationManager.AddAnimation(new UIAnimation_BeginBatch());
             for (int x = 0; x < this.sizeX; x++)
             {
                 int first_empty = -1;
@@ -101,7 +103,7 @@ namespace Match3.Encounter
 
                         if (token != null)
                         {
-                            drop_animations.Add(new UIAnimation_MoveToken(token.x, token.y, x, first_empty));
+                            UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(token.x, token.y, x, first_empty));
 
                             token.SetPosition(x, first_empty, false);
                             first_empty += 1;
@@ -119,7 +121,7 @@ namespace Match3.Encounter
                 }
             }
 
-            UIAnimationManager.AddAnimation(new UIAnimation_Parallel(drop_animations));
+            UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
             UIAnimationManager.AddAnimation(new UIAnimation_DropTokens(types));
         }
 

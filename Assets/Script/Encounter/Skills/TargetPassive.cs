@@ -13,8 +13,10 @@ namespace Match3.Encounter.Effect.Passive
             string sprite,
             string tooltip,
 
-            GameEffect.Action[] OnTurnStart = null
-        ) : base(name, sprite, tooltip, OnTurnStart)
+            GameEffect.Action[] OnTurnStart = null,
+            GameEffect.Action[] OnApplyPassive = null,
+            GameEffect.Action[] OnRemovePassive = null
+        ) : base(name, sprite, tooltip, OnTurnStart, OnApplyPassive, OnRemovePassive)
         {
             _AllPassives.Add(name, this);
         }
