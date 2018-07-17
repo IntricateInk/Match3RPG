@@ -41,12 +41,17 @@ namespace Match3.UI
         private void Awake()
         {
             UIAnimationManager.OnResourceChange += this.OnResourceChange;
+            UIAnimationManager.OnTimeChange     += this.OnTimeChange;
+            UIAnimationManager.OnTurnChange     += this.OnTurnChange;
         }
 
         private void OnDestroy()
         {
             UIAnimationManager.OnResourceChange -= this.OnResourceChange;
+            UIAnimationManager.OnTimeChange     -= this.OnTimeChange;
+            UIAnimationManager.OnTurnChange     -= this.OnTurnChange;
         }
+        
 
         private void Flip(int amount)
         {
@@ -94,6 +99,8 @@ namespace Match3.UI
             rt.anchoredPosition = new Vector2(sign * 2, 0);
         }
 
+        private void OnTurnChange(int amount)   { this.OnResourceChange(TokenType.TURN, amount); }
+        private void OnTimeChange(float amount) { this.OnResourceChange(TokenType.TIME, (int)amount); }
         private void OnResourceChange(TokenType type, int amount)
         {
             if (type == this.field)

@@ -6,18 +6,48 @@ using UnityEngine;
 
 public enum TokenType : int
 {
+    NULL           = -1,
     STRENGTH       = 0,
     AGILITY        = 1,
     INTELLIGENCE   = 2,
     CHARISMA       = 3,
     LUCK           = 4,
     TIME           = 5,
-    TURN           = 6,
-    COUNT          = 7
+    TURN           = 6
+}
+
+public static class TokenTypeHelper
+{
+    public static int ResourceCount() { return 5; }
+    public static int Count() { return 7; }
+
+    public static TokenType RandomResource()
+    {
+        return (TokenType) UnityEngine.Random.Range(0, ResourceCount());
+    }
 }
 
 public static class TokenTypeExtensions
 {
+
+    public static RuntimeAnimatorController GetAnimator(this TokenType token)
+    {
+        switch (token)
+        {
+            case TokenType.STRENGTH:
+                return Resources.Load<RuntimeAnimatorController>("animations/crystal_orange/animator");
+            case TokenType.AGILITY:
+                return Resources.Load<RuntimeAnimatorController>("animations/crystal_grey/animator");
+            case TokenType.INTELLIGENCE:
+                return Resources.Load<RuntimeAnimatorController>("animations/crystal_blue/animator");
+            case TokenType.CHARISMA:
+                return Resources.Load<RuntimeAnimatorController>("animations/crystal_pink/animator");
+            case TokenType.LUCK:
+                return Resources.Load<RuntimeAnimatorController>("animations/crystal_green/animator");
+            default:
+                throw new ArgumentException("Token type of " + token + " has no animator.");
+        }
+    }
 
     public static Sprite GetSprite(this TokenType token)
     {

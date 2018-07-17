@@ -15,11 +15,13 @@ namespace Match3.Character
 
 			skills: new string[] {
 "Bash",
-"Sleight"
+"Sleight",
+"Parasitic Burst"
 },
 
 			passives: new string[] { 
-"Strong"
+"Strong",
+"Intelligent"
  }
 
 		);
@@ -72,6 +74,32 @@ namespace Match3.Character
 
 			skills: new string[] {
 "Sleight"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet HONOR = new TrophySheet(
+			name: "Honor",
+			sprite: "tokens/cha",
+			tooltip: "Glory and honor!",
+
+			skills: new string[] {
+"Socialize"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet BLOODTHRISTY = new TrophySheet(
+			name: "Bloodthristy",
+			sprite: "tokens/cha",
+			tooltip: "Blood for blood",
+
+			skills: new string[] {
+"Mass Influence"
 },
 
 			passives: new string[] {  }

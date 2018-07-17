@@ -107,31 +107,31 @@ namespace Match3.Encounter.Encounter
         internal bool isCompleted(PlayerState player)
         {
             // str
-            int str = player.Resources[(int)TokenType.STRENGTH];
+            int str = player.GetResource(TokenType.STRENGTH);
 
             if (str > this.MaxStrength) return false;
             if (str < this.MinStrength) return false;
 
             // agi
-            int agi = player.Resources[(int)TokenType.AGILITY];
+            int agi = player.GetResource(TokenType.AGILITY);
 
             if (agi > this.MaxAgility) return false;
             if (agi < this.MinAgility) return false;
 
             // int
-            int intl = player.Resources[(int)TokenType.INTELLIGENCE];
+            int intl = player.GetResource(TokenType.INTELLIGENCE);
 
             if (intl > this.MaxIntelligence) return false;
             if (intl < this.MinIntelligence) return false;
 
             // cha
-            int cha = player.Resources[(int)TokenType.CHARISMA];
+            int cha = player.GetResource(TokenType.CHARISMA);
 
             if (cha > this.MaxCharisma) return false;
             if (cha < this.MinCharisma) return false;
 
             // luk
-            int luck = player.Resources[(int)TokenType.LUCK];
+            int luck = player.GetResource(TokenType.LUCK);
 
             if (luck > this.MaxLuck) return false;
             if (luck < this.MinLuck) return false;

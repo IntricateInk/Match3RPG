@@ -40,11 +40,15 @@ namespace Match3.UI
         private void Awake()
         {
             UIAnimationManager.OnResourceChange += this.OnResourceChange;
+            UIAnimationManager.OnTimeChange += this.OnTimeChange;
+            UIAnimationManager.OnTurnChange += this.OnTurnChange;
         }
 
         private void OnDestroy()
         {
             UIAnimationManager.OnResourceChange -= this.OnResourceChange;
+            UIAnimationManager.OnTimeChange -= this.OnTimeChange;
+            UIAnimationManager.OnTurnChange -= this.OnTurnChange;
         }
 
         internal void SetTooltip(ITooltip tooltip)
@@ -53,12 +57,13 @@ namespace Match3.UI
             this.icon.sprite = tooltip.GetSprite();
         }
 
-        internal void SetTimeLabel(float time)
+        internal void OnTimeChange(float time)
         {
-            this.timeLabel.text = time.ToString("00:00");
+            TimeSpan t = TimeSpan.FromSeconds(time);
+            this.timeLabel.text = String.Format("Time {0:D2}:{1:D2}", t.Minutes, t.Seconds);
         }
 
-        internal void TurnLabelChange(int turn)
+        internal void OnTurnChange(int turn)
         {
             this.turnLabel.text = "Turns: " + turn.ToString();
         }

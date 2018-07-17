@@ -7,10 +7,9 @@ namespace Match3.UI
 {
     public class UISkillContainer : MonoBehaviour
     {
-
-        internal void AddSkill(ITooltip tooltip, int index)
+        internal void AddSkill(ITooltip tooltip, string resource_cost, int index)
         {
-            UIFactory.Create(tooltip, index, this);
+            UIFactory.CreateSkillIcon(tooltip, resource_cost, index, this);
         }
     }
 }

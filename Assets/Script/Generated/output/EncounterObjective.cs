@@ -14,8 +14,8 @@ namespace Match3.Encounter.Encounter
             sprite: "skills/bash",
             tooltip: "Beat up the bandits",
 			
-			GoldReward: 0,
-            ExpReward: 0,
+			GoldReward: 10,
+            ExpReward: 5,
             TrophyReward: new string[] {
 "Honor"
 },
@@ -50,8 +50,8 @@ namespace Match3.Encounter.Encounter
             sprite: "skills/bash",
             tooltip: "A satisfying punch!",
 			
-			GoldReward: 0,
-            ExpReward: 0,
+			GoldReward: 20,
+            ExpReward: 4,
             TrophyReward: new string[] {
 "Bloodthristy"
 },
@@ -86,8 +86,8 @@ namespace Match3.Encounter.Encounter
             sprite: "",
             tooltip: "You shouldn't be seeing this",
 			
-			GoldReward: 0,
-            ExpReward: 0,
+			GoldReward: 30,
+            ExpReward: 3,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -120,8 +120,8 @@ namespace Match3.Encounter.Encounter
             sprite: "skills/bash",
             tooltip: "Efficiency!",
 			
-			GoldReward: 0,
-            ExpReward: 0,
+			GoldReward: 40,
+            ExpReward: 2,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -154,8 +154,8 @@ namespace Match3.Encounter.Encounter
             sprite: "skills/bash",
             tooltip: "Your time is running out",
 			
-			GoldReward: 0,
-            ExpReward: 0,
+			GoldReward: 50,
+            ExpReward: 1,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -173,11 +173,11 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
+            MinTime: 0,
+            MaxTime: 60,
 
-            MinTurn: 0,
-            MaxTurn: 60
+            MinTurn: -1,
+            MaxTurn: 100
         );
 
 

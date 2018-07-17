@@ -1,7 +1,7 @@
 ﻿using Match3.Character;
 using Match3.Encounter.Encounter;
-using Match3.Encounter.Passive;
-using Match3.Encounter.Skill;
+using Match3.Encounter.Effect.Passive;
+using Match3.Encounter.Effect.Skill;
 using Match3.Overworld;
 using Match3.UI.Animation;
 using System;
@@ -14,7 +14,7 @@ namespace Match3.Encounter
 {
     public abstract class EncounterSubState
     {
-        protected EncounterState encounter { get; private set; }
+        internal EncounterState encounter { get; private set; }
 
         public EncounterSubState(EncounterState parent)
         {
@@ -53,18 +53,7 @@ namespace Match3.Encounter
             this.playerState = new PlayerState(this);
             this.boardState  = new BoardState(this, 8, 8);
             this.inputState  = new InputState(this);
-
-            for (int i = 0; i < this.playerState.Skills.Count; i++)
-            {
-                GameSkill skill = this.playerState.Skills[i];
-                UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, i));
-            }
             
-            foreach (GamePassive passive in this.playerState.Passives)
-            {
-                UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(passive));
-            }
-
             foreach (EncounterObjective objective in this.encounterSheet.mainObjectives)
             {
                 UIAnimationManager.AddAnimation(new UIInstruction_AddObjective(objective, true));
@@ -77,9 +66,40 @@ namespace Match3.Encounter
 
             UIAnimationManager.AddAnimation(new UIInstruction_SetPlayer(this.playerSheet));
             UIAnimationManager.AddAnimation(new UIInstruction_SetEncounter(this.encounterSheet));
+
+            this.DoEncounterStart();
         }
 
         // private
+
+        private void DoEncounterStart ()
+        {
+            this.DoTurnStart();
+        }
+
+        private void DoTurnStart()
+        {
+            foreach (CharacterPassive passive in playerState.Passives)
+            {
+                passive.OnTurnStart(this, null);
+            }
+
+            foreach (TileState tile in this.boardState.tiles)
+            {
+                List<TokenState> target = new List<TokenState>();
+                target.Add(tile.token);
+
+                foreach (TargetPassive passive in tile.Passives)
+                {
+                    passive.OnTurnStart(this, target);
+                }
+
+                foreach (TargetPassive passive in tile.token.Passives)
+                {
+                    passive.OnTurnStart(this, target);
+                }
+            }
+        }
 
         private void DoTurn()
         {
@@ -92,21 +112,24 @@ namespace Match3.Encounter
             if (this.encounterSheet.MainObjectiveMet(this))
             {
                 this.DoEncounterEnd();
-            } else
-            {
-                this.inputState.Reset();
             }
 
-            foreach (GamePassive passive in playerState.Passives)
-            {
-                if (passive is IPassive_OnTurnStart)
-                    ((IPassive_OnTurnStart)passive).OnTurnStart(this);
-            }
+            this.DoTurnStart();
         }
 
         private void DoEncounterEnd()
         {
             UIAnimationManager.ClearAnimation();
+
+            foreach (EncounterObjective obj in encounterSheet.mainObjectives) {
+                if (obj.isCompleted(playerState)) playerSheet.GainReward(obj);
+            }
+
+            foreach (EncounterObjective obj in encounterSheet.bonusObjectives)
+            {
+                if (obj.isCompleted(playerState)) playerSheet.GainReward(obj);
+            }
+
             OverworldState.Current.GoToOverworld();
         }
 
@@ -119,8 +142,10 @@ namespace Match3.Encounter
 
         public void SelectToken(int x, int y)
         {
-            if (this.inputState.InputToken(this.boardState.tokens[x, y]))
+            if (this.inputState.InputToken(this.boardState.tiles[x, y].token))
+            {
                 this.DoTurn();
+            }
         }
 
         public void SelectSkill(int skill_index)

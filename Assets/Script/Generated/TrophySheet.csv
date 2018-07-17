@@ -4,3 +4,5 @@ START_THIEF,Mark of the Thief,tokens/agi,The mark of a thief,Sleight,Agile
 START_MERCHANT,Full Pouch,tokens/cha,Merchants ALWAYS have gold,Sleight,
 START_NAVIGATOR,Navigator's Quill,tokens/int,"To know where to go, you must first record where you are",Sleight,
 START_JESTER,Lucky Die,tokens/luk,Fortune favors the fool.,Sleight,
+HONOR,Honor,tokens/cha,Glory and honor!,Socialize,
+BLOODTHRISTY,Bloodthristy,tokens/cha,Blood for blood,Mass Influence,
