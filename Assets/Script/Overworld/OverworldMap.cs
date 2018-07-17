@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 using Match3.Encounter;
 
 public class OverworldMap
-{
+ {
 
     public List<OverworldNode> nodeList = null;
+    public GameObject loadingImage;
+    public GameObject nodePrefab;
 
     public OverworldMap()
     {
@@ -64,6 +66,7 @@ public class OverworldMap
         }
        
     }
+
 
 }
 

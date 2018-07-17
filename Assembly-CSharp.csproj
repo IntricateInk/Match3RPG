@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\a.cs" />
     <Compile Include="Assets\Script\Encounter\BoardState.cs" />
     <Compile Include="Assets\Script\Encounter\Encounters\EncounterObjective.cs" />
     <Compile Include="Assets\Script\Encounter\Encounters\EncounterSheet.cs" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Match3.Encounter.Encounter;
+using Match3.Encounter;
 
 public class OverworldNode {
 
@@ -20,11 +21,11 @@ public class OverworldNode {
     private bool obfuscated;
    
 
+
     // constructor
     public OverworldNode (nodeType type)
     {
-        this.obfuscated = Random.value < 0.3f ? true : false;
-        // randomizer
+        this._nodeType = type;
         this._encounterSheet = EncounterSheet.TEST_1;
     }
 
@@ -34,5 +35,12 @@ public class OverworldNode {
         string[] array = (string[])nodeType.GetValues(typeof(string));
         List<string> list = new List<string>(array);
         return list;
+    }
+
+
+
+    public void LoadLevel()
+    {
+        EncounterState.NewEncounter(_encounterSheet);
     }
 }

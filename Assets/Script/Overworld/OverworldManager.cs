@@ -9,8 +9,7 @@ public class OverworldManager : MonoBehaviour
 {
     // singleton access
     private static OverworldManager _instance;
-    private OverworldMap _map { get; set; }
-    public GameObject loadingImage;
+    private static OverworldMap _map { get; set; }
     //public GameObject buttonPrefab;
     private int score;
 
@@ -31,7 +30,7 @@ public class OverworldManager : MonoBehaviour
         {
             if (_instance == null)
             {
-                _instance = GameObject.FindObjectOfType<OverworldManager>();
+               
             }
             return _instance;
         }
@@ -40,8 +39,8 @@ public class OverworldManager : MonoBehaviour
     // to keep level data across scene changes
     void Awake()
     {
-        loadingImage.SetActive(false);
-        DontDestroyOnLoad(this.gameObject);
+        //loadingImage.SetActive(false);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
 
@@ -79,25 +78,11 @@ public class OverworldManager : MonoBehaviour
         return levelMap;
     }
 
-
-    public void OnGUI()
+    public void loadLevel(int index)
     {
-        for (int i = 0; i < _map.nodeList.Count; i++)
-        {
-            if (GUI.Button(new Rect(150 * i, 0, 100, 100), "Level" + i))
-            {
-                LoadScene(_map.nodeList[i]);
-            }
-
-        }
-        
+        _map.nodeList[index].LoadLevel();
     }
-
-    public void LoadScene(OverworldNode node)
-    {
-        loadingImage.SetActive(true);
-        EncounterState.NewEncounter(node._encounterSheet);
-    }
+    
 
 }
 
