@@ -50,10 +50,12 @@ namespace Match3.Encounter
             this.encounterSheet = encounterSheet;
             this.playerSheet = playerSheet;
 
-            this.playerState = new PlayerState(this);
+            this.inputState = new InputState(this);
             this.boardState  = new BoardState(this, 8, 8);
-            this.inputState  = new InputState(this);
-            
+            this.playerState = new PlayerState(this);
+
+            this.playerState.Initialize();
+
             foreach (EncounterObjective objective in this.encounterSheet.mainObjectives)
             {
                 UIAnimationManager.AddAnimation(new UIInstruction_AddObjective(objective, true));
@@ -81,7 +83,7 @@ namespace Match3.Encounter
         {
             foreach (CharacterPassive passive in playerState.Passives)
             {
-                passive.OnTurnStart(this, null);
+                passive.OnTurnStart(this, new List<TokenState>());
             }
 
             foreach (TileState tile in this.boardState.tiles)
@@ -99,6 +101,8 @@ namespace Match3.Encounter
                     passive.OnTurnStart(this, target);
                 }
             }
+
+            this.boardState.DoTokenFall();
         }
 
         private void DoTurn()

@@ -342,7 +342,6 @@
     <Compile Include="Assets\Script\Overworld\OverworldMap.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldNode.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldState.cs" />
-    <Compile Include="Assets\Script\TestMenuScript.cs" />
     <Compile Include="Assets\Script\TokenType.cs" />
     <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_DropTokens.cs" />
     <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_InstructionWrapper.cs" />
@@ -368,6 +367,7 @@
     <Compile Include="Assets\Script\UI\UIBoardController.cs" />
     <Compile Include="Assets\Script\UI\UIBuffContainer.cs" />
     <Compile Include="Assets\Script\UI\UIBuffIcon.cs" />
+    <Compile Include="Assets\Script\UI\UICanvasScaler.cs" />
     <Compile Include="Assets\Script\UI\UIFactory.cs" />
     <Compile Include="Assets\Script\UI\UIObjectiveController.cs" />
     <Compile Include="Assets\Script\UI\UIObjectiveListController.cs" />
@@ -381,6 +381,9 @@
     <Compile Include="Assets\Script\UI\UITooltipController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyController.cs" />
     <Compile Include="Assets\Script\Utility\List Extensions.cs" />
+    <Compile Include="Assets\Script\Utility\RandomUtil.cs" />
+    <Compile Include="Assets\Testing\testing_script.cs" />
+    <Compile Include="Assets\Testing\TestMenuScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Script\Generated\EncounterObjective_item.txt" />

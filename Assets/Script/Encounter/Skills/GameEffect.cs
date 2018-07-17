@@ -120,6 +120,44 @@ namespace Match3.Encounter.Effect
         }
 
         // With Args
+        
+        internal static Action SelectRandom(int n)
+        {
+            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            {
+                int size_x = encounter.boardState.sizeX;
+                int size_y = encounter.boardState.sizeY;
+
+                List<TokenState> new_selected = new List<TokenState>();
+                List<int> rand = RandomUtil.TakeRandomN(0, size_x * size_y, n);
+
+                selectedTokens.Clear();
+
+                foreach (int i in rand)
+                {
+                    int x = i % size_x;
+                    int y = i / size_y;
+                    selectedTokens.Add(encounter.boardState.tiles[x, y].token);
+                }
+            };
+        }
+
+        internal static Action SelectOffset(int x, int y)
+        {
+            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            {
+                List<TokenState> new_selected = new List<TokenState>();
+
+                foreach (TokenState token in selectedTokens)
+                {
+                    TokenState adj = token.GetAdjacent(x, y);
+                    if (adj != null) new_selected.Add(adj);
+                }
+
+                selectedTokens.Clear();
+                selectedTokens.AddRange(new_selected);
+            };
+        }
 
         internal static Action AddTileAnimation(string animation_name, float normalized_size = 1f)
         {

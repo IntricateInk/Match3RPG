@@ -1,8 +1,12 @@
 uid,name,sprite,tooltip,lst_skills,lst_passives
-START_WARRIOR,Warrior's Blood,tokens/str,A warrior's blood,"Bash, Sleight",Strong
+START_WARRIOR,Warrior's Blood,tokens/str,A warrior's blood,Bash,Strong
 START_THIEF,Mark of the Thief,tokens/agi,The mark of a thief,Sleight,Agile
-START_MERCHANT,Full Pouch,tokens/cha,Merchants ALWAYS have gold,Sleight,
-START_NAVIGATOR,Navigator's Quill,tokens/int,"To know where to go, you must first record where you are",Sleight,
-START_JESTER,Lucky Die,tokens/luk,Fortune favors the fool.,Sleight,
-HONOR,Honor,tokens/cha,Glory and honor!,Socialize,
-BLOODTHRISTY,Bloodthristy,tokens/cha,Blood for blood,Mass Influence,
+START_MERCHANT,Full Pouch,tokens/cha,Merchants ALWAYS have gold,Socialize,Charismatic
+START_NAVIGATOR,Navigator's Quill,tokens/int,"To know where to go, you must first record where you are",Strategize,Intelligent
+START_JESTER,Lucky Die,tokens/luk,Fortune favors the fool.,Rainbow,Lucky
+CITY_KEY,Key to the City,tokens/cha,You are the major!?,Mass Influence,
+HEIRLOOM,Heirloom,tokens/cha,A generic item passed down for generations. How boring.,Influence,
+MOLE_REWARD_1,Tamed Mole?,tokens/int,Can you REALLY tame a mole?,Mine,
+GOLDEN_COIN,Golden Coin,tokens/luk,It's your lucky day!,Lucky Find,
+PLYWOOD_BOW,Plywood Bow,tokens/agi,"It is said that this bow is so flexible, it shoots arrows that bend…… are you really that guillble?",Ricochet,
+PARASITE,Parasite,tokens/agi,Symbiosis is a thing? Is that you or the parasite speaking anyway.,Parasitic Burst,

@@ -1,2 +1,10 @@
 uid,name,icon,tooltip,lst_mainObjectives,lst_bonusObjectives,lst_passives
 TEST_1,Brawl,skills/bash,LOTS AND LOTS OF FISTS?,TEST_2,"TEST_1, TEST_3, TEST_4",
+mole_encounter_1,Minor Mole Infestation,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_encounter_1_main_agi_50, mole_encounter_1_main_loss",,Mole Infestation! (2)
+mole_encounter_2,Mole Infestation,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_encounter_1_main_agi_60, mole_encounter_1_main_loss",,Mole Infestation! (2)
+mole_encounter_3,Major Mole Infestation!,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_encounter_1_main_agi_60, mole_encounter_1_main_loss",,Mole Infestation! (4)
+mole_encounter_4,Mole Scouting Party,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_encounter_1_main_agi_70, mole_encounter_1_main_loss",,Mole Infestation! (4)
+mole_encounter_5,Army of Moles,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_encounter_1_main_agi_70, mole_encounter_1_main_loss",mole_encounter_1_bonus,Mole Infestation! (6)
+mole_encounter_6,City of Moles,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_encounter_1_main_agi_80, mole_encounter_1_main_loss",mole_encounter_1_bonus,Mole Infestation! (6)
+mole_encounter_7,Cathedrel of the Moles,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_encounter_1_main_agi_80, mole_encounter_1_main_loss",mole_encounter_1_bonus,Mole Infestation! (6)
+mole_encounter_8,King of the Moles,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_encounter_1_main_agi_90, mole_encounter_1_main_loss",mole_encounter_1_bonus,Mole Infestation! (6)

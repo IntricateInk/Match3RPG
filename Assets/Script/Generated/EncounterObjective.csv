@@ -4,3 +4,10 @@ TEST_2,Punch,skills/bash,A satisfying punch!,20,4,Bloodthristy,-1,100,-1,301,-1,
 TEST,sample,,You shouldn't be seeing this,30,3,,-1,100,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
 TEST_3,Turn Test,skills/bash,Efficiency!,40,2,,10,99,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
 TEST_4,Time Test,skills/bash,Your time is running out,50,1,,-1,100,0,60,-1,100,-1,100,-1,100,-1,100,-1,100
+mole_encounter_1_main_loss,Burried alive,tokens/agi,"You were slower than a bunch of moles, and got burried alive. RIP",-20,-10,,-1,100,-1,301,-1,100,0,10,-1,100,-1,100,-1,100
+mole_encounter_1_bonus,Befriend the Mole,tokens/cha,"Moles are friends, not food. Am I doing this right?",0,0,Tamed Mole?,-1,100,-1,301,-1,100,-1,100,-1,100,80,99,-1,100
+mole_encounter_1_main_agi_50,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",0,50,,-1,100,-1,301,-1,100,50,99,-1,100,-1,100,-1,100
+mole_encounter_1_main_agi_60,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",0,50,,-1,100,-1,301,-1,100,60,99,-1,100,-1,100,-1,100
+mole_encounter_1_main_agi_70,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",0,50,,-1,100,-1,301,-1,100,70,99,-1,100,-1,100,-1,100
+mole_encounter_1_main_agi_80,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",0,50,,-1,100,-1,301,-1,100,80,99,-1,100,-1,100,-1,100
+mole_encounter_1_main_agi_90,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",0,50,,-1,100,-1,301,-1,100,90,99,-1,100,-1,100,-1,100

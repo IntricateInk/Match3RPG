@@ -116,7 +116,7 @@ namespace Match3.Encounter.Effect.Skill
         // Factory Pattern
 
         private static Dictionary<string, GameSkill> _AllSkills = new Dictionary<string, GameSkill>();
-        
+
         public static GameSkill GetSkill(string name)
         {
             return _AllSkills[name];

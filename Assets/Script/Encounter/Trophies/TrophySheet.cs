@@ -60,6 +60,7 @@ namespace Match3.Character
         }
         
         private static Dictionary<string, TrophySheet> _AllTrophies = new Dictionary<string, TrophySheet>();
+        public static List<TrophySheet> AllTrophies { get { return new List<TrophySheet>(_AllTrophies.Values); } }
 
         public static TrophySheet[] GetTrophy(string[] ids)
         {

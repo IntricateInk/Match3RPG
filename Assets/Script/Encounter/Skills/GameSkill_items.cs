@@ -27,6 +27,38 @@ namespace Match3.Encounter.Effect.Skill
             }
         );
 
+        //public static GameSkill ROTATE = new GameSkill
+        //(
+        //    name: "Rotate",
+        //    sprite: "skills/bash",
+        //    tooltip: "Select a 2x2 grid and rotate.",
+
+        //    strCost: 1,
+
+        //    selectBehavior: SelectBehavior.Single,
+
+        //    runEffects: new GameEffect.Action[]
+        //    {
+        //        GameEffect.DestroySelected,
+        //    }
+        //);
+
+        //public static GameSkill SHIFT = new GameSkill
+        //(
+        //    name: "Shift",
+        //    sprite: "skills/bash",
+        //    tooltip: "Select a tile. Move all tiles on its left to the end of this row.",
+
+        //    strCost: 1,
+
+        //    selectBehavior: SelectBehavior.Single,
+
+        //    runEffects: new GameEffect.Action[]
+        //    {
+        //        GameEffect.DestroySelected,
+        //    }
+        //);
+
         //public static GameSkill SHOVE = new GameSkill
         //(
         //    name: "Shove",
@@ -62,6 +94,25 @@ namespace Match3.Encounter.Effect.Skill
             }
         );
         
+        //public static GameSkill BURST = new GameSkill
+        //(
+        //    name: "Burst",
+        //    sprite: "skills/sleight",
+        //    tooltip: "Select any two tiles and swap their positions.",
+
+        //    agiCost: 3,
+
+        //    selectBehavior: SelectBehavior.TwoAdjacent,
+
+        //    runEffects: new GameEffect.Action[]
+        //    {
+        //        GameEffect.BeginAnimationBatch,
+        //        GameEffect.PlayAnimation("stargate", normalized_size: 3f),
+        //        GameEffect.SwapFirstTwoSelected,
+        //        GameEffect.EndAnimationBatch,
+        //    }
+        //);
+
         public static GameSkill MASS_INFLUENCE = new GameSkill
         (
             name: "Mass Influence",
@@ -95,7 +146,7 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: new GameEffect.Action[]
             {
-                GameEffect.PlayAnimation("glow_bubble"),
+                GameEffect.PlayAnimation("glow_bubble", normalized_size: 3f),
                 GameEffect.TransformSelectedToType(TokenType.CHARISMA)
             }
         );

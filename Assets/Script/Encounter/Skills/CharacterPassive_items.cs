@@ -62,5 +62,72 @@ namespace Match3.Encounter.Effect.Passive
             }
         );
 
+        // level
+
+        public static CharacterPassive MOLE_INFESTATION_2 = new CharacterPassive
+        (
+            name: "Mole Infestation! (2)",
+            sprite: "tokens/luk",
+            tooltip: "Hole-y Mole-y! That is a lot of moles! You start with 15 Agility. At the start of each turn, two tokens become moles.",
+
+            OnApplyPassive: new GameEffect.Action[]
+            {
+                GameEffect.GainResource(TokenType.AGILITY, 15)
+            },
+
+            OnTurnStart: new GameEffect.Action[] {
+                GameEffect.SelectRandom(2),
+                GameEffect.BeginAnimationBatch,
+                GameEffect.PlayAnimation("dust1"),
+                GameEffect.EndAnimationBatch,
+                GameEffect.ApplyTokenBuff(TargetPassive.MOLE)
+            }
+        );
+
+        public static CharacterPassive MOLE_INFESTATION_4 = new CharacterPassive
+        (
+            name: "Mole Infestation! (4)",
+            sprite: "tokens/luk",
+            tooltip: "Hole-y Mole-y! That is a lot of moles! You start with 15 Agility. At the start of each turn, four tokens become moles.",
+
+            OnApplyPassive: new GameEffect.Action[]
+            {
+                GameEffect.GainResource(TokenType.AGILITY, 15)
+            },
+
+            OnTurnStart: new GameEffect.Action[] {
+                GameEffect.SelectRandom(4),
+                GameEffect.BeginAnimationBatch,
+                GameEffect.PlayAnimation("dust1"),
+                GameEffect.EndAnimationBatch,
+                GameEffect.ApplyTokenBuff(TargetPassive.MOLE)
+            }
+        );
+
+        public static CharacterPassive MOLE_INFESTATION_6 = new CharacterPassive
+        (
+            name: "Mole Infestation! (6)",
+            sprite: "tokens/luk",
+            tooltip: "Hole-y Mole-y! That is a lot of moles! You start with 15 Agility. At the start of each turn, SIX tokens become moles.",
+
+            OnApplyPassive: new GameEffect.Action[]
+            {
+                GameEffect.GainResource(TokenType.AGILITY, 15)
+            },
+
+            OnTurnStart: new GameEffect.Action[] {
+                GameEffect.SelectRandom(6),
+                GameEffect.BeginAnimationBatch,
+                GameEffect.PlayAnimation("dust1"),
+                GameEffect.EndAnimationBatch,
+                GameEffect.ApplyTokenBuff(TargetPassive.MOLE),
+            }
+        );
+
+        // spikes that destroy tiles at the bottom randomly at the end of the turn
+
+        // convert your most abundant resource to the last abundant resource
+
+        // gain X resource at the start of the game
     }
 }

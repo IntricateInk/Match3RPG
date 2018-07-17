@@ -12,8 +12,7 @@ namespace Match3.Encounter
     internal class PlayerState : EncounterSubState
     {
         private readonly int[] resources = new int[TokenTypeHelper.ResourceCount()];
-
-        public readonly List<TokenType> tokenList = new List<TokenType>();
+        
         public readonly List<CharacterPassive> Passives = new List<CharacterPassive>();
         public readonly List<GameSkill> Skills = new List<GameSkill>();
 
@@ -42,9 +41,13 @@ namespace Match3.Encounter
 
         public PlayerState(EncounterState parent) : base(parent)
         {
+        }
+
+        internal void Initialize()
+        {
             int i = 0;
 
-            foreach (TrophySheet trophy in parent.playerSheet.trophies)
+            foreach (TrophySheet trophy in encounter.playerSheet.trophies)
             {
                 foreach (string skill_name in trophy.skills)
                 {
@@ -61,40 +64,31 @@ namespace Match3.Encounter
                 {
                     CharacterPassive passive = CharacterPassive.GetPassive(passive_name);
 
-                    this.Passives.Add(passive);
-                    UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(passive));
+                    this.ApplyBuff(passive);
                 }
             }
 
-            foreach (string passive_name in parent.encounterSheet.passives)
+            foreach (string passive_name in encounter.encounterSheet.passives)
             {
                 CharacterPassive passive = CharacterPassive.GetPassive(passive_name);
 
-                this.Passives.Add(passive);
-                UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(passive));
+                this.ApplyBuff(passive);
             }
         }
 
-        public void ResetToken()
-        {
-            this.tokenList.AddRange(this.encounter.playerSheet.tokenDrawList);
-            this.tokenList.Shuffle();
-        }
-
-        public TokenType DrawToken()
-        {
-            if (this.tokenList.Count == 0) this.ResetToken();
-
-            TokenType token = this.tokenList[0];
-            this.tokenList.RemoveAt(0);
-            return token;
-        }
-        
         public void ApplyBuff(string buff_name) { ApplyBuff(CharacterPassive.GetPassive(buff_name)); }
-
         public void ApplyBuff(CharacterPassive buff)
         {
             this.Passives.Add(buff);
+            buff.OnApplyPassive(encounter, new List<TokenState>());
+            UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(buff));
+        }
+
+        public void RemoveBuff(string buff_name) { RemoveBuff(CharacterPassive.GetPassive(buff_name)); }
+        public void RemoveBuff(CharacterPassive buff)
+        {
+            buff.OnRemovePassive(encounter, new List<TokenState>());
+            this.Passives.Remove(buff);
         }
 
         public int GetResource(TokenType type)
@@ -104,7 +98,7 @@ namespace Match3.Encounter
 
         public void GainResource(TokenType type, int amount)
         {
-            this.resources[type.AsInt()] += amount;
+            this.resources[type.AsInt()] += Mathf.Clamp(amount, 0, 99);
 
             UIAnimationManager.AddAnimation(new UIInstruction_UpdateResources(type, this.GetResource(type)), true);
         }

@@ -41,12 +41,11 @@ namespace Match3.Encounter
             UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
 
             this.DoTokenFall();
-            this.HighlightMatching();
 
             this.encounter.playerState.Turn++;
         }
 
-        private void HighlightMatching()
+        internal void HighlightMatching()
         {
             List<TokenState> matches = this.GetMatching();
 
@@ -82,8 +81,8 @@ namespace Match3.Encounter
 
             return tokens_matched;
         }
-        
-        private void DoTokenFall()
+
+        internal void DoTokenFall()
         {
             TokenType?[,] types = new TokenType?[this.sizeX, this.sizeY];
 
@@ -115,7 +114,7 @@ namespace Match3.Encounter
 
                 while (first_empty < this.sizeY)
                 {
-                    this.tiles[x, first_empty].token = new TokenState(this, this.encounter.playerState.DrawToken(), x, first_empty);
+                    this.tiles[x, first_empty].token = new TokenState(this, this.DrawToken(), x, first_empty);
                     types[x, first_empty] = this.tiles[x, first_empty].token.type;
                     first_empty++;
                 }
@@ -123,8 +122,10 @@ namespace Match3.Encounter
 
             UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
             UIAnimationManager.AddAnimation(new UIAnimation_DropTokens(types));
-        }
 
+            this.HighlightMatching();
+        }
+        
         private void fillBoard()
         {
             TokenType?[,] types = new TokenType?[this.sizeX, this.sizeY];
@@ -132,11 +133,28 @@ namespace Match3.Encounter
             for (int x = 0; x < this.sizeX; x++)
                 for (int y = 0; y < this.sizeY; y++)
                 {
-                    this.tiles[x, y].token = new TokenState(this, this.encounter.playerState.DrawToken(), x, y);
+                    this.tiles[x, y].token = new TokenState(this, this.DrawToken(), x, y);
                     types[x, y] = this.tiles[x, y].token.type;
                 }
 
             UIAnimationManager.AddAnimation( new UIAnimation_DropTokens(types) );
+        }
+
+        public readonly List<TokenType> tokenList = new List<TokenType>();
+
+        public void ResetToken()
+        {
+            this.tokenList.AddRange(this.encounter.playerSheet.tokenDrawList);
+            this.tokenList.Shuffle();
+        }
+
+        public TokenType DrawToken()
+        {
+            if (this.tokenList.Count == 0) this.ResetToken();
+
+            TokenType token = this.tokenList[0];
+            this.tokenList.RemoveAt(0);
+            return token;
         }
 
     }
