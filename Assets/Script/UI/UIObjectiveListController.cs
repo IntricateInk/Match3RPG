@@ -10,7 +10,7 @@ namespace Match3.UI
     {
         internal void AddObjective(EncounterObjective objective)
         {
-            UIFactory.Create(this, objective);
+            UIFactory.CreateObjective(this, objective);
         }
     }
 }

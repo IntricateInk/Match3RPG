@@ -493,58 +493,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1042215346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1042215348}
-  - component: {fileID: 1042215347}
-  m_Layer: 0
-  m_Name: UI Factory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1042215347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1042215346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a55d73ac7c5aa4fa611e4d5333dce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tokenControllerPrefab: {fileID: 114323522903211402, guid: d886894edd33c604b9c9719dc2f0d9fc,
-    type: 2}
-  skillIconPrefab: {fileID: 114998046633201212, guid: c2b0b3336f785cd4e90615d36e5f81fa,
-    type: 2}
-  uiBuffIconPrefab: {fileID: 114687184931459446, guid: 4936c879f72a8664baa59e88abf67506,
-    type: 2}
-  objectivePrefab: {fileID: 114317292483886978, guid: 7688e36af06313548a70591051663455,
-    type: 2}
-  resourceBarPrefab: {fileID: 114302430734981072, guid: 1d8147e48cf6e7046ab0ceba0f6b9805,
-    type: 2}
-  trophyPrefab: {fileID: 114144052390102238, guid: 2e317d2c2fbc7624aa75e59414a28095,
-    type: 2}
---- !u!4 &1042215348
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1042215346}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1215686888
 GameObject:
   m_ObjectHideFlags: 0

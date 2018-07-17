@@ -10,9 +10,6 @@ namespace Match3.UI
         [SerializeField]
         private Image icon;
 
-        [SerializeField]
-        private Text label;
-
         private ITooltip _tooltip;
         public ITooltip tooltip
         {
@@ -24,7 +21,6 @@ namespace Match3.UI
                 if (this.tooltip != null)
                 {
                     this.icon.sprite = this.tooltip.GetSprite();
-                    this.label.text  = this.tooltip.name;
                 }
             }
         }

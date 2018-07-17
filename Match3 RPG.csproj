@@ -364,6 +364,7 @@
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetTurns.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_UpdateResources.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIAnimationManager.cs" />
+    <Compile Include="Assets\Script\UI\startgame.cs" />
     <Compile Include="Assets\Script\UI\UIBoardController.cs" />
     <Compile Include="Assets\Script\UI\UIBuffContainer.cs" />
     <Compile Include="Assets\Script\UI\UIBuffIcon.cs" />
@@ -379,7 +380,6 @@
     <Compile Include="Assets\Script\UI\UITooltip.cs" />
     <Compile Include="Assets\Script\UI\UITooltipController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyController.cs" />
-    <Compile Include="Assets\Script\UI\UITrophyListController.cs" />
     <Compile Include="Assets\Script\Utility\List Extensions.cs" />
   </ItemGroup>
   <ItemGroup>

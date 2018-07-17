@@ -4,6 +4,7 @@ using UnityEngine;
 using Match3.Encounter;
 using System;
 using Match3.Encounter.Encounter;
+using Match3.Character;
 
 namespace Match3.UI
 {
@@ -23,24 +24,14 @@ namespace Match3.UI
 
         [SerializeField]
         private UIObjectiveController objectivePrefab;
-        
+
+        [SerializeField]
+        private UITrophyController objectiveTrophyPrefab;
+
         [SerializeField]
         private UIResourceBarController resourceBarPrefab;
-
-        [SerializeField]
-        private UITrophyController trophyPrefab;
-
-        internal static UITrophyController Create(ITooltip tooltip, UITrophyListController uiTrophyListController)
-        {
-            UITrophyController trophy = Instantiate(UIFactory.Instance.trophyPrefab);
-
-            trophy.tooltip = tooltip;
-            trophy.transform.SetParent(uiTrophyListController.transform);
-
-            return trophy;
-        }
-
-        internal static UIObjectiveController Create(UIObjectiveListController uiObjectiveListController, EncounterObjective objective)
+        
+        internal static UIObjectiveController CreateObjective(UIObjectiveListController uiObjectiveListController, EncounterObjective objective)
         {
             UIObjectiveController uiObjective = Instantiate(UIFactory.Instance.objectivePrefab);
             uiObjective.transform.SetParent(uiObjectiveListController.transform);
@@ -49,7 +40,16 @@ namespace Match3.UI
 
             return uiObjective;
         }
-        
+
+        internal static UITrophyController CreateTrophy(TrophySheet trophy, Transform parent)
+        {
+            UITrophyController uiTrophy = Instantiate(UIFactory.Instance.objectiveTrophyPrefab, parent);
+
+            uiTrophy.tooltip = trophy;
+
+            return uiTrophy;
+        }
+
         internal static UISkillIcon CreateSkillIcon(ITooltip tooltip, string resource_cost, int index, UISkillContainer uISkillBar)
         {
             UISkillIcon skillIcon = Instantiate(UIFactory.Instance.skillIconPrefab);

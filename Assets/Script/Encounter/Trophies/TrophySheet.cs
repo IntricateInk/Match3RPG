@@ -9,7 +9,29 @@ namespace Match3.Character
     {
         public string name    { get; private set; }
         public string sprite  { get; private set; }
-        public string tooltip { get; private set; }
+
+        private string _tooltip;
+        public string tooltip {
+            get
+            {
+                string skill_desc = "<size=16><b>Skills</b></size>\n";
+                foreach (string skill in this.skills)
+                {
+                    skill_desc += skill;
+                    skill_desc += "\n";
+                }
+
+                string passive_desc = "<size=16><b>Passives</b></size>\n";
+                foreach (string passive in this.passives)
+                {
+                    skill_desc += passive;
+                    skill_desc += "\n"; 
+                }
+
+                return string.Format("{0}{1}\n<i><size=10>{2}</size></i>", skill_desc, passive_desc, this._tooltip);
+            }
+            private set { this._tooltip = value; }
+        }
 
         public readonly string[] skills;
         public readonly string[] passives;
