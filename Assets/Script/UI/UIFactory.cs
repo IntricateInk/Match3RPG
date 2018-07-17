@@ -49,14 +49,14 @@ namespace Match3.UI
 
             return uiObjective;
         }
-
-
-        internal static UISkillIcon Create(ITooltip tooltip, int index, UISkillContainer uISkillBar)
+        
+        internal static UISkillIcon CreateSkillIcon(ITooltip tooltip, string resource_cost, int index, UISkillContainer uISkillBar)
         {
             UISkillIcon skillIcon = Instantiate(UIFactory.Instance.skillIconPrefab);
             skillIcon.transform.SetParent(uISkillBar.transform);
 
             skillIcon.tooltip = tooltip;
+            skillIcon.resourceCost = resource_cost;
             skillIcon.index = index;
 
             return skillIcon;

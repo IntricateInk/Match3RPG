@@ -14,4 +14,9 @@ public static class ListExtensions {
             list.Insert(i, e);
         }
     }
+
+    public static T RandomChoice<T>(this List<T> list)
+    {
+        return list[Random.Range(0, list.Count)];
+    }
 }

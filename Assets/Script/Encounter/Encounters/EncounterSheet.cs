@@ -15,6 +15,7 @@ namespace Match3.Encounter.Encounter
 
         public readonly EncounterObjective[] mainObjectives;
         public readonly EncounterObjective[] bonusObjectives;
+        public readonly string[] passives;
 
         public EncounterSheet
             (
@@ -22,7 +23,8 @@ namespace Match3.Encounter.Encounter
                 string icon,
                 string tooltip,
                 string[] mainObjectives,
-                string[] bonusObjectives
+                string[] bonusObjectives,
+                string[] passives
             )
         {
             this.name    = name;
@@ -31,6 +33,7 @@ namespace Match3.Encounter.Encounter
 
             this.mainObjectives  = EncounterObjective.GetObjective(mainObjectives);
             this.bonusObjectives = EncounterObjective.GetObjective(bonusObjectives);
+            this.passives = passives;
         }
 
         internal bool MainObjectiveMet(EncounterState encounter)

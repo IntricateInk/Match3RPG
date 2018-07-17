@@ -5,23 +5,26 @@ using UnityEngine.SceneManagement;
 using Match3.Encounter;
 using Match3.Encounter.Encounter;
 using Match3.Character;
-using Match3.Encounter.Passive;
-using Match3.Encounter.Skill;
+using Match3.Encounter.Effect.Passive;
+using Match3.Encounter.Effect.Skill;
 using Match3.Overworld;
+using UnityEngine.UI;
 
 public class TestMenuScript : MonoBehaviour {
 
-    private static bool isInit = false;
+    [SerializeField]
+    private Text goldLabel;
 
-    private void Start()
+    [SerializeField]
+    private Text expLabel;
+
+    public void Update()
     {
-        if (isInit) return;
-         
-        GamePassive.Init();
-        GameSkill.Init();
+        PlayerSheet player = OverworldState.Current.player;
 
-        isInit = true;
-    }
+        this.goldLabel.text = player.Gold.ToString();
+        this.expLabel.text  = player.Experience.ToString();
+    } 
 
     public void Test()
     {

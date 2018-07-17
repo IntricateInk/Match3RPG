@@ -47,10 +47,8 @@ namespace Match3.UI
         {
             if (UITooltipController.Current == null)
             {
-                this.gameObject.SetActive(false);
             } else
             {
-                this.gameObject.SetActive(true);
                 this.header.text = UITooltipController.Current.name;
                 this.body.text   = UITooltipController.Current.tooltip;
                 this.icon.sprite = UITooltipController.Current.GetSprite();
