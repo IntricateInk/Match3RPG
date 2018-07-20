@@ -7,66 +7,93 @@ using Match3.Encounter;
 
 public class OverworldMap
  {
+    
+    public OverworldNode[,] levelMap;
+    public int depth { get; private set; }   
+    public int width;
+    public int levelIndex;
 
-    public List<OverworldNode> nodeList = null;
-    public GameObject loadingImage;
-    public GameObject nodePrefab;
-
-    public OverworldMap()
+    public OverworldMap(int depth = 10, int width = 7, int branches = 4)
     {
-        
-    }
-
-    // let's just agree to use the real level index on the for loops here
-    // remember to offset by -1
-    public bool generateLevel()
-    {
-        try
-        {
-            if (this.nodeList == null)
-            {
-                this.nodeList = new List<OverworldNode>();
-            }
-
-            for (int i = 0; i < 3; i++)
-            {
-                OverworldNode node = new OverworldNode(OverworldNode.nodeType.MOB);
-                this.nodeList.Add(node);
-            }
-
-            for (int i = 3; i < 6; i++)
-            {
-                OverworldNode node = new OverworldNode(OverworldNode.nodeType.MOB);
-                this.nodeList.Add(node);
-            }
-
-            for (int i = 6; i < 10; i++)
-            {
-                OverworldNode node = new OverworldNode(OverworldNode.nodeType.MOB);
-                this.nodeList.Add(node);
-            }
-
-            // for the 10th level, add a boss stage
-            this.nodeList.Add(new OverworldNode(OverworldNode.nodeType.BOSS));
-
-            /*
-            for (int i = 0; i < nodeList.Count; i++)
-            {
-                Debug.Log("Nodelist #" + i + " is "  + this.nodeList[i]._nodeType);
-
-            }
-            */
-            
-            return true;
-
-        } catch (System.Exception e)
-        {
-            Debug.Log("ERROR" + e);
-            return false;
-        }
        
+        bool generateSuccessful = this.GenerateLevelMap(depth, width);
+
+        if (!generateSuccessful)
+        {
+            throw new System.Exception("Failed to fetch map");
+        }
+
+        this.generateEdges(branches);
     }
 
+    public bool GenerateLevelMap(int depth = 10, int width = 7)
+    {
 
+
+        // conventions
+        // index 0 is always the start, we mark as special ENUM START
+        // index depth is always the boss
+        // the numbers are real world numbers without offsetting.
+        // floor 1(encounter 1) = index 1
+        int maxDepth = depth + 1;
+        OverworldNode[,] levelMap = new OverworldNode[maxDepth, width];
+
+
+        for (int i = 0; i < maxDepth; i++)
+        {
+            List<OverworldNode.nodeType> overWorldNodeTypes = OverworldNode.FetchOverworldNodeTypes(i, maxDepth);
+            for (int j = 0; j < width; j++)
+            {
+                levelMap[i, j] = new OverworldNode(overWorldNodeTypes.RandomChoice());
+            }
+        }
+
+
+
+        /* 
+        // test function
+        for (int i = 0; i < maxDepth; i++)
+        {
+            for (int j = 1; j < width; j++)
+            {
+                Debug.Log("Level " + i  + "," +  j + "  :  " + levelMap[i, j]);
+            }
+        }
+        */
+
+        this.levelMap = levelMap;
+        this.depth = depth;
+        this.width = width;
+        return true;
+    }
+    
+    public void generateEdges(int branches = 4)
+    {
+        if (this.levelMap == null)
+        {
+            throw new System.Exception("Level map is not generated");
+        }
+
+        // define starting points
+        int divider = (int)Mathf.Ceil(this.width / (float)branches);
+        int[] startingPoints = new int[branches];
+
+        for (int i =0; i < branches; i++)
+        {
+            startingPoints[i] = (0 + (i * divider));
+            //Debug.Log("Starting point is " + startingPoints[i]);
+        }
+
+        // generate edges lazily
+        for (int i = 0; i < branches; i++)
+        {
+            
+        }
+    }
+
+    public void incrementLevel()
+    {
+        this.levelIndex += 1;
+    }
 }
 
