@@ -352,15 +352,17 @@
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_AddBuff.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_AddObjective.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_AddSkill.cs" />
+    <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_FloatingText.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_OverlayText.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SelectSkill.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetEncounter.cs" />
+    <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetEnergy.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetPlayer.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetTime.cs" />
-    <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetTokenMatch.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetTokenSelected.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetTokenSprite.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetTurns.cs" />
+    <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_ShowEncounterSummary.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_UpdateResources.cs" />
     <Compile Include="Assets\Script\UI\Animations\UIAnimationManager.cs" />
     <Compile Include="Assets\Script\UI\startgame.cs" />
@@ -369,6 +371,7 @@
     <Compile Include="Assets\Script\UI\UIBuffIcon.cs" />
     <Compile Include="Assets\Script\UI\UICanvasScaler.cs" />
     <Compile Include="Assets\Script\UI\UIFactory.cs" />
+    <Compile Include="Assets\Script\UI\UIFloatingText.cs" />
     <Compile Include="Assets\Script\UI\UIObjectiveController.cs" />
     <Compile Include="Assets\Script\UI\UIObjectiveListController.cs" />
     <Compile Include="Assets\Script\UI\UIPlayerStateController.cs" />
@@ -380,6 +383,7 @@
     <Compile Include="Assets\Script\UI\UITooltip.cs" />
     <Compile Include="Assets\Script\UI\UITooltipController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyController.cs" />
+    <Compile Include="Assets\Script\UI\UIVictoryOverlayController.cs" />
     <Compile Include="Assets\Script\Utility\List Extensions.cs" />
     <Compile Include="Assets\Script\Utility\RandomUtil.cs" />
     <Compile Include="Assets\Testing\testing_script.cs" />

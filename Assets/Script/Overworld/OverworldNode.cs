@@ -26,7 +26,7 @@ public class OverworldNode {
     public OverworldNode (nodeType type)
     {
         this._nodeType = type;
-        this._encounterSheet = EncounterSheet.TEST_1;
+        this._encounterSheet = EncounterSheet.AllEncounters.RandomChoice();
     }
 
 

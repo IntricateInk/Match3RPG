@@ -5,6 +5,7 @@ using Match3.Encounter;
 using System;
 using Match3.Encounter.Encounter;
 using Match3.Character;
+using Match3.Encounter.Effect.Skill;
 
 namespace Match3.UI
 {
@@ -30,7 +31,19 @@ namespace Match3.UI
 
         [SerializeField]
         private UIResourceBarController resourceBarPrefab;
-        
+
+        [SerializeField]
+        private UIFloatingText floatingTextPrefab;
+
+        internal static UIFloatingText CreateFloatingText(string text, Transform parent)
+        {
+            UIFloatingText floating_text = Instantiate<UIFloatingText>(UIFactory.Instance.floatingTextPrefab, parent);
+
+            floating_text.text = text;
+
+            return floating_text;
+        }
+
         internal static UIObjectiveController CreateObjective(UIObjectiveListController uiObjectiveListController, EncounterObjective objective)
         {
             UIObjectiveController uiObjective = Instantiate(UIFactory.Instance.objectivePrefab);
@@ -50,13 +63,14 @@ namespace Match3.UI
             return uiTrophy;
         }
 
-        internal static UISkillIcon CreateSkillIcon(ITooltip tooltip, string resource_cost, int index, UISkillContainer uISkillBar)
+        internal static UISkillIcon CreateSkillIcon(GameSkill skill, int index, UISkillContainer uISkillBar)
         {
             UISkillIcon skillIcon = Instantiate(UIFactory.Instance.skillIconPrefab);
             skillIcon.transform.SetParent(uISkillBar.transform);
 
-            skillIcon.tooltip = tooltip;
-            skillIcon.resourceCost = resource_cost;
+            skillIcon.tooltip = skill;
+            skillIcon.energyCost = skill.energyCost.ToString();
+            skillIcon.resourceCost = skill.ResourceCostString;
             skillIcon.index = index;
 
             return skillIcon;

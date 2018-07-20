@@ -145,8 +145,8 @@ namespace Match3.Encounter.Encounter
             // time
             int time = (int)player.Time;
 
-            if (time > this.MaxTurn) return false;
-            if (time < this.MinTurn) return false;
+            if (time > this.MaxTime) return false;
+            if (time < this.MinTime) return false;
 
             return true;
         }

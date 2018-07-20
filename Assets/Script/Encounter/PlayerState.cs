@@ -12,9 +12,22 @@ namespace Match3.Encounter
     internal class PlayerState : EncounterSubState
     {
         private readonly int[] resources = new int[TokenTypeHelper.ResourceCount()];
-        
+        public int[] Resources { get { return (int[])this.resources.Clone(); } }
+
         public readonly List<CharacterPassive> Passives = new List<CharacterPassive>();
         public readonly List<GameSkill> Skills = new List<GameSkill>();
+        
+        private int _Energy = 0;
+        public int Energy
+        {
+            get { return _Energy; }
+            set
+            {
+                _Energy = value;
+
+                UIAnimationManager.AddAnimation(new UIInstruction_SetEnergy(this.Energy), true);
+            }
+        }
 
         private int _Turn;
         public int Turn
@@ -29,6 +42,7 @@ namespace Match3.Encounter
         }
 
         private float _Time = 0f;
+
         public float Time {
             get { return this._Time; }
             internal set
@@ -38,6 +52,8 @@ namespace Match3.Encounter
                 UIAnimationManager.AddAnimation(new UIInstruction_SetTime(this.Time));
             }
         }
+
+        public int MaximumEnergy { get { return 3; } }
 
         public PlayerState(EncounterState parent) : base(parent)
         {
@@ -56,7 +72,7 @@ namespace Match3.Encounter
                     if (this.Skills.Contains(skill)) continue;
 
                     this.Skills.Add(skill);
-                    UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, skill.costString, i));
+                    UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, i));
                     i++;
                 }
 
@@ -91,6 +107,11 @@ namespace Match3.Encounter
             this.Passives.Remove(buff);
         }
 
+        internal void UseEnergy(int energyCost)
+        {
+            this.Energy -= energyCost;
+        }
+
         public int GetResource(TokenType type)
         {
             return this.resources[type.AsInt()];
@@ -98,7 +119,8 @@ namespace Match3.Encounter
 
         public void GainResource(TokenType type, int amount)
         {
-            this.resources[type.AsInt()] += Mathf.Clamp(amount, 0, 99);
+            this.resources[type.AsInt()] += amount;
+            this.resources[type.AsInt()] = Mathf.Clamp(this.resources[type.AsInt()], 0, 99);
 
             UIAnimationManager.AddAnimation(new UIInstruction_UpdateResources(type, this.GetResource(type)), true);
         }

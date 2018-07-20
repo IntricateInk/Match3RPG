@@ -51,17 +51,7 @@ namespace Match3.Encounter.Encounter
 
             return false;
         }
-
-        internal void CheckBonusObjectives(EncounterState encounter)
-        {
-            foreach (EncounterObjective objective in this.bonusObjectives)
-            {
-                if (objective.isCompleted(encounter.playerState))
-                {
-                }
-            }
-        }
-
+        
         // Factory
 
         private static Dictionary<string, EncounterSheet> _AllEncounters = new Dictionary<string, EncounterSheet>();

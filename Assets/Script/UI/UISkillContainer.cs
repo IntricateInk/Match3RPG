@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Match3.Encounter.Effect.Skill;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,9 +8,9 @@ namespace Match3.UI
 {
     public class UISkillContainer : MonoBehaviour
     {
-        internal void AddSkill(ITooltip tooltip, string resource_cost, int index)
+        internal void AddSkill(GameSkill skill, int index)
         {
-            UIFactory.CreateSkillIcon(tooltip, resource_cost, index, this);
+            UIFactory.CreateSkillIcon(skill, index, this);
         }
     }
 }

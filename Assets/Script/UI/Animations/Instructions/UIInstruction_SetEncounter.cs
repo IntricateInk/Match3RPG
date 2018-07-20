@@ -14,7 +14,7 @@ namespace Match3.UI.Animation
 
         private readonly ITooltip tooltip;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             manager.encounterLabel.text  = this.tooltip.name;
             manager.encounterIcon.sprite = this.tooltip.GetSprite();

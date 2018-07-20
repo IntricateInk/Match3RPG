@@ -10,7 +10,6 @@ namespace Match3.Encounter
     public class TokenState
     {
         private bool _isSelected = false;
-        private bool _isMatching = false;
 
         public readonly BoardState board;
 
@@ -40,15 +39,6 @@ namespace Match3.Encounter
             }
         }
         
-        public bool isMatching
-        {
-            get { return this._isMatching; }
-            set {
-                this._isMatching = value;
-                UIAnimationManager.AddAnimation(new UIInstruction_SetTokenMatch(x, y, isMatching), true);
-            }
-        }
-
         internal TileState tile {
             get { return this.board.tiles[x, y]; }
         }
@@ -66,8 +56,28 @@ namespace Match3.Encounter
             this.board = board;
         }
 
-        // Game Methods
-        
+        #region HELPER
+
+        internal List<TokenState> GetAllAdjacent()
+        {
+            List<TokenState> adjs = new List<TokenState>();
+            TokenState adj;
+
+            adj = this.GetAdjacent(0, -1);
+            if (adj != null) adjs.Add(adj);
+
+            adj = this.GetAdjacent(0, 1);
+            if (adj != null) adjs.Add(adj);
+
+            adj = this.GetAdjacent(1, 0);
+            if (adj != null) adjs.Add(adj);
+
+            adj = this.GetAdjacent(-1, 0);
+            if (adj != null) adjs.Add(adj);
+
+            return adjs;
+        }
+
         internal TokenState GetAdjacent(int dx, int dy)
         {
             int x = this.x + dx;
@@ -78,7 +88,12 @@ namespace Match3.Encounter
 
             return board.tiles[x, y].token;
         }
-        
+
+        #endregion HELPER
+
+        // Game Methods
+
+        internal void Swap(int dx, int dy) { Swap(GetAdjacent(dx, dy)); }
         internal void Swap(TokenState other)
         {
             UIAnimationManager.AddAnimation(new UIAnimation_SwapToken(this.x, this.y, other.x, other.y));
@@ -103,31 +118,78 @@ namespace Match3.Encounter
 
         internal void Match()
         {
+            ShowResourceGain(this.type, 1);
             Destroy();
             board.encounter.playerState.GainResource(this.type, 1);
         }
 
         internal void Destroy()
         {
+            foreach (TargetPassive passive in this.Passives)
+                passive.OnDestroy(board.encounter, new List<TokenState>() { this });
+
             board.tiles[this.x, this.y].token = null;
 
-            UIAnimationManager.AddAnimation(new UIAnimation_RemoveTokens(this.x, this.y));
+            UIAnimationManager.AddAnimation(new UIAnimation_RemoveToken(this.x, this.y));
         }
-
-        // Private UI methods
         
-        internal void ApplyBuff(string buff_name)  { ApplyBuff(TargetPassive.GetPassive(buff_name)); }
         internal void ApplyBuff(TargetPassive buff)
         {
-            this.Passives.Add(buff);
-            buff.OnApplyPassive(this.board.encounter, new List<TokenState>() { this });
+            if (!this.Passives.Contains(buff))
+            {
+                this.Passives.Add(buff);
+                buff.OnApplyPassive(this.board.encounter, new List<TokenState>() { this });
+            }
         }
-
-        internal void RemoveBuff(string buff_name) { RemoveBuff(TargetPassive.GetPassive(buff_name)); }
+        
         internal void RemoveBuff(TargetPassive buff)
         {
-            buff.OnRemovePassive(this.board.encounter, new List<TokenState>() { this });
-            this.Passives.Remove(buff);
+            if (this.Passives.Contains(buff))
+            {
+                buff.OnRemovePassive(this.board.encounter, new List<TokenState>() { this });
+                this.Passives.Remove(buff);
+            }
         }
+
+        // UI methods
+
+        internal void ShowResourceGain(TokenType token, int amount)
+        {
+            string sign = "";
+            if (amount > 0) sign = "+";
+            if (amount < 0) sign = "-";
+
+            ShowText(string.Format("{0}{1}{2}", sign, Mathf.Abs(amount), token.AsStr()));
+        }
+
+        internal void ShowText(string text)
+        {
+            UIAnimationManager.AddAnimation(new UIInstruction_FloatingText(text, this.x, this.y), isQueued: true);
+        }
+
+        internal void PlayAnimation(string animation_name)
+        {
+            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.None);
+            UIAnimationManager.AddAnimation(anim);
+        }
+
+        internal void PlayAnimation(string animation_name, float play_time)
+        {
+            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.None);
+            UIAnimationManager.AddAnimation(anim, play_time);
+        }
+
+        internal void AttachAnimation(string animation_name, float normalized_size = 1f)
+        {
+            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.Token_Add, normalized_size);
+            UIAnimationManager.AddAnimation(anim);
+        }
+
+        internal void DettachAnimation(string animation_name)
+        {
+            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.Token_Remove);
+            UIAnimationManager.AddAnimation(anim);
+        }
+        
     }
 }

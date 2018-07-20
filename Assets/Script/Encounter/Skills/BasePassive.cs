@@ -16,10 +16,11 @@ namespace Match3.Encounter.Effect.Passive
             string sprite,
             string tooltip,
 
-            GameEffect.Action[] OnTurnStart = null,
-            GameEffect.Action[] OnApplyPassive = null,
-            GameEffect.Action[] OnRemovePassive = null
-
+            GameEffect.Action OnTurnStart,
+            GameEffect.Action OnTurnEnd,
+            GameEffect.Action OnApplyPassive,
+            GameEffect.Action OnRemovePassive,
+            GameEffect.Action OnDestroy
         )
         {
             this.name = name;
@@ -27,26 +28,40 @@ namespace Match3.Encounter.Effect.Passive
             this.tooltip = tooltip;
 
             this.actionsOnTurnStart     = OnTurnStart;
+            this.actionsOnTurnEnd       = OnTurnEnd;
             this.actionsOnApplyPassive  = OnApplyPassive;
             this.actionsOnRemovePassive = OnRemovePassive;
+            this.actionsOnDestroy       = OnDestroy;
         }
         
-        private readonly GameEffect.Action[] actionsOnTurnStart;
+        private readonly GameEffect.Action actionsOnTurnStart;
         internal void OnTurnStart(EncounterState encounter, List<TokenState> targets)
         {
-            GameEffect.Invoke(actionsOnTurnStart, encounter, targets);
+            if (actionsOnTurnStart != null) actionsOnTurnStart(encounter, targets);
         }
 
-        private readonly GameEffect.Action[] actionsOnApplyPassive;
+        private readonly GameEffect.Action actionsOnTurnEnd;
+        internal void OnTurnEnd(EncounterState encounter, List<TokenState> targets)
+        {
+            if (actionsOnTurnEnd != null) actionsOnTurnEnd(encounter, targets);
+        }
+
+        private readonly GameEffect.Action actionsOnApplyPassive;
         internal void OnApplyPassive(EncounterState encounter, List<TokenState> targets)
         {
-            GameEffect.Invoke(actionsOnApplyPassive, encounter, targets);
+            if (actionsOnApplyPassive != null) actionsOnApplyPassive(encounter, targets);
         }
 
-        private readonly GameEffect.Action[] actionsOnRemovePassive;
+        private readonly GameEffect.Action actionsOnRemovePassive;
         internal void OnRemovePassive(EncounterState encounter, List<TokenState> targets)
         {
-            GameEffect.Invoke(actionsOnRemovePassive, encounter, targets);
+            if (actionsOnRemovePassive != null) actionsOnRemovePassive(encounter, targets);
+        }
+
+        private readonly GameEffect.Action actionsOnDestroy;
+        internal void OnDestroy(EncounterState encounter, List<TokenState> targets)
+        {
+            if (actionsOnDestroy != null) actionsOnDestroy(encounter, targets);
         }
     }
 }

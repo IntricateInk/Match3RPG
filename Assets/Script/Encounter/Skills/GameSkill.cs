@@ -13,14 +13,14 @@ namespace Match3.Encounter.Effect.Skill
         private string _tooltip;
         public string tooltip
         {
-            get { return string.Format("Cost: {0}\n{1}", costString, _tooltip); }
+            get { return string.Format("Energy: {2}\nCost: {0}\n{1}", ResourceCostString, _tooltip, energyCost); }
             private set
             {
                 this._tooltip = value;
             }
         }
 
-        public string costString
+        public string ResourceCostString
         {
             get
             {
@@ -35,7 +35,9 @@ namespace Match3.Encounter.Effect.Skill
                 string sprite, 
                 string tooltip,
                 SelectBehavior selectBehavior,
-                Effect.GameEffect.Action[] runEffects,
+                Effect.GameEffect.Action runEffects,
+
+                int energyCost,
 
                 int strCost = 0,
                 int agiCost = 0,
@@ -47,6 +49,8 @@ namespace Match3.Encounter.Effect.Skill
             this.name = name;
             this.sprite = sprite;
             this.tooltip = tooltip;
+
+            this.energyCost = energyCost;
 
             this.strCost = strCost;
             this.agiCost = agiCost;
@@ -60,18 +64,21 @@ namespace Match3.Encounter.Effect.Skill
             _AllSkills.Add(name, this);
         }
 
+        public readonly int energyCost;
         private readonly int strCost;
         private readonly int agiCost;
         private readonly int intCost;
         private readonly int chaCost;
         private readonly int lukCost;
-        private readonly GameEffect.Action[] runEffects;
+        private readonly GameEffect.Action runEffects;
 
         // Cost
 
         internal bool CanPayCost(EncounterState encounter)
         {
             PlayerState player = encounter.playerState;
+
+            if (player.Energy < energyCost) return false;
 
             if (player.GetResource(TokenType.STRENGTH)     < strCost) return false;
             if (player.GetResource(TokenType.AGILITY)      < agiCost) return false;
@@ -86,6 +93,7 @@ namespace Match3.Encounter.Effect.Skill
         {
             PlayerState player = encounter.playerState;
 
+            player.UseEnergy(energyCost);
             player.GainResource(TokenType.STRENGTH    , -strCost);
             player.GainResource(TokenType.AGILITY     , -agiCost);
             player.GainResource(TokenType.INTELLIGENCE, -intCost);
@@ -110,7 +118,7 @@ namespace Match3.Encounter.Effect.Skill
             this.PayCost(encounter);
 
             List<TokenState> tokens = new List<TokenState>(encounter.inputState.selectedTokens);
-            GameEffect.Invoke(this.runEffects, encounter, tokens);
+            this.runEffects(encounter, tokens);
         }
 
         // Factory Pattern

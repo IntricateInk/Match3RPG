@@ -161,6 +161,32 @@ namespace Match3.Character
 
 		);
 
+		public static TrophySheet HEAVY_AXE = new TrophySheet(
+			name: "Heavy Axe",
+			sprite: "tokens/str",
+			tooltip: "Great for chopping!",
+
+			skills: new string[] {
+"Chop!"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet HEAVY_BLADE = new TrophySheet(
+			name: "Heavy Blade",
+			sprite: "tokens/str",
+			tooltip: "Great for slicing!",
+
+			skills: new string[] {
+"Slice!"
+},
+
+			passives: new string[] {  }
+
+		);
+
 
     }
 }

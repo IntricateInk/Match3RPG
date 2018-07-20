@@ -25,6 +25,11 @@ public static class TokenTypeHelper
     {
         return (TokenType) UnityEngine.Random.Range(0, ResourceCount());
     }
+
+    public static TokenType[] AllResource()
+    {
+        return new TokenType[] { TokenType.STRENGTH, TokenType.AGILITY, TokenType.INTELLIGENCE, TokenType.CHARISMA, TokenType.LUCK };
+    }
 }
 
 public static class TokenTypeExtensions
@@ -67,6 +72,25 @@ public static class TokenTypeExtensions
                 return Resources.Load<Sprite>("tokens/turn");
             case TokenType.TIME:
                 return Resources.Load<Sprite>("tokens/time");
+            default:
+                throw new ArgumentException("Token type of " + token + " not recognized.");
+        }
+    }
+
+    public static string AsStr(this TokenType token)
+    {
+        switch (token)
+        {
+            case TokenType.STRENGTH:
+                return "S";
+            case TokenType.AGILITY:
+                return "A";
+            case TokenType.INTELLIGENCE:
+                return "I";
+            case TokenType.CHARISMA:
+                return "C";
+            case TokenType.LUCK:
+                return "L";
             default:
                 throw new ArgumentException("Token type of " + token + " not recognized.");
         }

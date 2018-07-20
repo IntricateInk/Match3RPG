@@ -20,6 +20,9 @@ namespace Match3.UI
         private Text timeLabel;
 
         [SerializeField]
+        private Text energyLabel;
+
+        [SerializeField]
         private Text turnLabel;
 
         [SerializeField]
@@ -42,6 +45,7 @@ namespace Match3.UI
             UIAnimationManager.OnResourceChange += this.OnResourceChange;
             UIAnimationManager.OnTimeChange += this.OnTimeChange;
             UIAnimationManager.OnTurnChange += this.OnTurnChange;
+            UIAnimationManager.OnEnergyChange += this.OnEnergyChange;
         }
 
         private void OnDestroy()
@@ -49,12 +53,23 @@ namespace Match3.UI
             UIAnimationManager.OnResourceChange -= this.OnResourceChange;
             UIAnimationManager.OnTimeChange -= this.OnTimeChange;
             UIAnimationManager.OnTurnChange -= this.OnTurnChange;
+            UIAnimationManager.OnEnergyChange -= this.OnEnergyChange;
+        }
+        
+        public void OnTurnEndButtonClick()
+        {
+            EncounterState.Current.EndTurn();
         }
 
         internal void SetTooltip(ITooltip tooltip)
         {
             this.nameLabel.text = tooltip.name;
             this.icon.sprite = tooltip.GetSprite();
+        }
+
+        private void OnEnergyChange(int energy)
+        {
+            this.energyLabel.text = energy.ToString();
         }
 
         internal void OnTimeChange(float time)

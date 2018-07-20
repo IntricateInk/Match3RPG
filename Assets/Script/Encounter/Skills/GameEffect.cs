@@ -3,6 +3,7 @@ using Match3.UI.Animation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Match3.Encounter.Effect
@@ -13,24 +14,14 @@ namespace Match3.Encounter.Effect
 
         public delegate void Action(EncounterState encounter, List<TokenState> selectedTokens);
 
-        internal static void Invoke(Action[] actions, EncounterState encounter, List<TokenState> tokens)
-        {
-            if (actions == null) return;
-
-            foreach (GameEffect.Action action in actions)
-            {
-                action(encounter, tokens);
-            }
-        }
-
-        // Without Args
-
-        internal static void BeginAnimationBatch(EncounterState encounter, List<TokenState> selectedTokens)
+        // encounter specific effects
+        
+        internal static void BeginAnimationBatch()
         {
             UIAnimationManager.AddAnimation(new UIAnimation_BeginBatch());
         }
 
-        internal static void EndAnimationBatch(EncounterState encounter, List<TokenState> selectedTokens)
+        internal static void EndAnimationBatch()
         {
             UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
         }
@@ -118,33 +109,27 @@ namespace Match3.Encounter.Effect
                 selectedTokens.Add(current);
             }
         }
-
-        // With Args
         
-        internal static Action SelectRandom(int n)
+        internal static void SelectRandom(EncounterState encounter, List<TokenState> selectedTokens, int n)
         {
-            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            int size_x = encounter.boardState.sizeX;
+            int size_y = encounter.boardState.sizeY;
+            
+            List<int> rand = RandomUtil.TakeRandomN(0, size_x * size_y, n);
+
+            selectedTokens.Clear();
+
+            foreach (int i in rand)
             {
-                int size_x = encounter.boardState.sizeX;
-                int size_y = encounter.boardState.sizeY;
-
-                List<TokenState> new_selected = new List<TokenState>();
-                List<int> rand = RandomUtil.TakeRandomN(0, size_x * size_y, n);
-
-                selectedTokens.Clear();
-
-                foreach (int i in rand)
-                {
-                    int x = i % size_x;
-                    int y = i / size_y;
-                    selectedTokens.Add(encounter.boardState.tiles[x, y].token);
-                }
-            };
+                int x = i % size_x;
+                int y = i / size_y;
+                selectedTokens.Add(encounter.boardState.tiles[x, y].token);
+            }
         }
 
-        internal static Action SelectOffset(int x, int y)
+        internal static void SelectOffset(EncounterState encounter, List<TokenState> selectedTokens, int x, int y)
         {
-            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            
             {
                 List<TokenState> new_selected = new List<TokenState>();
 
@@ -159,111 +144,95 @@ namespace Match3.Encounter.Effect
             };
         }
 
-        internal static Action AddTileAnimation(string animation_name, float normalized_size = 1f)
+        internal static void AddTileAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, float normalized_size = 1f)
         {
-            return AddAnimation(animation_name, UIAnimation_AddAnimation.AnimationType.Tile_Add, normalized_size);
+            AddAnimation(encounter, selectedTokens, animation_name, UIAnimation_AddAnimation.AnimationType.Tile_Add, normalized_size);
         }
 
-        internal static Action RemoveTileAnimation(string animation_name, float normalized_size = 1f)
+        internal static void RemoveTileAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, float normalized_size = 1f)
         {
-            return AddAnimation(animation_name, UIAnimation_AddAnimation.AnimationType.Tile_Remove, normalized_size);
+            AddAnimation(encounter, selectedTokens, animation_name, UIAnimation_AddAnimation.AnimationType.Tile_Remove, normalized_size);
         }
 
-        internal static Action AddTokenAnimation(string animation_name, float normalized_size = 1f)
+        internal static void AddTokenAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, float normalized_size = 1f)
         {
-            return AddAnimation(animation_name, UIAnimation_AddAnimation.AnimationType.Token_Add, normalized_size);
+            AddAnimation(encounter, selectedTokens, animation_name, UIAnimation_AddAnimation.AnimationType.Token_Add, normalized_size);
         }
 
-        internal static Action RemoveTokenAnimation(string animation_name, float normalized_size = 1f)
+        internal static void RemoveTokenAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, float normalized_size = 1f)
         {
-            return AddAnimation(animation_name, UIAnimation_AddAnimation.AnimationType.Token_Remove, normalized_size);
+            AddAnimation(encounter, selectedTokens, animation_name, UIAnimation_AddAnimation.AnimationType.Token_Remove, normalized_size);
         }
 
-        internal static Action PlayAnimation(string animation_name, float normalized_size = 1f)
+        internal static void PlayAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, float normalized_size = 1f)
         {
-            return AddAnimation(animation_name, UIAnimation_AddAnimation.AnimationType.None, normalized_size);
+            AddAnimation(encounter, selectedTokens, animation_name, UIAnimation_AddAnimation.AnimationType.None, normalized_size);
         }
 
-        private static Action AddAnimation(string animation_name, UIAnimation_AddAnimation.AnimationType animation_type, float normalized_size)
+        private static void AddAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, UIAnimation_AddAnimation.AnimationType animation_type, float normalized_size)
         {
-            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            foreach (TokenState token in selectedTokens)
             {
-                foreach (TokenState token in selectedTokens)
-                {
-                    UIAnimation anim = new UIAnimation_AddAnimation(animation_name, token.x, token.y, animation_type, normalized_size);
-                    UIAnimationManager.AddAnimation(anim);
-                }
-            };
+                UIAnimation anim = new UIAnimation_AddAnimation(animation_name, token.x, token.y, animation_type, normalized_size);
+                UIAnimationManager.AddAnimation(anim);
+            }
         }
 
-        internal static Action TransformSelectedToType(TokenType type)
+        internal static void TransformSelectedToType(EncounterState encounter, List<TokenState> selectedTokens, TokenType type)
         {
-            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            foreach (TokenState token in selectedTokens)
             {
-                foreach (TokenState token in selectedTokens)
-                {
-                    token.type = type;
-                }
-            };
+                token.type = type;
+            }
         }
 
-        public static Action GainSelectedAsResource(int amount)
+        public static void GainSelectedAsResource(EncounterState encounter, List<TokenState> selectedTokens, int amount)
         {
-            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            foreach (TokenState token in selectedTokens)
             {
-                foreach (TokenState token in selectedTokens)
-                {
-                    encounter.playerState.GainResource(token.type, amount);
-                }
-            };
+                encounter.playerState.GainResource(token.type, amount);
+            }
         }
 
-        internal static Action GainRandomResource(int amount)
+        internal static void GainRandomResource(EncounterState encounter, List<TokenState> selectedTokens, int amount)
         {
-            return (EncounterState encounter, List<TokenState> selectedTokens) =>
-            {
-                encounter.playerState.GainResource(TokenTypeHelper.RandomResource(), amount);
-            };
+            encounter.playerState.GainResource(TokenTypeHelper.RandomResource(), amount);
         }
 
-        public static Action GainResource(TokenType type, int amount)
+        public static void GainResource(EncounterState encounter, List<TokenState> selectedTokens, TokenType type, int amount)
         {
-            return (EncounterState encounter, List<TokenState> selectedTokens) =>
-            {
-                encounter.playerState.GainResource(type, amount);
-            };
+            encounter.playerState.GainResource(type, amount);
         }
 
-        public static Action ApplyBuff(string buff_name)
+        public static void ApplyBuff(EncounterState encounter, List<TokenState> selectedTokens, string buff_name)
         {
-            return (EncounterState encounter, List<TokenState> selectedTokens) =>
-            {
-                encounter.playerState.ApplyBuff(buff_name);
-            };
+            encounter.playerState.ApplyBuff(buff_name);
         }
 
-        public static Action ApplyTileBuff(string buff_name) { return ApplyTileBuff(TargetPassive.GetPassive(buff_name)); }
-        public static Action ApplyTileBuff(TargetPassive buff)
+        public static void ApplyTileBuff(EncounterState encounter, List<TokenState> selectedTokens, string buff_name)
         {
-            return (EncounterState encounter, List<TokenState> selectedTokens) =>
-            {
-                foreach (TokenState token in selectedTokens)
-                {
-                    token.tile.ApplyBuff(buff);
-                }
-            };
+            ApplyTileBuff(encounter, selectedTokens, TargetPassive.GetPassive(buff_name));
         }
 
-        public static Action ApplyTokenBuff(string buff_name) { return ApplyTileBuff(TargetPassive.GetPassive(buff_name)); }
-        public static Action ApplyTokenBuff(TargetPassive buff)
+        public static void ApplyTileBuff(EncounterState encounter, List<TokenState> selectedTokens, TargetPassive buff)
         {
-            return (EncounterState encounter, List<TokenState> selectedTokens) =>
+            foreach (TokenState token in selectedTokens)
             {
-                foreach (TokenState token in selectedTokens)
-                {
-                    token.ApplyBuff(buff);
-                }
-            };
+                token.tile.ApplyBuff(buff);
+            }
+        }
+
+        public static void ApplyTokenBuff(EncounterState encounter, List<TokenState> selectedTokens, string buff_name)
+        {
+            ApplyTileBuff(encounter, selectedTokens, TargetPassive.GetPassive(buff_name));
+        }
+
+        public static void ApplyTokenBuff(EncounterState encounter, List<TokenState> selectedTokens, TargetPassive buff)
+        {
+            foreach (TokenState token in selectedTokens)
+            {
+                token.ApplyBuff(buff);
+            }
         }
     }
 }

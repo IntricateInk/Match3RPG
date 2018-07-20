@@ -17,6 +17,9 @@ namespace Match3.UI
         private Text label;
 
         [SerializeField]
+        private Text energyLabel;
+
+        [SerializeField]
         private Text resourceLabel;
 
         [SerializeField]
@@ -34,6 +37,12 @@ namespace Match3.UI
             set { this.resourceLabel.text = value; }
         }
         
+        public string energyCost
+        {
+            get { return this.energyLabel.text; }
+            set { this.energyLabel.text = value; }
+        }
+
         private ITooltip _tooltip;
         internal override ITooltip tooltip
         {

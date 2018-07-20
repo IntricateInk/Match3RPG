@@ -28,6 +28,6 @@ public class TestMenuScript : MonoBehaviour {
 
     public void Test()
     {
-        EncounterState.NewEncounter(EncounterSheet.TEST_1);
+        EncounterState.NewEncounter(EncounterSheet.AllEncounters[0]);
     }
 }
