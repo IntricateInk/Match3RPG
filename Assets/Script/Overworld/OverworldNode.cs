@@ -9,6 +9,7 @@ public class OverworldNode {
 
     public EncounterSheet _encounterSheet { get; private set; } // link to encounter object
     public enum nodeType {
+        START,
         MOB,
         BOSS,
         SHOP,
@@ -21,13 +22,19 @@ public class OverworldNode {
 
     public nodeType _nodeType {get; private set;}
     private bool obfuscated;
-   
+
+    private int xIndex; // public?
+    private int yIndex; // public?
+
+    public int fromEdge;
+    public int toEdge;
 
 
     // constructor
     public OverworldNode (nodeType type)
     {
         this._nodeType = type;
+        // TODO randomize encounter  sheet choice here
         this._encounterSheet = EncounterSheet.TEST_1;
     }
 
@@ -35,9 +42,13 @@ public class OverworldNode {
     public static List<nodeType> FetchOverworldNodeTypes(int depth, int maxDepth)
     {
        
+        if (depth == 0)
+        {
+            return new List<nodeType> { nodeType.START };
+        }
 
         // Only boss on the last node
-        if (depth == maxDepth)
+        if (depth == maxDepth - 1)
         {
             return new List<nodeType> { nodeType.BOSS };
         }
@@ -50,18 +61,22 @@ public class OverworldNode {
         }
 
         // Only rest site before boss
-        if (depth > maxDepth)
+        if (depth == maxDepth - 2)
         {
             return new List<nodeType> { nodeType.REST };
         }
 
         // else allow everything
-        nodeType[] types = (nodeType[])System.Enum.GetValues(typeof(nodeType));
-        List<nodeType> list = new List<nodeType>(types);
-        return list;
+        return new List<nodeType> { nodeType.ELITE, nodeType.EVENT, nodeType.MOB, nodeType.REST, nodeType.SHOP };
+        //nodeType[] types = (nodeType[])System.Enum.GetValues(typeof(nodeType));
+        //List<nodeType> list = new List<nodeType>(types);
+        //return list;
     }
 
+    public void attachEdges()
+    {
 
+    }
 
     public void LoadLevel()
     {

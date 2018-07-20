@@ -10,8 +10,23 @@ public class OverworldManager : MonoBehaviour
     // singleton access
     private static OverworldManager _instance;
     private static OverworldMap _map { get; set; }
-    //public GameObject buttonPrefab;
-    private int score;
+
+    // map setting configs
+    [SerializeField]
+    private int mapWidth;
+    [SerializeField]
+    private int mapDepth;
+    [SerializeField]
+    private int branches;
+
+    [SerializeField]
+    private GameObject buttonPrefab;
+    [SerializeField]
+    private GameObject mapParent;
+    
+    private int levelIndex;
+
+
 
     // constructor
     void Start()
@@ -46,15 +61,31 @@ public class OverworldManager : MonoBehaviour
 
 
 
-    public static OverworldMap createOverworld()
+    public OverworldMap createOverworld()
     {
-        OverworldMap map = new OverworldMap();
-        bool isGenerateSuccessful = map.generateLevel();
-        // show map
 
-        if (isGenerateSuccessful)
+
+        OverworldMap map = new OverworldMap(this.mapDepth, this.mapWidth, this.branches);
+
+
+        // show map, might need to move to a different function
+        if (buttonPrefab == null || mapParent == null)
         {
-           
+            throw new System.Exception("No prefab attached, pleae attach prefab to OverWorldManager script");
+        }
+
+
+
+        for (int i = 0; i < map.depth + 1; i++)
+        {
+            for (int j = 0; j < map.width; j++)
+            {
+                int i0 = i;
+                int j0 = j;
+                Button button = Instantiate<GameObject>(buttonPrefab, mapParent.transform).GetComponent<Button>();
+                button.GetComponentInChildren<Text>().text = map.levelMap[i, j]._nodeType.ToString();
+                button.onClick.AddListener(() => this.loadLevel(i0, j0));
+            }
         }
         
         return map;
@@ -62,9 +93,10 @@ public class OverworldManager : MonoBehaviour
 
    
 
-    public void loadLevel(int index)
+    public void loadLevel(int i,  int j)
     {
-        _map.nodeList[index].LoadLevel();
+        Debug.Log(i + " , " +j);
+        _map.levelMap[i, j].LoadLevel();
     }
     
 
