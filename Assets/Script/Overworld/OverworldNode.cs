@@ -86,33 +86,28 @@ public class OverworldNode
 
     public void LoadLevel()
     {
-        EncounterState.NewEncounter(_encounterSheet);
+        if (_nodeType != nodeType.REST && _nodeType != nodeType.START)
+        {
+            EncounterState.NewEncounter(_encounterSheet);
+        }
     }
 
     public EncounterSheet assignEncounter(nodeType type)
     {
         switch (type)
         {
-
             case nodeType.MOB:
                 return EncounterSheet.AllEncounters.RandomChoice();
-                break;
             case nodeType.SHOP:
                 return EncounterSheet.AllEncounters.RandomChoice();
-                break;
             case nodeType.ELITE:
                 return EncounterSheet.AllEncounters.RandomChoice();
-                break;
             case nodeType.BOSS:
                 return EncounterSheet.AllEncounters.RandomChoice();
-                break;
             case nodeType.EVENT:
                 return EncounterSheet.AllEncounters.RandomChoice();
-                break;
             default:
                 return null;
-                break;
         }
-
     }
 }

@@ -99,7 +99,7 @@ public class OverworldManager : MonoBehaviour
 
     public void loadLevel(int i,  int j)
     {
-        Debug.Log(i + " , " +j);
+        //Debug.Log(i + " , " +j);
         _map.levelMap[i, j].LoadLevel();
     }
     
