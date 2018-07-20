@@ -18,7 +18,7 @@ namespace Match3.UI.Animation
         private readonly int y;
         private readonly bool is_selected;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             manager.board.tokens[x, y].is_selected = is_selected;
         }

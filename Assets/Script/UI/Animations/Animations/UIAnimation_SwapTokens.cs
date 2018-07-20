@@ -19,8 +19,6 @@ namespace Match3.UI.Animation
             this.isDone = false;
         }
 
-        public bool isDone { get; private set; }
-
         private readonly int x0;
         private readonly int y0;
         private readonly int x1;
@@ -32,7 +30,7 @@ namespace Match3.UI.Animation
         UITokenController token0;
         UITokenController token1;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             if (this.t == 0f)
             {

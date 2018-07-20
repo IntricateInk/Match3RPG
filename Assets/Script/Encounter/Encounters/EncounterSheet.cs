@@ -34,6 +34,8 @@ namespace Match3.Encounter.Encounter
             this.mainObjectives  = EncounterObjective.GetObjective(mainObjectives);
             this.bonusObjectives = EncounterObjective.GetObjective(bonusObjectives);
             this.passives = passives;
+
+            _AllEncounters.Add(name, this);
         }
 
         internal bool MainObjectiveMet(EncounterState encounter)
@@ -49,15 +51,10 @@ namespace Match3.Encounter.Encounter
 
             return false;
         }
+        
+        // Factory
 
-        internal void CheckBonusObjectives(EncounterState encounter)
-        {
-            foreach (EncounterObjective objective in this.bonusObjectives)
-            {
-                if (objective.isCompleted(encounter.playerState))
-                {
-                }
-            }
-        }
+        private static Dictionary<string, EncounterSheet> _AllEncounters = new Dictionary<string, EncounterSheet>();
+        public static List<EncounterSheet> AllEncounters { get { return new List<EncounterSheet>(_AllEncounters.Values); } }
     }
 }

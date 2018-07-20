@@ -16,7 +16,7 @@ namespace Match3.UI.Animation
         private readonly TokenType type;
         private readonly int amount;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             manager.RaiseResourceChange(type, amount);
         }

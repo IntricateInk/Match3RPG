@@ -15,7 +15,7 @@ namespace Match3.UI.Animation
 
         private readonly float time;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             manager.RaiseTimeChange(time);
         }

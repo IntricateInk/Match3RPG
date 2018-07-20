@@ -12,10 +12,22 @@ namespace Match3.Encounter
     internal class PlayerState : EncounterSubState
     {
         private readonly int[] resources = new int[TokenTypeHelper.ResourceCount()];
+        public int[] Resources { get { return (int[])this.resources.Clone(); } }
 
-        public readonly List<TokenType> tokenList = new List<TokenType>();
         public readonly List<CharacterPassive> Passives = new List<CharacterPassive>();
         public readonly List<GameSkill> Skills = new List<GameSkill>();
+        
+        private int _Energy = 0;
+        public int Energy
+        {
+            get { return _Energy; }
+            set
+            {
+                _Energy = value;
+
+                UIAnimationManager.AddAnimation(new UIInstruction_SetEnergy(this.Energy), true);
+            }
+        }
 
         private int _Turn;
         public int Turn
@@ -30,6 +42,7 @@ namespace Match3.Encounter
         }
 
         private float _Time = 0f;
+
         public float Time {
             get { return this._Time; }
             internal set
@@ -40,11 +53,17 @@ namespace Match3.Encounter
             }
         }
 
+        public int MaximumEnergy { get { return 3; } }
+
         public PlayerState(EncounterState parent) : base(parent)
+        {
+        }
+
+        internal void Initialize()
         {
             int i = 0;
 
-            foreach (TrophySheet trophy in parent.playerSheet.trophies)
+            foreach (TrophySheet trophy in encounter.playerSheet.trophies)
             {
                 foreach (string skill_name in trophy.skills)
                 {
@@ -53,7 +72,7 @@ namespace Match3.Encounter
                     if (this.Skills.Contains(skill)) continue;
 
                     this.Skills.Add(skill);
-                    UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, skill.costString, i));
+                    UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, i));
                     i++;
                 }
 
@@ -61,40 +80,36 @@ namespace Match3.Encounter
                 {
                     CharacterPassive passive = CharacterPassive.GetPassive(passive_name);
 
-                    this.Passives.Add(passive);
-                    UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(passive));
+                    this.ApplyBuff(passive);
                 }
             }
 
-            foreach (string passive_name in parent.encounterSheet.passives)
+            foreach (string passive_name in encounter.encounterSheet.passives)
             {
                 CharacterPassive passive = CharacterPassive.GetPassive(passive_name);
 
-                this.Passives.Add(passive);
-                UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(passive));
+                this.ApplyBuff(passive);
             }
         }
 
-        public void ResetToken()
-        {
-            this.tokenList.AddRange(this.encounter.playerSheet.tokenDrawList);
-            this.tokenList.Shuffle();
-        }
-
-        public TokenType DrawToken()
-        {
-            if (this.tokenList.Count == 0) this.ResetToken();
-
-            TokenType token = this.tokenList[0];
-            this.tokenList.RemoveAt(0);
-            return token;
-        }
-        
         public void ApplyBuff(string buff_name) { ApplyBuff(CharacterPassive.GetPassive(buff_name)); }
-
         public void ApplyBuff(CharacterPassive buff)
         {
             this.Passives.Add(buff);
+            buff.OnApplyPassive(encounter, new List<TokenState>());
+            UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(buff));
+        }
+
+        public void RemoveBuff(string buff_name) { RemoveBuff(CharacterPassive.GetPassive(buff_name)); }
+        public void RemoveBuff(CharacterPassive buff)
+        {
+            buff.OnRemovePassive(encounter, new List<TokenState>());
+            this.Passives.Remove(buff);
+        }
+
+        internal void UseEnergy(int energyCost)
+        {
+            this.Energy -= energyCost;
         }
 
         public int GetResource(TokenType type)
@@ -105,6 +120,7 @@ namespace Match3.Encounter
         public void GainResource(TokenType type, int amount)
         {
             this.resources[type.AsInt()] += amount;
+            this.resources[type.AsInt()] = Mathf.Clamp(this.resources[type.AsInt()], 0, 99);
 
             UIAnimationManager.AddAnimation(new UIInstruction_UpdateResources(type, this.GetResource(type)), true);
         }

@@ -7,28 +7,30 @@ using UnityEngine.UI;
 
 namespace Match3.UI.Animation
 {
-    public interface UIInstruction
+    public abstract class UIInstruction
     {
-        void Run(UIAnimationManager manager, float dt);
+        internal abstract void Run(UIAnimationManager manager, float dt);
     }
 
-    public interface UIAnimation : UIInstruction
+    public abstract class UIAnimation : UIInstruction
     {
-        bool isDone { get; }
+        public bool isDone { get; protected set; }
+        internal float PlayTime;
+        internal bool IsShortCutPlay = false;
     }
 
     public class UIAnimation_BeginBatch : UIAnimation
     {
-        public bool isDone { get { return true; } }
-        public void Run(UIAnimationManager manager, float dt) { }
+        public UIAnimation_BeginBatch() { isDone = true; }
+        internal override void Run(UIAnimationManager manager, float dt) { }
     }
 
     public class UIAnimation_EndBatch : UIAnimation
     {
-        public bool isDone { get { return true; } }
-        public void Run(UIAnimationManager manager, float dt) { }
+        public UIAnimation_EndBatch() { isDone = true; }
+        internal override void Run(UIAnimationManager manager, float dt) { }
     }
-
+    
     public class UIAnimationManager : MonoBehaviour
     {
         // statics
@@ -47,6 +49,14 @@ namespace Match3.UI.Animation
 
         public static void AddAnimation(UIAnimation animation)
         {
+            AnimationQueue.Enqueue(animation);
+        }
+
+        public static void AddAnimation(UIAnimation animation, float play_time)
+        {
+            animation.PlayTime = play_time;
+            animation.IsShortCutPlay = true;
+
             AnimationQueue.Enqueue(animation);
         }
 
@@ -86,6 +96,9 @@ namespace Match3.UI.Animation
         internal UITextOverlayController textOverlay;
 
         [SerializeField]
+        internal UIVictoryOverlayController victoryOverlay;
+
+        [SerializeField]
         internal Transform canvas;
 
         internal static event Action<TokenType, int> OnResourceChange;
@@ -96,6 +109,9 @@ namespace Match3.UI.Animation
 
         internal static event Action<float> OnTimeChange;
         internal void RaiseTimeChange(float time) { if (OnTimeChange != null) OnTimeChange(time); }
+        
+        internal static event Action<int> OnEnergyChange;
+        internal void RaiseEnergyChange(int energy) { if (OnEnergyChange != null) OnEnergyChange(energy); }
 
         internal static int SelectedSkill = -1;
         internal static event Action<int> OnSelectedSkill;
@@ -104,65 +120,92 @@ namespace Match3.UI.Animation
             SelectedSkill = index;
             if (OnSelectedSkill != null) OnSelectedSkill(index);
         }
-
+        
         private void Update()
         {
             EncounterState.Current.TimeTick(Time.deltaTime);
-
-            while (UIAnimationManager.InstructionQueue.Count != 0)
-                UIAnimationManager.InstructionQueue.Dequeue().Run(this, Time.deltaTime);
+            ExecuteAllInstructions();
 
             // no current animation and no more animations
             if (UIAnimationManager.Current.Count == 0 && AnimationQueue.Count == 0) return;
+            
+            bool load_next_anim = true;
 
-            if (UIAnimationManager.Current.Count == 0)
-                UIAnimationManager.Current.Add(AnimationQueue.Dequeue());
-
-            while (true) {
-                bool is_all_done = true;
-
+            while (true)
+            {
                 for (int i = 0; i < UIAnimationManager.Current.Count; i++)
                 {
-                    UIAnimation current_inst = UIAnimationManager.Current[i];
-                    current_inst.Run(this, Time.deltaTime);
+                    UIAnimation current_anim = UIAnimationManager.Current[i];
+                    current_anim.Run(this, Time.deltaTime);
 
-                    if (current_inst.isDone)
+                    if (current_anim.IsShortCutPlay)
                     {
-                        UIAnimationManager.Current.RemoveAt(i);
-                        i--;
-                    } else
+                        current_anim.PlayTime -= Time.deltaTime;
+
+                        if (current_anim.PlayTime > 0)
+                        {
+                            load_next_anim = false;
+                        }
+                        else if (current_anim.isDone)
+                        {
+                            UIAnimationManager.Current.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                    else
                     {
-                        is_all_done = false;
+                        if (current_anim.isDone)
+                        {
+                            UIAnimationManager.Current.RemoveAt(i);
+                            i--;
+                        }
+                        else
+                        {
+                            load_next_anim = false;
+                        }
                     }
                 }
-                
-                if (is_all_done)
+
+                if (load_next_anim)
                 {
-                    UIAnimationManager.Current.Clear();
+                    // no more animations
                     if (AnimationQueue.Count == 0) return;
 
-                    bool is_batch = false;
-
-                    do
-                    {
-                        UIAnimation next = AnimationQueue.Dequeue();
-
-                        if (next is UIAnimation_BeginBatch)
-                        {
-                            is_batch = true;
-                        } else if (next is UIAnimation_EndBatch)
-                        {
-                            is_batch = false;
-                        } else { 
-                            UIAnimationManager.Current.Add(next);
-                        }
-                    } while (is_batch);
-                }
-                else
+                    DequeueAnimation();
+                } else
                 {
                     break;
                 }
             }
+        }
+
+        private void DequeueAnimation()
+        {
+            bool is_batch = false;
+
+            do
+            {
+                UIAnimation next = AnimationQueue.Dequeue();
+
+                if (next is UIAnimation_BeginBatch)
+                {
+                    is_batch = true;
+                }
+                else if (next is UIAnimation_EndBatch)
+                {
+                    is_batch = false;
+                }
+                else
+                {
+                    UIAnimationManager.Current.Add(next);
+                }
+            } while (is_batch);
+        }
+
+        private void ExecuteAllInstructions()
+        {
+            while (UIAnimationManager.InstructionQueue.Count != 0)
+                UIAnimationManager.InstructionQueue.Dequeue().Run(this, Time.deltaTime);
         }
     }
 }

@@ -1,2 +1,15 @@
 uid,name,icon,tooltip,lst_mainObjectives,lst_bonusObjectives,lst_passives
-TEST_1,Brawl,skills/bash,LOTS AND LOTS OF FISTS?,TEST_2,"TEST_1, TEST_3, TEST_4",
+mole_1,Minor Mole Infestation,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_1_main_agi, mole_1_main_cha, mole_main_loss",mole_bonus_luk,Mole Infestation! (2)
+mole_2,Mole Infestation,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_2_main_agi, mole_2_main_cha, mole_main_loss",mole_bonus_luk,Mole Infestation! (3)
+mole_3,Major Mole Infestation!,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_3_main_agi, mole_3_main_cha, mole_main_loss",mole_bonus_luk,Mole Infestation! (4)
+phantom_str,Phantom Berserker,tokens/str,The restless spirit of a dead warrior haunts you.,"phantom_main_agi_str_win, phantom_main_str_loss, phantom_main_agi_loss, phantom_main_turn_loss",,Phantom Berserker
+phantom_agi,Phantom Swindler,tokens/agi,The restless spirit of a dead rogue haunts you.,"phantom_main_agi_int_win, phantom_main_agi_loss, phantom_main_int_loss, phantom_main_turn_loss",,Phantom Swindler
+phantom_int,Phantom Navigator,tokens/int,The restless spirit of a dead navigator haunts you.,"phantom_main_int_cha_win, phantom_main_cha_loss, phantom_main_int_loss, phantom_main_turn_loss",,Phantom Navigator
+phantom_luk,Phantom Jester,tokens/luk,The restless spirit of a dead jester haunts you.,"phantom_main_agi_luk_win, phantom_main_agi_loss, phantom_main_luk_loss, phantom_main_turn_loss",,Phantom Jester
+phantom_cha,Phantom Noble,tokens/cha,The restless spirit of a dead noble haunts you.,"phantom_main_cha_luk_win, phantom_main_cha_loss, phantom_main_luk_loss, phantom_main_turn_loss",,Phantom Noble
+monkey_1,Monkey Forest,tokens/agi,A forest full of monkeys…… great,"monkey_luk_win, monkey_1_stragi_win, monkey_1_intcha_win, monkey_1_loss",,Monkey Jungle
+monkey_2,Monkey Jungle,tokens/agi,A forest full of monkeys…… great,"monkey_luk_win, monkey_2_stragi_win, monkey_2_intcha_win, monkey_2_loss",,Monkey Jungle
+monkey_3,Monkey Thicklet,tokens/agi,A forest full of monkeys…… great,"monkey_luk_win, monkey_3_stragi_win, monkey_3_intcha_win, monkey_3_loss",,Monkey Jungle
+wildfire_1,Small Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_1_turn_win, wildfire_1_agi_loss",,Small Forest Fire!
+wildfire_2,Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_2_turn_win, wildfire_2_agi_loss",,Forest Fire!
+wildfire_3,Blazing Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_3_turn_win, wildfire_3_agi_loss",,Blazing Forest Fire!

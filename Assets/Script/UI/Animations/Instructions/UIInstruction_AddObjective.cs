@@ -18,7 +18,7 @@ namespace Match3.UI.Animation
         private readonly bool isMain;
         private readonly EncounterObjective objective;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             if (isMain)
                 manager.mainObjectives.AddObjective(objective);

@@ -17,8 +17,6 @@ namespace Match3.UI.Animation
             this.animation_duration = animation_duration;
         }
 
-        public bool isDone { get; private set; }
-
         private readonly int new_x;
         private readonly int new_y;
         private readonly int x;
@@ -28,7 +26,7 @@ namespace Match3.UI.Animation
         private UITokenController token;
         private float t = 0f;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             if (t == 0f)
                 this.token = manager.board.tokens[this.x, this.y];

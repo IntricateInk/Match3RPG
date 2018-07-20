@@ -19,7 +19,10 @@ namespace Match3.Encounter
                 UIAnimationManager.AddAnimation(new UIInstruction_SelectSkill(selectedSkillIndex));
             }
         }
+
         public GameSkill selectedSkill { get { return this.encounter.playerState.Skills[this.selectedSkillIndex]; } }
+
+        internal bool IsBlockInput = false;
 
         public InputState(EncounterState parent) : base(parent)
         {
@@ -29,16 +32,20 @@ namespace Match3.Encounter
 
         internal void SelectToken(TokenState selected, bool isSelected)
         {
+            if (IsBlockInput) return;
+
             if (isSelected && !this.selectedTokens.Contains(selected))
                 this.selectedTokens.Add(selected);
             else if (!isSelected && this.selectedTokens.Contains(selected))
                 this.selectedTokens.Remove(selected);
-            
+
             selected.isSelected = isSelected;
         }
 
         internal bool InputToken(TokenState selected)
         {
+            if (IsBlockInput) return false;
+
             if (this.selectedSkillIndex == -1)
             {
                 UIAnimationManager.AddAnimation(new UIInstruction_OverlayText("Select a skill first!"));
@@ -50,23 +57,32 @@ namespace Match3.Encounter
             return this.selectedSkill.ShouldRun(this.selectedTokens);
         }
 
-        internal void DoSkill()
+        internal void CheckIfCanPaySkill()
         {
-            foreach (TokenState token in this.selectedTokens)
-            {
-                token.isSelected = false;
-            }
-            this.selectedSkill.Run(this.encounter);
-            this.selectedTokens.Clear();
+            if (selectedSkillIndex == -1) return;
 
             if (!this.selectedSkill.CanPayCost(this.encounter))
             {
                 this.selectedSkillIndex = -1;
             }
         }
+
+        internal void DoSkill()
+        {
+            if (IsBlockInput) return;
+
+            foreach (TokenState token in this.selectedTokens)
+            {
+                token.isSelected = false;
+            }
+            this.selectedSkill.Run(this.encounter);
+            this.selectedTokens.Clear();
+        }
         
         internal void SetSkill(int skill_index)
         {
+            if (IsBlockInput) return;
+
             if (this.encounter.playerState.Skills[skill_index].CanPayCost(this.encounter))
             {
                 foreach (TokenState token in this.selectedTokens)

@@ -18,7 +18,7 @@ namespace Match3.UI.Animation
         private readonly int y;
         private readonly TokenType type;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             manager.board.tokens[x, y].SetType(type);
         }

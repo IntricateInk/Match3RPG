@@ -14,16 +14,14 @@ namespace Match3.UI.Animation
 
             this.isDone = false;
         }
-
-        public bool isDone { get; private set; }
-
+        
         private readonly TokenType?[,] tokens;
         private readonly float animation_duration;
 
         private UITokenController[,] uiTokens;
         private float t = 0f;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             float fallHeight = manager.board.GetComponent<RectTransform>().sizeDelta.y;
 

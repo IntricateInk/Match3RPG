@@ -26,8 +26,6 @@ namespace Match3.UI.Animation
             this.isDone = false;
         }
 
-        public bool isDone { get; private set; }
-
         private readonly string animation_name;
         private readonly int x;
         private readonly int y;
@@ -36,7 +34,7 @@ namespace Match3.UI.Animation
 
         private Animator animation = null;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             if (animation == null)
             {

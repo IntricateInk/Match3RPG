@@ -14,14 +14,11 @@ namespace Match3.Character
 			tooltip: "A warrior's blood",
 
 			skills: new string[] {
-"Bash",
-"Sleight",
-"Parasitic Burst"
+"Bash"
 },
 
 			passives: new string[] { 
-"Strong",
-"Intelligent"
+"Strong"
  }
 
 		);
@@ -47,10 +44,12 @@ namespace Match3.Character
 			tooltip: "Merchants ALWAYS have gold",
 
 			skills: new string[] {
-"Sleight"
+"Socialize"
 },
 
-			passives: new string[] {  }
+			passives: new string[] { 
+"Charismatic"
+ }
 
 		);
 
@@ -60,10 +59,12 @@ namespace Match3.Character
 			tooltip: "To know where to go, you must first record where you are",
 
 			skills: new string[] {
-"Sleight"
+"Strategize"
 },
 
-			passives: new string[] {  }
+			passives: new string[] { 
+"Intelligent"
+ }
 
 		);
 
@@ -73,33 +74,113 @@ namespace Match3.Character
 			tooltip: "Fortune favors the fool.",
 
 			skills: new string[] {
-"Sleight"
+"Rainbow"
 },
 
-			passives: new string[] {  }
+			passives: new string[] { 
+"Lucky"
+ }
 
 		);
 
-		public static TrophySheet HONOR = new TrophySheet(
-			name: "Honor",
+		public static TrophySheet CITY_KEY = new TrophySheet(
+			name: "Key to the City",
 			sprite: "tokens/cha",
-			tooltip: "Glory and honor!",
-
-			skills: new string[] {
-"Socialize"
-},
-
-			passives: new string[] {  }
-
-		);
-
-		public static TrophySheet BLOODTHRISTY = new TrophySheet(
-			name: "Bloodthristy",
-			sprite: "tokens/cha",
-			tooltip: "Blood for blood",
+			tooltip: "You are the major!?",
 
 			skills: new string[] {
 "Mass Influence"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet HEIRLOOM = new TrophySheet(
+			name: "Heirloom",
+			sprite: "tokens/cha",
+			tooltip: "A generic item passed down for generations. How boring.",
+
+			skills: new string[] {
+"Influence"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet MOLE_REWARD_1 = new TrophySheet(
+			name: "Tamed Mole?",
+			sprite: "tokens/int",
+			tooltip: "Can you REALLY tame a mole?",
+
+			skills: new string[] {
+"Mine"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet GOLDEN_COIN = new TrophySheet(
+			name: "Golden Coin",
+			sprite: "tokens/luk",
+			tooltip: "It's your lucky day!",
+
+			skills: new string[] {
+"Lucky Find"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet PLYWOOD_BOW = new TrophySheet(
+			name: "Plywood Bow",
+			sprite: "tokens/agi",
+			tooltip: "It is said that this bow is so flexible, it shoots arrows that bend…… are you really that guillble?",
+
+			skills: new string[] {
+"Ricochet"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet PARASITE = new TrophySheet(
+			name: "Parasite",
+			sprite: "tokens/agi",
+			tooltip: "Symbiosis is a thing? Is that you or the parasite speaking anyway.",
+
+			skills: new string[] {
+"Parasitic Burst"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet HEAVY_AXE = new TrophySheet(
+			name: "Heavy Axe",
+			sprite: "tokens/str",
+			tooltip: "Great for chopping!",
+
+			skills: new string[] {
+"Chop!"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet HEAVY_BLADE = new TrophySheet(
+			name: "Heavy Blade",
+			sprite: "tokens/str",
+			tooltip: "Great for slicing!",
+
+			skills: new string[] {
+"Slice!"
 },
 
 			passives: new string[] {  }

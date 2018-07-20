@@ -14,7 +14,7 @@ namespace Match3.UI.Animation
 
         private readonly int turns;
 
-        public void Run(UIAnimationManager manager, float dt)
+        internal override void Run(UIAnimationManager manager, float dt)
         {
             manager.RaiseTurnChange(turns);
         }

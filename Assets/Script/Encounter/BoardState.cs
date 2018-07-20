@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Match3.Encounter
@@ -9,7 +10,7 @@ namespace Match3.Encounter
     public class BoardState : EncounterSubState
     {
         public TileState[,] tiles;
-        
+
         public int sizeX { get { return this.tiles.GetLength(0); } }
         public int sizeY { get { return this.tiles.GetLength(1); } }
         
@@ -26,10 +27,9 @@ namespace Match3.Encounter
             }
 
             this.fillBoard();
-            this.HighlightMatching();
         }
 
-        internal void DoTurn()
+        internal void DoTurnEnd()
         {
             this.DoTokenFall();
 
@@ -41,19 +41,8 @@ namespace Match3.Encounter
             UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
 
             this.DoTokenFall();
-            this.HighlightMatching();
 
             this.encounter.playerState.Turn++;
-        }
-
-        private void HighlightMatching()
-        {
-            List<TokenState> matches = this.GetMatching();
-
-            foreach (TokenState token in matches)
-            {
-                token.isMatching = true;
-            }
         }
 
         private List<TokenState> GetMatching()
@@ -82,8 +71,8 @@ namespace Match3.Encounter
 
             return tokens_matched;
         }
-        
-        private void DoTokenFall()
+
+        internal void DoTokenFall()
         {
             TokenType?[,] types = new TokenType?[this.sizeX, this.sizeY];
 
@@ -115,7 +104,7 @@ namespace Match3.Encounter
 
                 while (first_empty < this.sizeY)
                 {
-                    this.tiles[x, first_empty].token = new TokenState(this, this.encounter.playerState.DrawToken(), x, first_empty);
+                    this.tiles[x, first_empty].token = new TokenState(this, this.DrawToken(), x, first_empty);
                     types[x, first_empty] = this.tiles[x, first_empty].token.type;
                     first_empty++;
                 }
@@ -124,7 +113,7 @@ namespace Match3.Encounter
             UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
             UIAnimationManager.AddAnimation(new UIAnimation_DropTokens(types));
         }
-
+        
         private void fillBoard()
         {
             TokenType?[,] types = new TokenType?[this.sizeX, this.sizeY];
@@ -132,12 +121,60 @@ namespace Match3.Encounter
             for (int x = 0; x < this.sizeX; x++)
                 for (int y = 0; y < this.sizeY; y++)
                 {
-                    this.tiles[x, y].token = new TokenState(this, this.encounter.playerState.DrawToken(), x, y);
+                    this.tiles[x, y].token = new TokenState(this, this.DrawToken(), x, y);
                     types[x, y] = this.tiles[x, y].token.type;
                 }
 
             UIAnimationManager.AddAnimation( new UIAnimation_DropTokens(types) );
         }
 
+        public readonly List<TokenType> tokenList = new List<TokenType>();
+
+        public void ResetToken()
+        {
+            this.tokenList.AddRange(this.encounter.playerSheet.tokenDrawList);
+            this.tokenList.Shuffle();
+        }
+
+        public TokenType DrawToken()
+        {
+            if (this.tokenList.Count == 0) this.ResetToken();
+
+            TokenType token = this.tokenList[0];
+            this.tokenList.RemoveAt(0);
+            return token;
+        }
+
+        // Helper Methods
+
+        internal TokenState GetToken(int x, int y)
+        {
+            return this.tiles[x, y].token;
+        }
+
+        internal List<TokenState> GetTokensExcluding(params TokenType[] types)
+        {
+            return GetTokens(TokenTypeHelper.AllResource().Except(types).ToArray());
+        }
+
+        internal List<TokenState> GetTokens(params TokenType[] types)
+        {
+            if (types.Length == 0)
+            {
+                types = TokenTypeHelper.AllResource();
+            }
+
+            List<TokenState> tokens = new List<TokenState>();
+
+            foreach (TileState tile in this.tiles)
+            {
+                if (Array.IndexOf(types, tile.token.type) != -1)
+                {
+                    tokens.Add(tile.token);
+                }
+            }
+            return tokens;
+        }
+        
     }
 }

@@ -26,7 +26,7 @@ namespace Match3.Encounter
     {
         
         public static EncounterState Current { get; private set; }
-
+        
         public PlayerSheet playerSheet { get; private set; }
         public EncounterSheet encounterSheet { get; private set; }
         
@@ -50,10 +50,12 @@ namespace Match3.Encounter
             this.encounterSheet = encounterSheet;
             this.playerSheet = playerSheet;
 
-            this.playerState = new PlayerState(this);
+            this.inputState = new InputState(this);
             this.boardState  = new BoardState(this, 8, 8);
-            this.inputState  = new InputState(this);
-            
+            this.playerState = new PlayerState(this);
+
+            this.playerState.Initialize();
+
             foreach (EncounterObjective objective in this.encounterSheet.mainObjectives)
             {
                 UIAnimationManager.AddAnimation(new UIInstruction_AddObjective(objective, true));
@@ -69,7 +71,7 @@ namespace Match3.Encounter
 
             this.DoEncounterStart();
         }
-
+        
         // private
 
         private void DoEncounterStart ()
@@ -79,9 +81,11 @@ namespace Match3.Encounter
 
         private void DoTurnStart()
         {
+            this.playerState.Energy = this.playerState.MaximumEnergy;
+
             foreach (CharacterPassive passive in playerState.Passives)
             {
-                passive.OnTurnStart(this, null);
+                passive.OnTurnStart(this, new List<TokenState>());
             }
 
             foreach (TileState tile in this.boardState.tiles)
@@ -99,41 +103,108 @@ namespace Match3.Encounter
                     passive.OnTurnStart(this, target);
                 }
             }
+            this.boardState.DoTokenFall();
+
+            this.inputState.CheckIfCanPaySkill();
+            this.inputState.IsBlockInput = false;
         }
 
-        private void DoTurn()
+        private void DoTurnEnd()
         {
-            this.inputState.DoSkill();
+            this.inputState.IsBlockInput = true;
+            this.boardState.DoTokenFall();
+            this.boardState.DoTurnEnd();
 
-            this.boardState.DoTurn();
+            foreach (CharacterPassive passive in playerState.Passives)
+            {
+                passive.OnTurnEnd(this, new List<TokenState>());
+            }
 
-            this.encounterSheet.CheckBonusObjectives(this);
+            List<TokenState> tokens = new List<TokenState>();
+            List<TargetPassive> passives = new List<TargetPassive>();
+
+            foreach (TileState tile in this.boardState.tiles)
+            {
+                List<TokenState> target = new List<TokenState>();
+                target.Add(tile.token);
+
+                foreach (TargetPassive passive in tile.Passives)
+                {
+                    tokens.Add(tile.token);
+                    passives.Add(passive);
+                }
+                
+                foreach (TargetPassive passive in tile.token.Passives)
+                {
+                    tokens.Add(tile.token);
+                    passives.Add(passive);
+                }
+            }
+
+            for (int i = 0; i < tokens.Count; i++)
+            {
+                TokenState token = tokens[i];
+                TargetPassive passive = passives[i];
+
+                passive.OnTurnEnd(this, new List<TokenState>() { token });
+            }
+
+            this.boardState.DoTokenFall();
 
             if (this.encounterSheet.MainObjectiveMet(this))
             {
                 this.DoEncounterEnd();
+                return;
             }
 
             this.DoTurnStart();
+            this.boardState.DoTokenFall();
+        }
+
+        private void DoSkill()
+        {
+            this.inputState.DoSkill();
+
+            this.inputState.CheckIfCanPaySkill();
         }
 
         private void DoEncounterEnd()
         {
-            UIAnimationManager.ClearAnimation();
+            this.inputState.IsBlockInput = true;
 
-            foreach (EncounterObjective obj in encounterSheet.mainObjectives) {
-                if (obj.isCompleted(playerState)) playerSheet.GainReward(obj);
+            int gold_reward = 0;
+            int exp_reward = 0;
+            List<string> trophies = new List<string>();
+            List<EncounterObjective> completed = new List<EncounterObjective>();
+
+            foreach (EncounterObjective obj in encounterSheet.mainObjectives)
+            {
+                if (obj.isCompleted(playerState)) completed.Add(obj);
             }
 
             foreach (EncounterObjective obj in encounterSheet.bonusObjectives)
             {
-                if (obj.isCompleted(playerState)) playerSheet.GainReward(obj);
+                if (obj.isCompleted(playerState)) completed.Add(obj);
             }
 
-            OverworldState.Current.GoToOverworld();
+            foreach (EncounterObjective obj in completed)
+            {
+                gold_reward += obj.GoldReward;
+                exp_reward += obj.ExpReward;
+                trophies.AddRange(obj.TrophyReward);
+
+                playerSheet.GainReward(obj);
+            }
+
+            UIAnimationManager.AddAnimation(new UIInstruction_ShowEncounterSummary(gold_reward, exp_reward, trophies.ToArray()));
         }
 
         // public to UI classes
+
+        internal void ReturnToOverworld()
+        {
+            OverworldState.Current.GoToOverworld();
+        }
 
         public void TimeTick(float deltaTime)
         {
@@ -144,7 +215,7 @@ namespace Match3.Encounter
         {
             if (this.inputState.InputToken(this.boardState.tiles[x, y].token))
             {
-                this.DoTurn();
+                this.DoSkill();
             }
         }
 
@@ -152,5 +223,11 @@ namespace Match3.Encounter
         {
             this.inputState.SetSkill(skill_index);
         }
+
+        internal void EndTurn()
+        {
+            this.DoTurnEnd();
+        }
+
     }
 }
