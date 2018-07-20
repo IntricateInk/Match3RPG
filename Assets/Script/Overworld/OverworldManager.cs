@@ -60,23 +60,7 @@ public class OverworldManager : MonoBehaviour
         return map;
     }
 
-    OverworldNode.nodeType[,] GenerateLevelMap(int numberOfLevels = 10, int branches = 3)
-    {
-        List<string> overWorldNodeTypes = OverworldNode.FetchOverworldNodeTypes();
-        OverworldNode.nodeType[,] levelMap = new OverworldNode.nodeType[numberOfLevels, branches];
-
-        // By design, we are hardcoding the first and last few levels
-
-
-
-        for (int i = 1; i < numberOfLevels - 1; i++)
-        {
-
-        }
-
-        levelMap[numberOfLevels, 2] = OverworldNode.nodeType.BOSS;
-        return levelMap;
-    }
+   
 
     public void loadLevel(int index)
     {

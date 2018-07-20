@@ -59,7 +59,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\a.cs" />
     <Compile Include="Assets\Script\Encounter\BoardState.cs" />
     <Compile Include="Assets\Script\Encounter\Encounters\EncounterObjective.cs" />
     <Compile Include="Assets\Script\Encounter\Encounters\EncounterSheet.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="Assets\Script\Generated\output\EncounterSheet.cs" />
     <Compile Include="Assets\Script\Generated\output\TrophySheet.cs" />
     <Compile Include="Assets\Script\ITooltip.cs" />
+    <Compile Include="Assets\Script\Overworld\OverworldEdge.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldManager.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldMap.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldNode.cs" />
@@ -126,6 +126,7 @@
     <Compile Include="Assets\Script\UI\UITooltipController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyListController.cs" />
+    <Compile Include="Assets\Script\Utility\EnumLister.cs" />
     <Compile Include="Assets\Script\Utility\List Extensions.cs" />
     <None Include="Assets\Script\Generated\EncounterObjective_item.txt" />
     <None Include="Assets\Script\Generated\EncounterSheet_item.txt" />

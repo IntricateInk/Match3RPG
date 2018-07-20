@@ -5,7 +5,7 @@ using Match3.Encounter.Encounter;
 using UnityEngine.SceneManagement;
 using Match3.Encounter;
 
-public class OverworldMap
+public class OverworldMap : MonoBehaviour
  {
 
     public List<OverworldNode> nodeList = null;
@@ -67,6 +67,37 @@ public class OverworldMap
        
     }
 
+    void isOnLevel(int level)
+    {
+        for (int i = 0; i < nodeList.Count; i++)
+        {
+               
+        }
+    }
 
+    public OverworldNode.nodeType[,] GenerateLevelMap(int depth = 10, int width = 7, int branches = 4)
+    {
+        
+        OverworldNode.nodeType[,] levelMap = new OverworldNode.nodeType[depth, width];
+
+        
+        for (int i = 1; i < depth - 1; i++)
+        {
+            List<OverworldNode.nodeType> overWorldNodeTypes = OverworldNode.FetchOverworldNodeTypes(i, depth);
+            for (int j = 1; j < depth; j++)
+            {
+                levelMap[i, j] = overWorldNodeTypes.RandomChoice();
+
+
+            }
+        }
+
+
+        // last one is a boss
+        levelMap[depth, 2] = OverworldNode.nodeType.BOSS;
+        return levelMap;
+    }
+
+    public List
 }
 
