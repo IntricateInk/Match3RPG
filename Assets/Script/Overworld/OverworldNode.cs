@@ -36,8 +36,12 @@ public class OverworldNode
     public OverworldNode(nodeType type)
     {
         this._nodeType = type;
+
         // TODO randomize encounter  sheet choice here
-        this._encounterSheet = EncounterSheet.AllEncounters.RandomChoice();
+
+
+
+        this._encounterSheet = assignEncounter(_nodeType);
     }
 
 
@@ -83,5 +87,32 @@ public class OverworldNode
     public void LoadLevel()
     {
         EncounterState.NewEncounter(_encounterSheet);
+    }
+
+    public EncounterSheet assignEncounter(nodeType type)
+    {
+        switch (type)
+        {
+
+            case nodeType.MOB:
+                return EncounterSheet.AllEncounters.RandomChoice();
+                break;
+            case nodeType.SHOP:
+                return EncounterSheet.AllEncounters.RandomChoice();
+                break;
+            case nodeType.ELITE:
+                return EncounterSheet.AllEncounters.RandomChoice();
+                break;
+            case nodeType.BOSS:
+                return EncounterSheet.AllEncounters.RandomChoice();
+                break;
+            case nodeType.EVENT:
+                return EncounterSheet.AllEncounters.RandomChoice();
+                break;
+            default:
+                return null;
+                break;
+        }
+
     }
 }
