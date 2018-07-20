@@ -74,6 +74,10 @@ public class OverworldManager : MonoBehaviour
             throw new System.Exception("No prefab attached, pleae attach prefab to OverWorldManager script");
         }
 
+        // dynamically assign button size
+        Vector2 rectTransformSize = mapParent.GetComponent<RectTransform>().sizeDelta;
+        Vector2 buttonSize = new Vector2(rectTransformSize.x / map.width, rectTransformSize.y / map.depth);
+        mapParent.GetComponent<GridLayoutGroup>().cellSize = buttonSize;
 
 
         for (int i = 0; i < map.depth + 1; i++)
