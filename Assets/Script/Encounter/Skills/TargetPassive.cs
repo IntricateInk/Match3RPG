@@ -20,12 +20,13 @@ namespace Match3.Encounter.Effect.Passive
             GameEffect.Action OnDestroy = null
         ) : base(name, sprite, tooltip, OnTurnStart, OnTurnEnd, OnApplyPassive, OnRemovePassive, OnDestroy)
         {
+            if (_AllPassives == null) _AllPassives = new Dictionary<string, TargetPassive>();
             _AllPassives.Add(name, this);
         }
-        
+
         // Factory Methods
 
-        private static Dictionary<string, TargetPassive> _AllPassives = new Dictionary<string, TargetPassive>();
+        private static Dictionary<string, TargetPassive> _AllPassives;
 
         public static TargetPassive GetPassive(string name)
         {

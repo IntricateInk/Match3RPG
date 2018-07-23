@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
+using Match3.UI.Animation;
 
 namespace Match3.Encounter
 {
@@ -42,18 +43,37 @@ namespace Match3.Encounter
         
         // Private UI methods
         
-        internal void ApplyBuff(string buff_name) { ApplyBuff(TargetPassive.GetPassive(buff_name)); }
         internal void ApplyBuff(TargetPassive buff)
         {
-            this.Passives.Add(buff);
-            buff.OnApplyPassive(this.board.encounter, new List<TokenState>() { this.token });
+            if (!this.Passives.Contains(buff))
+            {
+                this.Passives.Add(buff);
+                buff.OnApplyPassive(this.board.encounter, new List<TokenState>() { this.token });
+                UIAnimationManager.AddAnimation(new UIInstruction_AddTargetBuff(this.x, this.y, buff, false));
+            }
         }
 
-        internal void RemoveBuff(string buff_name) { RemoveBuff(TargetPassive.GetPassive(buff_name)); }
         internal void RemoveBuff(TargetPassive buff)
         {
-            buff.OnRemovePassive(this.board.encounter, new List<TokenState>() { this.token });
-            this.Passives.Remove(buff);
+            if (this.Passives.Contains(buff))
+            {
+                buff.OnRemovePassive(this.board.encounter, new List<TokenState>() { this.token });
+                this.Passives.Remove(buff);
+                UIAnimationManager.AddAnimation(new UIInstruction_RemoveTargetBuff(this.x, this.y, buff, false));
+            }
         }
+
+        internal void AttachAnimation(string animation_name, float normalized_size = 1f)
+        {
+            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.Tile_Add, normalized_size);
+            UIAnimationManager.AddAnimation(anim);
+        }
+
+        internal void DettachAnimation(string animation_name)
+        {
+            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.Tile_Remove);
+            UIAnimationManager.AddAnimation(anim);
+        }
+
     }
 }

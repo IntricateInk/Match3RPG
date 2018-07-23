@@ -47,7 +47,7 @@ namespace Match3.UI
 
         internal void RemoveToken()
         {
-            this.board.tokens[this.x, this.y] = null;
+            this.board.tiles[this.x, this.y].token = null;
             this.animator.Play("Kill");
             Destroy(this.gameObject, this.animator.GetCurrentAnimatorStateInfo(0).length);
         }
@@ -92,6 +92,14 @@ namespace Match3.UI
                 color *= Color.grey;
 
             this.image.color = color;
+        }
+
+        internal void Highlight(bool is_highlight)
+        {
+            if (is_highlight)
+                board.SetLayer(this.transform, 1);
+            else
+                board.SetLayer(this.transform, 0);
         }
     }
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-
 namespace Match3.Encounter.Effect.Passive
 {
     public partial class CharacterPassive : ITooltip
@@ -72,6 +71,8 @@ namespace Match3.Encounter.Effect.Passive
 
         #endregion CHARACTER
 
+        // +1 energy at start of turn
+        // -1 energy at start of turn
         // lose X resource every X turns
         // timer based effect?
         //- +1 cascade at end of turn
@@ -81,47 +82,7 @@ namespace Match3.Encounter.Effect.Passive
         //- if perform a T match, apply buff?
 
         #region ENCOUNTER
-
-        #region MOLE
             
-        private static CharacterPassive MoleInfestation(int moles)
-        {
-            return new CharacterPassive
-            (
-                name: string.Format("Mole Infestation! ({0})", moles),
-                sprite: "tokens/luk",
-                tooltip: string.Format
-                (
-                    "Hole-y Mole-y! That is a lot of moles! You start with 15 STR. At the start of each turn, {0} tokens become moles.",
-                    moles
-                ),
-
-                OnApplyPassive: (EncounterState encounter, List<TokenState> targets) =>
-                {
-                    GameEffect.GainResource(encounter, targets, TokenType.STRENGTH, 15);
-                },
-
-                OnTurnStart: (EncounterState encounter, List<TokenState> targets) =>
-                {
-                    List<TokenState> top_3_rows = encounter.boardState.GetTokens().FindAll((token) => { return token.y >= 5; });
-                    top_3_rows.Shuffle();
-
-                    GameEffect.BeginAnimationBatch();
-                    foreach (TokenState token in top_3_rows.Take(moles))
-                    {
-                        token.ApplyBuff(TargetPassive.MOLE);
-                    }
-                    GameEffect.EndAnimationBatch();
-                }
-            );
-        }
-
-        public static CharacterPassive MOLE_INFESTATION_2 = MoleInfestation(2);
-        public static CharacterPassive MOLE_INFESTATION_3 = MoleInfestation(3);
-        public static CharacterPassive MOLE_INFESTATION_4 = MoleInfestation(4);
-
-        #endregion MOLE
-
         #region PHANTOM
 
         private static CharacterPassive Phantom(string name, TokenType type1, TokenType type2)
@@ -243,6 +204,8 @@ namespace Match3.Encounter.Effect.Passive
         #region SPIKED_HOLE
         // spawns crew
         // random tiles at the bottom are destroyed
+        // survive X turns
+        // lose if run out of AGI or STR
         #endregion SPIKED_HOLE
 
         #region TRAP_ROOM
@@ -252,17 +215,61 @@ namespace Match3.Encounter.Effect.Passive
         #endregion TRAP_ROOM
 
         #region DARK_ROOM
-        // spawn trap tiles and crew
-        // trap tile 1, when token matches on this tile, destroy 3x3
-        // trap tile 2, when token matches on this tile, destroy row + col
+
+        private static CharacterPassive DarkRoom(string name, string sprite, int crew, int trap3x3, int trap_plus)
+        {
+            return new CharacterPassive
+            (
+                name: name, sprite: sprite,
+                tooltip: string.Format(
+                    "A really dark room. Watch your step! At the start of the round, gain 5 AGI and spawn {0} Crew, {1} Flamethrower Trap and {2} Explosive Trap", 
+                    crew, trap3x3, trap_plus
+                    ),
+
+                OnApplyPassive: (EncounterState encounter, List<TokenState> targets) =>
+                {
+                    encounter.playerState.GainResource(TokenType.AGILITY, 5);
+
+                    List<TokenState> tokens = encounter.boardState.GetTokens();
+                    tokens.Shuffle();
+
+                    GameEffect.BeginAnimationBatch();
+
+                    foreach (TokenState token in tokens.Take(crew))
+                    {
+                        token.ApplyBuff(TargetPassive.CREW);
+                    }
+
+                    tokens.RemoveRange(0, crew);
+
+                    foreach (TokenState token in tokens.Take(trap3x3))
+                    {
+                        token.tile.ApplyBuff(TargetPassive.EXPLOSIVE_TRAP);
+                    }
+
+                    tokens.RemoveRange(0, trap3x3);
+
+                    foreach (TokenState token in tokens.Take(trap_plus))
+                    {
+                        token.tile.ApplyBuff(TargetPassive.FLAMETHROWER_TRAP);
+                    }
+
+                    GameEffect.EndAnimationBatch();
+                }
+            );
+        }
+
+        public static CharacterPassive DARK_ROOM_1 = DarkRoom("Dark Room"             , "tokens/agi", 2, 3, 3);
+        public static CharacterPassive DARK_ROOM_2 = DarkRoom("Bloodstained Dark Room", "tokens/agi", 2, 5, 5);
+        public static CharacterPassive DARK_ROOM_3 = DarkRoom("Torture Chamber"       , "tokens/agi", 2, 7, 7);
+
         #endregion DARK_ROOM
-
-        #region ZOMBIE
-        #endregion ZOMBIE
-
+        
         #region DROWNING
+        // objective: survive X turns? Or gain X resource
         // Crew with Drowning debuff
-        // Drowning destroys token if below X row. Drop 1 row every turn
+        // Drowning destroys token if below X row at the end of turn. Drop 1 row every turn at the start of turn
+        // at the start of each turn, random non-Crew tiles get swapped upwards
         #endregion DROWNING
 
         #region SCAMMER
@@ -272,13 +279,7 @@ namespace Match3.Encounter.Effect.Passive
         #region RAVEN
         //- Raven encounter(raven buffs, jumps to top when destroyed, swaps with a nearby tile of same type below?)
         #endregion RAVEN
-
-        #region SIREN
-        // spawns crew and sirens. 
-        // sirens cause adjacent tiles to mimic your highest resource and move around randomly
-        // sirens are tile buff
-        #endregion SIREN
-
+        
         #region AMBUSH
         // spawns crew and enemy
         // enemies destroy adjacent tiles if they contain crew
@@ -287,8 +288,8 @@ namespace Match3.Encounter.Effect.Passive
         #endregion AMBUSH
 
         #region BLACK_CAT
-        // randomly transofrm LUK into non-LUK
-        // something?
+        // if a black cat is destroyed, lose LUK and jump to another non-LUK token
+        // black cat moves around, transforming adjacent LUK token into its type
         #endregion BLACK_CAT
 
         #endregion ENCOUNTER

@@ -23,14 +23,45 @@ monkey_2_loss,Robbed,tokens/agi,Robbed by monkeys…,-50,-100,,15,99,-1,301,-1,100
 monkey_3_loss,Robbed,tokens/agi,Robbed by monkeys…,-50,-100,,10,99,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
 monkey_1_stragi_win,Beat Up,tokens/str,SHOO,0,30,,-1,100,-1,301,25,99,25,99,-1,100,-1,100,-1,100
 monkey_2_stragi_win,Beat Up,tokens/str,SHOO,0,70,,-1,100,-1,301,35,99,35,99,-1,100,-1,100,-1,100
-monkey_3_stragi_win,Beat Up,tokens/str,SHOO,0,100,,-1,100,-1,301,45,99,45,99,-1,100,-1,100,-1,100
+monkey_3_stragi_win,Beat Up,tokens/str,SHOO,0,100,,-1,100,-1,301,30,40,30,40,-1,100,-1,100,-1,100
 monkey_1_intcha_win,Tame,tokens/int,"I mean, you are almost a monkey right? Be nice.",0,10,,-1,100,-1,301,-1,100,-1,100,25,99,25,99,-1,100
 monkey_2_intcha_win,Tame,tokens/int,"I mean, you are almost a monkey right? Be nice.",0,20,,-1,100,-1,301,-1,100,-1,100,35,99,35,99,-1,100
-monkey_3_intcha_win,Tame,tokens/int,"I mean, you are almost a monkey right? Be nice.",0,30,,-1,100,-1,301,-1,100,-1,100,45,99,45,99,-1,100
-monkey_luk_win,Lucky Break,tokens/luk,Something else caught the monkeys' attention… but what?,0,0,,-1,100,-1,301,-1,100,-1,100,-1,100,-1,100,80,99
+monkey_3_intcha_win,Tame,tokens/int,"I mean, you are almost a monkey right? Be nice.",0,30,,-1,100,-1,301,-1,100,-1,100,30,40,30,40,-1,100
+monkey_luk_win,Lucky Break,tokens/luk,Something else caught the monkeys' attention… but what?,0,0,,-1,100,-1,301,-1,100,-1,100,-1,100,-1,100,70,99
 wildfire_1_agi_loss,Burnt,tokens/agi,"You were too slow, and got burnt by the flames",0,-25,,-1,100,-1,301,-1,100,0,20,-1,100,-1,100,-1,100
 wildfire_2_agi_loss,Burnt,tokens/agi,"You were too slow, and got burnt by the flames",0,-40,,-1,100,-1,301,-1,100,0,25,-1,100,-1,100,-1,100
 wildfire_3_agi_loss,Burnt,tokens/agi,"You were too slow, and got burnt by the flames",0,-55,,-1,100,-1,301,-1,100,0,30,-1,100,-1,100,-1,100
 wildfire_1_turn_win,Survive!,tokens/agi,You escape the flames! Phew.,0,20,,5,99,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
 wildfire_2_turn_win,Survive!,tokens/agi,You escape the flames! Phew.,0,40,,8,99,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
 wildfire_3_turn_win,Survive!,tokens/agi,You escape the flames! Phew.,0,60,,15,99,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
+dark_room_main_loss,Trapped!,tokens/agi,Caught by traps in the dark room,0,-100,,-1,100,-1,301,-1,100,0,3,-1,100,-1,100,-1,100
+dark_room_1_win,Escape,tokens/int,You escape the room and find a small treasure,40,40,,-1,100,-1,301,-1,100,-1,100,15,99,-1,100,-1,100
+dark_room_2_win,Escape,tokens/int,You escape the room and find a small treasure,60,60,,-1,100,-1,301,-1,100,-1,100,20,99,-1,100,-1,100
+dark_room_3_win,Escape,tokens/int,You escape the room and find a small treasure,80,80,,-1,100,-1,301,-1,100,-1,100,25,99,-1,100,-1,100
+dark_room_1_turn_loss,Suffocate,tokens/agi,You ran out of air,0,-100,,12,99,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
+dark_room_2_turn_loss,Suffocate,tokens/agi,You ran out of air,0,-100,,10,99,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
+dark_room_3_turn_loss,Suffocate,tokens/agi,You ran out of air,0,-100,,8,99,-1,301,-1,100,-1,100,-1,100,-1,100,-1,100
+siren_1_cha_loss,Charmed,tokens/cha,You give in to the allure of the sirens,0,-80,,-1,100,-1,301,-1,100,-1,100,-1,100,80,99,-1,100
+siren_2_cha_loss,Charmed,tokens/cha,You give in to the allure of the sirens,0,-100,,-1,100,-1,301,-1,100,-1,100,-1,100,75,99,-1,100
+siren_3_cha_loss,Charmed,tokens/cha,You give in to the allure of the sirens,0,-120,,-1,100,-1,301,-1,100,-1,100,-1,100,70,99,-1,100
+siren_1_agi_loss,Distracted,tokens/agi,"Distracted by the sirens, you slip and fall into the water",-40,0,,-1,100,-1,301,-1,100,0,10,-1,100,-1,100,-1,100
+siren_2_agi_loss,Distracted,tokens/agi,"Distracted by the sirens, you slip and fall into the water",-60,0,,-1,100,-1,301,-1,100,0,15,-1,100,-1,100,-1,100
+siren_3_agi_loss,Distracted,tokens/agi,"Distracted by the sirens, you slip and fall into the water",-80,0,,-1,100,-1,301,-1,100,0,15,-1,100,-1,100,-1,100
+siren_1_str_win,Force of Will,tokens/str,"With a strong will, you ignore the cries of the siren",0,100,,-1,100,-1,301,30,99,-1,100,-1,100,-1,100,-1,100
+siren_2_str_win,Force of Will,tokens/str,"With a strong will, you ignore the cries of the siren",0,120,,-1,100,-1,301,35,99,-1,100,-1,100,-1,100,-1,100
+siren_3_str_win,Force of Will,tokens/str,"With a strong will, you ignore the cries of the siren",0,140,,-1,100,-1,301,40,99,-1,100,-1,100,-1,100,-1,100
+siren_1_int_win,Cunning Ploy,tokens/int,You devise a plan that will allow you to escape the sirens,0,60,,-1,100,-1,301,-1,100,-1,100,15,99,-1,100,-1,100
+siren_2_int_win,Cunning Ploy,tokens/int,You devise a plan that will allow you to escape the sirens,0,80,,-1,100,-1,301,-1,100,-1,100,20,99,-1,100,-1,100
+siren_3_int_win,Cunning Ploy,tokens/int,You devise a plan that will allow you to escape the sirens,0,100,,-1,100,-1,301,-1,100,-1,100,25,99,-1,100,-1,100
+siren_bonus_luk,Unexpected Treasure!,tokens/luk,Treasure….?,100,0,,-1,100,-1,301,-1,100,-1,100,-1,100,-1,100,60,99
+zombie_1_str_win,Fight,tokens/str,"Through sheer force, you beat your way through the dead.",20,80,,-1,100,-1,301,30,99,-1,100,-1,100,-1,100,-1,100
+zombie_2_str_win,Fight,tokens/str,"Through sheer force, you beat your way through the dead.",25,100,,-1,100,-1,301,40,99,-1,100,-1,100,-1,100,-1,100
+zombie_3_str_win,Fight,tokens/str,"Through sheer force, you beat your way through the dead.",30,120,,-1,100,-1,301,50,99,-1,100,-1,100,-1,100,-1,100
+zombie_1_agi_win,Escape,tokens/agi,"With nimble feet, you escape the zombies",0,80,,-1,100,-1,301,-1,100,30,99,-1,100,-1,100,-1,100
+zombie_2_agi_win,Escape,tokens/agi,"With nimble feet, you escape the zombies",0,100,,-1,100,-1,301,-1,100,40,99,-1,100,-1,100,-1,100
+zombie_3_agi_win,Escape,tokens/agi,"With nimble feet, you escape the zombies",0,120,,-1,100,-1,301,-1,100,50,99,-1,100,-1,100,-1,100
+zombie_bonus_int,Learn by Observation,tokens/int,Your keen eyes pick up some information about the dead.,0,100,,-1,100,-1,301,-1,100,-1,100,70,99,-1,100,-1,100
+zombie_bonus_cha,Convince the zombies?,tokens/cha,"So um, I guess even the dead can communicate",0,100,,-1,100,-1,301,-1,100,-1,100,-1,100,70,99,-1,100
+zombie_1_stragi_lose,Captured by the unliving,tokens/str,The grasp of the dead does not relent,-30,-50,,-1,100,-1,301,0,2,0,2,-1,100,-1,100,-1,100
+zombie_2_stragi_lose,Captured by the unliving,tokens/str,The grasp of the dead does not relent,-45,-75,,-1,100,-1,301,0,2,0,2,-1,100,-1,100,-1,100
+zombie_3_stragi_lose,Captured by the unliving,tokens/str,The grasp of the dead does not relent,-60,-100,,-1,100,-1,301,0,2,0,2,-1,100,-1,100,-1,100

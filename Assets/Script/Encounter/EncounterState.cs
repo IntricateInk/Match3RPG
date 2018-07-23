@@ -58,16 +58,16 @@ namespace Match3.Encounter
 
             foreach (EncounterObjective objective in this.encounterSheet.mainObjectives)
             {
-                UIAnimationManager.AddAnimation(new UIInstruction_AddObjective(objective, true));
+                UIAnimationManager.AddInstruction(new UIInstruction_AddObjective(objective, true));
             }
 
             foreach (EncounterObjective objective in this.encounterSheet.bonusObjectives)
             {
-                UIAnimationManager.AddAnimation(new UIInstruction_AddObjective(objective, false));
+                UIAnimationManager.AddInstruction(new UIInstruction_AddObjective(objective, false));
             }
 
-            UIAnimationManager.AddAnimation(new UIInstruction_SetPlayer(this.playerSheet));
-            UIAnimationManager.AddAnimation(new UIInstruction_SetEncounter(this.encounterSheet));
+            UIAnimationManager.AddInstruction(new UIInstruction_SetPlayer(this.playerSheet));
+            UIAnimationManager.AddInstruction(new UIInstruction_SetEncounter(this.encounterSheet));
 
             this.DoEncounterStart();
         }
@@ -93,12 +93,12 @@ namespace Match3.Encounter
                 List<TokenState> target = new List<TokenState>();
                 target.Add(tile.token);
 
-                foreach (TargetPassive passive in tile.Passives)
+                foreach (TargetPassive passive in tile.Passives.ToArray())
                 {
                     passive.OnTurnStart(this, target);
                 }
 
-                foreach (TargetPassive passive in tile.token.Passives)
+                foreach (TargetPassive passive in tile.token.Passives.ToArray())
                 {
                     passive.OnTurnStart(this, target);
                 }
@@ -221,12 +221,18 @@ namespace Match3.Encounter
 
         public void SelectSkill(int skill_index)
         {
-            this.inputState.SetSkill(skill_index);
+            if (this.inputState.SetSkill(skill_index))
+            {
+                this.DoSkill();
+            }
         }
 
         internal void EndTurn()
         {
-            this.DoTurnEnd();
+            if (!this.inputState.IsBlockInput)
+            {
+                this.DoTurnEnd();
+            }
         }
 
     }

@@ -409,6 +409,276 @@ namespace Match3.Encounter.Encounter
 				}
             );
 
+        public static EncounterSheet dark_room_1 = new EncounterSheet
+            (
+                name: "Dark Room",
+                icon: "tokens/agi",
+                tooltip: "The room is really dark",
+                
+				mainObjectives: new string[] 
+				{
+				
+"dark_room_1_win",
+"dark_room_main_loss",
+"dark_room_1_turn_loss"
+
+				},
+                
+				bonusObjectives: new string[] 
+				{
+				
+				},
+				
+				passives: new string[] 
+				{
+				
+"Dark Room"
+
+				}
+            );
+
+        public static EncounterSheet dark_room_2 = new EncounterSheet
+            (
+                name: "Bloodstained Dark Room",
+                icon: "tokens/agi",
+                tooltip: "The room is really dark",
+                
+				mainObjectives: new string[] 
+				{
+				
+"dark_room_2_win",
+"dark_room_main_loss",
+"dark_room_2_turn_loss"
+
+				},
+                
+				bonusObjectives: new string[] 
+				{
+				
+				},
+				
+				passives: new string[] 
+				{
+				
+"Bloodstained Dark Room"
+
+				}
+            );
+
+        public static EncounterSheet dark_room_3 = new EncounterSheet
+            (
+                name: "Torture Chamber",
+                icon: "tokens/agi",
+                tooltip: "The room is really dark",
+                
+				mainObjectives: new string[] 
+				{
+				
+"dark_room_3_win",
+"dark_room_main_loss",
+"dark_room_3_turn_loss"
+
+				},
+                
+				bonusObjectives: new string[] 
+				{
+				
+				},
+				
+				passives: new string[] 
+				{
+				
+"Torture Chamber"
+
+				}
+            );
+
+        public static EncounterSheet siren_1 = new EncounterSheet
+            (
+                name: "Ship Graveyard",
+                icon: "tokens/cha",
+                tooltip: "A beautiful song washes over you.",
+                
+				mainObjectives: new string[] 
+				{
+				
+"siren_1_int_win",
+"siren_1_str_win",
+"siren_1_cha_loss",
+"siren_1_agi_loss"
+
+				},
+                
+				bonusObjectives: new string[] 
+				{
+				
+"siren_bonus_luk"
+
+				},
+				
+				passives: new string[] 
+				{
+				
+"Ship Graveyard"
+
+				}
+            );
+
+        public static EncounterSheet siren_2 = new EncounterSheet
+            (
+                name: "Cape of the Lost",
+                icon: "tokens/cha",
+                tooltip: "A beautiful song washes over you.",
+                
+				mainObjectives: new string[] 
+				{
+				
+"siren_2_int_win",
+"siren_2_str_win",
+"siren_2_cha_loss",
+"siren_2_agi_loss"
+
+				},
+                
+				bonusObjectives: new string[] 
+				{
+				
+"siren_bonus_luk"
+
+				},
+				
+				passives: new string[] 
+				{
+				
+"Cape of the Lost"
+
+				}
+            );
+
+        public static EncounterSheet siren_3 = new EncounterSheet
+            (
+                name: "Basin of Sorrow",
+                icon: "tokens/cha",
+                tooltip: "A beautiful song washes over you.",
+                
+				mainObjectives: new string[] 
+				{
+				
+"siren_3_int_win",
+"siren_3_str_win",
+"siren_3_cha_loss",
+"siren_3_agi_loss"
+
+				},
+                
+				bonusObjectives: new string[] 
+				{
+				
+"siren_bonus_luk"
+
+				},
+				
+				passives: new string[] 
+				{
+				
+"Basin of Sorrow"
+
+				}
+            );
+
+        public static EncounterSheet zombie_1 = new EncounterSheet
+            (
+                name: "Unearthed Graveyard",
+                icon: "skills/bash",
+                tooltip: "The graves are empty.",
+                
+				mainObjectives: new string[] 
+				{
+				
+"zombie_1_str_win",
+"zombie_1_agi_win",
+"zombie_1_stragi_lose"
+
+				},
+                
+				bonusObjectives: new string[] 
+				{
+				
+"zombie_bonus_int",
+"zombie_bonus_cha"
+
+				},
+				
+				passives: new string[] 
+				{
+				
+"Unearthed Graveyard"
+
+				}
+            );
+
+        public static EncounterSheet zombie_2 = new EncounterSheet
+            (
+                name: "Desecrated Ground",
+                icon: "skills/bash",
+                tooltip: "The graves are empty.",
+                
+				mainObjectives: new string[] 
+				{
+				
+"zombie_2_str_win",
+"zombie_2_agi_win",
+"zombie_2_stragi_lose"
+
+				},
+                
+				bonusObjectives: new string[] 
+				{
+				
+"zombie_bonus_int",
+"zombie_bonus_cha"
+
+				},
+				
+				passives: new string[] 
+				{
+				
+"Desecrated Ground"
+
+				}
+            );
+
+        public static EncounterSheet zombie_3 = new EncounterSheet
+            (
+                name: "Necropolis",
+                icon: "skills/bash",
+                tooltip: "The graves are empty.",
+                
+				mainObjectives: new string[] 
+				{
+				
+"zombie_3_str_win",
+"zombie_3_agi_win",
+"zombie_3_stragi_lose"
+
+				},
+                
+				bonusObjectives: new string[] 
+				{
+				
+"zombie_bonus_int",
+"zombie_bonus_cha"
+
+				},
+				
+				passives: new string[] 
+				{
+				
+"Necropolis"
+
+				}
+            );
+
 
     }
 }

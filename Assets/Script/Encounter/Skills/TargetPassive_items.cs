@@ -1,4 +1,5 @@
 ﻿using Match3.Encounter.Effect.Skill;
+using Match3.UI.Animation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Match3.Encounter.Effect.Passive
             name: "Void",
             sprite: "skills/bash",
             tooltip: "At the start of each turn, destroy the token on this tile.",
-            
+
             OnTurnStart: (EncounterState encounter, List<TokenState> targets) =>
             {
                 GameEffect.DestroySelected(encounter, targets);
@@ -34,7 +35,7 @@ namespace Match3.Encounter.Effect.Passive
                 GameEffect.TransformSelectedToRandom(encounter, targets);
             }
         );
-        
+
         public static TargetPassive NEBULA = new TargetPassive
         (
             name: "Nebula",
@@ -55,19 +56,105 @@ namespace Match3.Encounter.Effect.Passive
 
             OnApplyPassive: (EncounterState encounter, List<TokenState> targets) =>
             {
-                GameEffect.AddTokenAnimation(encounter, targets, "dust1");
+                GameEffect.AddTileAnimation(encounter, targets, "dust1");
             },
 
             OnRemovePassive: (EncounterState encounter, List<TokenState> targets) =>
             {
-                GameEffect.RemoveTokenAnimation(encounter, targets, "dust1");
+                GameEffect.RemoveTileAnimation(encounter, targets, "dust1");
             },
 
             OnTurnStart: (EncounterState encounter, List<TokenState> targets) =>
             {
-                GameEffect.GainSelectedAsResource(encounter, targets, 1);
+                TokenState token = targets[0];
+
+                GameEffect.BeginAnimationBatch();
+                token.PlayAnimation("dust1", 0.1f);
+                token.ShowResourceGain(1);
+                encounter.playerState.GainResource(token.type, 1);
+                GameEffect.EndAnimationBatch();
             }
         );
+
+        #region ENCOUNTER
+
+        public static TargetPassive FLAMETHROWER_TRAP = new TargetPassive
+        (
+            name: "Flamethrower Trap",
+            sprite: "skills/bash",
+            tooltip: "If the token is destroyed, destroy all other tokens in the row and column.",
+
+            OnApplyPassive: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                targets[0].tile.AttachAnimation("dust3");
+            },
+
+            OnRemovePassive: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                targets[0].tile.DettachAnimation("dust3");
+            },
+
+            OnDestroy: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                TokenState token = targets[0];
+                List<TokenState> row = encounter.boardState.GetRow(token.x);
+                List<TokenState> col = encounter.boardState.GetCol(token.y);
+
+                row.AddRange(col);
+
+                GameEffect.BeginAnimationBatch();
+
+                foreach (TokenState other in row)
+                {
+                    if (other == token) continue;
+
+                    other.PlayAnimation("fire2");
+                    other.Destroy();
+                }
+
+                GameEffect.EndAnimationBatch();
+            }
+        );
+
+
+        public static TargetPassive EXPLOSIVE_TRAP = new TargetPassive
+        (
+            name: "Explosive Trap",
+            sprite: "skills/bash",
+            tooltip: "If the token is destroyed, destroy all other tokens in a 3 by 3 grid around it.",
+
+            OnApplyPassive: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                targets[0].tile.AttachAnimation("dust2");
+            },
+
+            OnRemovePassive: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                targets[0].tile.DettachAnimation("dust2");
+            },
+
+            OnDestroy: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                TokenState token = targets[0];
+                
+                GameEffect.BeginAnimationBatch();
+                for (int dx = -1; dx < 1; dx++) {
+                    for (int dy = -1; dy < 1; dy++)
+                    {
+                        TokenState other = token.GetAdjacent(dx, dy);
+
+                        if (other != null && other != token)
+                        {
+                            other.PlayAnimation("fire2");
+                            other.Destroy();
+                        }
+                    }
+                }
+                GameEffect.EndAnimationBatch();
+            }
+        );
+
+        #endregion ENCOUNTER
 
         #endregion TILE
 
@@ -103,45 +190,8 @@ namespace Match3.Encounter.Effect.Passive
             }
         );
 
-        public static TargetPassive MOLE = new TargetPassive
-        (
-            name: "Mole",
-            sprite: "skills/bash",
-            tooltip: "At the end of each turn, destroy the token below. If this token is at the bottom row at the start of your turn, lose 5 STR Resource.",
-            
-            OnApplyPassive: (EncounterState encounter, List<TokenState> targets) =>
-            {
-                targets[0].PlayAnimation("dust1");
-                GameEffect.AddTokenAnimation(encounter, targets, "smoke3");
-            },
-
-            OnRemovePassive: (EncounterState encounter, List<TokenState> targets) =>
-            {
-                GameEffect.RemoveTokenAnimation(encounter, targets, "smoke3");
-            },
-
-            OnTurnEnd: (EncounterState encounter, List<TokenState> targets) =>
-            {
-                TokenState token = targets[0];
-                if (token.y == 0)
-                {
-                    GameEffect.BeginAnimationBatch();
-                    encounter.playerState.GainResource(TokenType.STRENGTH, -5);
-                    token.PlayAnimation("dust1", 0f);
-                    token.ShowResourceGain(TokenType.STRENGTH, -5);
-                    GameEffect.EndAnimationBatch();
-                }
-                else
-                {
-                    token = token.GetAdjacent(0, -1);
-                    GameEffect.BeginAnimationBatch();
-                    token.PlayAnimation("dust1", 0f);
-                    token.Destroy();
-                    GameEffect.EndAnimationBatch();
-                }
-            }
-        );
-
+        #region ENCOUNTER
+        
         public static TargetPassive MONKEY = new TargetPassive
         (
             name: "Monkey",
@@ -166,9 +216,8 @@ namespace Match3.Encounter.Effect.Passive
                 (
                     Array.FindAll(TokenTypeHelper.AllResource(), (type) => { return encounter.playerState.GetResource(type) == max; })
                 );
-                types.Shuffle();
-
-                targets[0].type = types[0];
+                
+                targets[0].type = types.RandomChoice();
                 targets[0].PlayAnimation("fire2", 0f);
             }
         );
@@ -210,23 +259,27 @@ namespace Match3.Encounter.Effect.Passive
 
             OnApplyPassive: (EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].AttachAnimation("stargate", 3f);
+                targets[0].AttachAnimation("glow_bubble", 3f);
             },
 
             OnRemovePassive: (EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].DettachAnimation("stargate");
+                targets[0].DettachAnimation("glow_bubble");
             },
 
             OnDestroy: (EncounterState encounter, List<TokenState> targets) =>
             {
                 encounter.playerState.GainResource(TokenType.STRENGTH, -25);
+                targets[0].PlayAnimation("blast2");
                 encounter.playerState.GainResource(TokenType.AGILITY, -25);
+                UIAnimationManager.AddAnimation(new UIInstruction_OverlayText("A crew member dies!"));
+                
                 targets[0].ShowResourceGain(TokenType.STRENGTH, -25);
                 targets[0].ShowResourceGain(TokenType.AGILITY, -25);
-                targets[0].PlayAnimation("blast2");
             }
         );
+
+        #endregion ENCOUNTER
 
         #endregion TOKEN
 

@@ -25,7 +25,7 @@ namespace Match3.Encounter
             {
                 _Energy = value;
 
-                UIAnimationManager.AddAnimation(new UIInstruction_SetEnergy(this.Energy), true);
+                UIAnimationManager.AddAnimation(new UIInstruction_SetEnergy(this.Energy));
             }
         }
 
@@ -37,7 +37,7 @@ namespace Match3.Encounter
             {
                 this._Turn = value;
                 
-                UIAnimationManager.AddAnimation(new UIInstruction_SetTurns(this.Turn), true);
+                UIAnimationManager.AddAnimation(new UIInstruction_SetTurns(this.Turn));
             }
         }
 
@@ -49,7 +49,7 @@ namespace Match3.Encounter
             {
                 this._Time = value;
 
-                UIAnimationManager.AddAnimation(new UIInstruction_SetTime(this.Time));
+                UIAnimationManager.AddInstruction(new UIInstruction_SetTime(this.Time));
             }
         }
 
@@ -72,7 +72,7 @@ namespace Match3.Encounter
                     if (this.Skills.Contains(skill)) continue;
 
                     this.Skills.Add(skill);
-                    UIAnimationManager.AddAnimation(new UIInstruction_AddSkill(skill, i));
+                    UIAnimationManager.AddInstruction(new UIInstruction_AddSkill(skill, i));
                     i++;
                 }
 
@@ -91,16 +91,14 @@ namespace Match3.Encounter
                 this.ApplyBuff(passive);
             }
         }
-
-        public void ApplyBuff(string buff_name) { ApplyBuff(CharacterPassive.GetPassive(buff_name)); }
+        
         public void ApplyBuff(CharacterPassive buff)
         {
             this.Passives.Add(buff);
             buff.OnApplyPassive(encounter, new List<TokenState>());
             UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(buff));
         }
-
-        public void RemoveBuff(string buff_name) { RemoveBuff(CharacterPassive.GetPassive(buff_name)); }
+        
         public void RemoveBuff(CharacterPassive buff)
         {
             buff.OnRemovePassive(encounter, new List<TokenState>());
@@ -122,7 +120,7 @@ namespace Match3.Encounter
             this.resources[type.AsInt()] += amount;
             this.resources[type.AsInt()] = Mathf.Clamp(this.resources[type.AsInt()], 0, 99);
 
-            UIAnimationManager.AddAnimation(new UIInstruction_UpdateResources(type, this.GetResource(type)), true);
+            UIAnimationManager.AddAnimation(new UIInstruction_UpdateResources(type, this.GetResource(type)));
         }
     }
 }

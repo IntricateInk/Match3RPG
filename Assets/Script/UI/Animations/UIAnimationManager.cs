@@ -39,12 +39,14 @@ namespace Match3.UI.Animation
         private static readonly Queue<UIInstruction> InstructionQueue = new Queue<UIInstruction>();
         private static List<UIAnimation> Current = new List<UIAnimation>();
         
-        public static void AddAnimation(UIInstruction instruction, bool isQueued = false)
+        public static void AddInstruction(UIInstruction instruction)
         {
-            if (isQueued)
-                AddAnimation(new UIAnimation_InstructionWrapper(instruction));
-            else
-                InstructionQueue.Enqueue(instruction);
+            InstructionQueue.Enqueue(instruction);
+        }
+
+        public static void AddAnimation(UIInstruction instruction)
+        {
+            AddAnimation(new UIAnimation_InstructionWrapper(instruction));
         }
 
         public static void AddAnimation(UIAnimation animation)
@@ -181,7 +183,7 @@ namespace Match3.UI.Animation
 
         private void DequeueAnimation()
         {
-            bool is_batch = false;
+            int is_batch = 0;
 
             do
             {
@@ -189,17 +191,17 @@ namespace Match3.UI.Animation
 
                 if (next is UIAnimation_BeginBatch)
                 {
-                    is_batch = true;
+                    is_batch++;
                 }
                 else if (next is UIAnimation_EndBatch)
                 {
-                    is_batch = false;
+                    is_batch--;
                 }
                 else
                 {
                     UIAnimationManager.Current.Add(next);
                 }
-            } while (is_batch);
+            } while (is_batch != 0);
         }
 
         private void ExecuteAllInstructions()

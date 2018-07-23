@@ -203,12 +203,7 @@ namespace Match3.Encounter.Effect
         {
             encounter.playerState.GainResource(type, amount);
         }
-
-        public static void ApplyBuff(EncounterState encounter, List<TokenState> selectedTokens, string buff_name)
-        {
-            encounter.playerState.ApplyBuff(buff_name);
-        }
-
+        
         public static void ApplyTileBuff(EncounterState encounter, List<TokenState> selectedTokens, string buff_name)
         {
             ApplyTileBuff(encounter, selectedTokens, TargetPassive.GetPassive(buff_name));

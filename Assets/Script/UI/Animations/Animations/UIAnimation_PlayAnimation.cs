@@ -38,36 +38,50 @@ namespace Match3.UI.Animation
         {
             if (animation == null)
             {
-                UITokenController token = manager.board.tokens[x, y];
+                UITileController tile = manager.board.tiles[x, y];
 
-                if (anim_type == AnimationType.Token_Remove)
+                switch (anim_type)
                 {
-                    Transform buff = token.transform.Find(animation_name);
+                    case AnimationType.Tile_Remove:
+                    case AnimationType.Token_Remove:
+                        Transform buff = null;
 
-                    if (buff != null)
-                        GameObject.Destroy(buff.gameObject);
+                        if (anim_type == AnimationType.Tile_Remove) 
+                            buff = tile.transform.Find(animation_name);
+                        else if (anim_type == AnimationType.Token_Remove)
+                            buff = tile.token.transform.Find(animation_name);
 
-                    isDone = true;
-                    return;
-                }
-                else if (animation == null)
-                {
-                    string path = "animations/" + animation_name + "/prefab";
-                    Animator prefab = Resources.Load<Animator>(path);
-                    animation = GameObject.Instantiate<Animator>(prefab, manager.canvas);
+                        if (buff != null)
+                            GameObject.Destroy(buff.gameObject);
 
-                    RectTransform rt = animation.GetComponent<RectTransform>();
-
-                    rt.sizeDelta = this.normalized_size * manager.board.token_size;
-                    animation.transform.position = token.transform.position + (Vector3)token.GetComponent<RectTransform>().rect.center;
-
-                    if (anim_type == AnimationType.Token_Add)
-                    {
-                        animation.transform.SetParent(token.transform);
-                        animation.name = animation_name;
                         isDone = true;
                         return;
-                    }
+
+                    case AnimationType.None:
+                    case AnimationType.Token_Add:
+                    case AnimationType.Tile_Add:
+
+                        string path = "animations/" + animation_name + "/prefab";
+                        Animator prefab = Resources.Load<Animator>(path);
+                        animation = GameObject.Instantiate<Animator>(prefab, manager.canvas);
+
+                        RectTransform rt = animation.GetComponent<RectTransform>();
+
+                        rt.sizeDelta = this.normalized_size * manager.board.token_size;
+                        animation.transform.position = manager.board.GetPosition(x, y);
+
+                        if (anim_type == AnimationType.Token_Add || anim_type == AnimationType.Tile_Add)
+                        {
+                            if (anim_type == AnimationType.Token_Add)
+                                animation.transform.SetParent(tile.token.transform);
+                            else if (anim_type == AnimationType.Tile_Add)
+                                animation.transform.SetParent(tile.transform);
+
+                            animation.name = animation_name;
+                            isDone = true;
+                            return;
+                        }
+                        break;
                 }
             }
 

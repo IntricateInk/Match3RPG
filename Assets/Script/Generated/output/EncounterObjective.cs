@@ -842,11 +842,11 @@ namespace Match3.Encounter.Encounter
             ExpReward: 100,
             TrophyReward: new string[] {},
             
-            MinStrength: 45,
-            MaxStrength: 99, 
+            MinStrength: 30,
+            MaxStrength: 40, 
 			
-            MinAgility: 45,
-            MaxAgility: 99,
+            MinAgility: 30,
+            MaxAgility: 40,
 
             MinIntelligence: -1,
             MaxIntelligence: 100,
@@ -950,11 +950,11 @@ namespace Match3.Encounter.Encounter
             MinAgility: -1,
             MaxAgility: 100,
 
-            MinIntelligence: 45,
-            MaxIntelligence: 99,
+            MinIntelligence: 30,
+            MaxIntelligence: 40,
 
-            MinCharisma: 45,
-            MaxCharisma: 99,
+            MinCharisma: 30,
+            MaxCharisma: 40,
 
             MinLuck: -1,
             MaxLuck: 100,
@@ -990,7 +990,7 @@ namespace Match3.Encounter.Encounter
             MinCharisma: -1,
             MaxCharisma: 100,
 
-            MinLuck: 80,
+            MinLuck: 70,
             MaxLuck: 99,
 
             MinTime: -1,
@@ -1202,6 +1202,1060 @@ namespace Match3.Encounter.Encounter
 
             MinTurn: 15,
             MaxTurn: 99
+        );
+
+
+        public static EncounterObjective dark_room_main_loss = new EncounterObjective
+        (
+			uid: "dark_room_main_loss",
+            name: "Trapped!",
+            sprite: "tokens/agi",
+            tooltip: "Caught by traps in the dark room",
+			
+			GoldReward: 0,
+            ExpReward: -100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 0,
+            MaxAgility: 3,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective dark_room_1_win = new EncounterObjective
+        (
+			uid: "dark_room_1_win",
+            name: "Escape",
+            sprite: "tokens/int",
+            tooltip: "You escape the room and find a small treasure",
+			
+			GoldReward: 40,
+            ExpReward: 40,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 15,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective dark_room_2_win = new EncounterObjective
+        (
+			uid: "dark_room_2_win",
+            name: "Escape",
+            sprite: "tokens/int",
+            tooltip: "You escape the room and find a small treasure",
+			
+			GoldReward: 60,
+            ExpReward: 60,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 20,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective dark_room_3_win = new EncounterObjective
+        (
+			uid: "dark_room_3_win",
+            name: "Escape",
+            sprite: "tokens/int",
+            tooltip: "You escape the room and find a small treasure",
+			
+			GoldReward: 80,
+            ExpReward: 80,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 25,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective dark_room_1_turn_loss = new EncounterObjective
+        (
+			uid: "dark_room_1_turn_loss",
+            name: "Suffocate",
+            sprite: "tokens/agi",
+            tooltip: "You ran out of air",
+			
+			GoldReward: 0,
+            ExpReward: -100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: 12,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective dark_room_2_turn_loss = new EncounterObjective
+        (
+			uid: "dark_room_2_turn_loss",
+            name: "Suffocate",
+            sprite: "tokens/agi",
+            tooltip: "You ran out of air",
+			
+			GoldReward: 0,
+            ExpReward: -100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: 10,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective dark_room_3_turn_loss = new EncounterObjective
+        (
+			uid: "dark_room_3_turn_loss",
+            name: "Suffocate",
+            sprite: "tokens/agi",
+            tooltip: "You ran out of air",
+			
+			GoldReward: 0,
+            ExpReward: -100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: 8,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective siren_1_cha_loss = new EncounterObjective
+        (
+			uid: "siren_1_cha_loss",
+            name: "Charmed",
+            sprite: "tokens/cha",
+            tooltip: "You give in to the allure of the sirens",
+			
+			GoldReward: 0,
+            ExpReward: -80,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: 80,
+            MaxCharisma: 99,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_2_cha_loss = new EncounterObjective
+        (
+			uid: "siren_2_cha_loss",
+            name: "Charmed",
+            sprite: "tokens/cha",
+            tooltip: "You give in to the allure of the sirens",
+			
+			GoldReward: 0,
+            ExpReward: -100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: 75,
+            MaxCharisma: 99,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_3_cha_loss = new EncounterObjective
+        (
+			uid: "siren_3_cha_loss",
+            name: "Charmed",
+            sprite: "tokens/cha",
+            tooltip: "You give in to the allure of the sirens",
+			
+			GoldReward: 0,
+            ExpReward: -120,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: 70,
+            MaxCharisma: 99,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_1_agi_loss = new EncounterObjective
+        (
+			uid: "siren_1_agi_loss",
+            name: "Distracted",
+            sprite: "tokens/agi",
+            tooltip: "Distracted by the sirens, you slip and fall into the water",
+			
+			GoldReward: -40,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 0,
+            MaxAgility: 10,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_2_agi_loss = new EncounterObjective
+        (
+			uid: "siren_2_agi_loss",
+            name: "Distracted",
+            sprite: "tokens/agi",
+            tooltip: "Distracted by the sirens, you slip and fall into the water",
+			
+			GoldReward: -60,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 0,
+            MaxAgility: 15,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_3_agi_loss = new EncounterObjective
+        (
+			uid: "siren_3_agi_loss",
+            name: "Distracted",
+            sprite: "tokens/agi",
+            tooltip: "Distracted by the sirens, you slip and fall into the water",
+			
+			GoldReward: -80,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 0,
+            MaxAgility: 15,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_1_str_win = new EncounterObjective
+        (
+			uid: "siren_1_str_win",
+            name: "Force of Will",
+            sprite: "tokens/str",
+            tooltip: "With a strong will, you ignore the cries of the siren",
+			
+			GoldReward: 0,
+            ExpReward: 100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 30,
+            MaxStrength: 99, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_2_str_win = new EncounterObjective
+        (
+			uid: "siren_2_str_win",
+            name: "Force of Will",
+            sprite: "tokens/str",
+            tooltip: "With a strong will, you ignore the cries of the siren",
+			
+			GoldReward: 0,
+            ExpReward: 120,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 35,
+            MaxStrength: 99, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_3_str_win = new EncounterObjective
+        (
+			uid: "siren_3_str_win",
+            name: "Force of Will",
+            sprite: "tokens/str",
+            tooltip: "With a strong will, you ignore the cries of the siren",
+			
+			GoldReward: 0,
+            ExpReward: 140,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 40,
+            MaxStrength: 99, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_1_int_win = new EncounterObjective
+        (
+			uid: "siren_1_int_win",
+            name: "Cunning Ploy",
+            sprite: "tokens/int",
+            tooltip: "You devise a plan that will allow you to escape the sirens",
+			
+			GoldReward: 0,
+            ExpReward: 60,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 15,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_2_int_win = new EncounterObjective
+        (
+			uid: "siren_2_int_win",
+            name: "Cunning Ploy",
+            sprite: "tokens/int",
+            tooltip: "You devise a plan that will allow you to escape the sirens",
+			
+			GoldReward: 0,
+            ExpReward: 80,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 20,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_3_int_win = new EncounterObjective
+        (
+			uid: "siren_3_int_win",
+            name: "Cunning Ploy",
+            sprite: "tokens/int",
+            tooltip: "You devise a plan that will allow you to escape the sirens",
+			
+			GoldReward: 0,
+            ExpReward: 100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 25,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective siren_bonus_luk = new EncounterObjective
+        (
+			uid: "siren_bonus_luk",
+            name: "Unexpected Treasure!",
+            sprite: "tokens/luk",
+            tooltip: "Treasure….?",
+			
+			GoldReward: 100,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: 60,
+            MaxLuck: 99,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_1_str_win = new EncounterObjective
+        (
+			uid: "zombie_1_str_win",
+            name: "Fight",
+            sprite: "tokens/str",
+            tooltip: "Through sheer force, you beat your way through the dead.",
+			
+			GoldReward: 20,
+            ExpReward: 80,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 30,
+            MaxStrength: 99, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_2_str_win = new EncounterObjective
+        (
+			uid: "zombie_2_str_win",
+            name: "Fight",
+            sprite: "tokens/str",
+            tooltip: "Through sheer force, you beat your way through the dead.",
+			
+			GoldReward: 25,
+            ExpReward: 100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 40,
+            MaxStrength: 99, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_3_str_win = new EncounterObjective
+        (
+			uid: "zombie_3_str_win",
+            name: "Fight",
+            sprite: "tokens/str",
+            tooltip: "Through sheer force, you beat your way through the dead.",
+			
+			GoldReward: 30,
+            ExpReward: 120,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 50,
+            MaxStrength: 99, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_1_agi_win = new EncounterObjective
+        (
+			uid: "zombie_1_agi_win",
+            name: "Escape",
+            sprite: "tokens/agi",
+            tooltip: "With nimble feet, you escape the zombies",
+			
+			GoldReward: 0,
+            ExpReward: 80,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 30,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_2_agi_win = new EncounterObjective
+        (
+			uid: "zombie_2_agi_win",
+            name: "Escape",
+            sprite: "tokens/agi",
+            tooltip: "With nimble feet, you escape the zombies",
+			
+			GoldReward: 0,
+            ExpReward: 100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 40,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_3_agi_win = new EncounterObjective
+        (
+			uid: "zombie_3_agi_win",
+            name: "Escape",
+            sprite: "tokens/agi",
+            tooltip: "With nimble feet, you escape the zombies",
+			
+			GoldReward: 0,
+            ExpReward: 120,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 50,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_bonus_int = new EncounterObjective
+        (
+			uid: "zombie_bonus_int",
+            name: "Learn by Observation",
+            sprite: "tokens/int",
+            tooltip: "Your keen eyes pick up some information about the dead.",
+			
+			GoldReward: 0,
+            ExpReward: 100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 70,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_bonus_cha = new EncounterObjective
+        (
+			uid: "zombie_bonus_cha",
+            name: "Convince the zombies?",
+            sprite: "tokens/cha",
+            tooltip: "So um, I guess even the dead can communicate",
+			
+			GoldReward: 0,
+            ExpReward: 100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: 70,
+            MaxCharisma: 99,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_1_stragi_lose = new EncounterObjective
+        (
+			uid: "zombie_1_stragi_lose",
+            name: "Captured by the unliving",
+            sprite: "tokens/str",
+            tooltip: "The grasp of the dead does not relent",
+			
+			GoldReward: -30,
+            ExpReward: -50,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 0,
+            MaxStrength: 2, 
+			
+            MinAgility: 0,
+            MaxAgility: 2,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_2_stragi_lose = new EncounterObjective
+        (
+			uid: "zombie_2_stragi_lose",
+            name: "Captured by the unliving",
+            sprite: "tokens/str",
+            tooltip: "The grasp of the dead does not relent",
+			
+			GoldReward: -45,
+            ExpReward: -75,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 0,
+            MaxStrength: 2, 
+			
+            MinAgility: 0,
+            MaxAgility: 2,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective zombie_3_stragi_lose = new EncounterObjective
+        (
+			uid: "zombie_3_stragi_lose",
+            name: "Captured by the unliving",
+            sprite: "tokens/str",
+            tooltip: "The grasp of the dead does not relent",
+			
+			GoldReward: -60,
+            ExpReward: -100,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 0,
+            MaxStrength: 2, 
+			
+            MinAgility: 0,
+            MaxAgility: 2,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTime: -1,
+            MaxTime: 301,
+
+            MinTurn: -1,
+            MaxTurn: 100
         );
 
 

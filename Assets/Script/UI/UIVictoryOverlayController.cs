@@ -25,7 +25,7 @@ namespace Match3.UI
             this.goldLabel.text = gold.ToString();
             this.expLabel.text = exp.ToString();
             this.trophyLabel.text = string.Join("\n", trophies);
-            this.animator.Play("Popup");
+            this.animator.SetBool("Popup", true);
         }
 
         public void OnOverworldButtonClick()

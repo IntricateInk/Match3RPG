@@ -10,6 +10,7 @@ namespace Match3.Encounter
     public class TokenState
     {
         private bool _isSelected = false;
+        public bool IsDestroyed { get; private set; }
 
         public readonly BoardState board;
 
@@ -21,7 +22,7 @@ namespace Match3.Encounter
             {
                 if (type != value)
                 {
-                    if (type != TokenType.NULL) UIAnimationManager.AddAnimation(new UIInstruction_SetTokenSprite(x, y, value), true);
+                    if (type != TokenType.NULL) UIAnimationManager.AddAnimation(new UIInstruction_SetTokenSprite(x, y, value));
                     _type = value;
                 }
             }
@@ -29,13 +30,18 @@ namespace Match3.Encounter
 
         public int x { get; internal set; }
         public int y { get; internal set; }
+
+        private static int next_uid = 0;
+        public readonly int uid;
+
+
         public bool isSelected
         {
             get { return this._isSelected; }
             set
             {
                 this._isSelected = value;
-                UIAnimationManager.AddAnimation(new UIInstruction_SetTokenSelected(x, y, isSelected), true);
+                UIAnimationManager.AddInstruction(new UIInstruction_SetTokenSelected(x, y, isSelected));
             }
         }
         
@@ -51,6 +57,10 @@ namespace Match3.Encounter
         {
             this.x = x;
             this.y = y;
+            this.uid = next_uid;
+            this.IsDestroyed = false;
+
+            next_uid++;
 
             this.type = type;
             this.board = board;
@@ -118,6 +128,8 @@ namespace Match3.Encounter
 
         internal void Match()
         {
+            if (this.IsDestroyed) return;
+
             ShowResourceGain(this.type, 1);
             Destroy();
             board.encounter.playerState.GainResource(this.type, 1);
@@ -125,11 +137,21 @@ namespace Match3.Encounter
 
         internal void Destroy()
         {
-            foreach (TargetPassive passive in this.Passives)
-                passive.OnDestroy(board.encounter, new List<TokenState>() { this });
+            if (this.IsDestroyed) return;
 
+            this.IsDestroyed = true;
             board.tiles[this.x, this.y].token = null;
-
+            
+            foreach (TargetPassive passive in this.Passives.ToArray())
+            {
+                passive.OnDestroy(board.encounter, new List<TokenState>() { this });
+                this.RemoveBuff(passive);
+            }
+            
+            foreach (TargetPassive passive in this.tile.Passives)
+            {
+                passive.OnDestroy(board.encounter, new List<TokenState>() { this });
+            }
             UIAnimationManager.AddAnimation(new UIAnimation_RemoveToken(this.x, this.y));
         }
         
@@ -139,6 +161,7 @@ namespace Match3.Encounter
             {
                 this.Passives.Add(buff);
                 buff.OnApplyPassive(this.board.encounter, new List<TokenState>() { this });
+                UIAnimationManager.AddAnimation(new UIInstruction_AddTargetBuff(this.x, this.y, buff, true));
             }
         }
         
@@ -148,11 +171,14 @@ namespace Match3.Encounter
             {
                 buff.OnRemovePassive(this.board.encounter, new List<TokenState>() { this });
                 this.Passives.Remove(buff);
+                UIAnimationManager.AddAnimation(new UIInstruction_RemoveTargetBuff(this.x, this.y, buff, true));
             }
         }
 
         // UI methods
 
+
+        internal void ShowResourceGain(int amount) { ShowResourceGain(this.type, amount); }
         internal void ShowResourceGain(TokenType token, int amount)
         {
             string sign = "";
@@ -164,7 +190,7 @@ namespace Match3.Encounter
 
         internal void ShowText(string text)
         {
-            UIAnimationManager.AddAnimation(new UIInstruction_FloatingText(text, this.x, this.y), isQueued: true);
+            UIAnimationManager.AddAnimation(new UIInstruction_FloatingText(text, this.x, this.y));
         }
 
         internal void PlayAnimation(string animation_name)

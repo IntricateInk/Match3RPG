@@ -114,6 +114,7 @@ namespace Match3.Encounter
             UIAnimationManager.AddAnimation(new UIAnimation_DropTokens(types));
         }
         
+
         private void fillBoard()
         {
             TokenType?[,] types = new TokenType?[this.sizeX, this.sizeY];
@@ -146,6 +147,33 @@ namespace Match3.Encounter
         }
 
         // Helper Methods
+
+        internal List<TokenState> GetRow(int x)
+        {
+            List<TokenState> row = new List<TokenState>();
+
+            for (int y = 0; y < sizeY; y++) {
+                TokenState token = this.tiles[x, y].token;
+
+                if (token != null) row.Add(token);
+            }
+
+            return row;
+        }
+
+        internal List<TokenState> GetCol(int y)
+        {
+            List<TokenState> col = new List<TokenState>();
+
+            for (int x = 0; x < sizeX; x++)
+            {
+                TokenState token = this.tiles[x, y].token;
+
+                if (token != null) col.Add(token);
+            }
+
+            return col;
+        }
 
         internal TokenState GetToken(int x, int y)
         {

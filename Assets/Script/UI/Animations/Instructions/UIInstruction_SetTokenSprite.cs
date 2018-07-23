@@ -20,7 +20,7 @@ namespace Match3.UI.Animation
 
         internal override void Run(UIAnimationManager manager, float dt)
         {
-            manager.board.tokens[x, y].SetType(type);
+            manager.board.tiles[x, y].token.SetType(type);
         }
     }
 }

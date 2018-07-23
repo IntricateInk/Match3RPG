@@ -19,8 +19,7 @@ namespace Match3.UI.Animation
 
         internal override void Run(UIAnimationManager manager, float dt)
         {
-            UITokenController token = manager.board.tokens[x, y];
-            UIFactory.CreateFloatingText(text, token.transform);
+            UIFactory.CreateFloatingText(text, manager.board.GetPosition(x, y), manager.board);
         }
     }
 }

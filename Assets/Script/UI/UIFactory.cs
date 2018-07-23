@@ -16,7 +16,10 @@ namespace Match3.UI
         
         [SerializeField]
         private UITokenController tokenControllerPrefab;
-        
+
+        [SerializeField]
+        private UITileController tileControllerPrefab;
+
         [SerializeField]
         private UISkillIcon skillIconPrefab;
 
@@ -35,10 +38,14 @@ namespace Match3.UI
         [SerializeField]
         private UIFloatingText floatingTextPrefab;
 
-        internal static UIFloatingText CreateFloatingText(string text, Transform parent)
-        {
-            UIFloatingText floating_text = Instantiate<UIFloatingText>(UIFactory.Instance.floatingTextPrefab, parent);
+        [SerializeField]
+        private Canvas canvas;
 
+        internal static UIFloatingText CreateFloatingText(string text, Vector3 position, UIBoardController board)
+        {
+            UIFloatingText floating_text = Instantiate<UIFloatingText>(UIFactory.Instance.floatingTextPrefab, board.transform);
+
+            floating_text.transform.position = position;
             floating_text.text = text;
 
             return floating_text;
@@ -76,11 +83,21 @@ namespace Match3.UI
             return skillIcon;
         }
 
-        internal static UITokenController Create(int x, int y, TokenType type, UIBoardController board)
+        internal static UITileController CreateTile(int x, int y, UIBoardController board)
+        {
+            UITileController tileController = Instantiate(UIFactory.Instance.tileControllerPrefab, board.transform);
+
+            tileController.board = board;
+            tileController.transform.position = board.GetPosition(x, y);
+
+            return tileController;
+        }
+
+        internal static UITokenController CreateToken(int x, int y, TokenType type, UIBoardController board)
         {
             UITokenController tokenController = Instantiate(UIFactory.Instance.tokenControllerPrefab);
 
-            tokenController.transform.SetParent(board.transform);
+            board.SetLayer(tokenController.transform, 0);
             tokenController.board = board;
             board.SetPosition(tokenController, x, y);
             tokenController.SetType(type);
@@ -99,7 +116,7 @@ namespace Match3.UI
             return resourceBar;
         }
 
-        internal static UIBuffIcon Create(ITooltip buff, UIBuffContainer uiBuffContainer)
+        internal static UIBuffIcon CreateBuffIcon(ITooltip buff, UIBuffContainer uiBuffContainer)
         {
             UIBuffIcon icon = Instantiate(UIFactory.Instance.uiBuffIconPrefab);
 

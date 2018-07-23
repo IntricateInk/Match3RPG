@@ -20,7 +20,7 @@ namespace Match3.UI.Animation
 
         internal override void Run(UIAnimationManager manager, float dt)
         {
-            manager.board.tokens[x, y].is_selected = is_selected;
+            manager.board.tiles[x, y].token.is_selected = is_selected;
         }
     }
 }

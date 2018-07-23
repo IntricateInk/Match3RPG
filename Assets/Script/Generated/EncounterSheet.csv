@@ -13,3 +13,12 @@ monkey_3,Monkey Thicklet,tokens/agi,A forest full of monkeys…… great,"monkey_luk
 wildfire_1,Small Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_1_turn_win, wildfire_1_agi_loss",,Small Forest Fire!
 wildfire_2,Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_2_turn_win, wildfire_2_agi_loss",,Forest Fire!
 wildfire_3,Blazing Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_3_turn_win, wildfire_3_agi_loss",,Blazing Forest Fire!
+dark_room_1,Dark Room,tokens/agi,The room is really dark,"dark_room_1_win, dark_room_main_loss, dark_room_1_turn_loss",,Dark Room
+dark_room_2,Bloodstained Dark Room,tokens/agi,The room is really dark,"dark_room_2_win, dark_room_main_loss, dark_room_2_turn_loss",,Bloodstained Dark Room
+dark_room_3,Torture Chamber,tokens/agi,The room is really dark,"dark_room_3_win, dark_room_main_loss, dark_room_3_turn_loss",,Torture Chamber
+siren_1,Ship Graveyard,tokens/cha,A beautiful song washes over you.,"siren_1_int_win, siren_1_str_win, siren_1_cha_loss, siren_1_agi_loss",siren_bonus_luk,Ship Graveyard
+siren_2,Cape of the Lost,tokens/cha,A beautiful song washes over you.,"siren_2_int_win, siren_2_str_win, siren_2_cha_loss, siren_2_agi_loss",siren_bonus_luk,Cape of the Lost
+siren_3,Basin of Sorrow,tokens/cha,A beautiful song washes over you.,"siren_3_int_win, siren_3_str_win, siren_3_cha_loss, siren_3_agi_loss",siren_bonus_luk,Basin of Sorrow
+zombie_1,Unearthed Graveyard,skills/bash,The graves are empty.,"zombie_1_str_win, zombie_1_agi_win, zombie_1_stragi_lose","zombie_bonus_int, zombie_bonus_cha",Unearthed Graveyard
+zombie_2,Desecrated Ground,skills/bash,The graves are empty.,"zombie_2_str_win, zombie_2_agi_win, zombie_2_stragi_lose","zombie_bonus_int, zombie_bonus_cha",Desecrated Ground
+zombie_3,Necropolis,skills/bash,The graves are empty.,"zombie_3_str_win, zombie_3_agi_win, zombie_3_stragi_lose","zombie_bonus_int, zombie_bonus_cha",Necropolis

@@ -26,7 +26,7 @@ namespace Match3.UI.Animation
         {
             if (t == 0)
             {
-                manager.board.tokens[x, y].RemoveToken();
+                manager.board.tiles[x, y].token.RemoveToken();
             }
 
             t += dt;

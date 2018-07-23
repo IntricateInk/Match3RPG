@@ -16,7 +16,7 @@ namespace Match3.Encounter
             set
             {
                 _selectedSkillIndex = value;
-                UIAnimationManager.AddAnimation(new UIInstruction_SelectSkill(selectedSkillIndex));
+                UIAnimationManager.AddInstruction(new UIInstruction_SelectSkill(selectedSkillIndex));
             }
         }
 
@@ -48,7 +48,7 @@ namespace Match3.Encounter
 
             if (this.selectedSkillIndex == -1)
             {
-                UIAnimationManager.AddAnimation(new UIInstruction_OverlayText("Select a skill first!"));
+                UIAnimationManager.AddInstruction(new UIInstruction_OverlayText("Select a skill first!"));
                 return false;
             }
 
@@ -79,9 +79,9 @@ namespace Match3.Encounter
             this.selectedTokens.Clear();
         }
         
-        internal void SetSkill(int skill_index)
+        internal bool SetSkill(int skill_index)
         {
-            if (IsBlockInput) return;
+            if (IsBlockInput) return false;
 
             if (this.encounter.playerState.Skills[skill_index].CanPayCost(this.encounter))
             {
@@ -92,9 +92,13 @@ namespace Match3.Encounter
 
                 this.selectedTokens.Clear();
                 this.selectedSkillIndex = skill_index;
+
+                return this.selectedSkill.ShouldRun(this.selectedTokens);
             } else
             {
-                UIAnimationManager.AddAnimation(new UIInstruction_OverlayText("Need more Resources to use that skill."));
+                UIAnimationManager.AddInstruction(new UIInstruction_OverlayText("Need more Resources to use that skill."));
+
+                return false;
             }
         }
     }

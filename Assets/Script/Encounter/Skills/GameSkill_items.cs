@@ -474,6 +474,10 @@ namespace Match3.Encounter.Effect.Skill
 
         // TODO:
 
+        // trade skills pay X resource, gain Y resource. 0 energy
+        // pay X resource, gain 1 energy
+        // gain 1 energy, gain a debuff
+
         //- select two tiles, destroy anything between
         //- apply aoe buff that causes tiles to move randomly
         //- destroy a diagonal \ and /

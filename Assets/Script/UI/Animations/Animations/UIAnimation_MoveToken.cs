@@ -29,7 +29,7 @@ namespace Match3.UI.Animation
         internal override void Run(UIAnimationManager manager, float dt)
         {
             if (t == 0f)
-                this.token = manager.board.tokens[this.x, this.y];
+                this.token = manager.board.tiles[this.x, this.y].token;
 
             Vector3 p0 = manager.board.GetPosition(this.x, this.y);
             Vector3 p1 = manager.board.GetPosition(this.new_x, this.new_y);

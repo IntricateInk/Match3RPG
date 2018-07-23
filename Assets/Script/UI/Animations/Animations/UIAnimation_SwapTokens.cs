@@ -34,8 +34,8 @@ namespace Match3.UI.Animation
         {
             if (this.t == 0f)
             {
-                this.token0 = manager.board.tokens[x0, y0];
-                this.token1 = manager.board.tokens[x1, y1];
+                this.token0 = manager.board.tiles[x0, y0].token;
+                this.token1 = manager.board.tiles[x1, y1].token;
             }
 
             this.t += dt;
