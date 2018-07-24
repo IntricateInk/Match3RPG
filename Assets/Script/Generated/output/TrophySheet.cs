@@ -14,7 +14,8 @@ namespace Match3.Character
 			tooltip: "A warrior's blood",
 
 			skills: new string[] {
-"Bash"
+"Bash",
+"Cross Section"
 },
 
 			passives: new string[] { 
@@ -44,7 +45,8 @@ namespace Match3.Character
 			tooltip: "Merchants ALWAYS have gold",
 
 			skills: new string[] {
-"Socialize"
+"Socialize",
+"Bribe"
 },
 
 			passives: new string[] { 
@@ -59,7 +61,8 @@ namespace Match3.Character
 			tooltip: "To know where to go, you must first record where you are",
 
 			skills: new string[] {
-"Strategize"
+"Strategize",
+"Inspect"
 },
 
 			passives: new string[] { 
@@ -89,6 +92,7 @@ namespace Match3.Character
 			tooltip: "You are the major!?",
 
 			skills: new string[] {
+"Influence",
 "Mass Influence"
 },
 
@@ -96,13 +100,14 @@ namespace Match3.Character
 
 		);
 
-		public static TrophySheet HEIRLOOM = new TrophySheet(
-			name: "Heirloom",
-			sprite: "tokens/cha",
-			tooltip: "A generic item passed down for generations. How boring.",
+		public static TrophySheet MASTER_PLANS = new TrophySheet(
+			name: "Master Plans",
+			sprite: "tokens/int",
+			tooltip: "Super secret specific plans that somehow apply to every situation?",
 
 			skills: new string[] {
-"Influence"
+"Ponder",
+"Well Laid Plans"
 },
 
 			passives: new string[] {  }
@@ -141,7 +146,8 @@ namespace Match3.Character
 			tooltip: "It is said that this bow is so flexible, it shoots arrows that bend…… are you really that guillble?",
 
 			skills: new string[] {
-"Ricochet"
+"Ricochet",
+"Shove"
 },
 
 			passives: new string[] {  }
@@ -164,26 +170,154 @@ namespace Match3.Character
 		public static TrophySheet HEAVY_AXE = new TrophySheet(
 			name: "Heavy Axe",
 			sprite: "tokens/str",
-			tooltip: "Great for chopping!",
+			tooltip: "Great for chopping AND slicing!",
 
 			skills: new string[] {
-"Chop!"
+"Chop!",
+"Slice!"
 },
 
 			passives: new string[] {  }
 
 		);
 
-		public static TrophySheet HEAVY_BLADE = new TrophySheet(
-			name: "Heavy Blade",
-			sprite: "tokens/str",
-			tooltip: "Great for slicing!",
+		public static TrophySheet EMBERSTONE = new TrophySheet(
+			name: "Emberstone",
+			sprite: "tokens/int",
+			tooltip: "It glows with power",
 
 			skills: new string[] {
-"Slice!"
+"Ignite"
 },
 
 			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet GOLDEN_TONGUE = new TrophySheet(
+			name: "Golden Tongue",
+			sprite: "tokens/cha",
+			tooltip: "A gilb tongue speaks fast",
+
+			skills: new string[] {
+"Threaten",
+"Guile",
+"Wit",
+"Affluence"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet NECRONOMICON = new TrophySheet(
+			name: "Necronomicon",
+			sprite: "tokens/int",
+			tooltip: "A dark book of necromancy",
+
+			skills: new string[] {
+"Necromancy"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet SMART_MANTLE = new TrophySheet(
+			name: "Smart Mantle",
+			sprite: "tokens/int",
+			tooltip: "This shows that you are really smart?",
+
+			skills: new string[] {
+"Study",
+"Profile"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet TRAP_TOOLS = new TrophySheet(
+			name: "Trapmaker's Tools",
+			sprite: "tokens/int",
+			tooltip: "Set a trap",
+
+			skills: new string[] {
+"Set Flamethrower Trap",
+"Set Explosive Trap"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet BANDIT_BANDANA = new TrophySheet(
+			name: "Bandit's Bandana",
+			sprite: "skills/bash",
+			tooltip: "When your live tethers on the edge, anything goes.",
+
+			skills: new string[] {
+"Cheap Shot",
+"Desperate Strike"
+},
+
+			passives: new string[] { 
+"Sprinter"
+ }
+
+		);
+
+		public static TrophySheet MERCHANT_FLAIR = new TrophySheet(
+			name: "Merchant's Flair",
+			sprite: "skills/sleight",
+			tooltip: "Merchants speak a lot",
+
+			skills: new string[] {
+"Fast Talk"
+},
+
+			passives: new string[] { 
+"Quick Witted"
+ }
+
+		);
+
+		public static TrophySheet STRANGE_MAGNET = new TrophySheet(
+			name: "Strange Magnet",
+			sprite: "skills/sleight",
+			tooltip: "It repels only, but why?",
+
+			skills: new string[] {
+"Repel"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet LEADER_OF_MEN = new TrophySheet(
+			name: "Leader of Men",
+			sprite: "skills/bash",
+			tooltip: "You lead men",
+
+			skills: new string[] {
+"Lackeys"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet BLACK_MARK = new TrophySheet(
+			name: "Black Mark",
+			sprite: "tokens/int",
+			tooltip: "The black mark of undeath",
+
+			skills: new string[] {},
+
+			passives: new string[] { 
+"Cursed"
+ }
 
 		);
 

@@ -34,9 +34,6 @@ namespace Match3.Encounter.Encounter
             int MinLuck = -1,
             int MaxLuck = 100,
 
-            int MinTime = -1,
-            int MaxTime = 301,
-
             int MinTurn = -1,
             int MaxTurn = 100
             )
@@ -65,10 +62,7 @@ namespace Match3.Encounter.Encounter
 
             this.MinLuck = MinLuck;
             this.MaxLuck = MaxLuck;
-
-            this.MinTime = MinTime;
-            this.MaxTime = MaxTime;
-
+            
             this.MinTurn = MinTurn;
             this.MaxTurn = MaxTurn;
 
@@ -93,10 +87,7 @@ namespace Match3.Encounter.Encounter
 
         public int MinLuck;
         public int MaxLuck;
-
-        public int MinTime;
-        public int MaxTime;
-
+        
         public int MinTurn;
         public int MaxTurn;
 
@@ -141,13 +132,7 @@ namespace Match3.Encounter.Encounter
 
             if (turn > this.MaxTurn) return false;
             if (turn < this.MinTurn) return false;
-
-            // time
-            int time = (int)player.Time;
-
-            if (time > this.MaxTime) return false;
-            if (time < this.MinTime) return false;
-
+            
             return true;
         }
 

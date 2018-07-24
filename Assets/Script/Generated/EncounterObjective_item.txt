@@ -25,9 +25,6 @@
             MinLuck: {Luk_Min},
             MaxLuck: {Luk_Max},
 
-            MinTime: {Time_Min},
-            MaxTime: {Time_Max},
-
             MinTurn: {Turn_Min},
             MaxTurn: {Turn_Max}
         );

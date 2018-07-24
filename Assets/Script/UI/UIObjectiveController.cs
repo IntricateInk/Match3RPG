@@ -66,7 +66,6 @@ namespace Match3.UI
                     this.TryCreate(TokenType.INTELLIGENCE, this.objective.MinIntelligence, this.objective.MaxIntelligence);
                     this.TryCreate(TokenType.CHARISMA, this.objective.MinCharisma, this.objective.MaxCharisma);
                     this.TryCreate(TokenType.LUCK, this.objective.MinLuck, this.objective.MaxLuck);
-                    this.TryCreate(TokenType.TIME, this.objective.MinTime, this.objective.MaxTime);
                     this.TryCreate(TokenType.TURN, this.objective.MinTurn, this.objective.MaxTurn);
                 }
             }

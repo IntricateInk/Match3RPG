@@ -68,13 +68,64 @@ namespace Match3.Encounter.Effect.Passive
                 GameEffect.GainResource(encounter, targets, TokenType.LUCK, 1);
             }
         );
+        
+        public static CharacterPassive SPRINTER = new CharacterPassive
+        (
+            name: "Sprinter",
+            sprite: "tokens/agi",
+            tooltip: string.Format("Gain 10 {0} at the start of the encounter. Lose 1 {0} at the start of each turn.", TokenType.AGILITY.AsStr()),
+
+            OnApplyPassive: (EncounterState encounter, List < TokenState > targets) =>
+            {
+                GameEffect.GainResource(encounter, targets, TokenType.AGILITY, 10);
+            },
+
+            OnTurnStart: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                GameEffect.GainResource(encounter, targets, TokenType.AGILITY, -1);
+            }
+        );
+
+        public static CharacterPassive QUICK_WITTED = new CharacterPassive
+        (
+            name: "Quick Witted",
+            sprite: "tokens/int",
+            tooltip: string.Format("Gain 10 {0} at the start of the encounter. Lose 1 {0} at the start of each turn.", TokenType.INTELLIGENCE.AsStr()),
+
+            OnApplyPassive: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                GameEffect.GainResource(encounter, targets, TokenType.INTELLIGENCE, 10);
+            },
+
+            OnTurnStart: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                GameEffect.GainResource(encounter, targets, TokenType.INTELLIGENCE, -1);
+            }
+        );
+
+        public static CharacterPassive CURSED = new CharacterPassive
+        (
+            name: "Cursed",
+            sprite: "tokens/int",
+            tooltip: "Spawn 3 Zombies at the start of each encounter",
+
+            OnApplyPassive: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                List<TokenState> tokens = encounter.boardState.GetTokens();
+                tokens.Shuffle();
+
+                foreach (TokenState token in tokens.Take(3))
+                {
+                    token.ApplyBuff(TargetPassive.ZOMBIE);
+                }
+            }
+        );
 
         #endregion CHARACTER
 
         // +1 energy at start of turn
         // -1 energy at start of turn
         // lose X resource every X turns
-        // timer based effect?
         //- +1 cascade at end of turn
         //- at start of turn, apply buff to random X tile
         //- if perform a 5 match, apply buff?
@@ -82,7 +133,7 @@ namespace Match3.Encounter.Effect.Passive
         //- if perform a T match, apply buff?
 
         #region ENCOUNTER
-            
+
         #region PHANTOM
 
         private static CharacterPassive Phantom(string name, TokenType type1, TokenType type2)

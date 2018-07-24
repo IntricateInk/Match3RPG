@@ -33,9 +33,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -66,9 +63,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -101,9 +95,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -134,9 +125,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -171,9 +159,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -206,9 +191,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -243,9 +225,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -279,9 +258,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: 80,
             MaxLuck: 99,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -312,9 +288,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -347,9 +320,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -380,9 +350,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -415,9 +382,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: 9,
             MaxLuck: 13,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -448,9 +412,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: 9,
             MaxLuck: 13,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -483,9 +444,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: 2,
             MaxTurn: 99
         );
@@ -516,9 +474,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: 2,
             MaxTurn: 99
@@ -551,9 +506,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: 2,
             MaxTurn: 99
         );
@@ -584,9 +536,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: 2,
             MaxTurn: 99
@@ -619,9 +568,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: 0,
             MaxLuck: 2,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: 2,
             MaxTurn: 99
         );
@@ -652,9 +598,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: 10,
             MaxTurn: 99
@@ -687,9 +630,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: 20,
             MaxTurn: 99
         );
@@ -720,9 +660,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: 15,
             MaxTurn: 99
@@ -755,9 +692,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: 10,
             MaxTurn: 99
         );
@@ -788,9 +722,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -823,9 +754,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -856,9 +784,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -891,9 +816,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -924,9 +846,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -959,9 +878,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -992,9 +908,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: 70,
             MaxLuck: 99,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1027,9 +940,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1060,9 +970,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1095,9 +1002,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1128,9 +1032,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: 5,
             MaxTurn: 99
@@ -1163,9 +1064,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: 8,
             MaxTurn: 99
         );
@@ -1196,9 +1094,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: 15,
             MaxTurn: 99
@@ -1231,9 +1126,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1264,9 +1156,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1299,9 +1188,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1332,9 +1218,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1367,9 +1250,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: 12,
             MaxTurn: 99
         );
@@ -1400,9 +1280,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: 10,
             MaxTurn: 99
@@ -1435,9 +1312,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: 8,
             MaxTurn: 99
         );
@@ -1468,9 +1342,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1503,9 +1374,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1536,9 +1404,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1571,9 +1436,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1604,9 +1466,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1639,9 +1498,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1672,9 +1528,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1707,9 +1560,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1740,9 +1590,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1775,9 +1622,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1808,9 +1652,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1843,9 +1684,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1876,9 +1714,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: 60,
             MaxLuck: 99,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1911,9 +1746,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -1944,9 +1776,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -1979,9 +1808,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -2012,9 +1838,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -2047,9 +1870,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -2080,9 +1900,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -2115,9 +1932,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -2148,9 +1962,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100
@@ -2183,9 +1994,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -2217,9 +2025,6 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTime: -1,
-            MaxTime: 301,
-
             MinTurn: -1,
             MaxTurn: 100
         );
@@ -2250,9 +2055,6 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
-
-            MinTime: -1,
-            MaxTime: 301,
 
             MinTurn: -1,
             MaxTurn: 100

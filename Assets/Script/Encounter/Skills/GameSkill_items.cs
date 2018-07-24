@@ -1,4 +1,5 @@
 ﻿using Match3.Encounter.Effect.Passive;
+using Match3.UI.Animation;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -271,9 +272,7 @@ namespace Match3.Encounter.Effect.Skill
                 GameEffect.GainRandomResource(encounter, targets, 1);
             }
         );
-
-        // to be added to spreadsheet
-
+        
         public static GameSkill FAST_TALK = new GameSkill
         (
             name: "Fast Talk",
@@ -472,9 +471,280 @@ namespace Match3.Encounter.Effect.Skill
             }
         );
 
+        private static GameSkill ChaTransformPlus(string name, string sprite, TokenType type)
+        {
+            return new GameSkill
+            (
+                name: name,
+                sprite: sprite,
+                tooltip: string.Format("Transform a token and adjacent tokens to {0}.", type.AsStr()),
+
+                energyCost: 1,
+
+                chaCost: 5,
+
+                selectBehavior: SelectBehavior.Single,
+
+                runEffects: (EncounterState encounter, List<TokenState> targets) =>
+                {
+                    List<TokenState> tokens = targets[0].GetAllAdjacent();
+                    tokens.Add(targets[0]);
+
+                    GameEffect.BeginAnimationBatch();
+                    foreach (TokenState token in tokens)
+                    {
+                        token.type = type;
+                        token.PlayAnimation("wave1");
+                    }
+                    GameEffect.EndAnimationBatch();
+                }
+            );
+
+        }
+
+        public static GameSkill THREATEN  = ChaTransformPlus("Threaten" , "tokens/cha", TokenType.STRENGTH);
+        public static GameSkill GUILE     = ChaTransformPlus("Guile"    , "tokens/cha", TokenType.AGILITY);
+        public static GameSkill WIT       = ChaTransformPlus("Wit"      , "tokens/cha", TokenType.INTELLIGENCE);
+        public static GameSkill AFFLUENCE = ChaTransformPlus("Affluence", "tokens/cha", TokenType.LUCK);
+
+        public static GameSkill PONDER = new GameSkill
+        (
+            name: "Ponder",
+            sprite: "tokens/int",
+            tooltip: "Gain 3 INT.",
+
+            energyCost: 1,
+
+            selectBehavior: SelectBehavior.None,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                const TokenType type = TokenType.INTELLIGENCE;
+                encounter.playerState.GainResource(type, 3);
+                string message = string.Format("You ponder...... gaining 3 {0}.", type.AsStr());
+                UIAnimationManager.AddAnimation(new UIInstruction_OverlayText(message));
+            }
+        );
+
+        public static GameSkill WELL_LAID_PLANS = new GameSkill
+        (
+            name: "Well Laid Plans",
+            sprite: "tokens/int",
+            tooltip: "Gain 1 Energy.",
+
+            energyCost: 0,
+
+            intCost: 10,
+
+            selectBehavior: SelectBehavior.None,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                encounter.playerState.Energy += 1;
+                string message = "You prepare yourself, gaining 1 Energy.";
+                UIAnimationManager.AddAnimation(new UIInstruction_OverlayText(message));
+            }
+        );
+
+        public static GameSkill ADRENALINE_RUSH = new GameSkill
+        (
+            name: "Adrenaline Rush",
+            sprite: "tokens/agi",
+            tooltip: "Gain 1 Energy.",
+
+            energyCost: 0,
+
+            strCost: 8,
+            agiCost: 8,
+
+            selectBehavior: SelectBehavior.None,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                encounter.playerState.Energy += 1;
+                string message = "A surge of adrenaline courses through your body. You gain 1 Energy.";
+                UIAnimationManager.AddAnimation(new UIInstruction_OverlayText(message));
+            }
+        );
+
+        public static GameSkill LACKEYS = new GameSkill
+        (
+            name: "Lackeys",
+            sprite: "tokens/cha",
+            tooltip: "Gain 1 Energy. Spawn 1 Crew.",
+
+            energyCost: 0,
+
+            chaCost: 8,
+
+            selectBehavior: SelectBehavior.None,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                encounter.playerState.Energy += 1;
+
+                List<TokenState> tokens = encounter.boardState.GetTokens();
+                tokens.Shuffle();
+
+                tokens[0].ApplyBuff(TargetPassive.CREW);
+            }
+        );
+
+        public static GameSkill NECROMANCY = new GameSkill
+        (
+            name: "Necromancy",
+            sprite: "tokens/cha",
+            tooltip: "Gain 1 Energy. Spawn 2 Zombies.",
+
+            energyCost: 0,
+
+            intCost: 5,
+
+            selectBehavior: SelectBehavior.None,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                encounter.playerState.Energy += 1;
+
+                List<TokenState> tokens = encounter.boardState.GetTokens();
+                tokens.Shuffle();
+
+                tokens[0].ApplyBuff(TargetPassive.ZOMBIE);
+                tokens[1].ApplyBuff(TargetPassive.ZOMBIE);
+            }
+        );
+
+        public static GameSkill IGNITE = new GameSkill
+        (
+            name: "Ignite",
+            sprite: "tokens/int",
+            tooltip: "Apply Wildfire to target token.",
+
+            energyCost: 1,
+
+            intCost: 3,
+
+            selectBehavior: SelectBehavior.Single,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                targets[0].ApplyBuff(TargetPassive.WILDFIRE);
+            }
+        );
+
+        public static GameSkill ENGINEER_FLAMETHROWER_TRAP = new GameSkill
+        (
+            name: "Set Flamethrower Trap",
+            sprite: "tokens/int",
+            tooltip: "Place a Flamethrower Trap on the target tile.",
+
+            energyCost: 0,
+
+            intCost: 20,
+
+            selectBehavior: SelectBehavior.Single,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                targets[0].ApplyBuff(TargetPassive.FLAMETHROWER_TRAP);
+            }
+        );
+
+        public static GameSkill ENGINEER_EXPLOSIVE_TRAP = new GameSkill
+        (
+            name: "Set Explosive Trap",
+            sprite: "tokens/int",
+            tooltip: "Place a Explosive Trap on the target tile.",
+
+            energyCost: 0,
+
+            intCost: 20,
+
+            selectBehavior: SelectBehavior.Single,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                targets[0].ApplyBuff(TargetPassive.EXPLOSIVE_TRAP);
+            }
+        );
+
+        public static GameSkill INSPECT = new GameSkill
+        (
+            name: "Inspect",
+            sprite: "tokens/int",
+            tooltip: "Gain resources of all tokens in a 3x3 area.",
+
+            energyCost: 2,
+
+            intCost: 3,
+
+            selectBehavior: SelectBehavior.Single,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                GameEffect.SelectSurrounding(encounter, targets);
+
+                GameEffect.BeginAnimationBatch();
+                foreach (TokenState token in targets)
+                {
+                    token.ShowResourceGain(1);
+                    encounter.playerState.GainResource(token.type, 1);
+                }
+
+                GameEffect.EndAnimationBatch();
+            }
+        );
+
+        public static GameSkill PROFILE = new GameSkill
+        (
+            name: "Profile",
+            sprite: "tokens/int",
+            tooltip: "Gain resources of all tokens in a column.",
+
+            energyCost: 2,
+
+            intCost: 3,
+
+            selectBehavior: SelectBehavior.Single,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                GameEffect.BeginAnimationBatch();
+                foreach (TokenState token in encounter.boardState.GetCol(targets[0].x))
+                {
+                    token.ShowResourceGain(1);
+                    encounter.playerState.GainResource(token.type, 1);
+                }
+                GameEffect.EndAnimationBatch();
+            }
+        );
+
+        public static GameSkill STUDY = new GameSkill
+        (
+            name: "Study",
+            sprite: "tokens/int",
+            tooltip: "Gain resources of all tokens in a row.",
+
+            energyCost: 2,
+
+            intCost: 3,
+
+            selectBehavior: SelectBehavior.Single,
+
+            runEffects: (EncounterState encounter, List<TokenState> targets) =>
+            {
+                GameEffect.BeginAnimationBatch();
+                foreach (TokenState token in encounter.boardState.GetRow(targets[0].y))
+                {
+                    token.ShowResourceGain(1);
+                    encounter.playerState.GainResource(token.type, 1);
+                }
+                GameEffect.EndAnimationBatch();
+            }
+        );
+
         // TODO:
 
-        // trade skills pay X resource, gain Y resource. 0 energy
         // pay X resource, gain 1 energy
         // gain 1 energy, gain a debuff
 

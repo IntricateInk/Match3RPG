@@ -30,4 +30,9 @@ public class TestMenuScript : MonoBehaviour {
     {
         EncounterState.NewEncounter(EncounterSheet.AllEncounters[0]);
     }
+
+    public void GoToDebug()
+    {
+        SceneManager.LoadScene("testmenu");
+    }
 }

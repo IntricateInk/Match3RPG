@@ -12,14 +12,13 @@ public enum TokenType : int
     INTELLIGENCE   = 2,
     CHARISMA       = 3,
     LUCK           = 4,
-    TIME           = 5,
-    TURN           = 6
+    TURN           = 5
 }
 
 public static class TokenTypeHelper
 {
     public static int ResourceCount() { return 5; }
-    public static int Count() { return 7; }
+    public static int Count() { return 6; }
 
     public static TokenType RandomResource()
     {
@@ -34,26 +33,6 @@ public static class TokenTypeHelper
 
 public static class TokenTypeExtensions
 {
-
-    public static RuntimeAnimatorController GetAnimator(this TokenType token)
-    {
-        switch (token)
-        {
-            case TokenType.STRENGTH:
-                return Resources.Load<RuntimeAnimatorController>("animations/crystal_orange/animator");
-            case TokenType.AGILITY:
-                return Resources.Load<RuntimeAnimatorController>("animations/crystal_grey/animator");
-            case TokenType.INTELLIGENCE:
-                return Resources.Load<RuntimeAnimatorController>("animations/crystal_blue/animator");
-            case TokenType.CHARISMA:
-                return Resources.Load<RuntimeAnimatorController>("animations/crystal_pink/animator");
-            case TokenType.LUCK:
-                return Resources.Load<RuntimeAnimatorController>("animations/crystal_green/animator");
-            default:
-                throw new ArgumentException("Token type of " + token + " has no animator.");
-        }
-    }
-
     public static Sprite GetSprite(this TokenType token)
     {
         switch (token)
@@ -70,8 +49,6 @@ public static class TokenTypeExtensions
                 return Resources.Load<Sprite>("tokens/luk");
             case TokenType.TURN:
                 return Resources.Load<Sprite>("tokens/turn");
-            case TokenType.TIME:
-                return Resources.Load<Sprite>("tokens/time");
             default:
                 throw new ArgumentException("Token type of " + token + " not recognized.");
         }
@@ -108,7 +85,6 @@ public static class TokenTypeExtensions
 
     public static int MaxValue(this TokenType token)
     {
-        if (token == TokenType.TIME) return 300;
         return 99;
     }
 
