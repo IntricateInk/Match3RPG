@@ -92,7 +92,22 @@ public class OverworldManager : MonoBehaviour
                 if (nodeInProcess.isInPath)
                 {
                     button.GetComponentInChildren<Text>().text = map.levelMap[i0, j0]._nodeType.ToString();
-                    button.onClick.AddListener(() => this.loadLevel(i0, j0));
+
+                    // if at first floor depth
+                    if (map.playerPosition.x == 0 && i0 == 0)
+                    {
+                        // highlight all
+                        button.onClick.AddListener(() => this.loadLevel(i0, j0));
+                        button.GetComponent<Image>().color = Color.green;
+                    } else
+                    {
+                        // highlight if adjascent
+                        if ((i0 == map.playerPosition.x + 1) && Mathf.Abs(map.playerPosition.y - j0) <= 1)
+                        {
+                            button.onClick.AddListener(() => this.loadLevel(i0, j0));
+                            button.GetComponent<Image>().color = Color.green;
+                        }
+                    }
                 }
                 else
                 {

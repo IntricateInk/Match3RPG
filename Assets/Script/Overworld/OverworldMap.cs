@@ -13,6 +13,8 @@ public class OverworldMap
     public int width;
     public int levelIndex;
 
+    public Vector2Int playerPosition;
+
     public OverworldMap(int depth = 10, int width = 7, int branches = 4)
     {
        
@@ -24,6 +26,7 @@ public class OverworldMap
         }
 
         this.generateEdges(branches);
+        this.playerPosition = new Vector2Int(1, -99);
     }
 
     public bool GenerateLevelMap(int depth = 10, int width = 7)
