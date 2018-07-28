@@ -72,6 +72,10 @@
     <Compile Include="Assets\Script\Encounter\Skills\GameEffect.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\GameSkill.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\GameSkill_items.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\items\items_mole.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\items\items_siren.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\items\items_zombie.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\items\template.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\SelectBehavior.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\TargetPassive.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\TargetPassive_items.cs" />
@@ -96,8 +100,10 @@
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_AddBuff.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_AddObjective.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_AddSkill.cs" />
+    <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_AddTargetBuff.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_FloatingText.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_OverlayText.cs" />
+    <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_RemoveTargetBuff.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SelectSkill.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetEncounter.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetEnergy.cs" />
@@ -123,6 +129,7 @@
     <Compile Include="Assets\Script\UI\UISkillContainer.cs" />
     <Compile Include="Assets\Script\UI\UISkillIcon.cs" />
     <Compile Include="Assets\Script\UI\UITextOverlayController.cs" />
+    <Compile Include="Assets\Script\UI\UITileController.cs" />
     <Compile Include="Assets\Script\UI\UITokenController.cs" />
     <Compile Include="Assets\Script\UI\UITooltip.cs" />
     <Compile Include="Assets\Script\UI\UITooltipController.cs" />

@@ -80,17 +80,28 @@ public class OverworldManager : MonoBehaviour
         mapParent.GetComponent<GridLayoutGroup>().cellSize = buttonSize;
 
 
-        for (int i = 0; i < map.depth + 1; i++)
+        for (int i = 0; i < map.depth; i++)
         {
             for (int j = 0; j < map.width; j++)
             {
                 int i0 = i;
                 int j0 = j;
+                OverworldNode nodeInProcess = map.levelMap[i0, j0];
                 Button button = Instantiate<GameObject>(buttonPrefab, mapParent.transform).GetComponent<Button>();
-                button.GetComponentInChildren<Text>().text = map.levelMap[i, j]._nodeType.ToString();
-                button.onClick.AddListener(() => this.loadLevel(i0, j0));
+
+                if (nodeInProcess.isInPath)
+                {
+                    button.GetComponentInChildren<Text>().text = map.levelMap[i0, j0]._nodeType.ToString();
+                    button.onClick.AddListener(() => this.loadLevel(i0, j0));
+                }
+                else
+                {
+                    button.GetComponent<Image>().enabled = false;
+                    button.GetComponentInChildren<Text>().text = null;
+                }
+
             }
-        }
+            }
         
         return map;
     }
