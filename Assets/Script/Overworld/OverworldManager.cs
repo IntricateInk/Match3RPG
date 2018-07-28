@@ -25,7 +25,7 @@ public class OverworldManager : MonoBehaviour
     private GameObject mapParent;
     
     private int levelIndex;
-
+    
 
 
     // constructor
@@ -78,6 +78,7 @@ public class OverworldManager : MonoBehaviour
         Vector2 rectTransformSize = mapParent.GetComponent<RectTransform>().sizeDelta;
         Vector2 buttonSize = new Vector2(rectTransformSize.x / map.width, rectTransformSize.y / map.depth);
         mapParent.GetComponent<GridLayoutGroup>().cellSize = buttonSize;
+        
 
 
         for (int i = 0; i < map.depth; i++)
@@ -88,31 +89,27 @@ public class OverworldManager : MonoBehaviour
                 int j0 = j;
                 OverworldNode nodeInProcess = map.levelMap[i0, j0];
                 Button button = Instantiate<GameObject>(buttonPrefab, mapParent.transform).GetComponent<Button>();
-
+                
                 if (nodeInProcess.isInPath)
                 {
                     button.GetComponentInChildren<Text>().text = map.levelMap[i0, j0]._nodeType.ToString();
-
+                    //buttonArray[i0, j0] = button;
                     // if at first floor depth
-                    if (map.playerPosition.x == 0 && i0 == 0)
+                    bool isFirstFloor = (map.playerPosition.x == 1 && i0 == 0);
+                    bool isAdjascent = ((i0 == map.playerPosition.x + 1) && Mathf.Abs(map.playerPosition.y - j0) <= 1);
+                    if (isFirstFloor || isAdjascent)
                     {
                         // highlight all
-                        button.onClick.AddListener(() => this.loadLevel(i0, j0));
+                        button.onClick.AddListener(() => this.loadLevel(button, i0, j0));
                         button.GetComponent<Image>().color = Color.green;
-                    } else
-                    {
-                        // highlight if adjascent
-                        if ((i0 == map.playerPosition.x + 1) && Mathf.Abs(map.playerPosition.y - j0) <= 1)
-                        {
-                            button.onClick.AddListener(() => this.loadLevel(i0, j0));
-                            button.GetComponent<Image>().color = Color.green;
-                        }
+                        button.GetComponent<NodeButtonScript>().shouldBreathe = true;
                     }
                 }
                 else
                 {
                     button.GetComponent<Image>().enabled = false;
                     button.GetComponentInChildren<Text>().text = null;
+                    button.GetComponent<NodeButtonScript>().shouldBreathe = false;
                 }
 
             }
@@ -121,11 +118,12 @@ public class OverworldManager : MonoBehaviour
         return map;
     }
 
-   
 
-    public void loadLevel(int i,  int j)
+
+    public void loadLevel(Button self, int i, int j)
     {
         //Debug.Log(i + " , " +j);
+
         _map.levelMap[i, j].LoadLevel();
     }
     
