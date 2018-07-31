@@ -17,3 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/encounter.unity
     guid: 07182b7339cc25e438bfd26de069ae8d
+  - enabled: 1
+    path: Assets/Assets/EventEncounter.unity
+    guid: fb58f304a8b047445b550caf6cfe8e50
+  m_configObjects: {}
