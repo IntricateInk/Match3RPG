@@ -99,6 +99,7 @@
     <Compile Include="Assets\Script\Generated\output\EncounterSheet.cs" />
     <Compile Include="Assets\Script\Generated\output\TrophySheet.cs" />
     <Compile Include="Assets\Script\ITooltip.cs" />
+    <Compile Include="Assets\Script\Overworld\DrawSkillsPurchase.cs" />
     <Compile Include="Assets\Script\Overworld\NodeButtonScript.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldManager.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldMap.cs" />
