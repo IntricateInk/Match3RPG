@@ -95,7 +95,7 @@ public class OverworldManager : MonoBehaviour
                     button.GetComponentInChildren<Text>().text = map.levelMap[i0, j0]._nodeType.ToString();
                     //buttonArray[i0, j0] = button;
                     // if at first floor depth
-                    bool isFirstFloor = (map.playerPosition.x == 1 && i0 == 0);
+                    bool isFirstFloor = (map.playerPosition.x == 1 && i0 == 1);
                     bool isAdjascent = ((i0 == map.playerPosition.x + 1) && Mathf.Abs(map.playerPosition.y - j0) <= 1);
                     if (isFirstFloor || isAdjascent)
                     {

@@ -8,7 +8,8 @@ public class OverworldNode
 {
 
 
-    public EncounterSheet _encounterSheet { get; private set; } // link to encounter object
+    public EncounterSheet _encounterSheet { get; private set; } // encounter data sheet
+    public EventSheet _eventSheet { get; private set; } // event data sheet
     public enum nodeType
     {
         START,
@@ -41,9 +42,7 @@ public class OverworldNode
 
         // TODO randomize encounter  sheet choice here
 
-
-
-        this._encounterSheet = assignEncounter(_nodeType);
+        assignEncounter(_nodeType);
     }
 
 
@@ -89,28 +88,44 @@ public class OverworldNode
 
     public void LoadLevel()
     {
-        if (_nodeType != nodeType.REST && _nodeType != nodeType.START)
+        switch(_nodeType)
         {
-            EncounterState.NewEncounter(_encounterSheet);
+            case nodeType.REST:
+                break;
+            case nodeType.EVENT:
+                EventManager.NewEvent(this._eventSheet);
+                break;
+            case nodeType.SHOP:
+                break;
+            default: // MOB ELITE BOSS
+                EncounterState.NewEncounter(this._encounterSheet);
+                break;
         }
     }
 
-    public EncounterSheet assignEncounter(nodeType type)
+    
+
+    public void assignEncounter(nodeType type)
     {
         switch (type)
         {
             case nodeType.MOB:
-                return EncounterSheet.AllEncounters.RandomChoice();
+                this._encounterSheet = EncounterSheet.AllEncounters.RandomChoice();
+                return;
             case nodeType.SHOP:
-                return EncounterSheet.AllEncounters.RandomChoice();
+                EncounterSheet.AllEncounters.RandomChoice();
+                return;
             case nodeType.ELITE:
-                return EncounterSheet.AllEncounters.RandomChoice();
+                EncounterSheet.AllEncounters.RandomChoice();
+                return;
             case nodeType.BOSS:
-                return EncounterSheet.AllEncounters.RandomChoice();
+                EncounterSheet.AllEncounters.RandomChoice();
+                return;
             case nodeType.EVENT:
-                return EncounterSheet.AllEncounters.RandomChoice();
+                this._eventSheet = EventSheet.AllEvents.RandomChoice();
+                return;
             default:
-                return null;
+                return;
         }
     }
 }

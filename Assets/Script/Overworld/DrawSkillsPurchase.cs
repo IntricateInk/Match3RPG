@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIShowEvent : MonoBehaviour {
+public class DrawSkillsPurchase : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

@@ -68,7 +68,7 @@ namespace Match3.Encounter.Encounter
 
         // Factory
 
-        private static Dictionary<string, EncounterSheet> _AllEncounters = new Dictionary<string, EncounterSheet>();
+        public static Dictionary<string, EncounterSheet> _AllEncounters = new Dictionary<string, EncounterSheet>();
         public static List<EncounterSheet> AllEncounters { get { return new List<EncounterSheet>(_AllEncounters.Values); } }
         
     }
