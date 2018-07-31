@@ -25,6 +25,8 @@ public class OverworldNode
     public nodeType _nodeType { get; private set; }
     private bool obfuscated;
 
+    public bool isInPath = false;
+        private int prevNode;
     private int xIndex; // public?
     private int yIndex; // public?
 
@@ -79,9 +81,10 @@ public class OverworldNode
         //return list;
     }
 
-    public void attachEdges()
+    public void attachEdges(int prevNode)
     {
-
+        this.prevNode = prevNode;
+        this.isInPath = true;
     }
 
     public void LoadLevel()

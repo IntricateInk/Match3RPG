@@ -13,37 +13,21 @@ namespace Match3.Encounter.Effect.Skill
         private string _tooltip;
         public string tooltip
         {
-            get { return string.Format("Energy: {2}\nCost: {0}\n{1}", ResourceCostString, _tooltip, energyCost); }
+            get { return _tooltip; }
             private set
             {
                 this._tooltip = value;
             }
         }
-
-        public string ResourceCostString
-        {
-            get
-            {
-                return new string('S', strCost) + new string('A', agiCost) + 
-                    new string('I', intCost) + new string('C', chaCost) + 
-                    new string('L', lukCost);
-            }
-        }
-
+        
         internal GameSkill(
                 string name, 
                 string sprite, 
                 string tooltip,
                 SelectBehavior selectBehavior,
-                Effect.GameEffect.Action runEffects,
+                GameEffect.SkillAction runEffects,
 
-                int energyCost,
-
-                int strCost = 0,
-                int agiCost = 0,
-                int intCost = 0,
-                int chaCost = 0,
-                int lukCost = 0
+                int energyCost
             )
         {
             this.name = name;
@@ -51,13 +35,7 @@ namespace Match3.Encounter.Effect.Skill
             this.tooltip = tooltip;
 
             this.energyCost = energyCost;
-
-            this.strCost = strCost;
-            this.agiCost = agiCost;
-            this.intCost = intCost;
-            this.chaCost = chaCost;
-            this.lukCost = lukCost;
-
+            
             this.selectBehavior = selectBehavior;
             this.runEffects = runEffects;
 
@@ -65,28 +43,17 @@ namespace Match3.Encounter.Effect.Skill
         }
 
         public readonly int energyCost;
-        private readonly int strCost;
-        private readonly int agiCost;
-        private readonly int intCost;
-        private readonly int chaCost;
-        private readonly int lukCost;
-        private readonly GameEffect.Action runEffects;
+        private readonly GameEffect.SkillAction runEffects;
 
         // Cost
 
         internal bool CanPayCost(EncounterState encounter)
         {
-            PlayerState player = encounter.playerState;
-
-            if (player.Energy < energyCost) return false;
-
-            if (player.GetResource(TokenType.STRENGTH)     < strCost) return false;
-            if (player.GetResource(TokenType.AGILITY)      < agiCost) return false;
-            if (player.GetResource(TokenType.INTELLIGENCE) < intCost) return false;
-            if (player.GetResource(TokenType.CHARISMA)     < chaCost) return false;
-            if (player.GetResource(TokenType.LUCK)         < lukCost) return false;
-
-            return true;
+            return CanPayCost(encounter.playerState.Energy);
+        }
+        public bool CanPayCost(int energy)
+        {
+            return energy >= this.energyCost;
         }
 
         private void PayCost(EncounterState encounter)
@@ -94,11 +61,6 @@ namespace Match3.Encounter.Effect.Skill
             PlayerState player = encounter.playerState;
 
             player.UseEnergy(energyCost);
-            player.GainResource(TokenType.STRENGTH    , -strCost);
-            player.GainResource(TokenType.AGILITY     , -agiCost);
-            player.GainResource(TokenType.INTELLIGENCE, -intCost);
-            player.GainResource(TokenType.CHARISMA    , -chaCost);
-            player.GainResource(TokenType.LUCK        , -lukCost);
         }
 
         // Select Behavior
@@ -118,9 +80,9 @@ namespace Match3.Encounter.Effect.Skill
             this.PayCost(encounter);
 
             List<TokenState> tokens = new List<TokenState>(encounter.inputState.selectedTokens);
-            this.runEffects(encounter, tokens);
+            this.runEffects(this, encounter, tokens);
         }
-
+        
         // Factory Pattern
 
         private static Dictionary<string, GameSkill> _AllSkills = new Dictionary<string, GameSkill>();

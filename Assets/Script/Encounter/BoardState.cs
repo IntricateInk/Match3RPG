@@ -44,7 +44,7 @@ namespace Match3.Encounter
 
             this.encounter.playerState.Turn++;
         }
-
+        
         private List<TokenState> GetMatching()
         {
             List<TokenState> tokens_matched = new List<TokenState>();
@@ -53,7 +53,9 @@ namespace Match3.Encounter
                 for (int y = 0; y < this.sizeY; y++)
                 {
                     TokenState token = this.tiles[x, y].token;
-                    
+
+                    if (token.type == TokenType.BLANK) continue;
+
                     if (x >= 2 && token.type == tiles[x-1, y].token.type && token.type == tiles[x-2, y].token.type)
                     {
                         if (!tokens_matched.Contains(token)) tokens_matched.Add(token);
@@ -148,7 +150,7 @@ namespace Match3.Encounter
 
         // Helper Methods
 
-        internal List<TokenState> GetRow(int x)
+        internal List<TokenState> GetCol(int x)
         {
             List<TokenState> row = new List<TokenState>();
 
@@ -161,7 +163,22 @@ namespace Match3.Encounter
             return row;
         }
 
-        internal List<TokenState> GetCol(int y)
+        internal List<TokenState> GetRow(params int[] row_indices)
+        {
+            List<TokenState> rows = new List<TokenState>();
+
+            foreach (int x in row_indices)
+            {
+                int idx = x;
+                if (idx < 0) idx = sizeX + idx;
+
+                rows.AddRange(this.GetRow(idx));
+            }
+
+            return rows;
+        }
+
+        internal List<TokenState> GetRow(int y)
         {
             List<TokenState> col = new List<TokenState>();
 
@@ -173,6 +190,21 @@ namespace Match3.Encounter
             }
 
             return col;
+        }
+
+        internal List<TokenState> GetCol(params int[] y_indices)
+        {
+            List<TokenState> cols = new List<TokenState>();
+
+            foreach (int y in y_indices)
+            {
+                int idx = y;
+                if (idx < 0) idx = sizeY + idx;
+
+                cols.AddRange(this.GetCol(idx));
+            }
+
+            return cols;
         }
 
         internal TokenState GetToken(int x, int y)

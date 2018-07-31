@@ -13,8 +13,7 @@ namespace Match3.Encounter.Encounter
 
         public EncounterObjective mainObjectiveMet { get; private set; }
 
-        public readonly EncounterObjective[] mainObjectives;
-        public readonly EncounterObjective[] bonusObjectives;
+        public readonly EncounterObjective[] objectives;
         public readonly string[] passives;
 
         public EncounterSheet
@@ -22,8 +21,7 @@ namespace Match3.Encounter.Encounter
                 string name,
                 string icon,
                 string tooltip,
-                string[] mainObjectives,
-                string[] bonusObjectives,
+                string[] objectives,
                 string[] passives
             )
         {
@@ -31,8 +29,7 @@ namespace Match3.Encounter.Encounter
             this.sprite  = icon;
             this.tooltip = tooltip;
 
-            this.mainObjectives  = EncounterObjective.GetObjective(mainObjectives);
-            this.bonusObjectives = EncounterObjective.GetObjective(bonusObjectives);
+            this.objectives = EncounterObjective.GetObjective(objectives);
             this.passives = passives;
 
             _AllEncounters.Add(name, this);
@@ -40,9 +37,9 @@ namespace Match3.Encounter.Encounter
 
         internal bool MainObjectiveMet(EncounterState encounter)
         {
-            foreach (EncounterObjective objective in this.mainObjectives)
+            foreach (EncounterObjective objective in this.objectives)
             {
-                if (objective.isCompleted(encounter.playerState))
+                if (objective.type != EncounterObjective.Type.BONUS && objective.isCompleted(encounter.playerState))
                 {
                     this.mainObjectiveMet = objective;
                     return true;

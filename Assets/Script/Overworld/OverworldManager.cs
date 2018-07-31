@@ -25,7 +25,7 @@ public class OverworldManager : MonoBehaviour
     private GameObject mapParent;
     
     private int levelIndex;
-
+    
 
 
     // constructor
@@ -78,28 +78,52 @@ public class OverworldManager : MonoBehaviour
         Vector2 rectTransformSize = mapParent.GetComponent<RectTransform>().sizeDelta;
         Vector2 buttonSize = new Vector2(rectTransformSize.x / map.width, rectTransformSize.y / map.depth);
         mapParent.GetComponent<GridLayoutGroup>().cellSize = buttonSize;
+        
 
 
-        for (int i = 0; i < map.depth + 1; i++)
+        for (int i = 0; i < map.depth; i++)
         {
             for (int j = 0; j < map.width; j++)
             {
                 int i0 = i;
                 int j0 = j;
+                OverworldNode nodeInProcess = map.levelMap[i0, j0];
                 Button button = Instantiate<GameObject>(buttonPrefab, mapParent.transform).GetComponent<Button>();
-                button.GetComponentInChildren<Text>().text = map.levelMap[i, j]._nodeType.ToString();
-                button.onClick.AddListener(() => this.loadLevel(i0, j0));
+                
+                if (nodeInProcess.isInPath)
+                {
+                    button.GetComponentInChildren<Text>().text = map.levelMap[i0, j0]._nodeType.ToString();
+                    //buttonArray[i0, j0] = button;
+                    // if at first floor depth
+                    bool isFirstFloor = (map.playerPosition.x == 1 && i0 == 0);
+                    bool isAdjascent = ((i0 == map.playerPosition.x + 1) && Mathf.Abs(map.playerPosition.y - j0) <= 1);
+                    if (isFirstFloor || isAdjascent)
+                    {
+                        // highlight all
+                        button.onClick.AddListener(() => this.loadLevel(button, i0, j0));
+                        button.GetComponent<Image>().color = Color.green;
+                        button.GetComponent<NodeButtonScript>().shouldBreathe = true;
+                    }
+                }
+                else
+                {
+                    button.GetComponent<Image>().enabled = false;
+                    button.GetComponentInChildren<Text>().text = null;
+                    button.GetComponent<NodeButtonScript>().shouldBreathe = false;
+                }
+
             }
-        }
+            }
         
         return map;
     }
 
-   
 
-    public void loadLevel(int i,  int j)
+
+    public void loadLevel(Button self, int i, int j)
     {
         //Debug.Log(i + " , " +j);
+
         _map.levelMap[i, j].LoadLevel();
     }
     

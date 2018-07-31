@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Match3.Encounter.Effect.Passive;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,18 +15,44 @@ namespace Match3.UI
         [SerializeField]
         private Text numberLabel;
 
-        private ITooltip _tooltip;
-        internal override ITooltip tooltip
+        private TargetPassive _target_buff = null;
+        internal TargetPassive target_buff
         {
-            get { return this._tooltip; }
+            get { return this._target_buff; }
             set
             {
-                this._tooltip = value;
+                this._target_buff = value;
 
-                if (this.tooltip != null)
+                if (this.target_buff != null)
                 {
-                    this.icon.sprite = this.tooltip.GetSprite();
+                    this.icon.sprite = this.target_buff.GetSprite();
                 }
+            }
+        }
+
+        private CharacterPassive _buff;
+        internal CharacterPassive buff
+        {
+            get { return this._buff; }
+            set
+            {
+                this._buff = value;
+
+                if (this.buff != null)
+                {
+                    this.icon.sprite = this.buff.GetSprite();
+                }
+            }
+        }
+
+        internal override ITooltip tooltip
+        {
+            get
+            {
+                if (this.target_buff != null)
+                    return this.target_buff;
+                else
+                    return this.buff;
             }
         }
 

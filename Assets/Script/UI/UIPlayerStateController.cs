@@ -26,31 +26,52 @@ namespace Match3.UI
         private Text turnLabel;
 
         [SerializeField]
-        private Text strLabel;
+        private UIResourceBarController strBar;
 
         [SerializeField]
-        private Text agiLabel;
+        private UIResourceBarController agiBar;
 
         [SerializeField]
-        private Text intLabel;
+        private UIResourceBarController intBar;
 
         [SerializeField]
-        private Text chaLabel;
+        private UIResourceBarController chaBar;
 
         [SerializeField]
-        private Text lukLabel;
+        private UIResourceBarController lukBar;
+
+        [SerializeField]
+        private Transform strIcon;
+        [SerializeField]
+        private Transform agiIcon;
+        [SerializeField]
+        private Transform intIcon;
+        [SerializeField]
+        private Transform chaIcon;
+        [SerializeField]
+        private Transform lukIcon;
 
         private void Awake()
         {
-            UIAnimationManager.OnResourceChange += this.OnResourceChange;
             UIAnimationManager.OnTimeChange += this.OnTimeChange;
             UIAnimationManager.OnTurnChange += this.OnTurnChange;
             UIAnimationManager.OnEnergyChange += this.OnEnergyChange;
+
+            strBar.field = TokenType.STRENGTH;
+            agiBar.field = TokenType.AGILITY;
+            intBar.field = TokenType.INTELLIGENCE;
+            chaBar.field = TokenType.CHARISMA;
+            lukBar.field = TokenType.LUCK;
+
+            strBar.OnResourceChange(TokenType.STRENGTH, 0);
+            agiBar.OnResourceChange(TokenType.AGILITY, 0);
+            intBar.OnResourceChange(TokenType.INTELLIGENCE, 0);
+            chaBar.OnResourceChange(TokenType.CHARISMA, 0);
+            lukBar.OnResourceChange(TokenType.LUCK, 0);
         }
 
         private void OnDestroy()
         {
-            UIAnimationManager.OnResourceChange -= this.OnResourceChange;
             UIAnimationManager.OnTimeChange -= this.OnTimeChange;
             UIAnimationManager.OnTurnChange -= this.OnTurnChange;
             UIAnimationManager.OnEnergyChange -= this.OnEnergyChange;
@@ -82,31 +103,28 @@ namespace Match3.UI
         {
             this.turnLabel.text = "Turns: " + turn.ToString();
         }
-
-        internal void OnResourceChange(TokenType token, int amount)
+        
+        internal Vector3 GetResourcePosition(TokenType token)
         {
             switch (token)
             {
                 case TokenType.STRENGTH:
-                    this.strLabel.text = amount.ToString();
-                    break;
+                    return this.strIcon.position;
 
                 case TokenType.AGILITY:
-                    this.agiLabel.text = amount.ToString();
-                    break;
+                    return this.agiIcon.position;
 
                 case TokenType.INTELLIGENCE:
-                    this.intLabel.text = amount.ToString();
-                    break;
+                    return this.intIcon.position;
 
                 case TokenType.CHARISMA:
-                    this.chaLabel.text = amount.ToString();
-                    break;
+                    return this.chaIcon.position;
 
                 case TokenType.LUCK:
-                    this.lukLabel.text = amount.ToString();
-                    break;
+                    return this.lukIcon.position;
             }
+
+            throw new ArgumentException(string.Format("No such token: {0}", token));
         }
     }
 }

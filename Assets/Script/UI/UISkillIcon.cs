@@ -1,4 +1,5 @@
 ﻿using Match3.Encounter;
+using Match3.Encounter.Effect.Skill;
 using Match3.UI.Animation;
 using System;
 using System.Collections;
@@ -18,9 +19,9 @@ namespace Match3.UI
 
         [SerializeField]
         private Text energyLabel;
-
+        
         [SerializeField]
-        private Text resourceLabel;
+        private Text descLabel;
 
         [SerializeField]
         private Animator animator;
@@ -30,12 +31,6 @@ namespace Match3.UI
             get { return this.label.text; }
             set { this.label.text = value; }
         }
-
-        public string resourceCost
-        {
-            get { return this.resourceLabel.text; }
-            set { this.resourceLabel.text = value; }
-        }
         
         public string energyCost
         {
@@ -43,29 +38,34 @@ namespace Match3.UI
             set { this.energyLabel.text = value; }
         }
 
-        private ITooltip _tooltip;
-        internal override ITooltip tooltip
+        private GameSkill _skill;
+        internal GameSkill skill
         {
-            get { return this._tooltip; }
+            get { return this._skill; }
             set
             {
-                this._tooltip = value;
+                this._skill = value;
 
-                this.skillName = tooltip.name;
+                this.skillName = skill.name;
                 this.image.sprite = Resources.Load<Sprite>(this.tooltip.sprite);
+                this.descLabel.text = this.skill.tooltip;
             }
         }
+
+        internal override ITooltip tooltip { get { return this.skill; } }
 
         private void Start()
         {
             UIAnimationManager.OnSelectedSkill += this.OnSelectSkill;
+            UIAnimationManager.OnEnergyChange += this.OnEnergyChange;
         }
 
         private void OnDestroy()
         {
             UIAnimationManager.OnSelectedSkill -= this.OnSelectSkill;
+            UIAnimationManager.OnEnergyChange -= this.OnEnergyChange;
         }
-
+        
         [NonSerialized]
         public int index;
 
@@ -77,30 +77,27 @@ namespace Match3.UI
         public new void OnPointerEnter()
         {
             base.OnPointerEnter();
-            this.animator.Play("Highlighted");
+            this.animator.SetBool("Pointer", true);
         }
 
         public new void OnPointerExit()
         {
             base.OnPointerExit();
-            this.UpdateAnimator();
+            this.animator.SetBool("Pointer", false);
+        }
+
+        private void OnEnergyChange(int energy)
+        {
+            this.animator.SetBool("CanUse", this.skill.CanPayCost(energy));
         }
 
         private void OnSelectSkill(int index)
         {
-            this.UpdateAnimator();
-        }
-
-        private void UpdateAnimator()
-        {
-            if (UIAnimationManager.SelectedSkill == index)
-            {
-                this.animator.Play("Pressed");
-            }
+            if (index == this.index)
+                this.animator.SetBool("Selected", true);
             else
-            {
-                this.animator.Play("Normal");
-            }
+                this.animator.SetBool("Selected", false);
         }
+        
     }
 }

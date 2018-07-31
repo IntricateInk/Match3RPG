@@ -4,16 +4,11 @@
                 icon: "{icon}",
                 tooltip: "{tooltip}",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{{
-				{lst_mainObjectives}
+				{lst_objectives}
 				}},
                 
-				bonusObjectives: new string[] 
-				{{
-				{lst_bonusObjectives}
-				}},
-				
 				passives: new string[] 
 				{{
 				{lst_passives}

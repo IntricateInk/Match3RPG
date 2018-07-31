@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Match3RPG", "Assembly-CSharp.csproj", "{BB2119B7-D1F7-47DB-958B-08FA5E483155}"
 EndProject
 Global
