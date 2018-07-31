@@ -81,8 +81,11 @@
     <Compile Include="Assets\Script\Encounter\Skills\Encounters\template.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\GameEffect.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\GameSkill.cs" />
-    <Compile Include="Assets\Script\Encounter\Skills\GameSkill\GameSkill_items.cs" />
-    <Compile Include="Assets\Script\Encounter\Skills\GameSkill\Shove.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\GameSkill_items.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\items\items_mole.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\items\items_siren.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\items\items_zombie.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\items\template.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\SelectBehavior.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\TargetPassive.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\TokenPassive\Crew.cs" />
@@ -92,10 +95,13 @@
     <Compile Include="Assets\Script\Encounter\TileState.cs" />
     <Compile Include="Assets\Script\Encounter\TokenState.cs" />
     <Compile Include="Assets\Script\Encounter\Trophies\TrophySheet.cs" />
+    <Compile Include="Assets\Script\EventEncounter\UIShowBackground.cs" />
+    <Compile Include="Assets\Script\EventEncounter\UIShowEvent.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterObjective.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterSheet.cs" />
     <Compile Include="Assets\Script\Generated\output\TrophySheet.cs" />
     <Compile Include="Assets\Script\ITooltip.cs" />
+    <Compile Include="Assets\Script\Overworld\NodeButtonScript.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldManager.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldMap.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldNode.cs" />
