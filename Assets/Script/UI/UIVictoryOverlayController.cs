@@ -1,4 +1,5 @@
 ﻿using Match3.Encounter;
+using Match3.Encounter.Encounter;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,22 +10,18 @@ namespace Match3.UI
     public class UIVictoryOverlayController : MonoBehaviour
     {
         [SerializeField]
+        private Transform objectiveContainer;
+
+        [SerializeField]
         private Animator animator;
-
-        [SerializeField]
-        private Text goldLabel;
-
-        [SerializeField]
-        private Text expLabel;
-
-        [SerializeField]
-        private Text trophyLabel;
-
-        internal void Show(float gold, float exp, string[] trophies)
+        
+        internal void Show(List<UIObjectiveController> objectives)
         {
-            this.goldLabel.text = gold.ToString();
-            this.expLabel.text = exp.ToString();
-            this.trophyLabel.text = string.Join("\n", trophies);
+            foreach (UIObjectiveController objective in objectives)
+            {
+                objective.transform.SetParent(this.objectiveContainer);
+            }
+
             this.animator.SetBool("Popup", true);
         }
 

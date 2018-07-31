@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Match3.UI
 {
-    internal class UISkillIcon : UITooltip
+    internal class UISkillIcon : MonoBehaviour
     {
         [SerializeField]
         private Image image;
@@ -20,9 +20,6 @@ namespace Match3.UI
         [SerializeField]
         private Text energyLabel;
         
-        [SerializeField]
-        private Text descLabel;
-
         [SerializeField]
         private Animator animator;
 
@@ -47,13 +44,10 @@ namespace Match3.UI
                 this._skill = value;
 
                 this.skillName = skill.name;
-                this.image.sprite = Resources.Load<Sprite>(this.tooltip.sprite);
-                this.descLabel.text = this.skill.tooltip;
+                this.image.sprite = Resources.Load<Sprite>(this.skill.sprite);
             }
         }
-
-        internal override ITooltip tooltip { get { return this.skill; } }
-
+        
         private void Start()
         {
             UIAnimationManager.OnSelectedSkill += this.OnSelectSkill;
@@ -74,15 +68,21 @@ namespace Match3.UI
             EncounterState.Current.SelectSkill(this.index);
         }
 
-        public new void OnPointerEnter()
+        public void OnPointerEnter()
         {
-            base.OnPointerEnter();
+            if (this.skill != null)
+            {
+                RectTransform rt = this.transform.GetComponent<RectTransform>();
+                Vector3 position = transform.position + (Vector3)rt.rect.max + new Vector3(5, 0);
+
+                UITooltipController.Show(this.skill, position, new Vector2(0, 1));
+            }
             this.animator.SetBool("Pointer", true);
         }
 
-        public new void OnPointerExit()
+        public void OnPointerExit()
         {
-            base.OnPointerExit();
+            if (this.skill != null) UITooltipController.Hide();
             this.animator.SetBool("Pointer", false);
         }
 

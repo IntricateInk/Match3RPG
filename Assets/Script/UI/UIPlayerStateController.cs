@@ -70,6 +70,52 @@ namespace Match3.UI
             lukBar.OnResourceChange(TokenType.LUCK, 0);
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                OnTurnEndButtonClick();
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                EncounterState.Current.SelectSkill(0);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                EncounterState.Current.SelectSkill(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                EncounterState.Current.SelectSkill(2);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                EncounterState.Current.SelectSkill(3);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                EncounterState.Current.SelectSkill(4);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                EncounterState.Current.SelectSkill(5);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha7))
+            {
+                EncounterState.Current.SelectSkill(6);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha8))
+            {
+                EncounterState.Current.SelectSkill(7);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                EncounterState.Current.SelectSkill(8);
+            }
+
+
+        }
+
         private void OnDestroy()
         {
             UIAnimationManager.OnTimeChange -= this.OnTimeChange;

@@ -22,7 +22,7 @@ namespace Match3.Encounter
             {
                 if (type != value)
                 {
-                    if (type != TokenType.NULL) UIAnimationManager.AddAnimation(new UIInstruction_SetTokenSprite(x, y, value));
+                    if (type != TokenType.NULL) UIAnimationManager.AddAnimation(new UIInstruction_SetTokenSprite(uid, value));
                     _type = value;
                 }
             }
@@ -41,7 +41,7 @@ namespace Match3.Encounter
             set
             {
                 this._isSelected = value;
-                UIAnimationManager.AddInstruction(new UIInstruction_SetTokenSelected(x, y, isSelected));
+                UIAnimationManager.AddInstruction(new UIInstruction_SetTokenSelected(uid, isSelected));
             }
         }
         
@@ -106,7 +106,8 @@ namespace Match3.Encounter
         internal void Swap(int dx, int dy) { Swap(GetAdjacent(dx, dy)); }
         internal void Swap(TokenState other)
         {
-            UIAnimationManager.AddAnimation(new UIAnimation_SwapToken(this.x, this.y, other.x, other.y));
+            UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(this.uid, other.x, other.y));
+            UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(other.uid, this.x, this.y));
 
             int this_x = this.x;
             int this_y = this.y;
@@ -118,7 +119,7 @@ namespace Match3.Encounter
         internal void SetPosition(int new_x, int new_y, bool doAnimate = true)
         {
             if (doAnimate)
-                UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(this.x, this.y, new_x, new_y));
+                UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(this.uid, new_x, new_y));
             
             this.x = new_x;
             this.y = new_y;
@@ -152,7 +153,7 @@ namespace Match3.Encounter
             {
                 passive.OnDestroy(board.encounter, new List<TokenState>() { this });
             }
-            UIAnimationManager.AddAnimation(new UIAnimation_RemoveToken(this.x, this.y));
+            UIAnimationManager.AddAnimation(new UIInstruction_RemoveToken(this.uid));
         }
         
         internal void ApplyBuff(TargetPassive buff)
@@ -161,7 +162,7 @@ namespace Match3.Encounter
             {
                 this.Passives.Add(buff);
                 buff.OnApplyPassive(this.board.encounter, new List<TokenState>() { this });
-                UIAnimationManager.AddAnimation(new UIInstruction_AddTargetBuff(this.x, this.y, buff, true));
+                UIAnimationManager.AddAnimation(new UIInstruction_AddTargetBuff(this.uid, buff));
             }
         }
         
@@ -171,7 +172,7 @@ namespace Match3.Encounter
             {
                 buff.OnRemovePassive(this.board.encounter, new List<TokenState>() { this });
                 this.Passives.Remove(buff);
-                UIAnimationManager.AddAnimation(new UIInstruction_RemoveTargetBuff(this.x, this.y, buff, true));
+                UIAnimationManager.AddAnimation(new UIInstruction_RemoveTargetBuff(this.uid, buff));
             }
         }
 
@@ -194,7 +195,7 @@ namespace Match3.Encounter
 
         internal void ShowText(string text)
         {
-            UIAnimationManager.AddAnimation(new UIInstruction_FloatingText(text, this.x, this.y));
+            UIAnimationManager.AddAnimation(new UIInstruction_FloatingText(text, this.AsIPosition()));
         }
 
         internal void PlayAnimation(string animation_name)

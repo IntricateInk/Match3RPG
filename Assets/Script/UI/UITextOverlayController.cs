@@ -9,26 +9,34 @@ namespace Match3.UI
     public class UITextOverlayController : MonoBehaviour
     {
         [SerializeField]
-        private Text label;
+        private Text titleLabel;
 
+        [SerializeField]
+        private Image icon;
+
+        [SerializeField]
+        private Text label;
+        
         [SerializeField]
         private Animator animator;
 
         [SerializeField]
-        private Image image;
+        private Image back;
 
         [SerializeField]
         private UIAnimationManager manager;
 
-        internal void Show(string text, bool pause_until_click)
+        internal void Show(string title, string sprite, string text, bool pause_until_click)
         {
             if (pause_until_click)
             {
                 manager.IsPaused = true;
                 this.animator.SetBool("AutoDismiss", false);
-                this.image.raycastTarget = true;
+                this.back.raycastTarget = true;
             }
 
+            this.titleLabel.text = title;
+            if (sprite != "") this.icon.sprite = Resources.Load<Sprite>(sprite);
             this.label.text = text;
             this.animator.Play("Popup");
         }
@@ -37,7 +45,7 @@ namespace Match3.UI
         {
             manager.IsPaused = false;
             this.animator.SetBool("AutoDismiss", true);
-            this.image.raycastTarget = false;
+            this.back.raycastTarget = false;
         }
     }
 }

@@ -14,22 +14,16 @@ namespace Match3.UI
         private Image image;
 
         [SerializeField]
+        private Image focusImage;
+
+        [SerializeField]
         private Animator animator;
+
+        internal int uid;
 
         internal int x;
         internal int y;
-
-        private bool _is_match = false;
-        internal bool is_match
-        {
-            get { return _is_match; }
-            set
-            {
-                _is_match = value;
-                Recolor();
-            }
-        }
-
+        
         private bool _is_selected = false;
         internal bool is_selected
         {
@@ -40,14 +34,16 @@ namespace Match3.UI
                 Recolor();
             }
         }
-        
+
+        internal UITileController tile { get { return this.board.tiles[x, y]; } }
+
         private bool is_mouse = false;
 
         internal UIBoardController board;
 
         internal void RemoveToken()
         {
-            this.board.tiles[this.x, this.y].token = null;
+            this.board.RemoveToken(this);
             this.animator.Play("Kill");
             Destroy(this.gameObject, this.animator.GetCurrentAnimatorStateInfo(0).length);
         }
@@ -78,20 +74,18 @@ namespace Match3.UI
 
         private void Recolor()
         {
-            Color color = Color.white;
+            Color color = new Color(0, 0, 0, 0);
 
             if (is_selected)
             {
                 color = Color.yellow;
-            } else if (is_match)
+            }
+            else if (is_mouse)
             {
-                color = Color.green;
+                color = Color.grey;
             }
 
-            if (is_mouse)
-                color *= Color.grey;
-
-            this.image.color = color;
+            this.focusImage.color = color;
         }
 
         internal void Highlight(bool is_highlight)

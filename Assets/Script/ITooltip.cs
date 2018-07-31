@@ -15,10 +15,4 @@ public static class ITooltipExtensions
     {
         return Resources.Load<Sprite>(tooltip.sprite);
     }
-
-    public static void Show(this ITooltip tooltip, bool is_show = true)
-    {
-        if (is_show) UITooltipController.Current = tooltip;
-        else if (!is_show && UITooltipController.Current == tooltip) UITooltipController.Current = null;
-    }
 }

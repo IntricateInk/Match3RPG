@@ -76,7 +76,7 @@ namespace Match3.Encounter
 
         internal void DoTokenFall()
         {
-            TokenType?[,] types = new TokenType?[this.sizeX, this.sizeY];
+            TokenState[,] tokens = new TokenState[this.sizeX, this.sizeY];
 
             UIAnimationManager.AddAnimation(new UIAnimation_BeginBatch());
             for (int x = 0; x < this.sizeX; x++)
@@ -94,7 +94,7 @@ namespace Match3.Encounter
 
                         if (token != null)
                         {
-                            UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(token.x, token.y, x, first_empty));
+                            UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(token.uid, x, first_empty));
 
                             token.SetPosition(x, first_empty, false);
                             first_empty += 1;
@@ -107,28 +107,28 @@ namespace Match3.Encounter
                 while (first_empty < this.sizeY)
                 {
                     this.tiles[x, first_empty].token = new TokenState(this, this.DrawToken(), x, first_empty);
-                    types[x, first_empty] = this.tiles[x, first_empty].token.type;
+                    tokens[x, first_empty] = this.tiles[x, first_empty].token;
                     first_empty++;
                 }
             }
 
             UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
-            UIAnimationManager.AddAnimation(new UIAnimation_DropTokens(types));
+            UIAnimationManager.AddAnimation(new UIAnimation_DropTokens(tokens));
         }
         
 
         private void fillBoard()
         {
-            TokenType?[,] types = new TokenType?[this.sizeX, this.sizeY];
+            TokenState[,] tokens = new TokenState[this.sizeX, this.sizeY];
 
             for (int x = 0; x < this.sizeX; x++)
                 for (int y = 0; y < this.sizeY; y++)
                 {
                     this.tiles[x, y].token = new TokenState(this, this.DrawToken(), x, y);
-                    types[x, y] = this.tiles[x, y].token.type;
+                    tokens[x, y] = this.tiles[x, y].token;
                 }
 
-            UIAnimationManager.AddAnimation( new UIAnimation_DropTokens(types) );
+            UIAnimationManager.AddAnimation( new UIAnimation_DropTokens(tokens) );
         }
 
         public readonly List<TokenType> tokenList = new List<TokenType>();

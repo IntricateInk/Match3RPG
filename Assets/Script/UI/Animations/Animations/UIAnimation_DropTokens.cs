@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Match3.Encounter;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace Match3.UI.Animation
 {
     public class UIAnimation_DropTokens : UIAnimation
     {
-        public UIAnimation_DropTokens(TokenType?[,] tokens, float animation_duration = 0.4f)
+        public UIAnimation_DropTokens(TokenState[,] tokens, float animation_duration = 0.4f)
         {
             this.tokens = tokens;
             this.animation_duration = animation_duration;
@@ -15,7 +16,7 @@ namespace Match3.UI.Animation
             this.isDone = false;
         }
         
-        private readonly TokenType?[,] tokens;
+        private readonly TokenState[,] tokens;
         private readonly float animation_duration;
 
         private UITokenController[,] uiTokens;
@@ -23,7 +24,7 @@ namespace Match3.UI.Animation
 
         internal override void Run(UIAnimationManager manager, float dt)
         {
-            float fallHeight = manager.board.GetComponent<RectTransform>().sizeDelta.y;
+            float fallHeight = manager.board.GetComponent<RectTransform>().rect.size.y;
 
             if (t == 0f)
             {

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Match3.UI
 {
-    internal class UIBuffIcon : UITooltip
+    internal class UIBuffIcon : MonoBehaviour
     {
         [SerializeField]
         private Image icon;
@@ -44,18 +44,7 @@ namespace Match3.UI
                 }
             }
         }
-
-        internal override ITooltip tooltip
-        {
-            get
-            {
-                if (this.target_buff != null)
-                    return this.target_buff;
-                else
-                    return this.buff;
-            }
-        }
-
+        
         private List<UITokenController> tokens = new List<UITokenController>();
         private List<UITileController>  tiles  = new List<UITileController>();
 
@@ -121,10 +110,8 @@ namespace Match3.UI
             }
         }
 
-        public new void OnPointerEnter()
+        public void OnPointerEnter()
         {
-            base.OnPointerEnter();
-
             foreach (UITokenController token in this.tokens)
             {
                 token.Highlight(true);
@@ -135,12 +122,21 @@ namespace Match3.UI
                 tile.Highlight(true);
                 if (tile.token != null) tile.token.Highlight(true);
             }
+
+            RectTransform rt = this.transform.GetComponent<RectTransform>();
+            Vector3 position = transform.position + (Vector3)rt.rect.max + new Vector3(5, 0);
+
+            if (this.buff != null)
+            {
+                UITooltipController.Show(this.buff, position, new Vector2(0, 1));
+            } else
+            {
+                UITooltipController.Show(this.target_buff, position, new Vector2(0, 1));
+            }
         }
 
-        public new void OnPointerExit()
+        public void OnPointerExit()
         {
-            base.OnPointerExit();
-
             foreach (UITokenController token in this.tokens)
             {
                 token.Highlight(false);
@@ -151,6 +147,8 @@ namespace Match3.UI
                 tile.Highlight(false);
                 if (tile.token != null) tile.token.Highlight(false);
             }
+
+            UITooltipController.Hide();
         }
     }
 }

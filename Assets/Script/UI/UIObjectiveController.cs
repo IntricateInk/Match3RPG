@@ -96,12 +96,18 @@ namespace Match3.UI
 
         public void OnPointerEnter()
         {
-            if (this.objective != null) this.objective.Show();
+            if (this.objective != null)
+            { 
+                RectTransform rt = this.transform.GetComponent<RectTransform>();
+                Vector3 position = transform.position + (Vector3)rt.rect.max + new Vector3(5, 0);
+
+                UITooltipController.Show(this.objective, position, new Vector2(0, 1));
+            }
         }
 
         public void OnPointerExit()
         {
-            if (this.objective != null) this.objective.Show(false);
+            if (this.objective != null) UITooltipController.Hide();
         }
     }
 }

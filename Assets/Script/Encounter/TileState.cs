@@ -49,7 +49,7 @@ namespace Match3.Encounter
             {
                 this.Passives.Add(buff);
                 buff.OnApplyPassive(this.board.encounter, new List<TokenState>() { this.token });
-                UIAnimationManager.AddAnimation(new UIInstruction_AddTargetBuff(this.x, this.y, buff, false));
+                UIAnimationManager.AddAnimation(new UIInstruction_AddTargetBuff(this.x, this.y, buff));
             }
         }
 
@@ -59,7 +59,7 @@ namespace Match3.Encounter
             {
                 buff.OnRemovePassive(this.board.encounter, new List<TokenState>() { this.token });
                 this.Passives.Remove(buff);
-                UIAnimationManager.AddAnimation(new UIInstruction_RemoveTargetBuff(this.x, this.y, buff, false));
+                UIAnimationManager.AddAnimation(new UIInstruction_RemoveTargetBuff(this.x, this.y, buff));
             }
         }
 

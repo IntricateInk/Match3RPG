@@ -93,14 +93,15 @@ namespace Match3.UI
             return tileController;
         }
 
-        internal static UITokenController CreateToken(int x, int y, TokenType type, UIBoardController board)
+        internal static UITokenController CreateToken(int x, int y, TokenState token, UIBoardController board)
         {
             UITokenController tokenController = Instantiate(UIFactory.Instance.tokenControllerPrefab);
 
             board.SetLayer(tokenController.transform, 0);
             tokenController.board = board;
             board.SetPosition(tokenController, x, y);
-            tokenController.SetType(type);
+            tokenController.uid = token.uid;
+            tokenController.SetType(token.type);
 
             return tokenController;
         }

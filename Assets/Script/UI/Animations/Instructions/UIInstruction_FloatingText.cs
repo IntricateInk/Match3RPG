@@ -7,19 +7,18 @@ namespace Match3.UI.Animation
 {
     public class UIInstruction_FloatingText : UIInstruction
     {
-        public UIInstruction_FloatingText(string text, int x, int y)
+        public UIInstruction_FloatingText(string text, IPosition p)
         {
-            this.x = x;
-            this.y = y;
+            this.p = p;
             this.text = text;
         }
 
         private readonly string text;
-        private readonly int x, y;
+        private readonly IPosition p;
 
         internal override void Run(UIAnimationManager manager, float dt)
         {
-            UIFactory.CreateFloatingText(text, manager.board.GetPosition(x, y), manager.board);
+            UIFactory.CreateFloatingText(text, p.GetPosition(manager), manager.board);
         }
     }
 }

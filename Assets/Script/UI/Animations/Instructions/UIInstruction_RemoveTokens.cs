@@ -5,20 +5,18 @@ using UnityEngine;
 
 namespace Match3.UI.Animation
 {
-    public class UIInstruction_SetTokenSprite : UIInstruction
+    public class UIInstruction_RemoveToken : UIInstruction
     {
-        public UIInstruction_SetTokenSprite(int uid, TokenType type)
+        public UIInstruction_RemoveToken(int uid)
         {
             this.uid = uid;
-            this.type = type;
         }
 
         private readonly int uid;
-        private readonly TokenType type;
 
         internal override void Run(UIAnimationManager manager, float dt)
         {
-            manager.board.GetToken(uid).SetType(type);
+            manager.board.GetToken(uid).RemoveToken();
         }
     }
 }

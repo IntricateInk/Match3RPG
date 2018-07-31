@@ -8,24 +8,29 @@ namespace Match3.UI.Animation
 {
     public class UIInstruction_RemoveTargetBuff : UIInstruction
     {
-        public UIInstruction_RemoveTargetBuff(int x, int y, TargetPassive buff, bool is_token)
+        public UIInstruction_RemoveTargetBuff(int uid, TargetPassive buff)
+        {
+            this.uid = uid;
+            this.buff = buff;
+        }
+
+        public UIInstruction_RemoveTargetBuff(int x, int y, TargetPassive buff)
         {
             this.x = x;
             this.y = y;
             this.buff = buff;
-
-            this.is_token = is_token;
         }
 
-        private readonly int x, y;
+        private readonly int uid = -1;
+        private readonly int x = -1;
+        private readonly int y = -1;
         private readonly TargetPassive buff;
-        private readonly bool is_token;
 
         internal override void Run(UIAnimationManager manager, float dt)
         {
-            if (is_token)
+            if (uid != -1)
             {
-                UITokenController token = manager.board.tiles[x, y].token;
+                UITokenController token = manager.board.GetToken(uid);
                 manager.buffContainer.RemoveTokenBuff(buff, token);
             }
             else

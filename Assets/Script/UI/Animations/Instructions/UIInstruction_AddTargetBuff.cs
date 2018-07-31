@@ -8,15 +8,25 @@ namespace Match3.UI.Animation
 {
     public class UIInstruction_AddTargetBuff : UIInstruction
     {
-        public UIInstruction_AddTargetBuff(int x, int y, TargetPassive buff, bool is_token)
+
+        public UIInstruction_AddTargetBuff(int uid, TargetPassive buff)
+        {
+            this.uid = uid;
+            this.buff = buff;
+
+            this.is_token = true;
+        }
+
+        public UIInstruction_AddTargetBuff(int x, int y, TargetPassive buff)
         {
             this.x = x;
             this.y = y;
             this.buff = buff;
 
-            this.is_token = is_token;
+            this.is_token = false;
         }
 
+        private readonly int uid;
         private readonly int x, y;
         private readonly TargetPassive buff;
         private readonly bool is_token;
@@ -25,7 +35,7 @@ namespace Match3.UI.Animation
         {
             if (is_token)
             {
-                UITokenController token = manager.board.tiles[x, y].token;
+                UITokenController token = manager.board.GetToken(uid);
                 manager.buffContainer.AddTokenBuff(buff, token);
             }
             else

@@ -48,10 +48,28 @@ namespace Match3.Encounter.Encounter
 
             return false;
         }
-        
+
+        internal EncounterObjective GetMainObjective(PlayerState player)
+        {
+            foreach (EncounterObjective objective in this.objectives)
+            {
+                if (objective.type == EncounterObjective.Type.WIN && objective.isCompleted(player))
+                    return objective;
+            }
+
+            foreach (EncounterObjective objective in this.objectives)
+            {
+                if (objective.type == EncounterObjective.Type.LOSE && objective.isCompleted(player))
+                    return objective;
+            }
+
+            return null;
+        }
+
         // Factory
 
         private static Dictionary<string, EncounterSheet> _AllEncounters = new Dictionary<string, EncounterSheet>();
         public static List<EncounterSheet> AllEncounters { get { return new List<EncounterSheet>(_AllEncounters.Values); } }
+        
     }
 }

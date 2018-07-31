@@ -8,20 +8,20 @@ namespace Match3.UI
 {
     public class UITooltipController : MonoBehaviour
     {
-
-        private static ITooltip _Current = null;
-        public static ITooltip Current
+        internal static void Show(ITooltip tooltip, Vector3 position, Vector2 anchor)
         {
-            get { return _Current; }
-            set
-            {
-                _Current = value;
-
-                if (OnTooltipChange != null) OnTooltipChange();
-            }
+            if (OnShow != null)
+                OnShow(tooltip, position, anchor);
         }
 
-        public static event Action OnTooltipChange;
+        internal static void Hide()
+        {
+            if (OnHide != null)
+                OnHide();
+        }
+
+        public static event Action OnHide;
+        public static event Action<ITooltip, Vector3, Vector2> OnShow;
 
         [SerializeField]
         private Image icon;
@@ -34,25 +34,32 @@ namespace Match3.UI
 
         private void Start()
         {
-            this.Redraw();
-            UITooltipController.OnTooltipChange += Redraw;
+            this.HideTooltip();
+            UITooltipController.OnShow += ShowTooltip;
+            UITooltipController.OnHide += HideTooltip;
         }
-
+        
         private void OnDestroy()
         {
-            UITooltipController.OnTooltipChange -= Redraw;
+            UITooltipController.OnShow -= ShowTooltip;
+            UITooltipController.OnHide -= HideTooltip;
         }
 
-        private void Redraw()
+        private void ShowTooltip(ITooltip tooltip, Vector3 position, Vector2 pivot)
         {
-            if (UITooltipController.Current == null)
-            {
-            } else
-            {
-                this.header.text = UITooltipController.Current.name;
-                this.body.text   = UITooltipController.Current.tooltip;
-                this.icon.sprite = UITooltipController.Current.GetSprite();
-            }
+            this.gameObject.SetActive(true);
+            this.header.text = tooltip.name;
+            this.body.text = tooltip.tooltip;
+            this.icon.sprite = tooltip.GetSprite();
+
+            RectTransform rt = this.GetComponent<RectTransform>();
+            rt.pivot = pivot;
+            this.transform.position = position;
         }
+
+        private void HideTooltip() { 
+            this.gameObject.SetActive(false);
+        }
+        
     }
 }

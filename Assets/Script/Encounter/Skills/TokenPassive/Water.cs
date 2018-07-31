@@ -17,7 +17,7 @@ namespace Match3.Encounter.Effect.Passive
             {
                 TokenState token = targets[0];
 
-                token.AttachAnimation("glow_bubble");
+                token.AttachAnimation("water");
 
                 if (token.Passives.Contains(TargetPassive.WILDFIRE))
                 {
@@ -28,7 +28,7 @@ namespace Match3.Encounter.Effect.Passive
 
             OnRemovePassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].DettachAnimation("glow_bubble");
+                targets[0].DettachAnimation("water");
             },
 
             OnTurnEnd: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

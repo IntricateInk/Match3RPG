@@ -27,12 +27,18 @@ namespace Match3.UI
 
         public void OnPointerEnter()
         {
-            if (this.tooltip != null) this.tooltip.Show();
+            if (this.tooltip != null)
+            {
+                RectTransform rt = this.transform.GetComponent<RectTransform>();
+                Vector3 position = transform.position + (Vector3)rt.rect.max + new Vector3(5, 0);
+
+                UITooltipController.Show(this.tooltip, position, new Vector2(0, 1));
+            }
         }
         
         public void OnPointerExit()
         {
-            if (this.tooltip != null) this.tooltip.Show(false);
+            UITooltipController.Hide();
         }
     }
 }

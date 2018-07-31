@@ -55,6 +55,15 @@ namespace Match3.Encounter
             this.playerState = new PlayerState(this);
 
             this.playerState.Initialize();
+            
+            this.DoEncounterStart();
+        }
+        
+        // private
+
+        private void DoEncounterStart ()
+        {
+            this.DoTurnStart();
 
             foreach (EncounterObjective objective in this.encounterSheet.objectives)
             {
@@ -64,14 +73,8 @@ namespace Match3.Encounter
             UIAnimationManager.AddInstruction(new UIInstruction_SetPlayer(this.playerSheet));
             UIAnimationManager.AddInstruction(new UIInstruction_SetEncounter(this.encounterSheet));
 
-            this.DoEncounterStart();
-        }
-        
-        // private
+            UIAnimationManager.AddAnimation(new UIInstruction_OverlayText(this.encounterSheet.name, this.encounterSheet.sprite, this.encounterSheet.tooltip, true));
 
-        private void DoEncounterStart ()
-        {
-            this.DoTurnStart();
         }
 
         private void DoTurnStart()
@@ -171,27 +174,18 @@ namespace Match3.Encounter
         private void DoEncounterEnd()
         {
             this.inputState.IsBlockInput = true;
-
-            int gold_reward = 0;
-            int exp_reward = 0;
-            List<string> trophies = new List<string>();
-            List<EncounterObjective> completed = new List<EncounterObjective>();
             
+            List<EncounterObjective> completed = new List<EncounterObjective>();
+
+            completed.Add(encounterSheet.GetMainObjective(this.playerState));
+
             foreach (EncounterObjective obj in encounterSheet.objectives)
             {
-                if (obj.isCompleted(playerState)) completed.Add(obj);
+                if (obj.isCompleted(playerState) && obj.type == EncounterObjective.Type.BONUS)
+                    completed.Add(obj);
             }
             
-            foreach (EncounterObjective obj in completed)
-            {
-                gold_reward += obj.GoldReward;
-                exp_reward += obj.ExpReward;
-                trophies.AddRange(obj.TrophyReward);
-
-                playerSheet.GainReward(obj);
-            }
-
-            UIAnimationManager.AddAnimation(new UIInstruction_ShowEncounterSummary(gold_reward, exp_reward, trophies.ToArray()));
+            UIAnimationManager.AddAnimation(new UIInstruction_ShowEncounterSummary(completed));
         }
 
         // public to UI classes

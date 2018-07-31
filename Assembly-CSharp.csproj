@@ -71,8 +71,8 @@
     <Compile Include="Assets\Script\Encounter\Skills\BasePassive.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\CharacterPassive.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\CharacterPassive\CharacterPassive_items.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\Encounters\Dark Room\Dark Room.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\Encounters\Drowning\Drowning.cs" />
-    <Compile Include="Assets\Script\Encounter\Skills\Encounters\items_dark_room.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\Encounters\items_spiked_hole.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\Encounters\items_zombie.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\Encounters\Mole\items_mole.cs" />
@@ -81,13 +81,12 @@
     <Compile Include="Assets\Script\Encounter\Skills\Encounters\template.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\GameEffect.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\GameSkill.cs" />
-    <Compile Include="Assets\Script\Encounter\Skills\GameSkill_items.cs" />
-    <Compile Include="Assets\Script\Encounter\Skills\items\items_mole.cs" />
-    <Compile Include="Assets\Script\Encounter\Skills\items\items_siren.cs" />
-    <Compile Include="Assets\Script\Encounter\Skills\items\items_zombie.cs" />
-    <Compile Include="Assets\Script\Encounter\Skills\items\template.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\GameSkill\GameSkill_items.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\GameSkill\Shove.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\SelectBehavior.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\TargetPassive.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\TilePassive\Explosive Trap.cs" />
+    <Compile Include="Assets\Script\Encounter\Skills\TilePassive\Flamethrower Trap.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\TokenPassive\Crew.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\TokenPassive\TargetPassive_items.cs" />
     <Compile Include="Assets\Script\Encounter\Skills\TokenPassive\Water.cs" />
@@ -113,8 +112,6 @@
     <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_LineAnimation.cs" />
     <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_MoveToken.cs" />
     <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_PlayAnimation.cs" />
-    <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_RemoveTokens.cs" />
-    <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_SwapTokens.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_AddBuff.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_AddObjective.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_AddSkill.cs" />
@@ -122,6 +119,7 @@
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_FloatingText.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_OverlayText.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_RemoveTargetBuff.cs" />
+    <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_RemoveTokens.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SelectSkill.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetEncounter.cs" />
     <Compile Include="Assets\Script\UI\Animations\Instructions\UIInstruction_SetEnergy.cs" />
@@ -150,7 +148,6 @@
     <Compile Include="Assets\Script\UI\UITextOverlayController.cs" />
     <Compile Include="Assets\Script\UI\UITileController.cs" />
     <Compile Include="Assets\Script\UI\UITokenController.cs" />
-    <Compile Include="Assets\Script\UI\UITooltip.cs" />
     <Compile Include="Assets\Script\UI\UITooltipController.cs" />
     <Compile Include="Assets\Script\UI\UITrophyController.cs" />
     <Compile Include="Assets\Script\UI\UIVictoryOverlayController.cs" />
