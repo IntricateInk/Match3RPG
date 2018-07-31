@@ -1,24 +1,31 @@
-uid,name,icon,tooltip,lst_mainObjectives,lst_bonusObjectives,lst_passives
-mole_1,Minor Mole Infestation,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_1_main_agi, mole_1_main_cha, mole_main_loss",mole_bonus_luk,Mole Infestation! (2)
-mole_2,Mole Infestation,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_2_main_agi, mole_2_main_cha, mole_main_loss",mole_bonus_luk,Mole Infestation! (3)
-mole_3,Major Mole Infestation!,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_3_main_agi, mole_3_main_cha, mole_main_loss",mole_bonus_luk,Mole Infestation! (4)
-phantom_str,Phantom Berserker,tokens/str,The restless spirit of a dead warrior haunts you.,"phantom_main_agi_str_win, phantom_main_str_loss, phantom_main_agi_loss, phantom_main_turn_loss",,Phantom Berserker
-phantom_agi,Phantom Swindler,tokens/agi,The restless spirit of a dead rogue haunts you.,"phantom_main_agi_int_win, phantom_main_agi_loss, phantom_main_int_loss, phantom_main_turn_loss",,Phantom Swindler
-phantom_int,Phantom Navigator,tokens/int,The restless spirit of a dead navigator haunts you.,"phantom_main_int_cha_win, phantom_main_cha_loss, phantom_main_int_loss, phantom_main_turn_loss",,Phantom Navigator
-phantom_luk,Phantom Jester,tokens/luk,The restless spirit of a dead jester haunts you.,"phantom_main_agi_luk_win, phantom_main_agi_loss, phantom_main_luk_loss, phantom_main_turn_loss",,Phantom Jester
-phantom_cha,Phantom Noble,tokens/cha,The restless spirit of a dead noble haunts you.,"phantom_main_cha_luk_win, phantom_main_cha_loss, phantom_main_luk_loss, phantom_main_turn_loss",,Phantom Noble
-monkey_1,Monkey Forest,tokens/agi,A forest full of monkeys…… great,"monkey_luk_win, monkey_1_stragi_win, monkey_1_intcha_win, monkey_1_loss",,Monkey Jungle
-monkey_2,Monkey Jungle,tokens/agi,A forest full of monkeys…… great,"monkey_luk_win, monkey_2_stragi_win, monkey_2_intcha_win, monkey_2_loss",,Monkey Jungle
-monkey_3,Monkey Thicklet,tokens/agi,A forest full of monkeys…… great,"monkey_luk_win, monkey_3_stragi_win, monkey_3_intcha_win, monkey_3_loss",,Monkey Jungle
-wildfire_1,Small Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_1_turn_win, wildfire_1_agi_loss",,Small Forest Fire!
-wildfire_2,Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_2_turn_win, wildfire_2_agi_loss",,Forest Fire!
-wildfire_3,Blazing Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_3_turn_win, wildfire_3_agi_loss",,Blazing Forest Fire!
-dark_room_1,Dark Room,tokens/agi,The room is really dark,"dark_room_1_win, dark_room_main_loss, dark_room_1_turn_loss",,Dark Room
-dark_room_2,Bloodstained Dark Room,tokens/agi,The room is really dark,"dark_room_2_win, dark_room_main_loss, dark_room_2_turn_loss",,Bloodstained Dark Room
-dark_room_3,Torture Chamber,tokens/agi,The room is really dark,"dark_room_3_win, dark_room_main_loss, dark_room_3_turn_loss",,Torture Chamber
-siren_1,Ship Graveyard,tokens/cha,A beautiful song washes over you.,"siren_1_int_win, siren_1_str_win, siren_1_cha_loss, siren_1_agi_loss",siren_bonus_luk,Ship Graveyard
-siren_2,Cape of the Lost,tokens/cha,A beautiful song washes over you.,"siren_2_int_win, siren_2_str_win, siren_2_cha_loss, siren_2_agi_loss",siren_bonus_luk,Cape of the Lost
-siren_3,Basin of Sorrow,tokens/cha,A beautiful song washes over you.,"siren_3_int_win, siren_3_str_win, siren_3_cha_loss, siren_3_agi_loss",siren_bonus_luk,Basin of Sorrow
-zombie_1,Unearthed Graveyard,skills/bash,The graves are empty.,"zombie_1_str_win, zombie_1_agi_win, zombie_1_stragi_lose","zombie_bonus_int, zombie_bonus_cha",Unearthed Graveyard
-zombie_2,Desecrated Ground,skills/bash,The graves are empty.,"zombie_2_str_win, zombie_2_agi_win, zombie_2_stragi_lose","zombie_bonus_int, zombie_bonus_cha",Desecrated Ground
-zombie_3,Necropolis,skills/bash,The graves are empty.,"zombie_3_str_win, zombie_3_agi_win, zombie_3_stragi_lose","zombie_bonus_int, zombie_bonus_cha",Necropolis
+uid,name,icon,tooltip,lst_objectives,lst_passives
+mole_1,Minor Mole Infestation,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_1_main_agi, mole_1_main_cha, mole_main_loss, mole_bonus_luk",Mole Infestation! (2)
+mole_2,Mole Infestation,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_2_main_agi, mole_2_main_cha, mole_main_loss, mole_bonus_luk",Mole Infestation! (3)
+mole_3,Major Mole Infestation!,skills/bash,Hole-y Mole-y! That IS A LOT OF MOLES.,"mole_3_main_agi, mole_3_main_cha, mole_main_loss, mole_bonus_luk",Mole Infestation! (4)
+phantom_str,Phantom Berserker,tokens/str,The restless spirit of a dead warrior haunts you.,"phantom_main_agi_str_win, phantom_main_str_loss, phantom_main_agi_loss, phantom_main_turn_loss",Phantom Berserker
+phantom_agi,Phantom Swindler,tokens/agi,The restless spirit of a dead rogue haunts you.,"phantom_main_agi_int_win, phantom_main_agi_loss, phantom_main_int_loss, phantom_main_turn_loss",Phantom Swindler
+phantom_int,Phantom Navigator,tokens/int,The restless spirit of a dead navigator haunts you.,"phantom_main_int_cha_win, phantom_main_cha_loss, phantom_main_int_loss, phantom_main_turn_loss",Phantom Navigator
+phantom_luk,Phantom Jester,tokens/luk,The restless spirit of a dead jester haunts you.,"phantom_main_agi_luk_win, phantom_main_agi_loss, phantom_main_luk_loss, phantom_main_turn_loss",Phantom Jester
+phantom_cha,Phantom Noble,tokens/cha,The restless spirit of a dead noble haunts you.,"phantom_main_cha_luk_win, phantom_main_cha_loss, phantom_main_luk_loss, phantom_main_turn_loss",Phantom Noble
+monkey_1,Monkey Forest,tokens/agi,A forest full of monkeys…… great,"monkey_luk_win, monkey_1_stragi_win, monkey_1_intcha_win, monkey_1_loss",Monkey Jungle
+monkey_2,Monkey Jungle,tokens/agi,A forest full of monkeys…… great,"monkey_luk_win, monkey_2_stragi_win, monkey_2_intcha_win, monkey_2_loss",Monkey Jungle
+monkey_3,Monkey Thicklet,tokens/agi,A forest full of monkeys…… great,"monkey_luk_win, monkey_3_stragi_win, monkey_3_intcha_win, monkey_3_loss",Monkey Jungle
+wildfire_1,Small Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_1_turn_win, wildfire_1_agi_loss",Small Forest Fire!
+wildfire_2,Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_2_turn_win, wildfire_2_agi_loss",Forest Fire!
+wildfire_3,Blazing Forest Fire,tokens/agi,The forest is on fire! The forest is on fire!,"wildfire_3_turn_win, wildfire_3_agi_loss",Blazing Forest Fire!
+dark_room_1,Dark Room,tokens/agi,The room is really dark,"dark_room_1_win, dark_room_main_loss, dark_room_1_turn_loss",Dark Room
+dark_room_2,Bloodstained Dark Room,tokens/agi,The room is really dark,"dark_room_2_win, dark_room_main_loss, dark_room_2_turn_loss",Bloodstained Dark Room
+dark_room_3,Torture Chamber,tokens/agi,The room is really dark,"dark_room_3_win, dark_room_main_loss, dark_room_3_turn_loss",Torture Chamber
+siren_1,Ship Graveyard,tokens/cha,A beautiful song washes over you.,"siren_1_int_win, siren_1_str_win, siren_1_cha_loss, siren_1_agi_loss, siren_bonus_luk",Ship Graveyard
+siren_2,Cape of the Lost,tokens/cha,A beautiful song washes over you.,"siren_2_int_win, siren_2_str_win, siren_2_cha_loss, siren_2_agi_loss, siren_bonus_luk",Cape of the Lost
+siren_3,Basin of Sorrow,tokens/cha,A beautiful song washes over you.,"siren_3_int_win, siren_3_str_win, siren_3_cha_loss, siren_3_agi_loss, siren_bonus_luk",Basin of Sorrow
+zombie_1,Unearthed Graveyard,skills/bash,The graves are empty.,"zombie_1_str_win, zombie_1_agi_win, zombie_1_stragi_lose, zombie_bonus_int, zombie_bonus_cha",Unearthed Graveyard
+zombie_2,Desecrated Ground,skills/bash,The graves are empty.,"zombie_2_str_win, zombie_2_agi_win, zombie_2_stragi_lose, zombie_bonus_int, zombie_bonus_cha",Desecrated Ground
+zombie_3,Necropolis,skills/bash,The graves are empty.,"zombie_3_str_win, zombie_3_agi_win, zombie_3_stragi_lose, zombie_bonus_int, zombie_bonus_cha",Necropolis
+ranger_1,Ranger,tokens/agi,The silent ranger strikes,"ranger_1_turn_loss, ranger_1_agi_win, ranger_1_cha_win, ranger_1_int_bonus",Ranger - Dash
+spiked_hole_1,Hidden Trap,tokens/agi,"You fall into a deep, deep hole","spiked_hole_1_agi_win, spiked_hole_1_str_loss, spiked_hole_int_bonus, spiked_hole_luk_bonus",Hidden Trap
+spiked_hole_2,Covered Pit,tokens/agi,"You fall into a deep, deep hole","spiked_hole_2_agi_win, spiked_hole_2_str_loss, spiked_hole_int_bonus, spiked_hole_luk_bonus",Covered Pit
+spiked_hole_3,Death Trap,tokens/agi,"You fall into a deep, deep hole","spiked_hole_3_agi_win, spiked_hole_3_str_loss, spiked_hole_int_bonus, spiked_hole_luk_bonus",Death Trap
+drown_1,Shipwrecked,tokens/str,That is a lot of water?,"drown_1_str_win, drown_1_turn_loss, drown_luk_bonus",Shipwrecked
+drown_2,Whirlpool,tokens/str,That is a lot of water?,"drown_2_str_win, drown_2_turn_loss, drown_luk_bonus",Whirlpool
+drown_3,Bermuda Triangle?,tokens/str,That is a lot of water?,"drown_3_str_win, drown_3_turn_loss, drown_luk_bonus",Bermuda Triangle?

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace Match3.UI
 {
@@ -67,8 +68,22 @@ namespace Match3.UI
                     this.TryCreate(TokenType.CHARISMA, this.objective.MinCharisma, this.objective.MaxCharisma);
                     this.TryCreate(TokenType.LUCK, this.objective.MinLuck, this.objective.MaxLuck);
                     this.TryCreate(TokenType.TURN, this.objective.MinTurn, this.objective.MaxTurn);
+
+                    this.Recolor();
                 }
             }
+        }
+
+        private void Recolor()
+        {
+            Color new_color = Color.yellow;
+
+            if      (this.objective.type == EncounterObjective.Type.WIN ) new_color = Color.green;
+            else if (this.objective.type == EncounterObjective.Type.LOSE) new_color = Color.red;
+
+            this.label.color      = new_color;
+            this.expLabel.color   = new_color;
+            this.moneyLabel.color = new_color;
         }
 
         private void TryCreate(TokenType field, int min, int max)

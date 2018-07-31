@@ -96,13 +96,14 @@ namespace Match3.Encounter
         {
             this.Passives.Add(buff);
             buff.OnApplyPassive(encounter, new List<TokenState>());
-            UIAnimationManager.AddAnimation(new UIInstruction_AddBuff(buff));
+            UIAnimationManager.AddAnimation(new UI_InstructionDisplayBuff(buff, true));
         }
         
         public void RemoveBuff(CharacterPassive buff)
         {
             buff.OnRemovePassive(encounter, new List<TokenState>());
             this.Passives.Remove(buff);
+            UIAnimationManager.AddAnimation(new UI_InstructionDisplayBuff(buff, false));
         }
 
         internal void UseEnergy(int energyCost)
@@ -112,11 +113,14 @@ namespace Match3.Encounter
 
         public int GetResource(TokenType type)
         {
+            if (type == TokenType.BLANK) return 0;
             return this.resources[type.AsInt()];
         }
 
         public void GainResource(TokenType type, int amount)
         {
+            if (type == TokenType.BLANK) return;
+
             this.resources[type.AsInt()] += amount;
             this.resources[type.AsInt()] = Mathf.Clamp(this.resources[type.AsInt()], 0, 99);
 

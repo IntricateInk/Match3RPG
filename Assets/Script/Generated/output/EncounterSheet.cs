@@ -12,22 +12,16 @@ namespace Match3.Encounter.Encounter
                 icon: "skills/bash",
                 tooltip: "Hole-y Mole-y! That IS A LOT OF MOLES.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "mole_1_main_agi",
 "mole_1_main_cha",
-"mole_main_loss"
-
-				},
-                
-				bonusObjectives: new string[] 
-				{
-				
+"mole_main_loss",
 "mole_bonus_luk"
 
 				},
-				
+                
 				passives: new string[] 
 				{
 				
@@ -42,22 +36,16 @@ namespace Match3.Encounter.Encounter
                 icon: "skills/bash",
                 tooltip: "Hole-y Mole-y! That IS A LOT OF MOLES.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "mole_2_main_agi",
 "mole_2_main_cha",
-"mole_main_loss"
-
-				},
-                
-				bonusObjectives: new string[] 
-				{
-				
+"mole_main_loss",
 "mole_bonus_luk"
 
 				},
-				
+                
 				passives: new string[] 
 				{
 				
@@ -72,22 +60,16 @@ namespace Match3.Encounter.Encounter
                 icon: "skills/bash",
                 tooltip: "Hole-y Mole-y! That IS A LOT OF MOLES.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "mole_3_main_agi",
 "mole_3_main_cha",
-"mole_main_loss"
-
-				},
-                
-				bonusObjectives: new string[] 
-				{
-				
+"mole_main_loss",
 "mole_bonus_luk"
 
 				},
-				
+                
 				passives: new string[] 
 				{
 				
@@ -102,7 +84,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/str",
                 tooltip: "The restless spirit of a dead warrior haunts you.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "phantom_main_agi_str_win",
@@ -112,11 +94,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -131,7 +108,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/agi",
                 tooltip: "The restless spirit of a dead rogue haunts you.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "phantom_main_agi_int_win",
@@ -141,11 +118,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -160,7 +132,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/int",
                 tooltip: "The restless spirit of a dead navigator haunts you.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "phantom_main_int_cha_win",
@@ -170,11 +142,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -189,7 +156,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/luk",
                 tooltip: "The restless spirit of a dead jester haunts you.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "phantom_main_agi_luk_win",
@@ -199,11 +166,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -218,7 +180,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/cha",
                 tooltip: "The restless spirit of a dead noble haunts you.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "phantom_main_cha_luk_win",
@@ -228,11 +190,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -247,7 +204,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/agi",
                 tooltip: "A forest full of monkeys…… great",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "monkey_luk_win",
@@ -257,11 +214,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -276,7 +228,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/agi",
                 tooltip: "A forest full of monkeys…… great",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "monkey_luk_win",
@@ -286,11 +238,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -305,7 +252,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/agi",
                 tooltip: "A forest full of monkeys…… great",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "monkey_luk_win",
@@ -315,11 +262,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -334,7 +276,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/agi",
                 tooltip: "The forest is on fire! The forest is on fire!",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "wildfire_1_turn_win",
@@ -342,11 +284,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -361,7 +298,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/agi",
                 tooltip: "The forest is on fire! The forest is on fire!",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "wildfire_2_turn_win",
@@ -369,11 +306,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -388,7 +320,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/agi",
                 tooltip: "The forest is on fire! The forest is on fire!",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "wildfire_3_turn_win",
@@ -396,11 +328,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -415,7 +342,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/agi",
                 tooltip: "The room is really dark",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "dark_room_1_win",
@@ -424,11 +351,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -443,7 +365,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/agi",
                 tooltip: "The room is really dark",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "dark_room_2_win",
@@ -452,11 +374,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -471,7 +388,7 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/agi",
                 tooltip: "The room is really dark",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "dark_room_3_win",
@@ -480,11 +397,6 @@ namespace Match3.Encounter.Encounter
 
 				},
                 
-				bonusObjectives: new string[] 
-				{
-				
-				},
-				
 				passives: new string[] 
 				{
 				
@@ -499,23 +411,17 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/cha",
                 tooltip: "A beautiful song washes over you.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "siren_1_int_win",
 "siren_1_str_win",
 "siren_1_cha_loss",
-"siren_1_agi_loss"
-
-				},
-                
-				bonusObjectives: new string[] 
-				{
-				
+"siren_1_agi_loss",
 "siren_bonus_luk"
 
 				},
-				
+                
 				passives: new string[] 
 				{
 				
@@ -530,23 +436,17 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/cha",
                 tooltip: "A beautiful song washes over you.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "siren_2_int_win",
 "siren_2_str_win",
 "siren_2_cha_loss",
-"siren_2_agi_loss"
-
-				},
-                
-				bonusObjectives: new string[] 
-				{
-				
+"siren_2_agi_loss",
 "siren_bonus_luk"
 
 				},
-				
+                
 				passives: new string[] 
 				{
 				
@@ -561,23 +461,17 @@ namespace Match3.Encounter.Encounter
                 icon: "tokens/cha",
                 tooltip: "A beautiful song washes over you.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "siren_3_int_win",
 "siren_3_str_win",
 "siren_3_cha_loss",
-"siren_3_agi_loss"
-
-				},
-                
-				bonusObjectives: new string[] 
-				{
-				
+"siren_3_agi_loss",
 "siren_bonus_luk"
 
 				},
-				
+                
 				passives: new string[] 
 				{
 				
@@ -592,23 +486,17 @@ namespace Match3.Encounter.Encounter
                 icon: "skills/bash",
                 tooltip: "The graves are empty.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "zombie_1_str_win",
 "zombie_1_agi_win",
-"zombie_1_stragi_lose"
-
-				},
-                
-				bonusObjectives: new string[] 
-				{
-				
+"zombie_1_stragi_lose",
 "zombie_bonus_int",
 "zombie_bonus_cha"
 
 				},
-				
+                
 				passives: new string[] 
 				{
 				
@@ -623,23 +511,17 @@ namespace Match3.Encounter.Encounter
                 icon: "skills/bash",
                 tooltip: "The graves are empty.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "zombie_2_str_win",
 "zombie_2_agi_win",
-"zombie_2_stragi_lose"
-
-				},
-                
-				bonusObjectives: new string[] 
-				{
-				
+"zombie_2_stragi_lose",
 "zombie_bonus_int",
 "zombie_bonus_cha"
 
 				},
-				
+                
 				passives: new string[] 
 				{
 				
@@ -654,27 +536,186 @@ namespace Match3.Encounter.Encounter
                 icon: "skills/bash",
                 tooltip: "The graves are empty.",
                 
-				mainObjectives: new string[] 
+				objectives: new string[] 
 				{
 				
 "zombie_3_str_win",
 "zombie_3_agi_win",
-"zombie_3_stragi_lose"
-
-				},
-                
-				bonusObjectives: new string[] 
-				{
-				
+"zombie_3_stragi_lose",
 "zombie_bonus_int",
 "zombie_bonus_cha"
 
 				},
-				
+                
 				passives: new string[] 
 				{
 				
 "Necropolis"
+
+				}
+            );
+
+        public static EncounterSheet ranger_1 = new EncounterSheet
+            (
+                name: "Ranger",
+                icon: "tokens/agi",
+                tooltip: "The silent ranger strikes",
+                
+				objectives: new string[] 
+				{
+				
+"ranger_1_turn_loss",
+"ranger_1_agi_win",
+"ranger_1_cha_win",
+"ranger_1_int_bonus"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Ranger - Dash"
+
+				}
+            );
+
+        public static EncounterSheet spiked_hole_1 = new EncounterSheet
+            (
+                name: "Hidden Trap",
+                icon: "tokens/agi",
+                tooltip: "You fall into a deep, deep hole",
+                
+				objectives: new string[] 
+				{
+				
+"spiked_hole_1_agi_win",
+"spiked_hole_1_str_loss",
+"spiked_hole_int_bonus",
+"spiked_hole_luk_bonus"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Hidden Trap"
+
+				}
+            );
+
+        public static EncounterSheet spiked_hole_2 = new EncounterSheet
+            (
+                name: "Covered Pit",
+                icon: "tokens/agi",
+                tooltip: "You fall into a deep, deep hole",
+                
+				objectives: new string[] 
+				{
+				
+"spiked_hole_2_agi_win",
+"spiked_hole_2_str_loss",
+"spiked_hole_int_bonus",
+"spiked_hole_luk_bonus"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Covered Pit"
+
+				}
+            );
+
+        public static EncounterSheet spiked_hole_3 = new EncounterSheet
+            (
+                name: "Death Trap",
+                icon: "tokens/agi",
+                tooltip: "You fall into a deep, deep hole",
+                
+				objectives: new string[] 
+				{
+				
+"spiked_hole_3_agi_win",
+"spiked_hole_3_str_loss",
+"spiked_hole_int_bonus",
+"spiked_hole_luk_bonus"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Death Trap"
+
+				}
+            );
+
+        public static EncounterSheet drown_1 = new EncounterSheet
+            (
+                name: "Shipwrecked",
+                icon: "tokens/str",
+                tooltip: "That is a lot of water?",
+                
+				objectives: new string[] 
+				{
+				
+"drown_1_str_win",
+"drown_1_turn_loss",
+"drown_luk_bonus"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Shipwrecked"
+
+				}
+            );
+
+        public static EncounterSheet drown_2 = new EncounterSheet
+            (
+                name: "Whirlpool",
+                icon: "tokens/str",
+                tooltip: "That is a lot of water?",
+                
+				objectives: new string[] 
+				{
+				
+"drown_2_str_win",
+"drown_2_turn_loss",
+"drown_luk_bonus"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Whirlpool"
+
+				}
+            );
+
+        public static EncounterSheet drown_3 = new EncounterSheet
+            (
+                name: "Bermuda Triangle?",
+                icon: "tokens/str",
+                tooltip: "That is a lot of water?",
+                
+				objectives: new string[] 
+				{
+				
+"drown_3_str_win",
+"drown_3_turn_loss",
+"drown_luk_bonus"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Bermuda Triangle?"
 
 				}
             );

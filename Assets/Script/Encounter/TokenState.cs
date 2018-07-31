@@ -125,7 +125,7 @@ namespace Match3.Encounter
 
             board.tiles[this.x, this.y].token = this;
         }
-
+        
         internal void Match()
         {
             if (this.IsDestroyed) return;
@@ -176,16 +176,20 @@ namespace Match3.Encounter
         }
 
         // UI methods
-
-
+        
         internal void ShowResourceGain(int amount) { ShowResourceGain(this.type, amount); }
         internal void ShowResourceGain(TokenType token, int amount)
         {
+            if (token == TokenType.BLANK) return;
+
             string sign = "";
             if (amount > 0) sign = "+";
             if (amount < 0) sign = "-";
 
             ShowText(string.Format("{0}{1}{2}", sign, Mathf.Abs(amount), token.AsStr()));
+
+            if (amount > 0) UIAnimationManager.AddAnimation(new UIAnimation_LerpIcon(token, 800f, this.AsIPosition(), token.AsIPosition()), 0f);
+            if (amount < 0) UIAnimationManager.AddAnimation(new UIAnimation_LerpIcon(token, 800f, token.AsIPosition(), this.AsIPosition()), 0f);
         }
 
         internal void ShowText(string text)

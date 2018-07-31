@@ -1,4 +1,5 @@
 ﻿using Match3.Encounter.Effect.Passive;
+using Match3.Encounter.Effect.Skill;
 using Match3.UI.Animation;
 using System;
 using System.Collections;
@@ -12,10 +13,11 @@ namespace Match3.Encounter.Effect
     {
         // System Calls
 
-        public delegate void Action(EncounterState encounter, List<TokenState> selectedTokens);
-
-        // encounter specific effects
+        public delegate void SkillAction(GameSkill self, EncounterState encounter, List<TokenState> selectedTokens);
+        public delegate void PassiveAction(BasePassive self, EncounterState encounter, List<TokenState> selectedTokens);
         
+        // encounter specific effects
+
         internal static void BeginAnimationBatch()
         {
             UIAnimationManager.AddAnimation(new UIAnimation_BeginBatch());
@@ -24,6 +26,16 @@ namespace Match3.Encounter.Effect
         internal static void EndAnimationBatch()
         {
             UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
+        }
+
+        internal static void BeginSequence()
+        {
+            UIAnimationManager.AddAnimation(new UIAnimation_BeginSequence());
+        }
+
+        internal static void EndSequence()
+        {
+            UIAnimationManager.AddAnimation(new UIAnimation_EndSequence());
         }
 
         public static void SelectSurrounding(EncounterState encounter, List<TokenState> selectedTokens)
@@ -46,6 +58,43 @@ namespace Match3.Encounter.Effect
                     }
                 }
             }
+        }
+
+        internal static void LerpAnimation(string sprite, float speed, IPosition p0, IPosition p1, float play_time)
+        {
+            UIAnimationManager.AddAnimation(
+                new UIAnimation_LerpIcon(sprite, speed, p0, p1), play_time);
+        }
+
+        internal static void LerpAnimation(string sprite, float speed, IPosition p0, IPosition p1)
+        {
+            UIAnimationManager.AddAnimation(
+                new UIAnimation_LerpIcon(sprite, speed, p0, p1));
+        }
+
+        internal static void LineAnimation(string name, CharacterPassive target1, TokenState target2, float play_time)
+        {
+            UIAnimationManager.AddAnimation(new UIAnimation_LineAnimation(name, target1, target2), play_time);
+        }
+
+        internal static void LineAnimation(string name, TokenState target1, TokenState target2, float play_time)
+        {
+            UIAnimationManager.AddAnimation(new UIAnimation_LineAnimation(name, target1, target2), play_time);
+        }
+
+        internal static void LineAnimation(string name, TokenState target1, TokenState target2)
+        {
+            UIAnimationManager.AddAnimation(new UIAnimation_LineAnimation(name, target1, target2));
+        }
+
+        internal static void LineAnimation(string name, CharacterPassive target1, TokenState target2)
+        {
+            UIAnimationManager.AddAnimation(new UIAnimation_LineAnimation(name, target1, target2));
+        }
+
+        internal static void LineAnimation(string name, TokenState target1, CharacterPassive target2)
+        {
+            UIAnimationManager.AddAnimation(new UIAnimation_LineAnimation(name, target1, target2));
         }
 
         internal static void TransformSelectedToRandom(EncounterState encounter, List<TokenState> selectedTokens)

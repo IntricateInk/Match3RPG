@@ -8,6 +8,7 @@ namespace Match3.UI
 {
     public class UIBuffContainer : MonoBehaviour
     {
+        private Dictionary<CharacterPassive, UIBuffIcon> charBuffs = new Dictionary<CharacterPassive, UIBuffIcon>();
         private Dictionary<TargetPassive, UIBuffIcon> tokenBuffs = new Dictionary<TargetPassive, UIBuffIcon>();
         private Dictionary<TargetPassive, UIBuffIcon> tileBuffs  = new Dictionary<TargetPassive, UIBuffIcon>();
 
@@ -21,7 +22,7 @@ namespace Match3.UI
             }
             else
             {
-                icon = UIFactory.CreateBuffIcon(buff, this);
+                icon = UIFactory.CreateTargetBuffIcon(buff, this);
                 this.tokenBuffs.Add(buff, icon);
             }
 
@@ -38,7 +39,7 @@ namespace Match3.UI
             }
             else
             {
-                icon = UIFactory.CreateBuffIcon(buff, this);
+                icon = UIFactory.CreateTargetBuffIcon(buff, this);
                 this.tileBuffs.Add(buff, icon);
             }
 
@@ -52,7 +53,7 @@ namespace Match3.UI
             UIBuffIcon icon = this.tokenBuffs[buff];
             icon.RemoveToken(token);
         }
-
+        
         internal void RemoveTileBuff(TargetPassive buff, UITileController tile)
         {
             if (!this.tileBuffs.ContainsKey(buff)) return;
@@ -61,9 +62,51 @@ namespace Match3.UI
             icon.RemoveTile(tile);
         }
 
-        internal void AddBuff(ITooltip buff)
+        internal void AddBuff(CharacterPassive buff)
         {
-            UIFactory.CreateBuffIcon(buff, this);
+            if (this.charBuffs.ContainsKey(buff))
+            {
+                this.charBuffs[buff].gameObject.SetActive(true);
+            }
+            else
+            {
+                UIBuffIcon uibuff = UIFactory.CreateCharBuffIcon(buff, this);
+                this.charBuffs.Add(buff, uibuff);
+            }
         }
+
+        internal void RemoveBuff(CharacterPassive buff)
+        {
+            if (!this.charBuffs.ContainsKey(buff)) return;
+
+            this.charBuffs[buff].gameObject.SetActive(false);
+        }
+
+        internal Vector3 GetBuffPosition(CharacterPassive passive)
+        {
+            if (this.charBuffs.ContainsKey(passive))
+            {
+                return this.charBuffs[passive].transform.position;
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("No such passive: {0}", passive));
+            }
+        }
+
+        internal Vector3 GetBuffPosition(TargetPassive passive)
+        {
+            if (this.tokenBuffs.ContainsKey(passive))
+            {
+                return this.tokenBuffs[passive].transform.position;
+            } else if (this.tileBuffs.ContainsKey(passive))
+            {
+                return this.tileBuffs[passive].transform.position;
+            } else
+            {
+                throw new ArgumentException(string.Format("No such passive: {0}", passive));
+            }
+        }
+
     }
 }

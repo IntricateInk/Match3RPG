@@ -56,14 +56,9 @@ namespace Match3.Encounter
 
             this.playerState.Initialize();
 
-            foreach (EncounterObjective objective in this.encounterSheet.mainObjectives)
+            foreach (EncounterObjective objective in this.encounterSheet.objectives)
             {
-                UIAnimationManager.AddInstruction(new UIInstruction_AddObjective(objective, true));
-            }
-
-            foreach (EncounterObjective objective in this.encounterSheet.bonusObjectives)
-            {
-                UIAnimationManager.AddInstruction(new UIInstruction_AddObjective(objective, false));
+                UIAnimationManager.AddInstruction(new UIInstruction_AddObjective(objective));
             }
 
             UIAnimationManager.AddInstruction(new UIInstruction_SetPlayer(this.playerSheet));
@@ -106,16 +101,18 @@ namespace Match3.Encounter
             this.boardState.DoTokenFall();
 
             this.inputState.CheckIfCanPaySkill();
-            this.inputState.IsBlockInput = false;
+
+            UIAnimationManager.AddAnimation(new UIAnimation_ToggleInputMode(false));
         }
 
         private void DoTurnEnd()
         {
-            this.inputState.IsBlockInput = true;
+            UIAnimationManager.AddAnimation(new UIAnimation_ToggleInputMode(true));
+
             this.boardState.DoTokenFall();
             this.boardState.DoTurnEnd();
 
-            foreach (CharacterPassive passive in playerState.Passives)
+            foreach (CharacterPassive passive in playerState.Passives.ToArray())
             {
                 passive.OnTurnEnd(this, new List<TokenState>());
             }
@@ -133,11 +130,14 @@ namespace Match3.Encounter
                     tokens.Add(tile.token);
                     passives.Add(passive);
                 }
-                
-                foreach (TargetPassive passive in tile.token.Passives)
+
+                if (tile.token != null)
                 {
-                    tokens.Add(tile.token);
-                    passives.Add(passive);
+                    foreach (TargetPassive passive in tile.token.Passives)
+                    {
+                        tokens.Add(tile.token);
+                        passives.Add(passive);
+                    }
                 }
             }
 
@@ -164,7 +164,7 @@ namespace Match3.Encounter
         private void DoSkill()
         {
             this.inputState.DoSkill();
-
+            this.boardState.DoTokenFall();
             this.inputState.CheckIfCanPaySkill();
         }
 
@@ -176,17 +176,12 @@ namespace Match3.Encounter
             int exp_reward = 0;
             List<string> trophies = new List<string>();
             List<EncounterObjective> completed = new List<EncounterObjective>();
-
-            foreach (EncounterObjective obj in encounterSheet.mainObjectives)
+            
+            foreach (EncounterObjective obj in encounterSheet.objectives)
             {
                 if (obj.isCompleted(playerState)) completed.Add(obj);
             }
-
-            foreach (EncounterObjective obj in encounterSheet.bonusObjectives)
-            {
-                if (obj.isCompleted(playerState)) completed.Add(obj);
-            }
-
+            
             foreach (EncounterObjective obj in completed)
             {
                 gold_reward += obj.GoldReward;
@@ -201,6 +196,11 @@ namespace Match3.Encounter
 
         // public to UI classes
 
+        internal void BlockInput(bool is_block)
+        {
+            this.inputState.IsBlockInput = is_block;
+        }
+ 
         internal void ReturnToOverworld()
         {
             OverworldState.Current.GoToOverworld();
