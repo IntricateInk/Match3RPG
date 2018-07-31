@@ -25,7 +25,9 @@ public class OverworldMap
         }
 
         this.generateEdges(branches);
-        this.playerPosition = new Vector2Int(2, 4);
+        this.playerPosition = new Vector2Int(1, -99);
+        //this.playerPosition = new Vector2Int(1, 0);
+
     }
 
     public bool GenerateLevelMap(int depth = 10, int width = 7)

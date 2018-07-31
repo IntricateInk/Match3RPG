@@ -98,7 +98,7 @@ public class OverworldNode
             case nodeType.SHOP:
                 break;
             default: // MOB ELITE BOSS
-                EncounterState.NewEncounter(_encounterSheet);
+                EncounterState.NewEncounter(this._encounterSheet);
                 break;
         }
     }
