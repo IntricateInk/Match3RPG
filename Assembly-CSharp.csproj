@@ -82,6 +82,8 @@
     <Compile Include="Assets\Script\Encounter\TileState.cs" />
     <Compile Include="Assets\Script\Encounter\TokenState.cs" />
     <Compile Include="Assets\Script\Encounter\Trophies\TrophySheet.cs" />
+    <Compile Include="Assets\Script\EventEncounter\UIShowBackground.cs" />
+    <Compile Include="Assets\Script\EventEncounter\UIShowEvent.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterObjective.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterSheet.cs" />
     <Compile Include="Assets\Script\Generated\output\TrophySheet.cs" />
