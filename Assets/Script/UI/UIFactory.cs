@@ -6,6 +6,7 @@ using System;
 using Match3.Encounter.Encounter;
 using Match3.Character;
 using Match3.Encounter.Effect.Skill;
+using Match3.Encounter.Effect.Passive;
 
 namespace Match3.UI
 {
@@ -69,15 +70,14 @@ namespace Match3.UI
 
             return uiTrophy;
         }
-
+        
         internal static UISkillIcon CreateSkillIcon(GameSkill skill, int index, UISkillContainer uISkillBar)
         {
             UISkillIcon skillIcon = Instantiate(UIFactory.Instance.skillIconPrefab);
             skillIcon.transform.SetParent(uISkillBar.transform);
 
-            skillIcon.tooltip = skill;
+            skillIcon.skill = skill;
             skillIcon.energyCost = skill.energyCost.ToString();
-            skillIcon.resourceCost = skill.ResourceCostString;
             skillIcon.index = index;
 
             return skillIcon;
@@ -116,12 +116,22 @@ namespace Match3.UI
             return resourceBar;
         }
 
-        internal static UIBuffIcon CreateBuffIcon(ITooltip buff, UIBuffContainer uiBuffContainer)
+        internal static UIBuffIcon CreateTargetBuffIcon(TargetPassive buff, UIBuffContainer uiBuffContainer)
         {
             UIBuffIcon icon = Instantiate(UIFactory.Instance.uiBuffIconPrefab);
 
             icon.transform.SetParent(uiBuffContainer.transform);
-            icon.tooltip = buff;
+            icon.target_buff = buff;
+
+            return icon;
+        }
+
+        internal static UIBuffIcon CreateCharBuffIcon(CharacterPassive buff, UIBuffContainer uiBuffContainer)
+        {
+            UIBuffIcon icon = Instantiate(UIFactory.Instance.uiBuffIconPrefab);
+
+            icon.transform.SetParent(uiBuffContainer.transform);
+            icon.buff = buff;
 
             return icon;
         }

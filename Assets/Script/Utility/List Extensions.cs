@@ -19,4 +19,18 @@ public static class ListExtensions {
     {
         return list[Random.Range(0, list.Count)];
     }
+
+    public static IEnumerable<T> RandomChoice<T>(this List<T> list, int n)
+    {
+        List<T> cpy = new List<T>(list);
+
+        while (n > 0)
+        {
+            T item = cpy.RandomChoice();
+            cpy.Remove(item);
+            yield return item;
+            n--;
+        }
+        yield break;
+    }
 }

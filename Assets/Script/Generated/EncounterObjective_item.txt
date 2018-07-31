@@ -6,6 +6,8 @@
             sprite: "{sprite}",
             tooltip: "{tooltip}",
 			
+			type: "{type}",
+			
 			GoldReward: {gold},
             ExpReward: {exp},
             TrophyReward: new string[] {{{lst_TrophyReward}}},

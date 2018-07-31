@@ -8,12 +8,21 @@ namespace Match3.Encounter.Encounter
 {
     public sealed partial class EncounterObjective : ITooltip
     {
+        public enum Type
+        {
+            WIN,
+            LOSE,
+            BONUS
+        }
+
         public EncounterObjective
             (
             string uid,
             string name,
             string sprite,
             string tooltip,
+
+            string type,
             
             int GoldReward = 0,
             int ExpReward  = 0,
@@ -44,6 +53,21 @@ namespace Match3.Encounter.Encounter
             this.sprite = sprite;
             this.tooltip = tooltip;
 
+            switch (type)
+            {
+                case "WIN":
+                    this.type = Type.WIN;
+                    break;
+
+                case "LOSE":
+                    this.type = Type.LOSE;
+                    break;
+
+                case "BONUS":
+                    this.type = Type.BONUS;
+                    break;
+            }
+
             this.GoldReward   = GoldReward;
             this.ExpReward    = ExpReward;
             this.TrophyReward = TrophyReward;
@@ -72,24 +96,26 @@ namespace Match3.Encounter.Encounter
         public string name { get; private set; }
         public string sprite { get; private set; }
         public string tooltip { get; private set; }
-        
-        public int MinStrength;
-        public int MaxStrength;
 
-        public int MinAgility;
-        public int MaxAgility;
+        public readonly Type type;
 
-        public int MinIntelligence;
-        public int MaxIntelligence;
+        public readonly int MinStrength;
+        public readonly int MaxStrength;
 
-        public int MinCharisma;
-        public int MaxCharisma;
+        public readonly int MinAgility;
+        public readonly int MaxAgility;
 
-        public int MinLuck;
-        public int MaxLuck;
-        
-        public int MinTurn;
-        public int MaxTurn;
+        public readonly int MinIntelligence;
+        public readonly int MaxIntelligence;
+
+        public readonly int MinCharisma;
+        public readonly int MaxCharisma;
+
+        public readonly int MinLuck;
+        public readonly int MaxLuck;
+
+        public readonly int MinTurn;
+        public readonly int MaxTurn;
 
         public readonly int GoldReward;
         public readonly int ExpReward;

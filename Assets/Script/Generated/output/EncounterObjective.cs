@@ -14,6 +14,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "You were slower than a bunch of moles, and got burried alive. RIP",
 			
+			type: "LOSE",
+			
 			GoldReward: -20,
             ExpReward: -10,
             TrophyReward: new string[] {},
@@ -44,6 +46,8 @@ namespace Match3.Encounter.Encounter
             name: "Escape the moles!",
             sprite: "tokens/agi",
             tooltip: "Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 50,
@@ -76,6 +80,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 50,
             TrophyReward: new string[] {},
@@ -107,6 +113,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 50,
             TrophyReward: new string[] {},
@@ -137,6 +145,8 @@ namespace Match3.Encounter.Encounter
             name: "Befriend the Mole",
             sprite: "tokens/cha",
             tooltip: "Moles are friends, not food. Am I doing this right?",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 0,
@@ -171,6 +181,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/cha",
             tooltip: "Moles are friends, not food. Am I doing this right?",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 50,
             TrophyReward: new string[] {
@@ -203,6 +215,8 @@ namespace Match3.Encounter.Encounter
             name: "Befriend the Mole",
             sprite: "tokens/cha",
             tooltip: "Moles are friends, not food. Am I doing this right?",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 100,
@@ -237,6 +251,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/luk",
             tooltip: "Would you look at that, it's treasure!",
 			
+			type: "BONUS",
+			
 			GoldReward: 100,
             ExpReward: 0,
             TrophyReward: new string[] {
@@ -270,6 +286,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/int",
             tooltip: "Defeat the phantom!",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 100,
             TrophyReward: new string[] {},
@@ -300,6 +318,8 @@ namespace Match3.Encounter.Encounter
             name: "Ward",
             sprite: "tokens/int",
             tooltip: "Defeat the phantom!",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 100,
@@ -332,6 +352,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/int",
             tooltip: "Defeat the phantom!",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 100,
             TrophyReward: new string[] {},
@@ -362,6 +384,8 @@ namespace Match3.Encounter.Encounter
             name: "Ward",
             sprite: "tokens/int",
             tooltip: "Defeat the phantom!",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 100,
@@ -394,6 +418,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/int",
             tooltip: "Defeat the phantom!",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 100,
             TrophyReward: new string[] {},
@@ -424,6 +450,8 @@ namespace Match3.Encounter.Encounter
             name: "Cursed",
             sprite: "tokens/str",
             tooltip: "Cursed by the phantom……",
+			
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -100,
@@ -456,6 +484,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "Cursed by the phantom……",
 			
+			type: "LOSE",
+			
 			GoldReward: 0,
             ExpReward: -100,
             TrophyReward: new string[] {},
@@ -486,6 +516,8 @@ namespace Match3.Encounter.Encounter
             name: "Cursed",
             sprite: "tokens/int",
             tooltip: "Cursed by the phantom……",
+			
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -100,
@@ -518,6 +550,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/cha",
             tooltip: "Cursed by the phantom……",
 			
+			type: "LOSE",
+			
 			GoldReward: 0,
             ExpReward: -100,
             TrophyReward: new string[] {},
@@ -548,6 +582,8 @@ namespace Match3.Encounter.Encounter
             name: "Cursed",
             sprite: "tokens/luk",
             tooltip: "Cursed by the phantom……",
+			
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -100,
@@ -580,6 +616,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/luk",
             tooltip: "You toss and turn, unable to shake off the terrible feeling",
 			
+			type: "LOSE",
+			
 			GoldReward: 0,
             ExpReward: -20,
             TrophyReward: new string[] {},
@@ -610,6 +648,8 @@ namespace Match3.Encounter.Encounter
             name: "Robbed",
             sprite: "tokens/agi",
             tooltip: "Robbed by monkeys…",
+			
+			type: "LOSE",
 			
 			GoldReward: -50,
             ExpReward: -100,
@@ -642,6 +682,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "Robbed by monkeys…",
 			
+			type: "LOSE",
+			
 			GoldReward: -50,
             ExpReward: -100,
             TrophyReward: new string[] {},
@@ -672,6 +714,8 @@ namespace Match3.Encounter.Encounter
             name: "Robbed",
             sprite: "tokens/agi",
             tooltip: "Robbed by monkeys…",
+			
+			type: "LOSE",
 			
 			GoldReward: -50,
             ExpReward: -100,
@@ -704,6 +748,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/str",
             tooltip: "SHOO",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 30,
             TrophyReward: new string[] {},
@@ -734,6 +780,8 @@ namespace Match3.Encounter.Encounter
             name: "Beat Up",
             sprite: "tokens/str",
             tooltip: "SHOO",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 70,
@@ -766,6 +814,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/str",
             tooltip: "SHOO",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 100,
             TrophyReward: new string[] {},
@@ -796,6 +846,8 @@ namespace Match3.Encounter.Encounter
             name: "Tame",
             sprite: "tokens/int",
             tooltip: "I mean, you are almost a monkey right? Be nice.",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 10,
@@ -828,6 +880,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/int",
             tooltip: "I mean, you are almost a monkey right? Be nice.",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 20,
             TrophyReward: new string[] {},
@@ -858,6 +912,8 @@ namespace Match3.Encounter.Encounter
             name: "Tame",
             sprite: "tokens/int",
             tooltip: "I mean, you are almost a monkey right? Be nice.",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 30,
@@ -890,6 +946,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/luk",
             tooltip: "Something else caught the monkeys' attention… but what?",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 0,
             TrophyReward: new string[] {},
@@ -920,6 +978,8 @@ namespace Match3.Encounter.Encounter
             name: "Burnt",
             sprite: "tokens/agi",
             tooltip: "You were too slow, and got burnt by the flames",
+			
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -25,
@@ -952,6 +1012,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "You were too slow, and got burnt by the flames",
 			
+			type: "LOSE",
+			
 			GoldReward: 0,
             ExpReward: -40,
             TrophyReward: new string[] {},
@@ -982,6 +1044,8 @@ namespace Match3.Encounter.Encounter
             name: "Burnt",
             sprite: "tokens/agi",
             tooltip: "You were too slow, and got burnt by the flames",
+			
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -55,
@@ -1014,6 +1078,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "You escape the flames! Phew.",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 20,
             TrophyReward: new string[] {},
@@ -1044,6 +1110,8 @@ namespace Match3.Encounter.Encounter
             name: "Survive!",
             sprite: "tokens/agi",
             tooltip: "You escape the flames! Phew.",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 40,
@@ -1076,6 +1144,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "You escape the flames! Phew.",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 60,
             TrophyReward: new string[] {},
@@ -1106,6 +1176,8 @@ namespace Match3.Encounter.Encounter
             name: "Trapped!",
             sprite: "tokens/agi",
             tooltip: "Caught by traps in the dark room",
+			
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -100,
@@ -1138,6 +1210,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/int",
             tooltip: "You escape the room and find a small treasure",
 			
+			type: "WIN",
+			
 			GoldReward: 40,
             ExpReward: 40,
             TrophyReward: new string[] {},
@@ -1168,6 +1242,8 @@ namespace Match3.Encounter.Encounter
             name: "Escape",
             sprite: "tokens/int",
             tooltip: "You escape the room and find a small treasure",
+			
+			type: "WIN",
 			
 			GoldReward: 60,
             ExpReward: 60,
@@ -1200,6 +1276,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/int",
             tooltip: "You escape the room and find a small treasure",
 			
+			type: "WIN",
+			
 			GoldReward: 80,
             ExpReward: 80,
             TrophyReward: new string[] {},
@@ -1230,6 +1308,8 @@ namespace Match3.Encounter.Encounter
             name: "Suffocate",
             sprite: "tokens/agi",
             tooltip: "You ran out of air",
+			
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -100,
@@ -1262,6 +1342,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "You ran out of air",
 			
+			type: "LOSE",
+			
 			GoldReward: 0,
             ExpReward: -100,
             TrophyReward: new string[] {},
@@ -1292,6 +1374,8 @@ namespace Match3.Encounter.Encounter
             name: "Suffocate",
             sprite: "tokens/agi",
             tooltip: "You ran out of air",
+			
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -100,
@@ -1324,6 +1408,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/cha",
             tooltip: "You give in to the allure of the sirens",
 			
+			type: "LOSE",
+			
 			GoldReward: 0,
             ExpReward: -80,
             TrophyReward: new string[] {},
@@ -1354,6 +1440,8 @@ namespace Match3.Encounter.Encounter
             name: "Charmed",
             sprite: "tokens/cha",
             tooltip: "You give in to the allure of the sirens",
+			
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -100,
@@ -1386,6 +1474,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/cha",
             tooltip: "You give in to the allure of the sirens",
 			
+			type: "LOSE",
+			
 			GoldReward: 0,
             ExpReward: -120,
             TrophyReward: new string[] {},
@@ -1416,6 +1506,8 @@ namespace Match3.Encounter.Encounter
             name: "Distracted",
             sprite: "tokens/agi",
             tooltip: "Distracted by the sirens, you slip and fall into the water",
+			
+			type: "LOSE",
 			
 			GoldReward: -40,
             ExpReward: 0,
@@ -1448,6 +1540,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "Distracted by the sirens, you slip and fall into the water",
 			
+			type: "LOSE",
+			
 			GoldReward: -60,
             ExpReward: 0,
             TrophyReward: new string[] {},
@@ -1478,6 +1572,8 @@ namespace Match3.Encounter.Encounter
             name: "Distracted",
             sprite: "tokens/agi",
             tooltip: "Distracted by the sirens, you slip and fall into the water",
+			
+			type: "LOSE",
 			
 			GoldReward: -80,
             ExpReward: 0,
@@ -1510,6 +1606,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/str",
             tooltip: "With a strong will, you ignore the cries of the siren",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 100,
             TrophyReward: new string[] {},
@@ -1540,6 +1638,8 @@ namespace Match3.Encounter.Encounter
             name: "Force of Will",
             sprite: "tokens/str",
             tooltip: "With a strong will, you ignore the cries of the siren",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 120,
@@ -1572,6 +1672,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/str",
             tooltip: "With a strong will, you ignore the cries of the siren",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 140,
             TrophyReward: new string[] {},
@@ -1602,6 +1704,8 @@ namespace Match3.Encounter.Encounter
             name: "Cunning Ploy",
             sprite: "tokens/int",
             tooltip: "You devise a plan that will allow you to escape the sirens",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 60,
@@ -1634,6 +1738,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/int",
             tooltip: "You devise a plan that will allow you to escape the sirens",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 80,
             TrophyReward: new string[] {},
@@ -1664,6 +1770,8 @@ namespace Match3.Encounter.Encounter
             name: "Cunning Ploy",
             sprite: "tokens/int",
             tooltip: "You devise a plan that will allow you to escape the sirens",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 100,
@@ -1696,6 +1804,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/luk",
             tooltip: "Treasure….?",
 			
+			type: "BONUS",
+			
 			GoldReward: 100,
             ExpReward: 0,
             TrophyReward: new string[] {},
@@ -1726,6 +1836,8 @@ namespace Match3.Encounter.Encounter
             name: "Fight",
             sprite: "tokens/str",
             tooltip: "Through sheer force, you beat your way through the dead.",
+			
+			type: "WIN",
 			
 			GoldReward: 20,
             ExpReward: 80,
@@ -1758,6 +1870,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/str",
             tooltip: "Through sheer force, you beat your way through the dead.",
 			
+			type: "WIN",
+			
 			GoldReward: 25,
             ExpReward: 100,
             TrophyReward: new string[] {},
@@ -1788,6 +1902,8 @@ namespace Match3.Encounter.Encounter
             name: "Fight",
             sprite: "tokens/str",
             tooltip: "Through sheer force, you beat your way through the dead.",
+			
+			type: "WIN",
 			
 			GoldReward: 30,
             ExpReward: 120,
@@ -1820,6 +1936,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "With nimble feet, you escape the zombies",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 80,
             TrophyReward: new string[] {},
@@ -1850,6 +1968,8 @@ namespace Match3.Encounter.Encounter
             name: "Escape",
             sprite: "tokens/agi",
             tooltip: "With nimble feet, you escape the zombies",
+			
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 100,
@@ -1882,6 +2002,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/agi",
             tooltip: "With nimble feet, you escape the zombies",
 			
+			type: "WIN",
+			
 			GoldReward: 0,
             ExpReward: 120,
             TrophyReward: new string[] {},
@@ -1912,6 +2034,8 @@ namespace Match3.Encounter.Encounter
             name: "Learn by Observation",
             sprite: "tokens/int",
             tooltip: "Your keen eyes pick up some information about the dead.",
+			
+			type: "BONUS",
 			
 			GoldReward: 0,
             ExpReward: 100,
@@ -1944,6 +2068,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/cha",
             tooltip: "So um, I guess even the dead can communicate",
 			
+			type: "BONUS",
+			
 			GoldReward: 0,
             ExpReward: 100,
             TrophyReward: new string[] {},
@@ -1974,6 +2100,8 @@ namespace Match3.Encounter.Encounter
             name: "Captured by the unliving",
             sprite: "tokens/str",
             tooltip: "The grasp of the dead does not relent",
+			
+			type: "LOSE",
 			
 			GoldReward: -30,
             ExpReward: -50,
@@ -2006,6 +2134,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/str",
             tooltip: "The grasp of the dead does not relent",
 			
+			type: "LOSE",
+			
 			GoldReward: -45,
             ExpReward: -75,
             TrophyReward: new string[] {},
@@ -2037,6 +2167,8 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/str",
             tooltip: "The grasp of the dead does not relent",
 			
+			type: "LOSE",
+			
 			GoldReward: -60,
             ExpReward: -100,
             TrophyReward: new string[] {},
@@ -2055,6 +2187,637 @@ namespace Match3.Encounter.Encounter
 
             MinLuck: -1,
             MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective ranger_1_turn_loss = new EncounterObjective
+        (
+			uid: "ranger_1_turn_loss",
+            name: "Retreat",
+            sprite: "tokens/turn",
+            tooltip: "The ranger escapes",
+			
+			type: "LOSE",
+			
+			GoldReward: 0,
+            ExpReward: -20,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: 12,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective ranger_1_agi_win = new EncounterObjective
+        (
+			uid: "ranger_1_agi_win",
+            name: "Feat of Skill",
+            sprite: "tokens/agi",
+            tooltip: "You best the ranger at her craft",
+			
+			type: "WIN",
+			
+			GoldReward: 30,
+            ExpReward: 60,
+            TrophyReward: new string[] {
+"Plywood Bow"
+},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 80,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective ranger_1_cha_win = new EncounterObjective
+        (
+			uid: "ranger_1_cha_win",
+            name: "Convincing",
+            sprite: "tokens/cha",
+            tooltip: "You convince the ranger to join you",
+			
+			type: "WIN",
+			
+			GoldReward: 0,
+            ExpReward: 20,
+            TrophyReward: new string[] {
+"Leader of Men"
+},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: 60,
+            MaxCharisma: 99,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective ranger_1_int_bonus = new EncounterObjective
+        (
+			uid: "ranger_1_int_bonus",
+            name: "Perceptive",
+            sprite: "tokens/int",
+            tooltip: "You learn something from the ranger's moves",
+			
+			type: "BONUS",
+			
+			GoldReward: 0,
+            ExpReward: 40,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 40,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spiked_hole_1_str_loss = new EncounterObjective
+        (
+			uid: "spiked_hole_1_str_loss",
+            name: "Fall",
+            sprite: "tokens/str",
+            tooltip: "Your grip weakens… and you fall.",
+			
+			type: "LOSE",
+			
+			GoldReward: -10,
+            ExpReward: -20,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 0,
+            MaxStrength: 15, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spiked_hole_2_str_loss = new EncounterObjective
+        (
+			uid: "spiked_hole_2_str_loss",
+            name: "Fall",
+            sprite: "tokens/str",
+            tooltip: "Your grip weakens… and you fall.",
+			
+			type: "LOSE",
+			
+			GoldReward: -20,
+            ExpReward: -40,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 0,
+            MaxStrength: 20, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spiked_hole_3_str_loss = new EncounterObjective
+        (
+			uid: "spiked_hole_3_str_loss",
+            name: "Fall",
+            sprite: "tokens/str",
+            tooltip: "Your grip weakens… and you fall.",
+			
+			type: "LOSE",
+			
+			GoldReward: -30,
+            ExpReward: -60,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 0,
+            MaxStrength: 25, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spiked_hole_1_agi_win = new EncounterObjective
+        (
+			uid: "spiked_hole_1_agi_win",
+            name: "Nimble",
+            sprite: "skills/sleight",
+            tooltip: "You climb out",
+			
+			type: "WIN",
+			
+			GoldReward: 0,
+            ExpReward: 25,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 40,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spiked_hole_2_agi_win = new EncounterObjective
+        (
+			uid: "spiked_hole_2_agi_win",
+            name: "Nimble",
+            sprite: "skills/sleight",
+            tooltip: "You climb out",
+			
+			type: "WIN",
+			
+			GoldReward: 0,
+            ExpReward: 50,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 45,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spiked_hole_3_agi_win = new EncounterObjective
+        (
+			uid: "spiked_hole_3_agi_win",
+            name: "Nimble",
+            sprite: "skills/sleight",
+            tooltip: "You climb out",
+			
+			type: "WIN",
+			
+			GoldReward: 0,
+            ExpReward: 75,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 50,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spiked_hole_int_bonus = new EncounterObjective
+        (
+			uid: "spiked_hole_int_bonus",
+            name: "Observe",
+            sprite: "tokens/int",
+            tooltip: "You learn something about traps",
+			
+			type: "BONUS",
+			
+			GoldReward: 0,
+            ExpReward: 20,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 30,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spiked_hole_luk_bonus = new EncounterObjective
+        (
+			uid: "spiked_hole_luk_bonus",
+            name: "Lucky Find",
+            sprite: "tokens/luk",
+            tooltip: "Some gold? Perhaps it belongs to the previous unfortunate victim",
+			
+			type: "BONUS",
+			
+			GoldReward: 40,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: 40,
+            MaxLuck: 99,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective drown_1_str_win = new EncounterObjective
+        (
+			uid: "drown_1_str_win",
+            name: "Swim to Shore",
+            sprite: "tokens/str",
+            tooltip: "You swim to land",
+			
+			type: "WIN",
+			
+			GoldReward: 0,
+            ExpReward: 40,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 30,
+            MaxStrength: 99, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective drown_2_str_win = new EncounterObjective
+        (
+			uid: "drown_2_str_win",
+            name: "Swim to Shore",
+            sprite: "tokens/str",
+            tooltip: "You swim to land",
+			
+			type: "WIN",
+			
+			GoldReward: 0,
+            ExpReward: 60,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 50,
+            MaxStrength: 99, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective drown_3_str_win = new EncounterObjective
+        (
+			uid: "drown_3_str_win",
+            name: "Swim to Shore",
+            sprite: "tokens/str",
+            tooltip: "You swim to land",
+			
+			type: "WIN",
+			
+			GoldReward: 0,
+            ExpReward: 80,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 70,
+            MaxStrength: 99, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective drown_1_turn_loss = new EncounterObjective
+        (
+			uid: "drown_1_turn_loss",
+            name: "Drown",
+            sprite: "tokens/str",
+            tooltip: "You drown",
+			
+			type: "LOSE",
+			
+			GoldReward: 0,
+            ExpReward: -40,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: 8,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective drown_2_turn_loss = new EncounterObjective
+        (
+			uid: "drown_2_turn_loss",
+            name: "Drown",
+            sprite: "tokens/str",
+            tooltip: "You drown",
+			
+			type: "LOSE",
+			
+			GoldReward: 0,
+            ExpReward: -60,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: 10,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective drown_3_turn_loss = new EncounterObjective
+        (
+			uid: "drown_3_turn_loss",
+            name: "Drown",
+            sprite: "tokens/str",
+            tooltip: "You drown",
+			
+			type: "LOSE",
+			
+			GoldReward: 0,
+            ExpReward: -80,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: 12,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective drown_luk_bonus = new EncounterObjective
+        (
+			uid: "drown_luk_bonus",
+            name: "Hidden Treasure",
+            sprite: "tokens/luk",
+            tooltip: "You find some hidden treasure",
+			
+			type: "BONUS",
+			
+			GoldReward: 100,
+            ExpReward: 30,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 70,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: 70,
+            MaxLuck: 99,
 
             MinTurn: -1,
             MaxTurn: 100

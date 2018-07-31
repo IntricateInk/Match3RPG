@@ -12,13 +12,14 @@ public enum TokenType : int
     INTELLIGENCE   = 2,
     CHARISMA       = 3,
     LUCK           = 4,
-    TURN           = 5
+    BLANK          = 5,
+    TURN           = 6
 }
 
 public static class TokenTypeHelper
 {
     public static int ResourceCount() { return 5; }
-    public static int Count() { return 6; }
+    public static int Count() { return 7; }
 
     public static TokenType RandomResource()
     {
@@ -33,25 +34,33 @@ public static class TokenTypeHelper
 
 public static class TokenTypeExtensions
 {
-    public static Sprite GetSprite(this TokenType token)
+
+    public static string GetSpritePath(this TokenType token)
     {
         switch (token)
         {
             case TokenType.STRENGTH:
-                return Resources.Load<Sprite>("tokens/str");
+                return "tokens/str";
             case TokenType.AGILITY:
-                return Resources.Load<Sprite>("tokens/agi");
+                return "tokens/agi";
             case TokenType.INTELLIGENCE:
-                return Resources.Load<Sprite>("tokens/int");
+                return "tokens/int";
             case TokenType.CHARISMA:
-                return Resources.Load<Sprite>("tokens/cha");
+                return "tokens/cha";
             case TokenType.LUCK:
-                return Resources.Load<Sprite>("tokens/luk");
+                return "tokens/luk";
+            case TokenType.BLANK:
+                return "tokens/blank";
             case TokenType.TURN:
-                return Resources.Load<Sprite>("tokens/turn");
+                return "tokens/turn";
             default:
                 throw new ArgumentException("Token type of " + token + " not recognized.");
         }
+    }
+
+    public static Sprite GetSprite(this TokenType token)
+    {
+        return Resources.Load<Sprite>(token.GetSpritePath());
     }
 
     public static string AsStr(this TokenType token)

@@ -6,7 +6,7 @@ namespace Match3.UI {
 
     internal abstract class UITooltip : MonoBehaviour {
 
-        internal abstract ITooltip tooltip { get; set; }
+        internal abstract ITooltip tooltip { get; }
 
         public void OnPointerEnter()
         {

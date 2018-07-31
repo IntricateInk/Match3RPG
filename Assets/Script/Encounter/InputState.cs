@@ -96,7 +96,7 @@ namespace Match3.Encounter
                 return this.selectedSkill.ShouldRun(this.selectedTokens);
             } else
             {
-                UIAnimationManager.AddInstruction(new UIInstruction_OverlayText("Need more Resources to use that skill."));
+                UIAnimationManager.AddInstruction(new UIInstruction_OverlayText("Need more energy to use that skill."));
 
                 return false;
             }

@@ -29,10 +29,7 @@ namespace Match3.UI
 
         [SerializeField]
         private RectTransform rangeUpperMarker;
-
-        private int rangeLower;
-        private int rangeUpper;
-
+        
         private TokenType _field;
         internal TokenType field {
             get { return this._field; }
@@ -56,26 +53,23 @@ namespace Match3.UI
             UIAnimationManager.OnTurnChange     -= this.OnTurnChange;
         }
         
-        private void OnTurnChange(int amount)   { this.OnResourceChange(TokenType.TURN, amount); }
-        private void OnResourceChange(TokenType type, int amount)
+        public void OnTurnChange(int amount)   { this.OnResourceChange(TokenType.TURN, amount); }
+        public void OnResourceChange(TokenType type, int amount)
         {
             if (type == this.field)
             {
                 this.amountLabel.text = amount.ToString();
                 
-                this.bar.anchorMin = new Vector2((float)0 / type.MaxValue(), 0.5f);
-                this.bar.anchorMax = new Vector2((float)amount / type.MaxValue(), 0.5f);
-                this.bar.offsetMin = new Vector2(0, -2);
-                this.bar.offsetMax = new Vector2(0, 2);
+                this.bar.anchorMin = new Vector2((float)0 / type.MaxValue(), 0.35f);
+                this.bar.anchorMax = new Vector2((float)amount / type.MaxValue(), 0.65f);
+                this.bar.offsetMin = Vector2.zero;
+                this.bar.offsetMax = Vector2.zero;
                 
             }
         }
 
         internal void SetRange(int min, int max)
         {
-            this.rangeLower = min;
-            this.rangeUpper = max;
-
             if (min == 0)
             {
                 this.rangeLowerLabel.gameObject.SetActive(false);
