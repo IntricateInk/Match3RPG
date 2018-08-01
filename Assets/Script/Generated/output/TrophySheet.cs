@@ -30,7 +30,8 @@ namespace Match3.Character
 			tooltip: "The mark of a thief",
 
 			skills: new string[] {
-"Sleight"
+"Shove",
+"Strategize"
 },
 
 			passives: new string[] { 
@@ -46,7 +47,8 @@ namespace Match3.Character
 
 			skills: new string[] {
 "Socialize",
-"Bribe"
+"Bribe",
+"Fast Talk"
 },
 
 			passives: new string[] { 
@@ -61,8 +63,8 @@ namespace Match3.Character
 			tooltip: "To know where to go, you must first record where you are",
 
 			skills: new string[] {
-"Strategize",
-"Inspect"
+"Inspect",
+"Sleight"
 },
 
 			passives: new string[] { 
@@ -77,7 +79,9 @@ namespace Match3.Character
 			tooltip: "Fortune favors the fool.",
 
 			skills: new string[] {
-"Rainbow"
+"Chain Reaction",
+"Ricochet",
+"Lucky Find"
 },
 
 			passives: new string[] { 
@@ -106,8 +110,7 @@ namespace Match3.Character
 			tooltip: "Super secret specific plans that somehow apply to every situation?",
 
 			skills: new string[] {
-"Ponder",
-"Well Laid Plans"
+"Part of the Plan"
 },
 
 			passives: new string[] {  }
@@ -146,8 +149,7 @@ namespace Match3.Character
 			tooltip: "It is said that this bow is so flexible, it shoots arrows that bend…… are you really that guillble?",
 
 			skills: new string[] {
-"Ricochet",
-"Shove"
+"Ricochet"
 },
 
 			passives: new string[] {  }
@@ -216,7 +218,8 @@ namespace Match3.Character
 			tooltip: "A dark book of necromancy",
 
 			skills: new string[] {
-"Necromancy"
+"Raise Dead",
+"Siphon Soul"
 },
 
 			passives: new string[] {  }
@@ -300,11 +303,11 @@ namespace Match3.Character
 			sprite: "skills/bash",
 			tooltip: "You lead men",
 
-			skills: new string[] {
-"Lackeys"
-},
+			skills: new string[] {},
 
-			passives: new string[] {  }
+			passives: new string[] { 
+"Commander"
+ }
 
 		);
 
@@ -318,6 +321,77 @@ namespace Match3.Character
 			passives: new string[] { 
 "Cursed"
  }
+
+		);
+
+		public static TrophySheet SPIRIT_WELL = new TrophySheet(
+			name: "Well of the Spirits",
+			sprite: "tokens/int",
+			tooltip: "The spirits gather around this well",
+
+			skills: new string[] {
+"Ritual"
+},
+
+			passives: new string[] { 
+"Awakening"
+ }
+
+		);
+
+		public static TrophySheet CLEAR_MIND = new TrophySheet(
+			name: "Clear Mind",
+			sprite: "tokens/int",
+			tooltip: "Breathe.",
+
+			skills: new string[] {
+"Absolution",
+"Infusion"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet FLEXIBLE = new TrophySheet(
+			name: "Flexible",
+			sprite: "tokens/agi",
+			tooltip: "Bend into the situation demands",
+
+			skills: new string[] {
+"Backflip",
+"Switcharoo"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet BARBARISM = new TrophySheet(
+			name: "Barbarism",
+			sprite: "tokens/str",
+			tooltip: "WRAGGGH",
+
+			skills: new string[] {
+"Leap",
+"Slam"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet POWERFUL = new TrophySheet(
+			name: "Powerful",
+			sprite: "tokens/str",
+			tooltip: "Heave with power",
+
+			skills: new string[] {
+"Lift",
+"Uppercut"
+},
+
+			passives: new string[] {  }
 
 		);
 

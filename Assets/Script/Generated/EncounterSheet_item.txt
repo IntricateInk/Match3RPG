@@ -1,8 +1,8 @@
         public static EncounterSheet {uid} = new EncounterSheet
             (
-                name: "{name}",
-                icon: "{icon}",
-                tooltip: "{tooltip}",
+                name: @"{name}",
+                icon: @"{icon}",
+                tooltip: @"{tooltip}",
                 
 				objectives: new string[] 
 				{{

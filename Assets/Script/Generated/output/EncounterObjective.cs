@@ -472,8 +472,8 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 2,
-            MaxTurn: 99
+            MinTurn: -1,
+            MaxTurn: 100
         );
 
 
@@ -505,8 +505,8 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 2,
-            MaxTurn: 99
+            MinTurn: -1,
+            MaxTurn: 100
         );
 
 
@@ -538,8 +538,8 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 2,
-            MaxTurn: 99
+            MinTurn: -1,
+            MaxTurn: 100
         );
 
 
@@ -571,8 +571,8 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 2,
-            MaxTurn: 99
+            MinTurn: -1,
+            MaxTurn: 100
         );
 
 
@@ -604,8 +604,8 @@ namespace Match3.Encounter.Encounter
             MinLuck: 0,
             MaxLuck: 2,
 
-            MinTurn: 2,
-            MaxTurn: 99
+            MinTurn: -1,
+            MaxTurn: 100
         );
 
 
@@ -1187,7 +1187,7 @@ namespace Match3.Encounter.Encounter
             MaxStrength: 100, 
 			
             MinAgility: 0,
-            MaxAgility: 3,
+            MaxAgility: 25,
 
             MinIntelligence: -1,
             MaxIntelligence: 100,
@@ -2107,11 +2107,11 @@ namespace Match3.Encounter.Encounter
             ExpReward: -50,
             TrophyReward: new string[] {},
             
-            MinStrength: 0,
-            MaxStrength: 2, 
+            MinStrength: -1,
+            MaxStrength: 100, 
 			
-            MinAgility: 0,
-            MaxAgility: 2,
+            MinAgility: -1,
+            MaxAgility: 100,
 
             MinIntelligence: -1,
             MaxIntelligence: 100,
@@ -2122,8 +2122,8 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: -1,
-            MaxTurn: 100
+            MinTurn: 8,
+            MaxTurn: 99
         );
 
 
@@ -2140,11 +2140,11 @@ namespace Match3.Encounter.Encounter
             ExpReward: -75,
             TrophyReward: new string[] {},
             
-            MinStrength: 0,
-            MaxStrength: 2, 
+            MinStrength: -1,
+            MaxStrength: 100, 
 			
-            MinAgility: 0,
-            MaxAgility: 2,
+            MinAgility: -1,
+            MaxAgility: 100,
 
             MinIntelligence: -1,
             MaxIntelligence: 100,
@@ -2155,8 +2155,8 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: -1,
-            MaxTurn: 100
+            MinTurn: 10,
+            MaxTurn: 99
         );
 
 
@@ -2173,11 +2173,11 @@ namespace Match3.Encounter.Encounter
             ExpReward: -100,
             TrophyReward: new string[] {},
             
-            MinStrength: 0,
-            MaxStrength: 2, 
+            MinStrength: -1,
+            MaxStrength: 100, 
 			
-            MinAgility: 0,
-            MaxAgility: 2,
+            MinAgility: -1,
+            MaxAgility: 100,
 
             MinIntelligence: -1,
             MaxIntelligence: 100,
@@ -2188,8 +2188,8 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: -1,
-            MaxTurn: 100
+            MinTurn: 12,
+            MaxTurn: 99
         );
 
 
@@ -2343,7 +2343,7 @@ namespace Match3.Encounter.Encounter
             TrophyReward: new string[] {},
             
             MinStrength: 0,
-            MaxStrength: 15, 
+            MaxStrength: 25, 
 			
             MinAgility: -1,
             MaxAgility: 100,
@@ -2376,7 +2376,7 @@ namespace Match3.Encounter.Encounter
             TrophyReward: new string[] {},
             
             MinStrength: 0,
-            MaxStrength: 20, 
+            MaxStrength: 25, 
 			
             MinAgility: -1,
             MaxAgility: 100,
@@ -2817,6 +2817,237 @@ namespace Match3.Encounter.Encounter
             MaxCharisma: 100,
 
             MinLuck: 70,
+            MaxLuck: 99,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spirit_1_int_win = new EncounterObjective
+        (
+			uid: "spirit_1_int_win",
+            name: "Commune",
+            sprite: "tokens/int",
+            tooltip: "Gain the wisdom of the forest",
+			
+			type: "",
+			
+			GoldReward: 0,
+            ExpReward: 50,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 40,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spirit_2_int_win = new EncounterObjective
+        (
+			uid: "spirit_2_int_win",
+            name: "Commune",
+            sprite: "tokens/int",
+            tooltip: "Gain the wisdom of the forest",
+			
+			type: "",
+			
+			GoldReward: 0,
+            ExpReward: 80,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 70,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spirit_3_int_win = new EncounterObjective
+        (
+			uid: "spirit_3_int_win",
+            name: "Commune",
+            sprite: "tokens/int",
+            tooltip: "Gain the wisdom of the forest",
+			
+			type: "",
+			
+			GoldReward: 0,
+            ExpReward: 110,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: 90,
+            MaxIntelligence: 99,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective spirit_1_turn_loss = new EncounterObjective
+        (
+			uid: "spirit_1_turn_loss",
+            name: "Ignored",
+            sprite: "tokens/turn",
+            tooltip: "The spirits lose interest in you",
+			
+			type: "",
+			
+			GoldReward: 0,
+            ExpReward: -5,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: 6,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective spirit_2_turn_loss = new EncounterObjective
+        (
+			uid: "spirit_2_turn_loss",
+            name: "Ignored",
+            sprite: "tokens/turn",
+            tooltip: "The spirits lose interest in you",
+			
+			type: "",
+			
+			GoldReward: 0,
+            ExpReward: -10,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: 5,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective spirit_3_turn_loss = new EncounterObjective
+        (
+			uid: "spirit_3_turn_loss",
+            name: "Ignored",
+            sprite: "tokens/turn",
+            tooltip: "The spirits lose interest in you",
+			
+			type: "",
+			
+			GoldReward: 0,
+            ExpReward: -15,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: 4,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective spirit_luk_agi_bonus = new EncounterObjective
+        (
+			uid: "spirit_luk_agi_bonus",
+            name: "Fairy",
+            sprite: "tokens/luk",
+            tooltip: "It's your lucky day! You found a fairy.",
+			
+			type: "",
+			
+			GoldReward: 50,
+            ExpReward: 50,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: 40,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: 40,
             MaxLuck: 99,
 
             MinTurn: -1,

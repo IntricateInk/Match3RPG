@@ -8,9 +8,12 @@ namespace Match3.Encounter.Encounter
     {
 		        public static EncounterSheet mole_1 = new EncounterSheet
             (
-                name: "Minor Mole Infestation",
-                icon: "skills/bash",
-                tooltip: "Hole-y Mole-y! That IS A LOT OF MOLES.",
+                name: @"Minor Mole Infestation",
+                icon: @"skills/bash",
+                tooltip: @"Hole-y Mole-y! That IS A LOT OF MOLES.
+
+Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
+Moles can be destroyed either by using certain skills or by matching them.",
                 
 				objectives: new string[] 
 				{
@@ -32,9 +35,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet mole_2 = new EncounterSheet
             (
-                name: "Mole Infestation",
-                icon: "skills/bash",
-                tooltip: "Hole-y Mole-y! That IS A LOT OF MOLES.",
+                name: @"Mole Infestation",
+                icon: @"skills/bash",
+                tooltip: @"Hole-y Mole-y! That IS A LOT OF MOLES.
+
+Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
+Moles can be destroyed either by using certain skills or by matching them.",
                 
 				objectives: new string[] 
 				{
@@ -56,9 +62,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet mole_3 = new EncounterSheet
             (
-                name: "Major Mole Infestation!",
-                icon: "skills/bash",
-                tooltip: "Hole-y Mole-y! That IS A LOT OF MOLES.",
+                name: @"Major Mole Infestation!",
+                icon: @"skills/bash",
+                tooltip: @"Hole-y Mole-y! That IS A LOT OF MOLES.
+
+Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
+Moles can be destroyed either by using certain skills or by matching them.",
                 
 				objectives: new string[] 
 				{
@@ -80,9 +89,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet phantom_str = new EncounterSheet
             (
-                name: "Phantom Berserker",
-                icon: "tokens/str",
-                tooltip: "The restless spirit of a dead warrior haunts you.",
+                name: @"Phantom Berserker",
+                icon: @"tokens/str",
+                tooltip: @"The restless spirit of a dead warrior haunts you.
+
+Match STR and AGI tokens every turn to stay alive.
+Win by matching an exact amount of STR and AGI tokens on the same turn.",
                 
 				objectives: new string[] 
 				{
@@ -104,9 +116,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet phantom_agi = new EncounterSheet
             (
-                name: "Phantom Swindler",
-                icon: "tokens/agi",
-                tooltip: "The restless spirit of a dead rogue haunts you.",
+                name: @"Phantom Swindler",
+                icon: @"tokens/agi",
+                tooltip: @"The restless spirit of a dead warrior haunts you.
+
+Match AGI and INT tokens every turn to stay alive.
+Win by matching an exact amount of AGI and INT tokens on the same turn.",
                 
 				objectives: new string[] 
 				{
@@ -128,9 +143,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet phantom_int = new EncounterSheet
             (
-                name: "Phantom Navigator",
-                icon: "tokens/int",
-                tooltip: "The restless spirit of a dead navigator haunts you.",
+                name: @"Phantom Navigator",
+                icon: @"tokens/int",
+                tooltip: @"The restless spirit of a dead warrior haunts you.
+
+Match INT and CHA tokens every turn to stay alive.
+Win by matching an exact amount of INT and CHA tokens on the same turn.",
                 
 				objectives: new string[] 
 				{
@@ -152,9 +170,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet phantom_luk = new EncounterSheet
             (
-                name: "Phantom Jester",
-                icon: "tokens/luk",
-                tooltip: "The restless spirit of a dead jester haunts you.",
+                name: @"Phantom Jester",
+                icon: @"tokens/luk",
+                tooltip: @"The restless spirit of a dead warrior haunts you.
+
+Match AGI and LUK tokens every turn to stay alive.
+Win by matching an exact amount of AGI and LUK tokens on the same turn.",
                 
 				objectives: new string[] 
 				{
@@ -176,9 +197,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet phantom_cha = new EncounterSheet
             (
-                name: "Phantom Noble",
-                icon: "tokens/cha",
-                tooltip: "The restless spirit of a dead noble haunts you.",
+                name: @"Phantom Noble",
+                icon: @"tokens/cha",
+                tooltip: @"The restless spirit of a dead warrior haunts you.
+
+Match CHA and LUK tokens every turn to stay alive.
+Win by matching an exact amount of CHA and LUK tokens on the same turn.",
                 
 				objectives: new string[] 
 				{
@@ -200,9 +224,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet monkey_1 = new EncounterSheet
             (
-                name: "Monkey Forest",
-                icon: "tokens/agi",
-                tooltip: "A forest full of monkeys…… great",
+                name: @"Monkey Forest",
+                icon: @"tokens/agi",
+                tooltip: @"A forest full of monkeys…… great
+
+Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
+Keep an eye on both resource types of the goal!",
                 
 				objectives: new string[] 
 				{
@@ -224,9 +251,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet monkey_2 = new EncounterSheet
             (
-                name: "Monkey Jungle",
-                icon: "tokens/agi",
-                tooltip: "A forest full of monkeys…… great",
+                name: @"Monkey Jungle",
+                icon: @"tokens/agi",
+                tooltip: @"A forest full of monkeys…… great
+
+Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
+Keep an eye on both resource types of the goal!",
                 
 				objectives: new string[] 
 				{
@@ -248,9 +278,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet monkey_3 = new EncounterSheet
             (
-                name: "Monkey Thicklet",
-                icon: "tokens/agi",
-                tooltip: "A forest full of monkeys…… great",
+                name: @"Monkey Thicklet",
+                icon: @"tokens/agi",
+                tooltip: @"A forest full of monkeys…… great
+
+Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
+Keep an eye on both resource types of the goal!",
                 
 				objectives: new string[] 
 				{
@@ -272,9 +305,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet wildfire_1 = new EncounterSheet
             (
-                name: "Small Forest Fire",
-                icon: "tokens/agi",
-                tooltip: "The forest is on fire! The forest is on fire!",
+                name: @"Small Forest Fire",
+                icon: @"tokens/agi",
+                tooltip: @"The forest is on fire! The forest is on fire!
+
+Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
+Match or destroy Wildfire tokens to prevent them from spreading.",
                 
 				objectives: new string[] 
 				{
@@ -294,9 +330,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet wildfire_2 = new EncounterSheet
             (
-                name: "Forest Fire",
-                icon: "tokens/agi",
-                tooltip: "The forest is on fire! The forest is on fire!",
+                name: @"Forest Fire",
+                icon: @"tokens/agi",
+                tooltip: @"The forest is on fire! The forest is on fire!
+
+Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
+Match or destroy Wildfire tokens to prevent them from spreading.",
                 
 				objectives: new string[] 
 				{
@@ -316,9 +355,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet wildfire_3 = new EncounterSheet
             (
-                name: "Blazing Forest Fire",
-                icon: "tokens/agi",
-                tooltip: "The forest is on fire! The forest is on fire!",
+                name: @"Blazing Forest Fire",
+                icon: @"tokens/agi",
+                tooltip: @"The forest is on fire! The forest is on fire!
+
+Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
+Match or destroy Wildfire tokens to prevent them from spreading.",
                 
 				objectives: new string[] 
 				{
@@ -338,9 +380,11 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet dark_room_1 = new EncounterSheet
             (
-                name: "Dark Room",
-                icon: "tokens/agi",
-                tooltip: "The room is really dark",
+                name: @"Dark Room",
+                icon: @"tokens/agi",
+                tooltip: @"The room is really dark
+
+Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.",
                 
 				objectives: new string[] 
 				{
@@ -361,9 +405,11 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet dark_room_2 = new EncounterSheet
             (
-                name: "Bloodstained Dark Room",
-                icon: "tokens/agi",
-                tooltip: "The room is really dark",
+                name: @"Bloodstained Dark Room",
+                icon: @"tokens/agi",
+                tooltip: @"The room is really dark
+
+Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.",
                 
 				objectives: new string[] 
 				{
@@ -384,9 +430,11 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet dark_room_3 = new EncounterSheet
             (
-                name: "Torture Chamber",
-                icon: "tokens/agi",
-                tooltip: "The room is really dark",
+                name: @"Torture Chamber",
+                icon: @"tokens/agi",
+                tooltip: @"The room is really dark
+
+Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.",
                 
 				objectives: new string[] 
 				{
@@ -407,9 +455,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet siren_1 = new EncounterSheet
             (
-                name: "Ship Graveyard",
-                icon: "tokens/cha",
-                tooltip: "A beautiful song washes over you.",
+                name: @"Ship Graveyard",
+                icon: @"tokens/cha",
+                tooltip: @"A beautiful song washes over you.
+
+Match STR or INT to defeat the Sirens.
+Try to keep your Crew away from the Sirens, as they will be destroyed if they are matched.",
                 
 				objectives: new string[] 
 				{
@@ -432,9 +483,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet siren_2 = new EncounterSheet
             (
-                name: "Cape of the Lost",
-                icon: "tokens/cha",
-                tooltip: "A beautiful song washes over you.",
+                name: @"Cape of the Lost",
+                icon: @"tokens/cha",
+                tooltip: @"A beautiful song washes over you.
+
+Match STR or INT to defeat the Sirens.
+Try to keep your Crew away from the Sirens, as they will be destroyed if they are matched.",
                 
 				objectives: new string[] 
 				{
@@ -457,9 +511,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet siren_3 = new EncounterSheet
             (
-                name: "Basin of Sorrow",
-                icon: "tokens/cha",
-                tooltip: "A beautiful song washes over you.",
+                name: @"Basin of Sorrow",
+                icon: @"tokens/cha",
+                tooltip: @"A beautiful song washes over you.
+
+Match STR or INT to defeat the Sirens.
+Try to keep your Crew away from the Sirens, as they will be destroyed if they are matched.",
                 
 				objectives: new string[] 
 				{
@@ -482,9 +539,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet zombie_1 = new EncounterSheet
             (
-                name: "Unearthed Graveyard",
-                icon: "skills/bash",
-                tooltip: "The graves are empty.",
+                name: @"Unearthed Graveyard",
+                icon: @"skills/bash",
+                tooltip: @"The graves are empty.
+
+Match resources to the goal. Zombies will delay you by consuming your resources.
+Zombies can be destroyed by using skills or matching them.",
                 
 				objectives: new string[] 
 				{
@@ -507,9 +567,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet zombie_2 = new EncounterSheet
             (
-                name: "Desecrated Ground",
-                icon: "skills/bash",
-                tooltip: "The graves are empty.",
+                name: @"Desecrated Ground",
+                icon: @"skills/bash",
+                tooltip: @"The graves are empty.
+
+Match resources to the goal. Zombies will delay you by consuming your resources.
+Zombies can be destroyed by using skills or matching them.",
                 
 				objectives: new string[] 
 				{
@@ -532,9 +595,12 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet zombie_3 = new EncounterSheet
             (
-                name: "Necropolis",
-                icon: "skills/bash",
-                tooltip: "The graves are empty.",
+                name: @"Necropolis",
+                icon: @"skills/bash",
+                tooltip: @"The graves are empty.
+
+Match resources to the goal. Zombies will delay you by consuming your resources.
+Zombies can be destroyed by using skills or matching them.",
                 
 				objectives: new string[] 
 				{
@@ -557,9 +623,13 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet ranger_1 = new EncounterSheet
             (
-                name: "Ranger",
-                icon: "tokens/agi",
-                tooltip: "The silent ranger strikes",
+                name: @"Ranger",
+                icon: @"tokens/agi",
+                tooltip: @"The silent ranger strikes
+
+The Ranger switches between two modes: Dash and Arrow.
+In Dash Mode, the Ranger places Crew and Markers on the board. Markers transform token to AGI.
+In Arrow Mode, the Ranger destroys all AGI tokens and tokens nearby AGI tokens. Keep your Crew away!",
                 
 				objectives: new string[] 
 				{
@@ -581,9 +651,11 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet spiked_hole_1 = new EncounterSheet
             (
-                name: "Hidden Trap",
-                icon: "tokens/agi",
-                tooltip: "You fall into a deep, deep hole",
+                name: @"Hidden Trap",
+                icon: @"tokens/agi",
+                tooltip: @"You fall into a deep, deep hole
+
+Keep your Crew near the top while you gain enough AGI to win.",
                 
 				objectives: new string[] 
 				{
@@ -605,9 +677,11 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet spiked_hole_2 = new EncounterSheet
             (
-                name: "Covered Pit",
-                icon: "tokens/agi",
-                tooltip: "You fall into a deep, deep hole",
+                name: @"Covered Pit",
+                icon: @"tokens/agi",
+                tooltip: @"You fall into a deep, deep hole
+
+Keep your Crew near the top while you gain enough AGI to win.",
                 
 				objectives: new string[] 
 				{
@@ -629,9 +703,11 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet spiked_hole_3 = new EncounterSheet
             (
-                name: "Death Trap",
-                icon: "tokens/agi",
-                tooltip: "You fall into a deep, deep hole",
+                name: @"Death Trap",
+                icon: @"tokens/agi",
+                tooltip: @"You fall into a deep, deep hole
+
+Keep your Crew near the top while you gain enough AGI to win.",
                 
 				objectives: new string[] 
 				{
@@ -653,9 +729,11 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet drown_1 = new EncounterSheet
             (
-                name: "Shipwrecked",
-                icon: "tokens/str",
-                tooltip: "That is a lot of water?",
+                name: @"Shipwrecked",
+                icon: @"tokens/str",
+                tooltip: @"That is a lot of water?
+
+Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.",
                 
 				objectives: new string[] 
 				{
@@ -676,9 +754,11 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet drown_2 = new EncounterSheet
             (
-                name: "Whirlpool",
-                icon: "tokens/str",
-                tooltip: "That is a lot of water?",
+                name: @"Whirlpool",
+                icon: @"tokens/str",
+                tooltip: @"That is a lot of water?
+
+Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.",
                 
 				objectives: new string[] 
 				{
@@ -699,9 +779,11 @@ namespace Match3.Encounter.Encounter
 
         public static EncounterSheet drown_3 = new EncounterSheet
             (
-                name: "Bermuda Triangle?",
-                icon: "tokens/str",
-                tooltip: "That is a lot of water?",
+                name: @"Bermuda Triangle?",
+                icon: @"tokens/str",
+                tooltip: @"That is a lot of water?
+
+Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.",
                 
 				objectives: new string[] 
 				{
@@ -716,6 +798,81 @@ namespace Match3.Encounter.Encounter
 				{
 				
 "Bermuda Triangle?"
+
+				}
+            );
+
+        public static EncounterSheet spirit_1 = new EncounterSheet
+            (
+                name: @"Whispering Forest",
+                icon: @"tokens/int",
+                tooltip: @"The spirits wander freely here… perhaps you could learn something from them?
+
+Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.",
+                
+				objectives: new string[] 
+				{
+				
+"spirit_1_int_win",
+"spirit_1_turn_loss",
+"spirit_luk_agi_bonus"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Whispering Forest"
+
+				}
+            );
+
+        public static EncounterSheet spirit_2 = new EncounterSheet
+            (
+                name: @"Verdent Forest",
+                icon: @"tokens/int",
+                tooltip: @"The spirits wander freely here… perhaps you could learn something from them?
+
+Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.",
+                
+				objectives: new string[] 
+				{
+				
+"spirit_2_int_win",
+"spirit_2_turn_loss",
+"spirit_luk_agi_bonus"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Verdent Forest"
+
+				}
+            );
+
+        public static EncounterSheet spirit_3 = new EncounterSheet
+            (
+                name: @"Heart of the Forest",
+                icon: @"tokens/int",
+                tooltip: @"The spirits wander freely here… perhaps you could learn something from them?
+
+Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.",
+                
+				objectives: new string[] 
+				{
+				
+"spirit_3_int_win",
+"spirit_3_turn_loss",
+"spirit_luk_agi_bonus"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Heart of the Forest"
 
 				}
             );

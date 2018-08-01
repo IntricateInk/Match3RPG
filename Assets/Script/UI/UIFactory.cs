@@ -32,6 +32,9 @@ namespace Match3.UI
 
         [SerializeField]
         private UITrophyController objectiveTrophyPrefab;
+        
+        [SerializeField]
+        private UIObjectiveItemController objectiveItemPrefab;
 
         [SerializeField]
         private UIResourceBarController resourceBarPrefab;
@@ -104,6 +107,15 @@ namespace Match3.UI
             tokenController.SetType(token.type);
 
             return tokenController;
+        }
+
+        internal static UIObjectiveItemController CreateObjectiveItem(UIObjectiveController controller, Transform parent, TokenType type, int goal, bool is_min)
+        {
+            UIObjectiveItemController obj_item = Instantiate(UIFactory.Instance.objectiveItemPrefab, parent);
+
+            obj_item.SetGoal(type, goal, is_min);
+
+            return obj_item;
         }
 
         internal static UIResourceBarController CreateResourceBar(UIObjectiveController controller, TokenType field, int min, int max)

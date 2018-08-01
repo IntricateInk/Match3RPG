@@ -35,6 +35,7 @@ namespace Match3.Encounter.Effect.Passive
             {
                 TokenState token = targets[0];
 
+                token.PlayAnimation("wave1", 0f);
                 token.type = TokenType.BLANK;
 
                 for (int dx = -1; dx <= 1; dx++)
@@ -43,6 +44,7 @@ namespace Match3.Encounter.Effect.Passive
                     if (adj != null)
                     {
                         adj.ApplyBuff(TargetPassive.WATER);
+                        adj.PlayAnimation("wave1", 0f);
                     }
                 }
 

@@ -30,6 +30,11 @@ public static class TokenTypeHelper
     {
         return new TokenType[] { TokenType.STRENGTH, TokenType.AGILITY, TokenType.INTELLIGENCE, TokenType.CHARISMA, TokenType.LUCK };
     }
+    
+    public static TokenType[] AllTokenType()
+    {
+        return new TokenType[] { TokenType.BLANK, TokenType.STRENGTH, TokenType.AGILITY, TokenType.INTELLIGENCE, TokenType.CHARISMA, TokenType.LUCK };
+    }
 }
 
 public static class TokenTypeExtensions

@@ -31,6 +31,9 @@ namespace Match3.UI
         [SerializeField]
         private Transform rewardsContainer;
 
+        [SerializeField]
+        private Transform itemContainer;
+
         private EncounterObjective _objective;
         internal EncounterObjective objective
         {
@@ -88,8 +91,11 @@ namespace Match3.UI
 
         private void TryCreate(TokenType field, int min, int max)
         {
-            if (min >= field.MinValue() && max <= field.MaxValue())
-                UIFactory.CreateResourceBar(this, field, min, max);
+            if (min > field.MinValue())
+                UIFactory.CreateObjectiveItem(this, this.itemContainer, field, min, true);
+
+            if (max < field.MaxValue())
+                UIFactory.CreateObjectiveItem(this, this.itemContainer, field, max, false);
         }
         
         // Unity API hooks

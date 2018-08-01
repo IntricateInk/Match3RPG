@@ -26,19 +26,19 @@ namespace Match3.Encounter.Effect.Passive
             OnDestroy: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
                 TokenState token = targets[0];
-                List<TokenState> row = encounter.boardState.GetRow(token.x);
-                List<TokenState> col = encounter.boardState.GetCol(token.y);
+                List<TileState> row = encounter.boardState.GetTileRow(token.y);
+                List<TileState> col = encounter.boardState.GetTileCol(token.x);
 
                 row.AddRange(col);
 
                 GameEffect.BeginAnimationBatch();
 
-                foreach (TokenState other in row)
+                foreach (TileState tile in row)
                 {
-                    if (other == token) continue;
+                    tile.PlayAnimation("fire2", 0.2f);
 
-                    other.PlayAnimation("fire2");
-                    other.Destroy();
+                    if (tile.token != null)
+                        tile.token.Destroy();
                 }
 
                 GameEffect.EndAnimationBatch();

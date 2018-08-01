@@ -13,7 +13,7 @@ namespace Match3.Encounter.Effect.Skill
             sprite: "skills/bash",
             tooltip: "Select two adjacent tokens. Swap them, then destroy the second.",
 
-            energyCost: 1,
+            energyCost: 2,
 
             selectBehavior: SelectBehavior.TwoAdjacent,
 
@@ -23,11 +23,11 @@ namespace Match3.Encounter.Effect.Skill
                 TokenState second = targets[1];
 
                 GameEffect.BeginAnimationBatch();
-                first.PlayAnimation("stargate", 3f);
+                first.PlayAnimation("stargate", normalized_size: 3f);
                 first.Swap(second);
-                GameEffect.EndAnimationBatch();
                 second.PlayAnimation("explosion1", 0f);
                 second.Destroy();
+                GameEffect.EndAnimationBatch();
             }
         );
     }

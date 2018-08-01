@@ -28,7 +28,14 @@ namespace Match3.Encounter.Effect.Passive
 
         public static CharacterPassive GetPassive(string name)
         {
-            return _AllPassives[name];
+            try
+            {
+                return _AllPassives[name];
+            } catch (KeyNotFoundException e)
+            {
+                Debug.Log(name);
+                throw e;
+            }
         }
     }
 }

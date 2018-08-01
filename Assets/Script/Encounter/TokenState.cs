@@ -198,27 +198,20 @@ namespace Match3.Encounter
             UIAnimationManager.AddAnimation(new UIInstruction_FloatingText(text, this.AsIPosition()));
         }
 
-        internal void PlayAnimation(string animation_name)
+        internal void PlayAnimation(string animation_name, float play_time = -1, float normalized_size = 1f)
         {
-            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.None);
-            UIAnimationManager.AddAnimation(anim);
-        }
-
-        internal void PlayAnimation(string animation_name, float play_time)
-        {
-            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.None);
-            UIAnimationManager.AddAnimation(anim, play_time);
+            this.tile.PlayAnimation(animation_name, play_time, normalized_size);
         }
 
         internal void AttachAnimation(string animation_name, float normalized_size = 1f)
         {
-            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.Token_Add, normalized_size);
+            UIAnimation anim = new UIAnimation_ApplyTargetAnimation(animation_name, this, normalized_size);
             UIAnimationManager.AddAnimation(anim);
         }
 
         internal void DettachAnimation(string animation_name)
         {
-            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.Token_Remove);
+            UIAnimation anim = new UIAnimation_RemoveTargetAnimation(animation_name, this);
             UIAnimationManager.AddAnimation(anim);
         }
         

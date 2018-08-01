@@ -31,13 +31,15 @@ namespace Match3.Encounter.Effect.Passive
                 {
                     for (int dy = -1; dy <= 1; dy++)
                     {
-                        TokenState other = token.GetAdjacent(dx, dy);
+                        TileState tile = token.tile.GetAdjacent(dx, dy);
 
-                        if (other != null && other != token)
-                        {
-                            other.PlayAnimation("fire2");
-                            other.Destroy();
-                        }
+                        if (tile == null) continue;
+
+                        tile.PlayAnimation("fire2", 0.2f);
+
+                        if (tile.token == null) continue;
+
+                        tile.token.Destroy();
                     }
                 }
                 GameEffect.EndAnimationBatch();

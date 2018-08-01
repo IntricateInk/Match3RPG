@@ -63,7 +63,7 @@ namespace Match3.Encounter
 
         private void DoEncounterStart ()
         {
-            this.DoTurnStart();
+            UIAnimationManager.AddAnimation(new UIInstruction_OverlayText(this.encounterSheet.name, this.encounterSheet.sprite, this.encounterSheet.tooltip, true));
 
             foreach (EncounterObjective objective in this.encounterSheet.objectives)
             {
@@ -73,8 +73,7 @@ namespace Match3.Encounter
             UIAnimationManager.AddInstruction(new UIInstruction_SetPlayer(this.playerSheet));
             UIAnimationManager.AddInstruction(new UIInstruction_SetEncounter(this.encounterSheet));
 
-            UIAnimationManager.AddAnimation(new UIInstruction_OverlayText(this.encounterSheet.name, this.encounterSheet.sprite, this.encounterSheet.tooltip, true));
-
+            this.DoTurnStart();
         }
 
         private void DoTurnStart()
@@ -101,6 +100,9 @@ namespace Match3.Encounter
                     passive.OnTurnStart(this, target);
                 }
             }
+
+            BasePassive.ResolveQueue();
+
             this.boardState.DoTokenFall();
 
             this.inputState.CheckIfCanPaySkill();
@@ -111,46 +113,32 @@ namespace Match3.Encounter
         private void DoTurnEnd()
         {
             UIAnimationManager.AddAnimation(new UIAnimation_ToggleInputMode(true));
-
-            this.boardState.DoTokenFall();
+            
             this.boardState.DoTurnEnd();
+            BasePassive.ResolveQueue();
 
             foreach (CharacterPassive passive in playerState.Passives.ToArray())
             {
                 passive.OnTurnEnd(this, new List<TokenState>());
             }
-
-            List<TokenState> tokens = new List<TokenState>();
-            List<TargetPassive> passives = new List<TargetPassive>();
-
+            
             foreach (TileState tile in this.boardState.tiles)
             {
-                List<TokenState> target = new List<TokenState>();
-                target.Add(tile.token);
-
                 foreach (TargetPassive passive in tile.Passives)
                 {
-                    tokens.Add(tile.token);
-                    passives.Add(passive);
+                    passive.OnTurnEnd(this, new List<TokenState>() { tile.token });
                 }
 
                 if (tile.token != null)
                 {
                     foreach (TargetPassive passive in tile.token.Passives)
                     {
-                        tokens.Add(tile.token);
-                        passives.Add(passive);
+                        passive.OnTurnEnd(this, new List<TokenState>() { tile.token });
                     }
                 }
             }
-
-            for (int i = 0; i < tokens.Count; i++)
-            {
-                TokenState token = tokens[i];
-                TargetPassive passive = passives[i];
-
-                passive.OnTurnEnd(this, new List<TokenState>() { token });
-            }
+            
+            BasePassive.ResolveQueue();
 
             this.boardState.DoTokenFall();
 
@@ -161,13 +149,15 @@ namespace Match3.Encounter
             }
 
             this.DoTurnStart();
-            this.boardState.DoTokenFall();
         }
 
         private void DoSkill()
         {
             this.inputState.DoSkill();
+            BasePassive.ResolveQueue();
+
             this.boardState.DoTokenFall();
+
             this.inputState.CheckIfCanPaySkill();
         }
 

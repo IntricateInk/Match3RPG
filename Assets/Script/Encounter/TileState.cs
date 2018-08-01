@@ -52,7 +52,7 @@ namespace Match3.Encounter
                 UIAnimationManager.AddAnimation(new UIInstruction_AddTargetBuff(this.x, this.y, buff));
             }
         }
-
+        
         internal void RemoveBuff(TargetPassive buff)
         {
             if (this.Passives.Contains(buff))
@@ -63,15 +63,26 @@ namespace Match3.Encounter
             }
         }
 
+        internal void PlayAnimation(string animation_name, float play_time = -1, float normalized_size = 1f)
+        {
+            UIAnimation anim =
+                new UIAnimation_AddAnimation(animation_name, this.AsIPosition(), normalized_size: normalized_size);
+
+            if (play_time == -1)
+                UIAnimationManager.AddAnimation(anim);
+            else
+                UIAnimationManager.AddAnimation(anim, play_time);
+        }
+
         internal void AttachAnimation(string animation_name, float normalized_size = 1f)
         {
-            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.Tile_Add, normalized_size);
+            UIAnimation anim = new UIAnimation_ApplyTargetAnimation(animation_name, this, normalized_size);
             UIAnimationManager.AddAnimation(anim);
         }
 
         internal void DettachAnimation(string animation_name)
         {
-            UIAnimation anim = new UIAnimation_AddAnimation(animation_name, this.x, this.y, UIAnimation_AddAnimation.AnimationType.Tile_Remove);
+            UIAnimation anim = new UIAnimation_RemoveTargetAnimation(animation_name, this);
             UIAnimationManager.AddAnimation(anim);
         }
 

@@ -192,41 +192,7 @@ namespace Match3.Encounter.Effect
                 selectedTokens.AddRange(new_selected);
             };
         }
-
-        internal static void AddTileAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, float normalized_size = 1f)
-        {
-            AddAnimation(encounter, selectedTokens, animation_name, UIAnimation_AddAnimation.AnimationType.Tile_Add, normalized_size);
-        }
-
-        internal static void RemoveTileAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, float normalized_size = 1f)
-        {
-            AddAnimation(encounter, selectedTokens, animation_name, UIAnimation_AddAnimation.AnimationType.Tile_Remove, normalized_size);
-        }
-
-        internal static void AddTokenAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, float normalized_size = 1f)
-        {
-            AddAnimation(encounter, selectedTokens, animation_name, UIAnimation_AddAnimation.AnimationType.Token_Add, normalized_size);
-        }
-
-        internal static void RemoveTokenAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, float normalized_size = 1f)
-        {
-            AddAnimation(encounter, selectedTokens, animation_name, UIAnimation_AddAnimation.AnimationType.Token_Remove, normalized_size);
-        }
-
-        internal static void PlayAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, float normalized_size = 1f)
-        {
-            AddAnimation(encounter, selectedTokens, animation_name, UIAnimation_AddAnimation.AnimationType.None, normalized_size);
-        }
-
-        private static void AddAnimation(EncounterState encounter, List<TokenState> selectedTokens, string animation_name, UIAnimation_AddAnimation.AnimationType animation_type, float normalized_size)
-        {
-            foreach (TokenState token in selectedTokens)
-            {
-                UIAnimation anim = new UIAnimation_AddAnimation(animation_name, token.x, token.y, animation_type, normalized_size);
-                UIAnimationManager.AddAnimation(anim);
-            }
-        }
-
+        
         internal static void TransformSelectedToType(EncounterState encounter, List<TokenState> selectedTokens, TokenType type)
         {
             foreach (TokenState token in selectedTokens)

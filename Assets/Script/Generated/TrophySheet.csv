@@ -1,23 +1,28 @@
 uid,name,sprite,tooltip,lst_skills,lst_passives
 START_WARRIOR,Warrior's Blood,tokens/str,A warrior's blood,"Bash, Cross Section",Strong
-START_THIEF,Mark of the Thief,tokens/agi,The mark of a thief,Sleight,Agile
-START_MERCHANT,Full Pouch,tokens/cha,Merchants ALWAYS have gold,"Socialize, Bribe",Charismatic
-START_NAVIGATOR,Navigator's Quill,tokens/int,"To know where to go, you must first record where you are","Strategize, Inspect",Intelligent
-START_JESTER,Lucky Die,tokens/luk,Fortune favors the fool.,Rainbow,Lucky
+START_THIEF,Mark of the Thief,tokens/agi,The mark of a thief,"Shove, Strategize",Agile
+START_MERCHANT,Full Pouch,tokens/cha,Merchants ALWAYS have gold,"Socialize, Bribe, Fast Talk",Charismatic
+START_NAVIGATOR,Navigator's Quill,tokens/int,"To know where to go, you must first record where you are","Inspect, Sleight",Intelligent
+START_JESTER,Lucky Die,tokens/luk,Fortune favors the fool.,"Chain Reaction, Ricochet, Lucky Find",Lucky
 CITY_KEY,Key to the City,tokens/cha,You are the major!?,"Influence, Mass Influence",
-MASTER_PLANS,Master Plans,tokens/int,Super secret specific plans that somehow apply to every situation?,"Ponder, Well Laid Plans",
+MASTER_PLANS,Master Plans,tokens/int,Super secret specific plans that somehow apply to every situation?,Part of the Plan,
 MOLE_REWARD_1,Tamed Mole?,tokens/int,Can you REALLY tame a mole?,Mine,
 GOLDEN_COIN,Golden Coin,tokens/luk,It's your lucky day!,Lucky Find,
-PLYWOOD_BOW,Plywood Bow,tokens/agi,"It is said that this bow is so flexible, it shoots arrows that bend…… are you really that guillble?","Ricochet, Shove",
+PLYWOOD_BOW,Plywood Bow,tokens/agi,"It is said that this bow is so flexible, it shoots arrows that bend…… are you really that guillble?",Ricochet,
 PARASITE,Parasite,tokens/agi,Symbiosis is a thing? Is that you or the parasite speaking anyway.,Parasitic Burst,
 HEAVY_AXE,Heavy Axe,tokens/str,Great for chopping AND slicing!,"Chop!, Slice!",
 EMBERSTONE,Emberstone,tokens/int,It glows with power,Ignite,
 GOLDEN_TONGUE,Golden Tongue,tokens/cha,A gilb tongue speaks fast,"Threaten, Guile, Wit, Affluence",
-NECRONOMICON,Necronomicon,tokens/int,A dark book of necromancy,Necromancy,
+NECRONOMICON,Necronomicon,tokens/int,A dark book of necromancy,"Raise Dead, Siphon Soul",
 SMART_MANTLE,Smart Mantle,tokens/int,This shows that you are really smart?,"Study, Profile",
 TRAP_TOOLS,Trapmaker's Tools,tokens/int,Set a trap,"Set Flamethrower Trap, Set Explosive Trap",
 BANDIT_BANDANA,Bandit's Bandana,skills/bash,"When your live tethers on the edge, anything goes.","Cheap Shot, Desperate Strike",Sprinter
 MERCHANT_FLAIR,Merchant's Flair,skills/sleight,Merchants speak a lot,Fast Talk,Quick Witted
 STRANGE_MAGNET,Strange Magnet,skills/sleight,"It repels only, but why?",Repel,
-LEADER_OF_MEN,Leader of Men,skills/bash,You lead men,Lackeys,
+LEADER_OF_MEN,Leader of Men,skills/bash,You lead men,,Commander
 BLACK_MARK,Black Mark,tokens/int,The black mark of undeath,,Cursed
+SPIRIT_WELL,Well of the Spirits,tokens/int,The spirits gather around this well,Ritual,Awakening
+CLEAR_MIND,Clear Mind,tokens/int,Breathe.,"Absolution, Infusion",
+FLEXIBLE,Flexible,tokens/agi,Bend into the situation demands,"Backflip, Switcharoo",
+BARBARISM,Barbarism,tokens/str,WRAGGGH,"Leap, Slam",
+POWERFUL,Powerful,tokens/str,Heave with power,"Lift, Uppercut",

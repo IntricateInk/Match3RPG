@@ -29,16 +29,21 @@ namespace Match3.Encounter
             this.fillBoard();
         }
 
-        internal void DoTurnEnd()
+        internal void DoMatch()
         {
-            this.DoTokenFall();
-
             UIAnimationManager.AddAnimation(new UIAnimation_BeginBatch());
             foreach (TokenState token in this.GetMatching())
             {
                 token.Match();
             }
             UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
+        }
+
+        internal void DoTurnEnd()
+        {
+            this.DoTokenFall();
+
+            this.DoMatch();
 
             this.DoTokenFall();
 
@@ -150,40 +155,34 @@ namespace Match3.Encounter
 
         // Helper Methods
 
-        internal List<TokenState> GetCol(int x)
+        internal List<TileState> GetTileCol(int x)
         {
-            List<TokenState> row = new List<TokenState>();
+            List<TileState> col = new List<TileState>();
 
-            for (int y = 0; y < sizeY; y++) {
-                TokenState token = this.tiles[x, y].token;
+            for (int y = 0; y < sizeY; y++)
+            {
+                col.Add(this.tiles[x, y]);
+            }
 
-                if (token != null) row.Add(token);
+            return col;
+        }
+
+        internal List<TileState> GetTileRow(int y)
+        {
+            List<TileState> row = new List<TileState>();
+
+            for (int x = 0; x < sizeX; x++)
+            {
+                row.Add(this.tiles[x, y]);
             }
 
             return row;
         }
-
-        internal List<TokenState> GetRow(params int[] row_indices)
-        {
-            List<TokenState> rows = new List<TokenState>();
-
-            foreach (int x in row_indices)
-            {
-                int idx = x;
-                if (idx < 0) idx = sizeX + idx;
-
-                rows.AddRange(this.GetRow(idx));
-            }
-
-            return rows;
-        }
-
-        internal List<TokenState> GetRow(int y)
+        internal List<TokenState> GetTokenCol(int x)
         {
             List<TokenState> col = new List<TokenState>();
 
-            for (int x = 0; x < sizeX; x++)
-            {
+            for (int y = 0; y < sizeY; y++) {
                 TokenState token = this.tiles[x, y].token;
 
                 if (token != null) col.Add(token);
@@ -192,7 +191,36 @@ namespace Match3.Encounter
             return col;
         }
 
-        internal List<TokenState> GetCol(params int[] y_indices)
+        internal List<TokenState> GetTokenRow(params int[] row_indices)
+        {
+            List<TokenState> rows = new List<TokenState>();
+
+            foreach (int x in row_indices)
+            {
+                int idx = x;
+                if (idx < 0) idx = sizeX + idx;
+
+                rows.AddRange(this.GetTokenRow(idx));
+            }
+
+            return rows;
+        }
+
+        internal List<TokenState> GetTokenRow(int y)
+        {
+            List<TokenState> row = new List<TokenState>();
+
+            for (int x = 0; x < sizeX; x++)
+            {
+                TokenState token = this.tiles[x, y].token;
+
+                if (token != null) row.Add(token);
+            }
+
+            return row;
+        }
+
+        internal List<TokenState> GetTokenCol(params int[] y_indices)
         {
             List<TokenState> cols = new List<TokenState>();
 
@@ -201,7 +229,7 @@ namespace Match3.Encounter
                 int idx = y;
                 if (idx < 0) idx = sizeY + idx;
 
-                cols.AddRange(this.GetCol(idx));
+                cols.AddRange(this.GetTokenCol(idx));
             }
 
             return cols;
@@ -214,14 +242,14 @@ namespace Match3.Encounter
 
         internal List<TokenState> GetTokensExcluding(params TokenType[] types)
         {
-            return GetTokens(TokenTypeHelper.AllResource().Except(types).ToArray());
+            return GetTokens(TokenTypeHelper.AllTokenType().Except(types).ToArray());
         }
 
         internal List<TokenState> GetTokens(params TokenType[] types)
         {
             if (types.Length == 0)
             {
-                types = TokenTypeHelper.AllResource();
+                types = TokenTypeHelper.AllTokenType();
             }
 
             List<TokenState> tokens = new List<TokenState>();

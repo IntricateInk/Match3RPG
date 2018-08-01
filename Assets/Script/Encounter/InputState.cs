@@ -82,6 +82,8 @@ namespace Match3.Encounter
         internal bool SetSkill(int skill_index)
         {
             if (IsBlockInput) return false;
+            if (skill_index >= this.encounter.playerState.Skills.Count) return false;
+
 
             if (this.encounter.playerState.Skills[skill_index].CanPayCost(this.encounter))
             {

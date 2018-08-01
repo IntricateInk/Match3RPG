@@ -11,7 +11,7 @@ namespace Match3.Encounter.Effect.Passive
         (
             name: "Crew",
             sprite: "skills/bash",
-            tooltip: "If destroyed, lose 25 STR and 25 AGI resources.",
+            tooltip: "When applied, blank the token. If destroyed, lose 25 STR and 25 AGI resources.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
@@ -21,18 +21,17 @@ namespace Match3.Encounter.Effect.Passive
 
             OnRemovePassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].DettachAnimation("glow_bubble");
+                targets[0].DettachAnimation("heartbeat");
             },
 
             OnDestroy: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
                 encounter.playerState.GainResource(TokenType.STRENGTH, -25);
-                targets[0].PlayAnimation("blast2");
                 encounter.playerState.GainResource(TokenType.AGILITY, -25);
-                UIAnimationManager.AddAnimation(new UIInstruction_OverlayText("A crew member dies!", true));
 
-                targets[0].ShowResourceGain(TokenType.STRENGTH, -25);
-                targets[0].ShowResourceGain(TokenType.AGILITY, -25);
+                UIAnimationManager.AddAnimation(new UIInstruction_OverlayText(
+                    "Crew", "skills/bash",
+                    "A crew member dies! You lose 25 STR and AGI.", true));
             }
         );
     }

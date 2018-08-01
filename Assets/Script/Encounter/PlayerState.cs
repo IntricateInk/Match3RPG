@@ -53,7 +53,7 @@ namespace Match3.Encounter
             }
         }
 
-        public int MaximumEnergy { get { return 3; } }
+        public int MaximumEnergy { get { return 5; } }
 
         public PlayerState(EncounterState parent) : base(parent)
         {
