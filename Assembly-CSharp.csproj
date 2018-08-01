@@ -158,6 +158,8 @@
     <Compile Include="Assets\Script\Overworld\OverworldMap.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldNode.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldState.cs" />
+    <Compile Include="Assets\Script\Overworld\Skill Tree\SkillItemController.cs" />
+    <Compile Include="Assets\Script\Overworld\Skill Tree\SkillTreeController.cs" />
     <Compile Include="Assets\Script\TokenType.cs" />
     <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_ApplyTargetAnimation.cs" />
     <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_DropTokens.cs" />
@@ -209,6 +211,7 @@
     <Compile Include="Assets\Script\UI\UIVictoryOverlayController.cs" />
     <Compile Include="Assets\Script\Utility\List Extensions.cs" />
     <Compile Include="Assets\Script\Utility\RandomUtil.cs" />
+    <Compile Include="Assets\Script\Utility\RectTransform Extensions.cs" />
     <Compile Include="Assets\Testing\testing_script.cs" />
     <Compile Include="Assets\Testing\TestMenuScript.cs" />
     <None Include="Assets\Script\Generated\EncounterObjective_item.txt" />

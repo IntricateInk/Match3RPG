@@ -395,6 +395,132 @@ namespace Match3.Character
 
 		);
 
+		public static TrophySheet CLASS_BEASTMASTER = new TrophySheet(
+			name: "Beastmaster",
+			sprite: "tokens/str",
+			tooltip: "The beastmaster commands beasts to move things",
+
+			skills: new string[] {},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet CLASS_PYRO = new TrophySheet(
+			name: "Pyromanic",
+			sprite: "tokens/str",
+			tooltip: "The pyromanic loves destroying tokens",
+
+			skills: new string[] {
+"Ignite"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet CLASS_BERSERKER = new TrophySheet(
+			name: "Berserker",
+			sprite: "tokens/str",
+			tooltip: "The berserker has many ways to gain energy",
+
+			skills: new string[] {
+"Shove"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet CLASS_JESTER = new TrophySheet(
+			name: "Jester",
+			sprite: "tokens/str",
+			tooltip: "The jester is great at moving tokens",
+
+			skills: new string[] {
+"Sleight"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet CLASS_NECROMANCER = new TrophySheet(
+			name: "Necromancer",
+			sprite: "tokens/str",
+			tooltip: "The necromancer uses zombies.",
+
+			skills: new string[] {
+"Raise Dead"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet CLASS_WARRIOR = new TrophySheet(
+			name: "Warrior",
+			sprite: "tokens/str",
+			tooltip: "The warrior is great at destroying tokens",
+
+			skills: new string[] {
+"Bash"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet CLASS_SCHOLAR = new TrophySheet(
+			name: "Scholar",
+			sprite: "tokens/str",
+			tooltip: "The scholar has many ways to gain resources",
+
+			skills: new string[] {
+"Study"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet CLASS_CAPTAIN = new TrophySheet(
+			name: "Captain",
+			sprite: "tokens/str",
+			tooltip: "The commander manipulates crew",
+
+			skills: new string[] {},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet CLASS_SHAMAN = new TrophySheet(
+			name: "Shaman",
+			sprite: "tokens/str",
+			tooltip: "The shaman manipulates spirits",
+
+			skills: new string[] {
+"Ritual"
+},
+
+			passives: new string[] {  }
+
+		);
+
+		public static TrophySheet CLASS_NOBLEMAN = new TrophySheet(
+			name: "Nobleman",
+			sprite: "tokens/str",
+			tooltip: "The nobleman can transform tokens",
+
+			skills: new string[] {
+"Influence"
+},
+
+			passives: new string[] {  }
+
+		);
+
 
     }
 }

@@ -20,21 +20,23 @@ public class OverworldManager : MonoBehaviour
     private int branches;
 
     [SerializeField]
-    private GameObject buttonPrefab;
+    private Button buttonPrefab;
+    [SerializeField]
+    private RectTransform linePrefab;
+
     [SerializeField]
     private GameObject mapParent;
-    
+    [SerializeField]
+    private Transform lineContainer;
+     
     private int levelIndex;
     
-
-
     // constructor
     void Start()
     {
-        if (_map == null)
-        {
-            _map = createOverworld();
-        }
+        if (_map == null) _map = createOverworld();
+
+        ShowMap();
     }
 
 
@@ -55,18 +57,15 @@ public class OverworldManager : MonoBehaviour
     void Awake()
     {
         //loadingImage.SetActive(false);
-        //DontDestroyOnLoad(this.gameObject);
     }
-
-
-
 
     public OverworldMap createOverworld()
     {
+        return new OverworldMap(this.mapDepth, this.mapWidth, this.branches);
+    }
 
-
-        OverworldMap map = new OverworldMap(this.mapDepth, this.mapWidth, this.branches);
-
+    public void ShowMap() {
+        OverworldMap map = _map;
 
         // show map, might need to move to a different function
         if (buttonPrefab == null || mapParent == null)
@@ -75,34 +74,42 @@ public class OverworldManager : MonoBehaviour
         }
 
         // dynamically assign button size
-        Vector2 rectTransformSize = mapParent.GetComponent<RectTransform>().sizeDelta;
-        Vector2 buttonSize = new Vector2(rectTransformSize.x / map.width, rectTransformSize.y / map.depth);
-        mapParent.GetComponent<GridLayoutGroup>().cellSize = buttonSize;
-        
+        Vector2 size = mapParent.GetComponent<RectTransform>().sizeDelta;
+        Vector2 buttonSize = new Vector2(size.x / map.sizeY, size.y / map.sizeX);
 
+        List<OverworldNode> next = _map.GetNextNodes(_map.playerX, _map.playerY);
 
-        for (int i = 0; i < map.depth; i++)
+        for (int i = 0; i < map.sizeX; i++)
         {
-            for (int j = 0; j < map.width; j++)
+            for (int j = 0; j < map.sizeY; j++)
             {
                 int i0 = i;
                 int j0 = j;
                 OverworldNode nodeInProcess = map.levelMap[i0, j0];
-                Button button = Instantiate<GameObject>(buttonPrefab, mapParent.transform).GetComponent<Button>();
-                
+                Button button = Instantiate<Button>(buttonPrefab, mapParent.transform);
+
+                Vector3 node_pos = GetButtonLocalPosition(nodeInProcess.x, nodeInProcess.y);
+                button.transform.localPosition = node_pos;
+
                 if (nodeInProcess.isInPath)
                 {
-                    button.GetComponentInChildren<Text>().text = map.levelMap[i0, j0]._nodeType.ToString();
+                    button.GetComponentInChildren<Text>().text = nodeInProcess._nodeType.ToString();
                     //buttonArray[i0, j0] = button;
                     // if at first floor depth
-                    bool isFirstFloor = (map.playerPosition.x == 1 && i0 == 1);
-                    bool isAdjascent = ((i0 == map.playerPosition.x + 1) && Mathf.Abs(map.playerPosition.y - j0) <= 1);
-                    if (isFirstFloor || isAdjascent)
-                    {
+                    if (next.Contains(nodeInProcess))
+                    { 
                         // highlight all
-                        button.onClick.AddListener(() => this.loadLevel(button, i0, j0));
+                        button.onClick.AddListener(() => this.loadLevel(nodeInProcess));
                         button.GetComponent<Image>().color = Color.green;
                         button.GetComponent<NodeButtonScript>().shouldBreathe = true;
+                    }
+
+                    foreach (OverworldNode nextNode in map.GetNextNodes(nodeInProcess.x, nodeInProcess.y))
+                    {
+                        RectTransform rt = Instantiate<RectTransform>(linePrefab, lineContainer);
+                        Vector3 next_pos = GetButtonLocalPosition(nextNode.x, nextNode.y);
+
+                        rt.LocalPositionFrom(node_pos, next_pos);
                     }
                 }
                 else
@@ -113,18 +120,20 @@ public class OverworldManager : MonoBehaviour
                 }
 
             }
-            }
-        
-        return map;
+        }
     }
 
-
-
-    public void loadLevel(Button self, int i, int j)
+    public Vector3 GetButtonLocalPosition(int x, int y)
+    {
+        Vector2 size = mapParent.GetComponent<RectTransform>().rect.size;
+        return new Vector3(x * size.x / _map.sizeX, y * size.y / _map.sizeY);
+    }
+    
+    public void loadLevel(OverworldNode node)
     {
         //Debug.Log(i + " , " +j);
 
-        _map.levelMap[i, j].LoadLevel();
+        _map.LoadLevel(node.x, node.y);
     }
     
 

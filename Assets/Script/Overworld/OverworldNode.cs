@@ -28,16 +28,21 @@ public class OverworldNode
 
     public bool isInPath = false;
         private int prevNode;
-    private int xIndex; // public?
-    private int yIndex; // public?
+
+    public readonly int x;
+    public readonly int y; 
 
     public int fromEdge;
     public int toEdge;
 
+    public readonly OverworldMap map;
 
     // constructor
-    public OverworldNode(nodeType type)
+    public OverworldNode(OverworldMap map, nodeType type, int x, int y)
     {
+        this.x = x;
+        this.y = y;
+        this.map = map;
         this._nodeType = type;
 
         // TODO randomize encounter  sheet choice here
@@ -53,7 +58,9 @@ public class OverworldNode
         {
             return new List<nodeType> { nodeType.START };
         }
-
+        // early exit FORCE mobs only until we finish events and shop
+        return new List<nodeType> { nodeType.MOB };
+        
         // Only boss on the last node
         if (depth == maxDepth - 1)
         {

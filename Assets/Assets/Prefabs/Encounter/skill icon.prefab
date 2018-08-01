@@ -392,7 +392,6 @@ MonoBehaviour:
   image: {fileID: 114266084182539436}
   label: {fileID: 114780944235909832}
   energyLabel: {fileID: 114668398559918246}
-  descLabel: {fileID: 0}
   animator: {fileID: 95311246841456844}
 --- !u!222 &222101330884126562
 CanvasRenderer:

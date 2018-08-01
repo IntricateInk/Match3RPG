@@ -49,9 +49,7 @@ namespace Match3.UI.Animation
                 Vector3 p_start = start_pos.GetPosition(manager);
                 Vector3 p_end = end_pos.GetPosition(manager);
 
-                rt.transform.position = p_start;
-                rt.transform.rotation = Quaternion.FromToRotation(Vector3.right, p_end - p_start);
-                rt.sizeDelta = new Vector2((p_start - p_end).magnitude, rt.sizeDelta.y);
+                rt.PositionFrom(p_start, p_end);
             }
 
             if (animation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
