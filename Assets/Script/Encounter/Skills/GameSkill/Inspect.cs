@@ -18,10 +18,8 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                GameEffect.SelectSurrounding(encounter, targets);
-
                 GameEffect.BeginAnimationBatch();
-                foreach (TokenState token in targets)
+                foreach (TokenState token in targets[0].GetSurrounding(-1, -1, 1, 1))
                 {
                     token.ShowResourceGain(1);
                     encounter.playerState.GainResource(token.type, 1);

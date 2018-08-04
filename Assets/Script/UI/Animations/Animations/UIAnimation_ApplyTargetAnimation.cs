@@ -42,7 +42,15 @@ namespace Match3.UI.Animation
             Transform parent;
 
             if (this.is_token)
+            {
+                UITokenController uiToken = manager.board.GetToken(token.uid);
+                if (uiToken == null)
+                {
+                    isDone = true;
+                    return;
+                }
                 parent = manager.board.GetToken(token.uid).transform;
+            }
             else
                 parent = manager.board.tiles[tile.x, tile.y].transform;
 

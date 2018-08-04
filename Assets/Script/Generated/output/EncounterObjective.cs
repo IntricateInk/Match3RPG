@@ -56,7 +56,7 @@ namespace Match3.Encounter.Encounter
             MinStrength: -1,
             MaxStrength: 100, 
 			
-            MinAgility: 30,
+            MinAgility: 20,
             MaxAgility: 99,
 
             MinIntelligence: -1,
@@ -89,7 +89,7 @@ namespace Match3.Encounter.Encounter
             MinStrength: -1,
             MaxStrength: 100, 
 			
-            MinAgility: 45,
+            MinAgility: 30,
             MaxAgility: 99,
 
             MinIntelligence: -1,
@@ -122,7 +122,7 @@ namespace Match3.Encounter.Encounter
             MinStrength: -1,
             MaxStrength: 100, 
 			
-            MinAgility: 60,
+            MinAgility: 40,
             MaxAgility: 99,
 
             MinIntelligence: -1,
@@ -150,9 +150,7 @@ namespace Match3.Encounter.Encounter
 			
 			GoldReward: 0,
             ExpReward: 0,
-            TrophyReward: new string[] {
-"Tamed Mole?"
-},
+            TrophyReward: new string[] {},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -185,9 +183,7 @@ namespace Match3.Encounter.Encounter
 			
 			GoldReward: 0,
             ExpReward: 50,
-            TrophyReward: new string[] {
-"Tamed Mole?"
-},
+            TrophyReward: new string[] {},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -220,9 +216,7 @@ namespace Match3.Encounter.Encounter
 			
 			GoldReward: 0,
             ExpReward: 100,
-            TrophyReward: new string[] {
-"Tamed Mole?"
-},
+            TrophyReward: new string[] {},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -255,9 +249,7 @@ namespace Match3.Encounter.Encounter
 			
 			GoldReward: 100,
             ExpReward: 0,
-            TrophyReward: new string[] {
-"Golden Coin"
-},
+            TrophyReward: new string[] {},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -637,7 +629,7 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 10,
+            MinTurn: 5,
             MaxTurn: 99
         );
 
@@ -670,7 +662,7 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 20,
+            MinTurn: 12,
             MaxTurn: 99
         );
 
@@ -703,7 +695,7 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 15,
+            MinTurn: 10,
             MaxTurn: 99
         );
 
@@ -736,7 +728,7 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 10,
+            MinTurn: 8,
             MaxTurn: 99
         );
 
@@ -755,10 +747,10 @@ namespace Match3.Encounter.Encounter
             TrophyReward: new string[] {},
             
             MinStrength: 25,
-            MaxStrength: 99, 
+            MaxStrength: 50, 
 			
             MinAgility: 25,
-            MaxAgility: 99,
+            MaxAgility: 50,
 
             MinIntelligence: -1,
             MaxIntelligence: 100,
@@ -788,10 +780,10 @@ namespace Match3.Encounter.Encounter
             TrophyReward: new string[] {},
             
             MinStrength: 35,
-            MaxStrength: 99, 
+            MaxStrength: 45, 
 			
             MinAgility: 35,
-            MaxAgility: 99,
+            MaxAgility: 45,
 
             MinIntelligence: -1,
             MaxIntelligence: 100,
@@ -860,10 +852,10 @@ namespace Match3.Encounter.Encounter
             MaxAgility: 100,
 
             MinIntelligence: 25,
-            MaxIntelligence: 99,
+            MaxIntelligence: 50,
 
             MinCharisma: 25,
-            MaxCharisma: 99,
+            MaxCharisma: 50,
 
             MinLuck: -1,
             MaxLuck: 100,
@@ -893,10 +885,10 @@ namespace Match3.Encounter.Encounter
             MaxAgility: 100,
 
             MinIntelligence: 35,
-            MaxIntelligence: 99,
+            MaxIntelligence: 45,
 
             MinCharisma: 35,
-            MaxCharisma: 99,
+            MaxCharisma: 45,
 
             MinLuck: -1,
             MaxLuck: 100,
@@ -1132,7 +1124,7 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 8,
+            MinTurn: 6,
             MaxTurn: 99
         );
 
@@ -1165,7 +1157,7 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 15,
+            MinTurn: 7,
             MaxTurn: 99
         );
 
@@ -1255,7 +1247,7 @@ namespace Match3.Encounter.Encounter
             MinAgility: -1,
             MaxAgility: 100,
 
-            MinIntelligence: 20,
+            MinIntelligence: 25,
             MaxIntelligence: 99,
 
             MinCharisma: -1,
@@ -1288,7 +1280,7 @@ namespace Match3.Encounter.Encounter
             MinAgility: -1,
             MaxAgility: 100,
 
-            MinIntelligence: 25,
+            MinIntelligence: 35,
             MaxIntelligence: 99,
 
             MinCharisma: -1,
@@ -1717,7 +1709,7 @@ namespace Match3.Encounter.Encounter
             MinAgility: -1,
             MaxAgility: 100,
 
-            MinIntelligence: 15,
+            MinIntelligence: 20,
             MaxIntelligence: 99,
 
             MinCharisma: -1,
@@ -1750,7 +1742,7 @@ namespace Match3.Encounter.Encounter
             MinAgility: -1,
             MaxAgility: 100,
 
-            MinIntelligence: 20,
+            MinIntelligence: 25,
             MaxIntelligence: 99,
 
             MinCharisma: -1,
@@ -1783,7 +1775,7 @@ namespace Match3.Encounter.Encounter
             MinAgility: -1,
             MaxAgility: 100,
 
-            MinIntelligence: 25,
+            MinIntelligence: 30,
             MaxIntelligence: 99,
 
             MinCharisma: -1,
@@ -1822,7 +1814,7 @@ namespace Match3.Encounter.Encounter
             MinCharisma: -1,
             MaxCharisma: 100,
 
-            MinLuck: 60,
+            MinLuck: 65,
             MaxLuck: 99,
 
             MinTurn: -1,
@@ -1843,7 +1835,7 @@ namespace Match3.Encounter.Encounter
             ExpReward: 80,
             TrophyReward: new string[] {},
             
-            MinStrength: 30,
+            MinStrength: 25,
             MaxStrength: 99, 
 			
             MinAgility: -1,
@@ -1876,7 +1868,7 @@ namespace Match3.Encounter.Encounter
             ExpReward: 100,
             TrophyReward: new string[] {},
             
-            MinStrength: 40,
+            MinStrength: 30,
             MaxStrength: 99, 
 			
             MinAgility: -1,
@@ -1909,7 +1901,7 @@ namespace Match3.Encounter.Encounter
             ExpReward: 120,
             TrophyReward: new string[] {},
             
-            MinStrength: 50,
+            MinStrength: 35,
             MaxStrength: 99, 
 			
             MinAgility: -1,
@@ -1945,7 +1937,7 @@ namespace Match3.Encounter.Encounter
             MinStrength: -1,
             MaxStrength: 100, 
 			
-            MinAgility: 30,
+            MinAgility: 25,
             MaxAgility: 99,
 
             MinIntelligence: -1,
@@ -1978,7 +1970,7 @@ namespace Match3.Encounter.Encounter
             MinStrength: -1,
             MaxStrength: 100, 
 			
-            MinAgility: 40,
+            MinAgility: 30,
             MaxAgility: 99,
 
             MinIntelligence: -1,
@@ -2011,7 +2003,7 @@ namespace Match3.Encounter.Encounter
             MinStrength: -1,
             MaxStrength: 100, 
 			
-            MinAgility: 50,
+            MinAgility: 35,
             MaxAgility: 99,
 
             MinIntelligence: -1,
@@ -2122,7 +2114,7 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 8,
+            MinTurn: 12,
             MaxTurn: 99
         );
 
@@ -2188,7 +2180,7 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 12,
+            MinTurn: 8,
             MaxTurn: 99
         );
 
@@ -2237,9 +2229,7 @@ namespace Match3.Encounter.Encounter
 			
 			GoldReward: 30,
             ExpReward: 60,
-            TrophyReward: new string[] {
-"Plywood Bow"
-},
+            TrophyReward: new string[] {},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2272,9 +2262,7 @@ namespace Match3.Encounter.Encounter
 			
 			GoldReward: 0,
             ExpReward: 20,
-            TrophyReward: new string[] {
-"Leader of Men"
-},
+            TrophyReward: new string[] {},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2606,7 +2594,7 @@ namespace Match3.Encounter.Encounter
             ExpReward: 40,
             TrophyReward: new string[] {},
             
-            MinStrength: 30,
+            MinStrength: 25,
             MaxStrength: 99, 
 			
             MinAgility: -1,
@@ -2639,7 +2627,7 @@ namespace Match3.Encounter.Encounter
             ExpReward: 60,
             TrophyReward: new string[] {},
             
-            MinStrength: 50,
+            MinStrength: 30,
             MaxStrength: 99, 
 			
             MinAgility: -1,
@@ -2672,7 +2660,7 @@ namespace Match3.Encounter.Encounter
             ExpReward: 80,
             TrophyReward: new string[] {},
             
-            MinStrength: 70,
+            MinStrength: 35,
             MaxStrength: 99, 
 			
             MinAgility: -1,
@@ -2720,7 +2708,7 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 8,
+            MinTurn: 12,
             MaxTurn: 99
         );
 
@@ -2786,7 +2774,7 @@ namespace Match3.Encounter.Encounter
             MinLuck: -1,
             MaxLuck: 100,
 
-            MinTurn: 12,
+            MinTurn: 8,
             MaxTurn: 99
         );
 
@@ -2831,7 +2819,7 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/int",
             tooltip: "Gain the wisdom of the forest",
 			
-			type: "",
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 50,
@@ -2864,7 +2852,7 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/int",
             tooltip: "Gain the wisdom of the forest",
 			
-			type: "",
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 80,
@@ -2876,7 +2864,7 @@ namespace Match3.Encounter.Encounter
             MinAgility: -1,
             MaxAgility: 100,
 
-            MinIntelligence: 70,
+            MinIntelligence: 60,
             MaxIntelligence: 99,
 
             MinCharisma: -1,
@@ -2897,7 +2885,7 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/int",
             tooltip: "Gain the wisdom of the forest",
 			
-			type: "",
+			type: "WIN",
 			
 			GoldReward: 0,
             ExpReward: 110,
@@ -2930,7 +2918,7 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/turn",
             tooltip: "The spirits lose interest in you",
 			
-			type: "",
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -5,
@@ -2963,7 +2951,7 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/turn",
             tooltip: "The spirits lose interest in you",
 			
-			type: "",
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -10,
@@ -2996,7 +2984,7 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/turn",
             tooltip: "The spirits lose interest in you",
 			
-			type: "",
+			type: "LOSE",
 			
 			GoldReward: 0,
             ExpReward: -15,
@@ -3029,7 +3017,7 @@ namespace Match3.Encounter.Encounter
             sprite: "tokens/luk",
             tooltip: "It's your lucky day! You found a fairy.",
 			
-			type: "",
+			type: "BONUS",
 			
 			GoldReward: 50,
             ExpReward: 50,

@@ -17,11 +17,7 @@ namespace Match3.Overworld
                 name:    "Thief",
                 sprite:  "tokens/agi",
                 tooltip: "Swift and silent",
-                trophies: new string[]
-                {
-                    "Warrior's Blood",
-                    "Mark of the Thief",
-                }
+                trophies: new string[0]
             );
         }
         

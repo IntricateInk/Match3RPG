@@ -11,13 +11,14 @@ namespace Match3.Character
 
         public int Gold;
         public int Experience;
-
-        public readonly List<TokenType> tokenDrawList;
+        
         public readonly List<TrophySheet> trophies;
 
         public string name    { get; private set; }
         public string sprite  { get; private set; }
         public string tooltip { get; private set; }
+
+        public event Action<TrophySheet> OnNewTrophy;
 
         public PlayerSheet(string name, string sprite, string tooltip, params string[] trophies)
         {
@@ -25,18 +26,9 @@ namespace Match3.Character
             this.sprite = sprite;
             this.tooltip = tooltip;
 
-            this.Gold = 0;
-            this.Experience = 0;
-
-            this.tokenDrawList = new List<TokenType>()
-            {
-                TokenType.STRENGTH,
-                TokenType.AGILITY,
-                TokenType.CHARISMA,
-                TokenType.INTELLIGENCE,
-                TokenType.LUCK,
-            };
-
+            this.Gold       = 100;
+            this.Experience = 100;
+            
             this.trophies = new List<TrophySheet>(TrophySheet.GetTrophy(trophies));
         }
 
@@ -47,8 +39,42 @@ namespace Match3.Character
 
             foreach (string trophyName in objective.TrophyReward)
             {
-                this.trophies.Add(TrophySheet.GetTrophy(trophyName));
+                this.AddTrophy(TrophySheet.GetTrophy(trophyName));
             }
+        }
+
+        internal bool LearnTrophy(TrophySheet trophy)
+        {
+            if (this.trophies.Contains(trophy) || this.Experience < trophy.expCost) return false;
+
+            this.Experience -= trophy.expCost;
+            this.AddTrophy(trophy);
+
+            return true;
+        }
+
+        public List<TrophySheet> GetUpgrades()
+        {
+            List<TrophySheet> upgrades = new List<TrophySheet>();
+
+            foreach (TrophySheet trophy in this.trophies)
+            {
+                foreach (TrophySheet upgrade in TrophySheet.GetTrophy(trophy.upgrades))
+                {
+                    if (!this.trophies.Contains(upgrade) && !upgrades.Contains(upgrade))
+                        upgrades.Add(upgrade);
+                }
+            }
+
+            return upgrades;
+        }
+        
+
+        public void AddTrophy(TrophySheet trophy)
+        {
+            this.trophies.Add(trophy);
+
+            if (this.OnNewTrophy != null) this.OnNewTrophy(trophy);
         }
     }
 }

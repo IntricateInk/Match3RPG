@@ -33,28 +33,38 @@ namespace Match3.Character
             private set { this._tooltip = value; }
         }
 
+        public readonly int expCost;
+
         public readonly string[] skills;
         public readonly string[] passives;
-
-        public void OverworldUse() { }
-
+        public readonly string[] upgrades;
+        
         private TrophySheet
         (
             string name, 
             string sprite, 
             string tooltip, 
+
+            int expCost,
+            
             string[] skills = null,
-            string[] passives = null
+            string[] passives = null,
+            string[] upgrades = null
         )
         {
             if (skills == null) skills = new string[0];
             if (passives == null) passives = new string[0];
+            if (upgrades == null) upgrades = new string[0];
 
             this.name = name;
             this.sprite = sprite;
             this.tooltip = tooltip;
+
+            this.expCost = expCost;
+            
             this.skills = skills;
             this.passives = passives;
+            this.upgrades = upgrades;
 
             _AllTrophies.Add(name, this);
         }

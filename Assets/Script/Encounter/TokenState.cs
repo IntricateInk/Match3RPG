@@ -27,7 +27,7 @@ namespace Match3.Encounter
                 }
             }
         }
-
+        
         public int x { get; internal set; }
         public int y { get; internal set; }
 
@@ -68,6 +68,23 @@ namespace Match3.Encounter
 
         #region HELPER
 
+        internal List<TokenState> GetSurrounding(int dx_min, int dy_min, int dx_max, int dy_max)
+        {
+            List<TokenState> surrounding = new List<TokenState>();
+
+            for (int dx = dx_min; dx <= dx_max; dx++)
+            {
+                for (int dy = dy_min; dy <= dy_max; dy++)
+                {
+                    TokenState adj = this.GetAdjacent(dx, dy);
+
+                    if (adj != null) surrounding.Add(adj);
+                }
+            }
+
+            return surrounding;
+        }
+
         internal List<TokenState> GetAllAdjacent()
         {
             List<TokenState> adjs = new List<TokenState>();
@@ -102,7 +119,7 @@ namespace Match3.Encounter
         #endregion HELPER
 
         // Game Methods
-
+        
         internal void Swap(int dx, int dy) { Swap(GetAdjacent(dx, dy)); }
         internal void Swap(TokenState other)
         {
@@ -126,7 +143,12 @@ namespace Match3.Encounter
 
             board.tiles[this.x, this.y].token = this;
         }
-        
+
+        internal void SetPositionRelative(int dx, int dy)
+        {
+            this.SetPosition(this.x + dx, this.y + dy);
+        }
+
         internal void Match()
         {
             if (this.IsDestroyed) return;

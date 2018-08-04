@@ -29,10 +29,7 @@ namespace Match3.UI.Animation
         private readonly TokenState token;
         private readonly TileState tile;
         private readonly bool is_token;
-
-        private Animator animation = null;
-
-
+        
         internal override void Run(UIAnimationManager manager, float dt)
         {
             Transform buff = null;

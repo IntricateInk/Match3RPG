@@ -22,44 +22,22 @@ namespace Match3.Encounter.Effect
         {
             UIAnimationManager.AddAnimation(new UIAnimation_BeginBatch());
         }
-
+        
         internal static void EndAnimationBatch()
         {
             UIAnimationManager.AddAnimation(new UIAnimation_EndBatch());
         }
-
+        
         internal static void BeginSequence()
         {
             UIAnimationManager.AddAnimation(new UIAnimation_BeginSequence());
         }
-
+        
         internal static void EndSequence()
         {
             UIAnimationManager.AddAnimation(new UIAnimation_EndSequence());
         }
-
-        public static void SelectSurrounding(EncounterState encounter, List<TokenState> selectedTokens)
-        {
-            TokenState[] old_selected_tokens = selectedTokens.ToArray();
-            selectedTokens.Clear();
-
-            foreach (TokenState token in old_selected_tokens)
-            {
-                for (int i = -1; i <= 1; i++)
-                {
-                    for (int j = -1; j <= 1; j++)
-                    {
-                        TokenState new_token = token.GetAdjacent(i, j);
-
-                        if (new_token == null) continue;
-                        if (selectedTokens.Contains(new_token)) continue;
-
-                        selectedTokens.Add(new_token);
-                    }
-                }
-            }
-        }
-
+        
         internal static void LerpAnimation(string sprite, float speed, IPosition p0, IPosition p1, float play_time)
         {
             UIAnimationManager.AddAnimation(
@@ -97,33 +75,53 @@ namespace Match3.Encounter.Effect
             UIAnimationManager.AddAnimation(new UIAnimation_LineAnimation(name, target1, target2));
         }
 
-        internal static void TransformSelectedToRandom(EncounterState encounter, List<TokenState> selectedTokens)
+        internal static void SpawnTileBuff(IEnumerable<TileState> tiles, TargetPassive buff, int amt)
         {
-            foreach (TokenState token in selectedTokens)
-            {
-                token.type = TokenTypeHelper.RandomResource();
-            }
+            SpawnTileBuff(new List<TileState>(tiles), buff, amt);
         }
-        
-        public static void DestroySelected(EncounterState encounter, List<TokenState> selectedTokens)
+
+        internal static void SpawnTileBuff(List<TileState> tiles, TargetPassive buff, int amt)
         {
-            foreach (TokenState token in selectedTokens)
+            foreach (TileState tile in tiles.RandomChoice(amt))
             {
-                token.Destroy();
+                tile.ApplyBuff(buff);
             }
         }
 
-        public static void SwapFirstTwoSelected(EncounterState encounter, List<TokenState> selectedTokens)
+        internal static void SpawnTokenBuff(List<TokenState> tokens, TargetPassive buff, int amt)
         {
-            encounter.inputState.selectedTokens[0].Swap(encounter.inputState.selectedTokens[1]);
-        }
-        
-        internal static void GainSelectedAsResource(EncounterState encounter, List<TokenState> selectedTokens)
-        {
-            foreach (TokenState token in selectedTokens)
+            foreach (TokenState token in tokens.RandomChoice(amt))
             {
-                encounter.playerState.GainResource(token.type, 1);
+                token.ApplyBuff(buff);
             }
+        }
+
+        internal static void Cascade(EncounterState encounter)
+        {
+            encounter.boardState.DoTokenFall();
+            encounter.boardState.DoMatch();
+        }
+
+        internal static List<TokenState> Chain(TokenState token, TargetPassive buff)
+        {
+            TokenState current = token;
+            List<TokenState> selected = new List<TokenState>();
+            selected.Add(token);
+
+            while (true)
+            {
+                List<TokenState> adj_tokens = current.GetAllAdjacent();
+                adj_tokens.RemoveAll((t) => { return selected.Contains(t); });
+                adj_tokens.RemoveAll((t) => { return !t.Passives.Contains(buff); });
+
+                // no more tokens to chain to
+                if (adj_tokens.Count == 0) break;
+
+                current = adj_tokens.RandomChoice();
+                selected.Add(current);
+            }
+
+            return selected;
         }
 
         public static void ChainFromFirst(EncounterState encounter, List<TokenState> selectedTokens)
@@ -133,23 +131,7 @@ namespace Match3.Encounter.Effect
 
             while (true)
             {
-                adj_tokens.Clear();
-
-                TokenState adj_token = current.GetAdjacent(-1, 0);
-                if (adj_token != null && adj_token.type == current.type && !selectedTokens.Contains(adj_token))
-                    adj_tokens.Add(adj_token);
-
-                adj_token = current.GetAdjacent(1, 0);
-                if (adj_token != null && adj_token.type == current.type && !selectedTokens.Contains(adj_token))
-                    adj_tokens.Add(adj_token);
-
-                adj_token = current.GetAdjacent(0, 1);
-                if (adj_token != null && adj_token.type == current.type && !selectedTokens.Contains(adj_token))
-                    adj_tokens.Add(adj_token);
-
-                adj_token = current.GetAdjacent(0, -1);
-                if (adj_token != null && adj_token.type == current.type && !selectedTokens.Contains(adj_token))
-                    adj_tokens.Add(adj_token);
+                adj_tokens = current.GetAllAdjacent();
 
                 // no more tokens to chain to
                 if (adj_tokens.Count == 0) break;

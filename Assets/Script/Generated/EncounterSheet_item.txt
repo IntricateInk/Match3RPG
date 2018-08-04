@@ -4,6 +4,9 @@
                 icon: @"{icon}",
                 tooltip: @"{tooltip}",
                 
+				min_depth: {min_depth},
+				max_depth: {max_depth},
+				
 				objectives: new string[] 
 				{{
 				{lst_objectives}
@@ -12,5 +15,15 @@
 				passives: new string[] 
 				{{
 				{lst_passives}
+				}},
+				
+				weights: new int[]
+				{{
+					{weight_shore},
+					{weight_sea},
+					{weight_town},
+					{weight_forest},
+					{weight_ruins},
+					{weight_boss}
 				}}
             );

@@ -18,8 +18,11 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                GameEffect.GainSelectedAsResource(encounter, targets);
-                GameEffect.DestroySelected(encounter, targets);
+                TokenState token = targets[0];
+
+                encounter.playerState.GainResource(token.type, 1);
+                token.ShowResourceGain(1);
+                token.Destroy();
             }
         );
     }

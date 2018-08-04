@@ -15,6 +15,9 @@ namespace Match3.Encounter.Encounter
 Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
 Moles can be destroyed either by using certain skills or by matching them.",
                 
+				min_depth: 1,
+				max_depth: 2,
+				
 				objectives: new string[] 
 				{
 				
@@ -30,6 +33,16 @@ Moles can be destroyed either by using certain skills or by matching them.",
 				
 "Mole Infestation! (2)"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -42,6 +55,9 @@ Moles can be destroyed either by using certain skills or by matching them.",
 Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
 Moles can be destroyed either by using certain skills or by matching them.",
                 
+				min_depth: 3,
+				max_depth: 4,
+				
 				objectives: new string[] 
 				{
 				
@@ -57,6 +73,16 @@ Moles can be destroyed either by using certain skills or by matching them.",
 				
 "Mole Infestation! (3)"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -69,6 +95,9 @@ Moles can be destroyed either by using certain skills or by matching them.",
 Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
 Moles can be destroyed either by using certain skills or by matching them.",
                 
+				min_depth: 5,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -84,6 +113,16 @@ Moles can be destroyed either by using certain skills or by matching them.",
 				
 "Mole Infestation! (4)"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -96,6 +135,9 @@ Moles can be destroyed either by using certain skills or by matching them.",
 Match STR and AGI tokens every turn to stay alive.
 Win by matching an exact amount of STR and AGI tokens on the same turn.",
                 
+				min_depth: 1,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -111,6 +153,16 @@ Win by matching an exact amount of STR and AGI tokens on the same turn.",
 				
 "Phantom Berserker"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					200,
+					0,
+					200,
+					0
 				}
             );
 
@@ -123,6 +175,9 @@ Win by matching an exact amount of STR and AGI tokens on the same turn.",
 Match AGI and INT tokens every turn to stay alive.
 Win by matching an exact amount of AGI and INT tokens on the same turn.",
                 
+				min_depth: 1,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -138,6 +193,16 @@ Win by matching an exact amount of AGI and INT tokens on the same turn.",
 				
 "Phantom Swindler"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					200,
+					0,
+					200,
+					0
 				}
             );
 
@@ -150,6 +215,9 @@ Win by matching an exact amount of AGI and INT tokens on the same turn.",
 Match INT and CHA tokens every turn to stay alive.
 Win by matching an exact amount of INT and CHA tokens on the same turn.",
                 
+				min_depth: 1,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -165,6 +233,16 @@ Win by matching an exact amount of INT and CHA tokens on the same turn.",
 				
 "Phantom Navigator"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					200,
+					0,
+					200,
+					0
 				}
             );
 
@@ -177,6 +255,9 @@ Win by matching an exact amount of INT and CHA tokens on the same turn.",
 Match AGI and LUK tokens every turn to stay alive.
 Win by matching an exact amount of AGI and LUK tokens on the same turn.",
                 
+				min_depth: 1,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -192,6 +273,16 @@ Win by matching an exact amount of AGI and LUK tokens on the same turn.",
 				
 "Phantom Jester"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					200,
+					0,
+					200,
+					0
 				}
             );
 
@@ -204,6 +295,9 @@ Win by matching an exact amount of AGI and LUK tokens on the same turn.",
 Match CHA and LUK tokens every turn to stay alive.
 Win by matching an exact amount of CHA and LUK tokens on the same turn.",
                 
+				min_depth: 1,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -219,6 +313,16 @@ Win by matching an exact amount of CHA and LUK tokens on the same turn.",
 				
 "Phantom Noble"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					200,
+					0,
+					200,
+					0
 				}
             );
 
@@ -231,6 +335,9 @@ Win by matching an exact amount of CHA and LUK tokens on the same turn.",
 Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
 Keep an eye on both resource types of the goal!",
                 
+				min_depth: 1,
+				max_depth: 2,
+				
 				objectives: new string[] 
 				{
 				
@@ -246,6 +353,16 @@ Keep an eye on both resource types of the goal!",
 				
 "Monkey Jungle"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -258,6 +375,9 @@ Keep an eye on both resource types of the goal!",
 Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
 Keep an eye on both resource types of the goal!",
                 
+				min_depth: 3,
+				max_depth: 4,
+				
 				objectives: new string[] 
 				{
 				
@@ -273,6 +393,16 @@ Keep an eye on both resource types of the goal!",
 				
 "Monkey Jungle"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -285,6 +415,9 @@ Keep an eye on both resource types of the goal!",
 Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
 Keep an eye on both resource types of the goal!",
                 
+				min_depth: 5,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -300,6 +433,16 @@ Keep an eye on both resource types of the goal!",
 				
 "Monkey Jungle"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -312,6 +455,9 @@ Keep an eye on both resource types of the goal!",
 Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
 Match or destroy Wildfire tokens to prevent them from spreading.",
                 
+				min_depth: 1,
+				max_depth: 2,
+				
 				objectives: new string[] 
 				{
 				
@@ -325,6 +471,16 @@ Match or destroy Wildfire tokens to prevent them from spreading.",
 				
 "Small Forest Fire!"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -337,6 +493,9 @@ Match or destroy Wildfire tokens to prevent them from spreading.",
 Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
 Match or destroy Wildfire tokens to prevent them from spreading.",
                 
+				min_depth: 3,
+				max_depth: 4,
+				
 				objectives: new string[] 
 				{
 				
@@ -350,6 +509,16 @@ Match or destroy Wildfire tokens to prevent them from spreading.",
 				
 "Forest Fire!"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -362,6 +531,9 @@ Match or destroy Wildfire tokens to prevent them from spreading.",
 Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
 Match or destroy Wildfire tokens to prevent them from spreading.",
                 
+				min_depth: 5,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -375,6 +547,16 @@ Match or destroy Wildfire tokens to prevent them from spreading.",
 				
 "Blazing Forest Fire!"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -386,6 +568,9 @@ Match or destroy Wildfire tokens to prevent them from spreading.",
 
 Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.",
                 
+				min_depth: 1,
+				max_depth: 2,
+				
 				objectives: new string[] 
 				{
 				
@@ -400,6 +585,16 @@ Match tokens to get to the goal! However, be cautious when making matches on top
 				
 "Dark Room"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					1000,
+					0
 				}
             );
 
@@ -411,6 +606,9 @@ Match tokens to get to the goal! However, be cautious when making matches on top
 
 Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.",
                 
+				min_depth: 3,
+				max_depth: 4,
+				
 				objectives: new string[] 
 				{
 				
@@ -425,6 +623,16 @@ Match tokens to get to the goal! However, be cautious when making matches on top
 				
 "Bloodstained Dark Room"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					1000,
+					0
 				}
             );
 
@@ -436,6 +644,9 @@ Match tokens to get to the goal! However, be cautious when making matches on top
 
 Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.",
                 
+				min_depth: 5,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -450,6 +661,16 @@ Match tokens to get to the goal! However, be cautious when making matches on top
 				
 "Torture Chamber"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					1000,
+					0
 				}
             );
 
@@ -462,6 +683,9 @@ Match tokens to get to the goal! However, be cautious when making matches on top
 Match STR or INT to defeat the Sirens.
 Try to keep your Crew away from the Sirens, as they will be destroyed if they are matched.",
                 
+				min_depth: 1,
+				max_depth: 2,
+				
 				objectives: new string[] 
 				{
 				
@@ -478,6 +702,16 @@ Try to keep your Crew away from the Sirens, as they will be destroyed if they ar
 				
 "Ship Graveyard"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					1000,
+					0,
+					0,
+					0,
+					0
 				}
             );
 
@@ -490,6 +724,9 @@ Try to keep your Crew away from the Sirens, as they will be destroyed if they ar
 Match STR or INT to defeat the Sirens.
 Try to keep your Crew away from the Sirens, as they will be destroyed if they are matched.",
                 
+				min_depth: 3,
+				max_depth: 4,
+				
 				objectives: new string[] 
 				{
 				
@@ -506,6 +743,16 @@ Try to keep your Crew away from the Sirens, as they will be destroyed if they ar
 				
 "Cape of the Lost"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					1000,
+					0,
+					0,
+					0,
+					0
 				}
             );
 
@@ -518,6 +765,9 @@ Try to keep your Crew away from the Sirens, as they will be destroyed if they ar
 Match STR or INT to defeat the Sirens.
 Try to keep your Crew away from the Sirens, as they will be destroyed if they are matched.",
                 
+				min_depth: 5,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -534,6 +784,16 @@ Try to keep your Crew away from the Sirens, as they will be destroyed if they ar
 				
 "Basin of Sorrow"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					1000,
+					0,
+					0,
+					0,
+					0
 				}
             );
 
@@ -546,6 +806,9 @@ Try to keep your Crew away from the Sirens, as they will be destroyed if they ar
 Match resources to the goal. Zombies will delay you by consuming your resources.
 Zombies can be destroyed by using skills or matching them.",
                 
+				min_depth: 1,
+				max_depth: 2,
+				
 				objectives: new string[] 
 				{
 				
@@ -562,6 +825,16 @@ Zombies can be destroyed by using skills or matching them.",
 				
 "Unearthed Graveyard"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					1000,
+					0
 				}
             );
 
@@ -574,6 +847,9 @@ Zombies can be destroyed by using skills or matching them.",
 Match resources to the goal. Zombies will delay you by consuming your resources.
 Zombies can be destroyed by using skills or matching them.",
                 
+				min_depth: 3,
+				max_depth: 4,
+				
 				objectives: new string[] 
 				{
 				
@@ -590,6 +866,16 @@ Zombies can be destroyed by using skills or matching them.",
 				
 "Desecrated Ground"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					1000,
+					0
 				}
             );
 
@@ -602,6 +888,9 @@ Zombies can be destroyed by using skills or matching them.",
 Match resources to the goal. Zombies will delay you by consuming your resources.
 Zombies can be destroyed by using skills or matching them.",
                 
+				min_depth: 5,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -618,6 +907,16 @@ Zombies can be destroyed by using skills or matching them.",
 				
 "Necropolis"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					1000,
+					0
 				}
             );
 
@@ -631,6 +930,9 @@ The Ranger switches between two modes: Dash and Arrow.
 In Dash Mode, the Ranger places Crew and Markers on the board. Markers transform token to AGI.
 In Arrow Mode, the Ranger destroys all AGI tokens and tokens nearby AGI tokens. Keep your Crew away!",
                 
+				min_depth: 1,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -646,6 +948,16 @@ In Arrow Mode, the Ranger destroys all AGI tokens and tokens nearby AGI tokens. 
 				
 "Ranger - Dash"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					0,
+					1000
 				}
             );
 
@@ -657,6 +969,9 @@ In Arrow Mode, the Ranger destroys all AGI tokens and tokens nearby AGI tokens. 
 
 Keep your Crew near the top while you gain enough AGI to win.",
                 
+				min_depth: 1,
+				max_depth: 2,
+				
 				objectives: new string[] 
 				{
 				
@@ -672,6 +987,16 @@ Keep your Crew near the top while you gain enough AGI to win.",
 				
 "Hidden Trap"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					1000,
+					0
 				}
             );
 
@@ -683,6 +1008,9 @@ Keep your Crew near the top while you gain enough AGI to win.",
 
 Keep your Crew near the top while you gain enough AGI to win.",
                 
+				min_depth: 3,
+				max_depth: 4,
+				
 				objectives: new string[] 
 				{
 				
@@ -698,6 +1026,16 @@ Keep your Crew near the top while you gain enough AGI to win.",
 				
 "Covered Pit"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					1000,
+					0
 				}
             );
 
@@ -709,6 +1047,9 @@ Keep your Crew near the top while you gain enough AGI to win.",
 
 Keep your Crew near the top while you gain enough AGI to win.",
                 
+				min_depth: 5,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -724,6 +1065,16 @@ Keep your Crew near the top while you gain enough AGI to win.",
 				
 "Death Trap"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					1000,
+					0
 				}
             );
 
@@ -735,6 +1086,9 @@ Keep your Crew near the top while you gain enough AGI to win.",
 
 Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.",
                 
+				min_depth: 1,
+				max_depth: 2,
+				
 				objectives: new string[] 
 				{
 				
@@ -749,6 +1103,16 @@ Water flows downwards, blanking tokens. The flow can be controlled by using skil
 				
 "Shipwrecked"
 
+				},
+				
+				weights: new int[]
+				{
+					1000,
+					1000,
+					0,
+					0,
+					0,
+					0
 				}
             );
 
@@ -760,6 +1124,9 @@ Water flows downwards, blanking tokens. The flow can be controlled by using skil
 
 Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.",
                 
+				min_depth: 3,
+				max_depth: 4,
+				
 				objectives: new string[] 
 				{
 				
@@ -774,6 +1141,16 @@ Water flows downwards, blanking tokens. The flow can be controlled by using skil
 				
 "Whirlpool"
 
+				},
+				
+				weights: new int[]
+				{
+					1000,
+					1000,
+					0,
+					0,
+					0,
+					0
 				}
             );
 
@@ -785,6 +1162,9 @@ Water flows downwards, blanking tokens. The flow can be controlled by using skil
 
 Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.",
                 
+				min_depth: 5,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -799,6 +1179,16 @@ Water flows downwards, blanking tokens. The flow can be controlled by using skil
 				
 "Bermuda Triangle?"
 
+				},
+				
+				weights: new int[]
+				{
+					1000,
+					1000,
+					0,
+					0,
+					0,
+					0
 				}
             );
 
@@ -810,6 +1200,9 @@ Water flows downwards, blanking tokens. The flow can be controlled by using skil
 
 Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.",
                 
+				min_depth: 1,
+				max_depth: 2,
+				
 				objectives: new string[] 
 				{
 				
@@ -824,6 +1217,16 @@ Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT withi
 				
 "Whispering Forest"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -835,6 +1238,9 @@ Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT withi
 
 Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.",
                 
+				min_depth: 3,
+				max_depth: 4,
+				
 				objectives: new string[] 
 				{
 				
@@ -849,6 +1255,16 @@ Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT withi
 				
 "Verdent Forest"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 
@@ -860,6 +1276,9 @@ Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT withi
 
 Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.",
                 
+				min_depth: 5,
+				max_depth: 99,
+				
 				objectives: new string[] 
 				{
 				
@@ -874,6 +1293,16 @@ Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT withi
 				
 "Heart of the Forest"
 
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					1000,
+					0,
+					0
 				}
             );
 

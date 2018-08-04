@@ -89,7 +89,14 @@ namespace Match3.Encounter.Effect.Skill
 
         public static GameSkill GetSkill(string name)
         {
-            return _AllSkills[name];
+            try
+            {
+                return _AllSkills[name];
+            } catch (Exception e)
+            {
+                Debug.Log("name");
+                throw e;
+            }
         }
     }
 }

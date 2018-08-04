@@ -11,9 +11,9 @@ namespace Match3.Encounter.Effect.Skill
         (
             name: "Siphon Soul",
             sprite: "skills/sleight",
-            tooltip: "For each Zombie, gain resource of the type of the token it is on.",
+            tooltip: "Destroy all Zombie tokens and gain them as Resource.",
 
-            energyCost: 4,
+            energyCost: 2,
 
             selectBehavior: SelectBehavior.None,
 
@@ -28,6 +28,7 @@ namespace Match3.Encounter.Effect.Skill
                         token.PlayAnimation("beam1");
                         token.ShowResourceGain(1);
                         encounter.playerState.GainResource(token.type, 1);
+                        token.Destroy();
                         GameEffect.EndSequence();
                     }
                 }

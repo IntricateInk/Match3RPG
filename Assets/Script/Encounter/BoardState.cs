@@ -140,7 +140,7 @@ namespace Match3.Encounter
 
         public void ResetToken()
         {
-            this.tokenList.AddRange(this.encounter.playerSheet.tokenDrawList);
+            this.tokenList.AddRange(TokenTypeHelper.AllResource());
             this.tokenList.Shuffle();
         }
 
@@ -256,7 +256,7 @@ namespace Match3.Encounter
 
             foreach (TileState tile in this.tiles)
             {
-                if (Array.IndexOf(types, tile.token.type) != -1)
+                if (tile.token != null && Array.IndexOf(types, tile.token.type) != -1)
                 {
                     tokens.Add(tile.token);
                 }

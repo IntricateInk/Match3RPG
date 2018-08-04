@@ -71,7 +71,7 @@ public class testing_script : MonoBehaviour {
         } else
         {
             btn.GetComponentInChildren<Image>().color = Color.white;
-            player.trophies.Add(trophies[i]);
+            player.AddTrophy(trophies[i]);
         }
     }
 }

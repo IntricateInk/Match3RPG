@@ -19,8 +19,7 @@ namespace Match3.Encounter.Effect.Skill
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
                 GameEffect.BeginAnimationBatch();
-                GameEffect.SelectSurrounding(encounter, targets);
-                foreach (TokenState token in targets)
+                foreach (TokenState token in targets[0].GetSurrounding(-1, -1, 1, 1))
                 {
                     token.PlayAnimation("spark1");
                     token.Destroy();

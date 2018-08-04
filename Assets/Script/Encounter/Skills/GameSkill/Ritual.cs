@@ -11,9 +11,9 @@ namespace Match3.Encounter.Effect.Skill
         (
             name: "Ritual",
             sprite: "skills/sleight",
-            tooltip: "Spawn 2 Spirit and 1 Spirit Catcher.",
+            tooltip: "Spawn 1 Spirit.",
 
-            energyCost: 5,
+            energyCost: 3,
 
             selectBehavior: SelectBehavior.None,
 
@@ -23,8 +23,6 @@ namespace Match3.Encounter.Effect.Skill
                 tokens.Shuffle();
 
                 tokens[0].ApplyBuff(TargetPassive.SPIRIT);
-                tokens[1].ApplyBuff(TargetPassive.SPIRIT);
-                tokens[2].tile.ApplyBuff(TargetPassive.SPIRIT_CATCHER);
             }
         );
     }

@@ -3,136 +3,93 @@ using System.Collections.Generic;
 using UnityEngine;
 using Match3.Encounter.Encounter;
 using Match3.Encounter;
+using System.Linq;
 
-public class OverworldNode
+namespace Match3.Overworld
 {
-
-
-    public EncounterSheet _encounterSheet { get; private set; } // encounter data sheet
-    public EventSheet _eventSheet { get; private set; } // event data sheet
-    public enum nodeType
+    public class OverworldNode
     {
-        START,
-        MOB,
-        BOSS,
-        SHOP,
-        EVENT,
-        ELITE,
-        REST
 
-    };
+        public readonly OverworldNodeType nodeType;
+        private bool obfuscated;
 
-
-    public nodeType _nodeType { get; private set; }
-    private bool obfuscated;
-
-    public bool isInPath = false;
+        public bool isInPath = false;
         private int prevNode;
 
-    public readonly int x;
-    public readonly int y; 
+        public readonly int x;
+        public readonly int y;
 
-    public int fromEdge;
-    public int toEdge;
+        public int fromEdge;
+        public int toEdge;
 
-    public readonly OverworldMap map;
+        public readonly OverworldMap map;
 
-    // constructor
-    public OverworldNode(OverworldMap map, nodeType type, int x, int y)
-    {
-        this.x = x;
-        this.y = y;
-        this.map = map;
-        this._nodeType = type;
-
-        // TODO randomize encounter  sheet choice here
-
-        assignEncounter(_nodeType);
-    }
-
-
-    public static List<nodeType> FetchOverworldNodeTypes(int depth, int maxDepth)
-    {
-
-        if (depth == 0)
+        // constructor
+        public OverworldNode(OverworldMap map, OverworldNodeType type, int x, int y)
         {
-            return new List<nodeType> { nodeType.START };
-        }
-        // early exit FORCE mobs only until we finish events and shop
-        return new List<nodeType> { nodeType.MOB };
-        
-        // Only boss on the last node
-        if (depth == maxDepth - 1)
-        {
-            return new List<nodeType> { nodeType.BOSS };
+            this.x = x;
+            this.y = y;
+            this.map = map;
+            this.nodeType = type;
         }
 
-        // No elites on the first 3 nodes
-        if (depth < 4)
-        {
 
-            return new List<nodeType> { nodeType.MOB, nodeType.EVENT };
+        public static List<OverworldNodeType> FetchOverworldNodeTypes(int depth, int maxDepth)
+        {
+            if (depth == 0)
+                return new List<OverworldNodeType> { OverworldNodeType.START };
+
+            if (depth == maxDepth - 1)
+                return new List<OverworldNodeType> { OverworldNodeType.BOSS };
+
+            return new List<OverworldNodeType>
+            {
+                OverworldNodeType.FOREST,
+                OverworldNodeType.SEA,
+                OverworldNodeType.SHORE,
+                OverworldNodeType.RUINS,
+                OverworldNodeType.TOWN
+            };
         }
 
-        // Only rest site before boss
-        if (depth == maxDepth - 2)
+        public void attachEdges(int prevNode)
         {
-            return new List<nodeType> { nodeType.REST };
+            this.prevNode = prevNode;
+            this.isInPath = true;
         }
 
-        // else allow everything
-        return new List<nodeType> { nodeType.ELITE, nodeType.EVENT, nodeType.MOB, nodeType.REST, nodeType.SHOP };
-        //nodeType[] types = (nodeType[])System.Enum.GetValues(typeof(nodeType));
-        //List<nodeType> list = new List<nodeType>(types);
-        //return list;
-    }
-
-    public void attachEdges(int prevNode)
-    {
-        this.prevNode = prevNode;
-        this.isInPath = true;
-    }
-
-    public void LoadLevel()
-    {
-        switch(_nodeType)
+        public void LoadLevel()
         {
-            case nodeType.REST:
-                break;
-            case nodeType.EVENT:
-                EventManager.NewEvent(this._eventSheet);
-                break;
-            case nodeType.SHOP:
-                break;
-            default: // MOB ELITE BOSS
-                EncounterState.NewEncounter(this._encounterSheet);
-                break;
-        }
-    }
+            IEnumerable<EncounterSheet> encounters = EncounterSheet.GetEncounters(this.x);
+            List<EventSheet> events = EventSheet.AllEvents;
 
-    
+            int encounter_total = encounters.Sum((e) => { return e.GetWeight(this.nodeType); });
+            int event_total = events.Sum((e) => { return 0; });
+            int roll = Random.Range(0, encounter_total + event_total);
 
-    public void assignEncounter(nodeType type)
-    {
-        switch (type)
-        {
-            case nodeType.MOB:
-                this._encounterSheet = EncounterSheet.AllEncounters.RandomChoice();
+            if (roll < event_total)
+            {
+                EventSheet selected = events[roll];
+                EventManager.NewEvent(selected);
                 return;
-            case nodeType.SHOP:
-                EncounterSheet.AllEncounters.RandomChoice();
-                return;
-            case nodeType.ELITE:
-                EncounterSheet.AllEncounters.RandomChoice();
-                return;
-            case nodeType.BOSS:
-                EncounterSheet.AllEncounters.RandomChoice();
-                return;
-            case nodeType.EVENT:
-                this._eventSheet = EventSheet.AllEvents.RandomChoice();
-                return;
-            default:
-                return;
+            }
+
+            roll -= event_total;
+
+            if (roll < encounter_total)
+            {
+                foreach (EncounterSheet selected in encounters)
+                {
+                    int w = selected.GetWeight(this.nodeType);
+                    if (roll < w)
+                    {
+                        EncounterState.NewEncounter(selected);
+                        return;
+                    }
+
+                    roll -= w;
+                } 
+            }
         }
     }
 }
