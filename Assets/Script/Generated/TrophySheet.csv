@@ -1,60 +1,31 @@
 uid,name,sprite,tooltip,expCost,lst_skills,lst_passives,lst_upgrades
-CLASS_PYROMANIC,Pyromanic,tokens/agi,,70,Ignite,Hotheaded,"Trapper's Tools, Explosive Kit, Emberstone, Emberblade, Fast Hands"
-ITEM_PYROMANIC_1,Trapper's Tools,tokens/agi,,35,"Set Explosive Trap, Set Flamethrower Trap",,Pyromanic
-ITEM_PYROMANIC_2,Explosive Kit,tokens/agi,,35,"Rig, Nitro",,Pyromanic
-ITEM_PYROMANIC_3,Emberstone,tokens/agi,,35,Flame Shaping,Hot Tempered,Pyromanic
-ITEM_PYROMANIC_4,Emberblade,tokens/agi,,35,"Pillar of Fire, Fire Wall",,Pyromanic
-CLASS_CAPTAIN,Captain,tokens/agi,,100,To Arms,Commander,"Banner, Warchief, Leader, Emblem, Combat Training"
-ITEM_CAPTAIN_1,Banner,tokens/agi,,35,"Advance, Retreat, Flank, March",,Captain
-ITEM_CAPTAIN_2,Warchief,tokens/agi,,35,Kill Command,,Captain
-ITEM_CAPTAIN_3,Leader,tokens/agi,,35,Pile On,Leader,Captain
-CLASS_TAMER,Animal Tamer,tokens/agi,,70,"Command Monkeys, Trained Raven",,"Mole Tamer, Crab Tamer, Frog Tamer, Moth Tamer, Combat Training"
-ITEM_TAMER_1,Mole Tamer,tokens/agi,,35,"Mine, Mole Speak",,Animal Tamer
-ITEM_TAMER_2,Crab Tamer,tokens/agi,,35,Crab Speak,,Animal Tamer
-ITEM_TAMER_3,Frog Tamer,tokens/agi,,35,Croak,,Animal Tamer
-ITEM_TAMER_4,Moth Tamer,tokens/agi,,35,Moth Speak,,Animal Tamer
-CLASS_NECROMANCER,Unholy Knowledge,tokens/agi,,70,Raise Dead,Commander of Darkness,"Soulstone, Unholy Mace, Spirit Whip, Black Grimore, Scepter of the Dead, Keen Mind"
-ITEM_NECROMANCER_1,Soulstone,tokens/agi,,35,Siphon Soul,,Unholy Knowledge
-ITEM_NECROMANCER_2,Unholy Mace,tokens/agi,,35,Unholy Bash,,Unholy Knowledge
-ITEM_NECROMANCER_3,Spirit Whip,tokens/agi,,35,Lifelink,,Unholy Knowledge
-ITEM_NECROMANCER_4,Black Grimore,tokens/agi,,35,Death Pulse,,Unholy Knowledge
-ITEM_NECROMANCER_5,Scepter of the Dead,tokens/agi,,35,"Dead Man's Hand, Dead Man's Knee",,Unholy Knowledge
-CLASS_SHAMAN,Totem,tokens/agi,,100,Ritual,Awakening,"Emberstaff, Face Paint, Lucky Coin, Demonic Artifact, Dreamcatcher, Keen Mind, Emblem"
-ITEM_SHAMAN_1,Emberstaff,tokens/agi,,35,Kindling,,Totem
-ITEM_SHAMAN_2,Face Paint,tokens/agi,,35,War Chant,,Totem
-ITEM_SHAMAN_3,Lucky Coin,tokens/agi,,35,Bless,,Totem
-ITEM_SHAMAN_4,Demonic Artifact,tokens/agi,,35,Pact,,Totem
-ITEM_SHAMAN_5,Dreamcatcher,tokens/agi,,35,Offering,,Totem
-CLASS_MONK,Mediator,tokens/agi,,100,Absolution,Empty Mind,"Martial Proficiency, Prayer Beads, Clear Orb, Zen Mastery, Keen Mind, Combat Training"
-ITEM_MONK_1,Martial Proficiency,tokens/agi,,35,"Taichi, Crane Fist",,Mediator
-ITEM_MONK_2,Prayer Beads,tokens/agi,,35,Pray,,Mediator
-ITEM_MONK_3,Clear Orb,tokens/agi,,35,,Purity,Mediator
-ITEM_MONK_4,Zen Mastery,tokens/agi,,35,Zen,,Mediator
-CLASS_WARRIOR,Combat Training,tokens/agi,,100,Cross Section,Strong,"Weapon Mastery, Unarmed Mastery, Bandana, Mediator, Animal Tamer, Captain"
-ITEM_WARRIOR_1,Weapon Mastery,tokens/agi,,35,"Slice!, Swing",,Combat Training
-ITEM_WARRIOR_2,Unarmed Mastery,tokens/agi,,35,"Uppercut, Chop!",,Combat Training
-CLASS_THIEF,Fast Hands,tokens/agi,,100,Sleight,Agile,"Escape Artist, Eagle Eyed, Pyromanic, Strategist, Lucky Die, Bandana"
+CLASS_PYROMANIC,Pyromanic,tokens/agi,,70,"Ignite, Set Flamethrower Trap, Rig, Flame Shaping",Hotheaded,"Trapper's Tools, Fast Hands"
+ITEM_PYROMANIC_1,Trapper's Tools,tokens/agi,,35,"Set Explosive Trap, Nitro, Pillar of Fire, Fire Wall",Hot Tempered,Pyromanic
+CLASS_CAPTAIN,Captain,tokens/agi,,100,"Pile On, Advance, Retreat, Flank, March",Commander,"Banner, Emblem, Combat Training"
+ITEM_CAPTAIN_1,Banner,tokens/agi,,35,"Kill Command, To Arms",Leader,Captain
+CLASS_TAMER,Animal Tamer,tokens/agi,,70,"Command Monkeys, Trained Raven, Moth Speak",,"Beastmaster, Combat Training"
+ITEM_TAMER_1,Beastmaster,tokens/agi,,35,"Mine, Mole Speak, Crab Speak, Croak",,Animal Tamer
+CLASS_NECROMANCER,Unholy Knowledge,tokens/agi,,70,"Raise Dead, Siphon Soul, Dead Man's Hand",Commander of Darkness,"Unholy Mace, Keen Mind"
+ITEM_NECROMANCER_2,Unholy Mace,tokens/agi,,35,"Unholy Bash, Dead Man's Knee, Lifelink, Death Pulse",,Unholy Knowledge
+CLASS_SHAMAN,Totem,tokens/agi,,100,"Ritual, War Chant, Bless",Awakening,"Emberstaff, Keen Mind, Emblem"
+ITEM_SHAMAN_1,Emberstaff,tokens/agi,,35,"Kindling, Pact, Offering",,Totem
+CLASS_MONK,Mediator,tokens/agi,,100,"Absolution, Taichi",Empty Mind,"Prayer Beads, Keen Mind, Combat Training"
+ITEM_MONK_2,Prayer Beads,tokens/agi,,35,"Pray, Crane Fist, Zen",Purity,Mediator
+CLASS_WARRIOR,Combat Training,tokens/agi,,100,"Cross Section, Swing, Uppercut",Strong,"Weapon Mastery, Bandana, Mediator, Animal Tamer, Captain"
+ITEM_WARRIOR_1,Weapon Mastery,tokens/agi,,35,"Slice!, Chop!",,Combat Training
+CLASS_THIEF,Fast Hands,tokens/agi,,100,"Sleight, Mark",Agile,"Escape Artist, Pyromanic, Strategist, Lucky Die, Bandana"
 ITEM_THIEF_1,Escape Artist,tokens/agi,,35,Escape,,Fast Hands
-ITEM_THIEF_2,Eagle Eyed,tokens/agi,,35,Mark,,Fast Hands
-CLASS_SCHOLAR,Keen Mind,tokens/agi,,100,"Strategize, Inspect",,"Curious, Resourceful, Unholy Knowledge, Totem, Mediator, Strategist"
-ITEM_SCHOLAR_1,Curious,tokens/agi,,35,Study,,Keen Mind
-ITEM_SCHOLAR_2,Resourceful,tokens/agi,,35,Profile,,Keen Mind
-CLASS_NOBLE,Emblem,tokens/agi,,100,Bribe,Charismatic,"Golden Tongue, Suit, Totem, Lucky Die, Captain, Funny Hat"
+CLASS_SCHOLAR,Keen Mind,tokens/agi,,100,"Strategize, Inspect",,"Curious, Unholy Knowledge, Totem, Mediator, Strategist"
+ITEM_SCHOLAR_1,Curious,tokens/agi,,35,"Study, Profile",,Keen Mind
+CLASS_NOBLE,Emblem,tokens/agi,,100,"Bribe, Gesture, Articulate",Charismatic,"Golden Tongue, Totem, Lucky Die, Captain, Funny Hat"
 ITEM_NOBLE_1,Golden Tongue,tokens/agi,,35,"Persuade, Sympathise",,Emblem
-ITEM_NOBLE_2,Suit,tokens/agi,,35,"Gesture, Articulate",,Emblem
-CLASS_SWINDLER,Lucky Die,tokens/agi,,100,Switcharoo,Gambler's Gait,"Incense, Shifty Lens, Tarot Card, Fast Hands, Emblem"
-ITEM_SWINDLER_1,Incense,tokens/agi,,35,Heady Fumes,,Lucky Die
-ITEM_SWINDLER_2,Shifty Lens,tokens/agi,,35,Alternative Perspective,,Lucky Die
-ITEM_SWINDLER_3,Tarot Card,tokens/agi,,35,Divine,,Lucky Die
-CLASS_BERSERKER,Bandana,tokens/agi,,100,Shove,Berserking,"ITEM_BERSERKER_1, ITEM_BERSERKER_2, ITEM_BERSERKER_3, ITEM_BERSERKER_4, Fast Hands, Combat Training"
-ITEM_BERSERKER_1,ITEM_BERSERKER_1,tokens/agi,,35,,Sprinter,Bandana
-ITEM_BERSERKER_2,ITEM_BERSERKER_2,tokens/agi,,35,Enrage,,Bandana
-ITEM_BERSERKER_3,ITEM_BERSERKER_3,tokens/agi,,35,Smash,,Bandana
-ITEM_BERSERKER_4,ITEM_BERSERKER_4,tokens/agi,,35,Slam,,Bandana
+CLASS_SWINDLER,Lucky Die,tokens/agi,,100,"Switcharoo, Alternative Perspective",Gambler's Gait,"Incense, Fast Hands, Emblem"
+ITEM_SWINDLER_1,Incense,tokens/agi,,35,"Heady Fumes, Divine",,Lucky Die
+CLASS_BERSERKER,Bandana,tokens/agi,,100,"Shove, Enrage, Smash",Berserking,"ITEM_BERSERKER_1, Fast Hands, Combat Training"
+ITEM_BERSERKER_1,ITEM_BERSERKER_1,tokens/agi,,35,Slam,Sprinter,Bandana
 CLASS_STRATEGIST,Strategist,tokens/agi,,100,Part of the Plan,Planned,"Fast Hands, Keen Mind"
-CLASS_JESTER,Funny Hat,tokens/agi,,70,Tumble,Irregular,"ITEM_JESTER_1, ITEM_JESTER_2, Emblem"
-ITEM_JESTER_1,ITEM_JESTER_1,tokens/agi,,35,Backflip,,Funny Hat
-ITEM_JESTER_2,ITEM_JESTER_2,tokens/agi,,35,,Lithe,Funny Hat
+CLASS_JESTER,Funny Hat,tokens/agi,,70,Tumble,Irregular,"ITEM_JESTER_1, Emblem"
+ITEM_JESTER_1,ITEM_JESTER_1,tokens/agi,,35,Backflip,Lithe,Funny Hat
 SHOP_ITEM_1,Sharp Weapon,tokens/agi,,0,,Sharp Weapon,
 SHOP_ITEM_2,Flexible,tokens/agi,,0,,Flexible,
 SHOP_ITEM_3,Shiny Armor,tokens/agi,,0,,Shiny Armor,
