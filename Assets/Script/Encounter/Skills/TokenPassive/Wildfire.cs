@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive WILDFIRE = new TargetPassive
         (
             name: "Wildfire",
-            sprite: "skills/bash",
+            sprite: "icons/fire_2",
             tooltip: "At the end of each turn, destroy this token and spread to adjacent tokens. Dispels Water.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

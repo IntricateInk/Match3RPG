@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive EXPLOSIVE_TRAP = new TargetPassive
         (
             name: "Explosive Trap",
-            sprite: "skills/bash",
+            sprite: "icons/part_1",
             tooltip: "If the token is destroyed, destroy all other tokens in a 3 by 3 grid around it.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

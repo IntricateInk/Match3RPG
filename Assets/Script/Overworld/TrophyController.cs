@@ -1,4 +1,6 @@
 ﻿using Match3.Character;
+using Match3.Encounter.Effect.Passive;
+using Match3.Encounter.Effect.Skill;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +21,7 @@ namespace Match3.Overworld
         private Text expLabel;
 
         [SerializeField]
-        private Text descLabel;
+        private SkillController[] tooltipControllers;
 
         [SerializeField]
         private Button learnButton;
@@ -40,7 +42,30 @@ namespace Match3.Overworld
                     this.nameLabel.text = this.trophy.name;
                     this.icon.sprite = this.trophy.GetSprite();
                     this.expLabel.text = this.trophy.expCost.ToString();
-                    this.descLabel.text = this.trophy.tooltip;
+
+                    int i = 0;
+
+                    foreach (string skill_name in this.trophy.skills)
+                    {
+                        GameSkill skill = GameSkill.GetSkill(skill_name);
+                        this.tooltipControllers[i].tooltip = skill;
+                        this.tooltipControllers[i].gameObject.SetActive(true);
+                        i++;
+                    }
+
+                    foreach (string passive_name in this.trophy.passives)
+                    {
+                        CharacterPassive passive = CharacterPassive.GetPassive(passive_name);
+                        this.tooltipControllers[i].tooltip = passive;
+                        this.tooltipControllers[i].gameObject.SetActive(true);
+                        i++;
+                    }
+
+                    while (i < this.tooltipControllers.Length)
+                    {
+                        this.tooltipControllers[i].gameObject.SetActive(false);
+                        i++;
+                    }
 
                     this.Recolor();
                 }

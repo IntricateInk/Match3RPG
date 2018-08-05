@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive MOTH = new TargetPassive
         (
             name: "MOTH",
-            sprite: "sprites/mole",
+            sprite: "sprites/eyes",
             tooltip: "At the end of the turn, swap all adjacent tokens away.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive UNSTABLE = new TargetPassive
         (
             name: "Unstable",
-            sprite: "skills/bash",
+            sprite: "icons/scatter",
             tooltip: "When destroyed, Cascade.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

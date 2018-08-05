@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive CRAB = new TargetPassive
         (
             name: "Crab",
-            sprite: "skills/bash",
+            sprite: "icons/crab",
             tooltip: "At the end of the turn, swap to the left. If already at the left end of the board, swap to the right end instead.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

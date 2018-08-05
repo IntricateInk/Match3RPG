@@ -10,12 +10,15 @@ namespace Match3.Encounter.Effect.Passive
         private static CharacterPassive ResourceAtStart(
             string name, string sprite, TokenType type, int amount)
         {
+            string sign = "+";
+            if (amount < 0) sign = "-";
+
             return new CharacterPassive
             (
                 name: name,
                 sprite: sprite,
                 tooltip: string.Format("At the start of the turn, gain {0}{1}{2}.",
-                Mathf.Sign(amount), Mathf.Abs(amount), type),
+                sign, Mathf.Abs(amount), type),
 
                 OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
                 {

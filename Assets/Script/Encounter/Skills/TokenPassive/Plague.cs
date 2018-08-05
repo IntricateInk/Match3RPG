@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive PLAGUE = new TargetPassive
         (
             name: "Plague",
-            sprite: "sprites/mole",
+            sprite: "icons/poison_1",
             tooltip: "When destroyed, spawn Zombies on all tokens in a 3x3 area around it.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

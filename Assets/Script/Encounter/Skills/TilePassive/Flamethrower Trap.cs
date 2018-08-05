@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive FLAMETHROWER_TRAP = new TargetPassive
         (
             name: "Flamethrower Trap",
-            sprite: "skills/bash",
+            sprite: "icons/part_2",
             tooltip: "If the token is destroyed, destroy all other tokens in the row and column.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

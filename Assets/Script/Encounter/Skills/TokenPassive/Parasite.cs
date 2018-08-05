@@ -13,7 +13,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive PARASITE = new TargetPassive
         (
             name: "Parasite",
-            sprite: "skills/bash",
+            sprite: "icons/portal_green",
             tooltip: "At the start of each turn, lose 1 Resource of the type of this token.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

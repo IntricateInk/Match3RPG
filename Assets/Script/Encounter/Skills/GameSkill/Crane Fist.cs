@@ -23,7 +23,7 @@ namespace Match3.Encounter.Effect.Skill
 
                 if (token.y == board.sizeY - 1) return;
 
-                token.Swap(board.GetToken(token.x, Mathf.Max(token.y + 3, board.sizeY - 1)));
+                token.Swap(board.GetToken(token.x, Mathf.Min(token.y + 3, board.sizeY - 1)));
                 token.type = TokenType.BLANK;
             }
         );

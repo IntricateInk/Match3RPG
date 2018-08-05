@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive REAGENT = new TargetPassive
         (
             name: "Reagent",
-            sprite: "sprites/mole",
+            sprite: "icons/bomb_2",
             tooltip: "When destroyed, swap all adjacent tokens 2 spaces away.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

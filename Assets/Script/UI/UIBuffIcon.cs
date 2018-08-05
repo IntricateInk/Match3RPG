@@ -124,14 +124,14 @@ namespace Match3.UI
             }
 
             RectTransform rt = this.transform.GetComponent<RectTransform>();
-            Vector3 position = transform.position + (Vector3)rt.rect.max + new Vector3(5, 0);
+            Vector3 position = transform.position + new Vector3(rt.rect.xMin, rt.rect.yMax) + new Vector3(0, 0);
 
             if (this.buff != null)
             {
-                UITooltipController.Show(this.buff, position, new Vector2(0, 1));
+                UITooltipController.Show(this.buff, position, new Vector2(1, 1));
             } else
             {
-                UITooltipController.Show(this.target_buff, position, new Vector2(0, 1));
+                UITooltipController.Show(this.target_buff, position, new Vector2(1, 1));
             }
         }
 
