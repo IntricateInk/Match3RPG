@@ -93,7 +93,7 @@ namespace Match3.Character
                 new KeyValuePair<string, TrophySheet> ("Strategist", TrophySheet.CLASS_STRATEGIST),
                 new KeyValuePair<string, TrophySheet> ("Shaman", TrophySheet.CLASS_SHAMAN),
                 new KeyValuePair<string, TrophySheet> ("Scholar", TrophySheet.CLASS_SCHOLAR),
-                new KeyValuePair<string, TrophySheet> ("Pyromaniac", TrophySheet.CLASS_PYROMANIAC),
+                new KeyValuePair<string, TrophySheet> ("Pyromaniac", TrophySheet.CLASS_PYROMANIC),
                 new KeyValuePair<string, TrophySheet> ("Noble", TrophySheet.CLASS_NOBLE),
                 new KeyValuePair<string, TrophySheet> ("Necromancer", TrophySheet.CLASS_NECROMANCER),
                 new KeyValuePair<string, TrophySheet> ("Monk", TrophySheet.CLASS_MONK),
