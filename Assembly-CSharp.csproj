@@ -239,10 +239,13 @@
     <Compile Include="Assets\Script\Encounter\TokenState.cs" />
     <Compile Include="Assets\Script\Encounter\Trophies\TrophySheet.cs" />
     <Compile Include="Assets\Script\Event\EventManager.cs" />
-    <Compile Include="Assets\Script\Event\EventSheet.cs" />
     <Compile Include="Assets\Script\Event\EventState.cs" />
-    <Compile Include="Assets\Script\Event\UIEventPrompt.cs" />
-    <Compile Include="Assets\Script\Event\UIShowBackground.cs" />
+    <Compile Include="Assets\Script\Event\GameEvent.cs" />
+    <Compile Include="Assets\Script\Event\GameEvents\FestivalEvent.cs" />
+    <Compile Include="Assets\Script\Event\GameEvents\MerchantEvent.cs" />
+    <Compile Include="Assets\Script\Event\GameEvents\PirateEvent.cs" />
+    <Compile Include="Assets\Script\Event\GameEvents\TemplateEvent.cs" />
+    <Compile Include="Assets\Script\Event\UIEventDisplay.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterObjective.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterSheet.cs" />
     <Compile Include="Assets\Script\Generated\output\TrophySheet.cs" />

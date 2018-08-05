@@ -4,6 +4,7 @@ using UnityEngine;
 using Match3.Encounter.Encounter;
 using Match3.Encounter;
 using System.Linq;
+using Match3.Events.core;
 
 namespace Match3.Overworld
 {
@@ -60,17 +61,19 @@ namespace Match3.Overworld
 
         public void LoadLevel()
         {
+
             IEnumerable<EncounterSheet> encounters = EncounterSheet.GetEncounters(this.x);
-            List<EventSheet> events = EventSheet.AllEvents;
-
+            List<GameEvent> events = EventState._AllEvents;
+            
             int encounter_total = encounters.Sum((e) => { return e.GetWeight(this.nodeType); });
-            int event_total = events.Sum((e) => { return 0; });
+            int event_total = events.Sum((e) => { return e.GetWeight(this.nodeType); });
             int roll = Random.Range(0, encounter_total + event_total);
-
+            
             if (roll < event_total)
             {
-                EventSheet selected = events[roll];
-                EventManager.NewEvent(selected);
+                GameEvent selected = events[roll];
+                //GameEvent selected = events[0];
+                EventState.NewEvent(selected);
                 return;
             }
 

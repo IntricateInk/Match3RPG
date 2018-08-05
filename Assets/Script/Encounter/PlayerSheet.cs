@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace Match3.Character
 {
@@ -34,14 +35,49 @@ namespace Match3.Character
 
         public void GainReward(EncounterObjective objective)
         {
-            this.Gold       += objective.GoldReward;
-            this.Experience += objective.ExpReward;
+            //this.Gold       += objective.GoldReward;
+            //this.Experience += objective.ExpReward;
 
-            foreach (string trophyName in objective.TrophyReward)
+            //foreach (string trophyName in objective.TrophyReward)
+            //{
+            //    this.trophies.Add(TrophySheet.GetTrophy(trophyName));
+            //}
+
+            this.GainReward(objective.GoldReward, objective.ExpReward, objective.TrophyReward);
+        }
+
+        public void GainReward(int goldReward, int expReward, string[] trophyReward)
+        {
+            this.Gold += goldReward;
+            this.Experience += expReward;
+
+            foreach (string trophyName in trophyReward)
             {
-                this.AddTrophy(TrophySheet.GetTrophy(trophyName));
+                this.trophies.Add(TrophySheet.GetTrophy(trophyName));
+                
             }
         }
+
+        public void GainReward(int goldReward, int expReward, TrophySheet trophyReward)
+        {
+            this.Gold += goldReward;
+            this.Experience += expReward;
+            this.trophies.Add(trophyReward);
+
+        }
+
+        public List<TrophySheet> getTrophyNotOwned()
+        {
+            List<TrophySheet> alltrophies = TrophySheet.AllTrophies;
+
+            // reverse intersect list, thanks stack overflow
+            var difference = new HashSet<TrophySheet>(trophies);
+            difference.SymmetricExceptWith(alltrophies);
+
+            List<TrophySheet> trophyNotOwded = difference.ToList<TrophySheet>();
+
+            return trophyNotOwded;
+		}
 
         internal bool LearnTrophy(TrophySheet trophy)
         {
