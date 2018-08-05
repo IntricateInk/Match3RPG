@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive MINER_DRONE = new TargetPassive
         (
             name: "Miner Drone",
-            sprite: "skills/bash",
+            sprite: "icons/burrow",
             tooltip: "At the start of each turn, gain 1 Resource of the type of the token on this tile.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive BRIMSTONE = new TargetPassive
         (
             name: "Brimstone",
-            sprite: "skills/bash",
+            sprite: "icons/bomb_1",
             tooltip: "When destroyed, destroy all other tokens in a 3 by 3 grid around it.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

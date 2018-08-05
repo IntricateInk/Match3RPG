@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive MARKED = new TargetPassive
         (
             name: "Marked",
-            sprite: "skills/bash",
+            sprite: "sprites/mark",
             tooltip: "At the end of the turn, removes itself and transform all adjacent (but not itself) tokens into AGI.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

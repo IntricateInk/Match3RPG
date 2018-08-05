@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive FAIRY = new TargetPassive
         (
             name: "Fairy",
-            sprite: "skills/sleight",
+            sprite: "icons/fairy",
             tooltip: "When applied, blank the token. At the end of each turn, if on a tile with Spirit Catcher, destroy this token and gain 30 LUK.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

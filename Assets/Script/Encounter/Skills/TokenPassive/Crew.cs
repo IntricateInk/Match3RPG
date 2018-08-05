@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive CREW = new TargetPassive
         (
             name: "Crew",
-            sprite: "skills/bash",
+            sprite: "icons/recruit",
             tooltip: "When applied, blank the token. If destroyed, lose 25 STR and 25 AGI resources.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

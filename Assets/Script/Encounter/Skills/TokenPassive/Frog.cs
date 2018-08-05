@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive FROG = new TargetPassive
         (
             name: "Frog",
-            sprite: "skills/bash",
+            sprite: "icons/frog",
             tooltip: "At the end of the turn, swap the token above it to the top row.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

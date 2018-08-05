@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive DEMON_SOUL = new TargetPassive
         (
             name: "Demon Soul",
-            sprite: "skills/sleight",
+            sprite: "icons/unholy_power",
             tooltip: "When applied, blank the token. At the start of each turn, lose 5 of all Resources. At the end of each turn, if on a tile with Spirit Catcher, destroy this token and gain 15 of all Resources.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

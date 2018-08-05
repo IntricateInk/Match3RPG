@@ -37,6 +37,7 @@ namespace Match3.Encounter.Effect.Skill
                             other.SetPosition(token.x - 1, token.y);
                         break;
                     }
+                    x--;
                 }
 
                 x = token.x + 2;
@@ -52,6 +53,7 @@ namespace Match3.Encounter.Effect.Skill
                             other.SetPosition(token.x + 1, token.y);
                         break;
                     }
+                    x++;
                 }
 
                 x = token.x;
@@ -67,6 +69,7 @@ namespace Match3.Encounter.Effect.Skill
                             other.SetPosition(token.x, token.y - 1);
                         break;
                     }
+                    y--;
                 }
 
                 x = token.x;
@@ -82,6 +85,7 @@ namespace Match3.Encounter.Effect.Skill
                             other.SetPosition(token.x, token.y + 1);
                         break;
                     }
+                    y++;
                 }
 
                 GameEffect.EndAnimationBatch();

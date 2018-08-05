@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive BLOODLUST = new TargetPassive
         (
             name: "Bloodlust",
-            sprite: "skills/bash",
+            sprite: "icons/angry",
             tooltip: "When destroyed, transform all adjacent tokens into STR.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

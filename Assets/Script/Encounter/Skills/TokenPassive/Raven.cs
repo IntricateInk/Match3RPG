@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive RAVEN = new TargetPassive
         (
             name: "Raven",
-            sprite: "skills/bash",
+            sprite: "icons/raven",
             tooltip: "At the end of the turn, swap to the top, then move to another random token.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

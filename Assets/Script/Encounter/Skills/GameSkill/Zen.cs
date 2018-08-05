@@ -18,8 +18,6 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                TokenState token = targets[0];
-
                 GameEffect.BeginAnimationBatch();
                 foreach (TokenState other in encounter.boardState.GetTokens())
                 {

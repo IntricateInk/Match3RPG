@@ -30,7 +30,14 @@ namespace Match3.Encounter.Effect.Passive
 
         public static TargetPassive GetPassive(string name)
         {
-            return _AllPassives[name];
+            try
+            {
+                return _AllPassives[name];
+            } catch (Exception e)
+            {
+                Debug.Log(name);
+                throw e;
+            }
         }
     }
 }

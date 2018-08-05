@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive HEROIC_SPIRIT = new TargetPassive
         (
             name: "Heroic Spirit",
-            sprite: "skills/sleight",
+            sprite: "sprites/str",
             tooltip: "When applied, blank the token. At the end of each turn, if on a tile with Spirit Catcher, destroy this token and gain 20 STR and 20 AGI.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

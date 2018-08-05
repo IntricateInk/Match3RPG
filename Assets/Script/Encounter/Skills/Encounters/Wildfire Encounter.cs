@@ -13,7 +13,7 @@ namespace Match3.Encounter.Effect.Passive
             return new CharacterPassive
             (
                 name: name, sprite: sprite,
-                tooltip: string.Format("FIRE! Gain 30 STR and AGI at the start of the encounter, and apply {0} Crew buffs and {1} Wildfire buffs to the board at random.", lives, wildfire),
+                tooltip: string.Format("FIRE! Gain 30 STR and AGI at the start of the encounter, and apply {0} Crew buffs. At the start of every turn, spawn {1} Wildfire tokens.", lives, wildfire),
 
                 OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
                 {
@@ -31,10 +31,23 @@ namespace Match3.Encounter.Effect.Passive
                     }
 
                     tokens.RemoveRange(0, lives);
+                },
+
+                OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
+                {
+                    List<TokenState> tokens = encounter.boardState.GetTokens();
+                    tokens.Shuffle();
+
+                    int n = wildfire;
 
                     foreach (TokenState token in tokens.Take(wildfire))
                     {
+                        if (token.Passives.Contains(TargetPassive.WILDFIRE) ||
+                            token.Passives.Contains(TargetPassive.CREW)) continue;
+
                         token.ApplyBuff(TargetPassive.WILDFIRE);
+                        n--;
+                        if (n < 0) break;
                     }
 
                     GameEffect.EndAnimationBatch();

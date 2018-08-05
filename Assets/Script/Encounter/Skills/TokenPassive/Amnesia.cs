@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive AMNESIA = new TargetPassive
         (
             name: "Amnesia",
-            sprite: "skills/bash",
+            sprite: "icons/sad",
             tooltip: "At the end of the turn, remove this buff and lose 4 Resource of this token's type.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

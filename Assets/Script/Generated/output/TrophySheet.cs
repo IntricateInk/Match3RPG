@@ -18,7 +18,10 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Ignite"
+"Ignite",
+"Set Flamethrower Trap",
+"Rig",
+"Flame Shaping"
 
 			},
 
@@ -33,9 +36,6 @@ namespace Match3.Character
 			{
 			
 "Trapper's Tools",
-"Explosive Kit",
-"Emberstone",
-"Emberblade",
 "Fast Hands"
 
 			}
@@ -53,64 +53,9 @@ namespace Match3.Character
 			{
 			
 "Set Explosive Trap",
-"Set Flamethrower Trap"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Pyromanic"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_PYROMANIC_2 = new TrophySheet(
-			name: "Explosive Kit",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Rig",
-"Nitro"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Pyromanic"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_PYROMANIC_3 = new TrophySheet(
-			name: "Emberstone",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Flame Shaping"
+"Nitro",
+"Pillar of Fire",
+"Fire Wall"
 
 			},
 
@@ -119,35 +64,6 @@ namespace Match3.Character
 			
 "Hot Tempered"
  
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Pyromanic"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_PYROMANIC_4 = new TrophySheet(
-			name: "Emberblade",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Pillar of Fire",
-"Fire Wall"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
 			},
 			
 			upgrades: new string[] 
@@ -169,7 +85,11 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"To Arms"
+"Pile On",
+"Advance",
+"Retreat",
+"Flank",
+"March"
 
 			},
 
@@ -184,8 +104,6 @@ namespace Match3.Character
 			{
 			
 "Banner",
-"Warchief",
-"Leader",
 "Emblem",
 "Combat Training"
 
@@ -203,66 +121,8 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Advance",
-"Retreat",
-"Flank",
-"March"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Captain"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_CAPTAIN_2 = new TrophySheet(
-			name: "Warchief",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Kill Command"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Captain"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_CAPTAIN_3 = new TrophySheet(
-			name: "Leader",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Pile On"
+"Kill Command",
+"To Arms"
 
 			},
 
@@ -293,7 +153,8 @@ namespace Match3.Character
 			{
 			
 "Command Monkeys",
-"Trained Raven"
+"Trained Raven",
+"Moth Speak"
 
 			},
 
@@ -305,10 +166,7 @@ namespace Match3.Character
 			upgrades: new string[] 
 			{
 			
-"Mole Tamer",
-"Crab Tamer",
-"Frog Tamer",
-"Moth Tamer",
+"Beastmaster",
 "Combat Training"
 
 			}
@@ -316,7 +174,7 @@ namespace Match3.Character
 		);
 
 		public static TrophySheet ITEM_TAMER_1 = new TrophySheet(
-			name: "Mole Tamer",
+			name: "Beastmaster",
 			sprite: "tokens/agi",
 			tooltip: @"",
 			
@@ -326,91 +184,9 @@ namespace Match3.Character
 			{
 			
 "Mine",
-"Mole Speak"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Animal Tamer"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_TAMER_2 = new TrophySheet(
-			name: "Crab Tamer",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Crab Speak"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Animal Tamer"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_TAMER_3 = new TrophySheet(
-			name: "Frog Tamer",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
+"Mole Speak",
+"Crab Speak",
 "Croak"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Animal Tamer"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_TAMER_4 = new TrophySheet(
-			name: "Moth Tamer",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Moth Speak"
 
 			},
 
@@ -438,7 +214,9 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Raise Dead"
+"Raise Dead",
+"Siphon Soul",
+"Dead Man's Hand"
 
 			},
 
@@ -452,40 +230,8 @@ namespace Match3.Character
 			upgrades: new string[] 
 			{
 			
-"Soulstone",
 "Unholy Mace",
-"Spirit Whip",
-"Black Grimore",
-"Scepter of the Dead",
 "Keen Mind"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_NECROMANCER_1 = new TrophySheet(
-			name: "Soulstone",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Siphon Soul"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Unholy Knowledge"
 
 			}
 
@@ -501,92 +247,10 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Unholy Bash"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Unholy Knowledge"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_NECROMANCER_3 = new TrophySheet(
-			name: "Spirit Whip",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Lifelink"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Unholy Knowledge"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_NECROMANCER_4 = new TrophySheet(
-			name: "Black Grimore",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
+"Unholy Bash",
+"Dead Man's Knee",
+"Lifelink",
 "Death Pulse"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Unholy Knowledge"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_NECROMANCER_5 = new TrophySheet(
-			name: "Scepter of the Dead",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Dead Man's Hand",
-"Dead Man's Knee"
 
 			},
 
@@ -614,7 +278,9 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Ritual"
+"Ritual",
+"War Chant",
+"Bless"
 
 			},
 
@@ -629,10 +295,6 @@ namespace Match3.Character
 			{
 			
 "Emberstaff",
-"Face Paint",
-"Lucky Coin",
-"Demonic Artifact",
-"Dreamcatcher",
 "Keen Mind",
 "Emblem"
 
@@ -650,118 +312,8 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Kindling"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Totem"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_SHAMAN_2 = new TrophySheet(
-			name: "Face Paint",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"War Chant"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Totem"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_SHAMAN_3 = new TrophySheet(
-			name: "Lucky Coin",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Bless"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Totem"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_SHAMAN_4 = new TrophySheet(
-			name: "Demonic Artifact",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Pact"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Totem"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_SHAMAN_5 = new TrophySheet(
-			name: "Dreamcatcher",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
+"Kindling",
+"Pact",
 "Offering"
 
 			},
@@ -790,7 +342,8 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Absolution"
+"Absolution",
+"Taichi"
 
 			},
 
@@ -804,41 +357,9 @@ namespace Match3.Character
 			upgrades: new string[] 
 			{
 			
-"Martial Proficiency",
 "Prayer Beads",
-"Clear Orb",
-"Zen Mastery",
 "Keen Mind",
 "Combat Training"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_MONK_1 = new TrophySheet(
-			name: "Martial Proficiency",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Taichi",
-"Crane Fist"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Mediator"
 
 			}
 
@@ -854,34 +375,10 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Pray"
+"Pray",
+"Crane Fist",
+"Zen"
 
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Mediator"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_MONK_3 = new TrophySheet(
-			name: "Clear Orb",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
 			},
 
 			passives: new string[] 
@@ -889,34 +386,6 @@ namespace Match3.Character
 			
 "Purity"
  
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Mediator"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_MONK_4 = new TrophySheet(
-			name: "Zen Mastery",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Zen"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
 			},
 			
 			upgrades: new string[] 
@@ -938,7 +407,9 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Cross Section"
+"Cross Section",
+"Swing",
+"Uppercut"
 
 			},
 
@@ -953,7 +424,6 @@ namespace Match3.Character
 			{
 			
 "Weapon Mastery",
-"Unarmed Mastery",
 "Bandana",
 "Mediator",
 "Animal Tamer",
@@ -974,35 +444,6 @@ namespace Match3.Character
 			{
 			
 "Slice!",
-"Swing"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Combat Training"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_WARRIOR_2 = new TrophySheet(
-			name: "Unarmed Mastery",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Uppercut",
 "Chop!"
 
 			},
@@ -1031,7 +472,8 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Sleight"
+"Sleight",
+"Mark"
 
 			},
 
@@ -1046,7 +488,6 @@ namespace Match3.Character
 			{
 			
 "Escape Artist",
-"Eagle Eyed",
 "Pyromanic",
 "Strategist",
 "Lucky Die",
@@ -1067,34 +508,6 @@ namespace Match3.Character
 			{
 			
 "Escape"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Fast Hands"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_THIEF_2 = new TrophySheet(
-			name: "Eagle Eyed",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Mark"
 
 			},
 
@@ -1136,7 +549,6 @@ namespace Match3.Character
 			{
 			
 "Curious",
-"Resourceful",
 "Unholy Knowledge",
 "Totem",
 "Mediator",
@@ -1156,34 +568,7 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Study"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Keen Mind"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_SCHOLAR_2 = new TrophySheet(
-			name: "Resourceful",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
+"Study",
 "Profile"
 
 			},
@@ -1212,7 +597,9 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Bribe"
+"Bribe",
+"Gesture",
+"Articulate"
 
 			},
 
@@ -1227,7 +614,6 @@ namespace Match3.Character
 			{
 			
 "Golden Tongue",
-"Suit",
 "Totem",
 "Lucky Die",
 "Captain",
@@ -1266,35 +652,6 @@ namespace Match3.Character
 
 		);
 
-		public static TrophySheet ITEM_NOBLE_2 = new TrophySheet(
-			name: "Suit",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Gesture",
-"Articulate"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Emblem"
-
-			}
-
-		);
-
 		public static TrophySheet CLASS_SWINDLER = new TrophySheet(
 			name: "Lucky Die",
 			sprite: "tokens/agi",
@@ -1305,7 +662,8 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Switcharoo"
+"Switcharoo",
+"Alternative Perspective"
 
 			},
 
@@ -1320,8 +678,6 @@ namespace Match3.Character
 			{
 			
 "Incense",
-"Shifty Lens",
-"Tarot Card",
 "Fast Hands",
 "Emblem"
 
@@ -1339,62 +695,7 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Heady Fumes"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Lucky Die"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_SWINDLER_2 = new TrophySheet(
-			name: "Shifty Lens",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Alternative Perspective"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Lucky Die"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_SWINDLER_3 = new TrophySheet(
-			name: "Tarot Card",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
+"Heady Fumes",
 "Divine"
 
 			},
@@ -1423,7 +724,9 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
-"Shove"
+"Shove",
+"Enrage",
+"Smash"
 
 			},
 
@@ -1438,9 +741,6 @@ namespace Match3.Character
 			{
 			
 "ITEM_BERSERKER_1",
-"ITEM_BERSERKER_2",
-"ITEM_BERSERKER_3",
-"ITEM_BERSERKER_4",
 "Fast Hands",
 "Combat Training"
 
@@ -1458,6 +758,8 @@ namespace Match3.Character
 			skills: new string[]
 			{
 			
+"Slam"
+
 			},
 
 			passives: new string[] 
@@ -1465,90 +767,6 @@ namespace Match3.Character
 			
 "Sprinter"
  
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Bandana"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_BERSERKER_2 = new TrophySheet(
-			name: "ITEM_BERSERKER_2",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Enrage"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Bandana"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_BERSERKER_3 = new TrophySheet(
-			name: "ITEM_BERSERKER_3",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Smash"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Bandana"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_BERSERKER_4 = new TrophySheet(
-			name: "ITEM_BERSERKER_4",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
-"Slam"
-
-			},
-
-			passives: new string[] 
-			{ 
-			 
 			},
 			
 			upgrades: new string[] 
@@ -1616,7 +834,6 @@ namespace Match3.Character
 			{
 			
 "ITEM_JESTER_1",
-"ITEM_JESTER_2",
 "Emblem"
 
 			}
@@ -1635,32 +852,6 @@ namespace Match3.Character
 			
 "Backflip"
 
-			},
-
-			passives: new string[] 
-			{ 
-			 
-			},
-			
-			upgrades: new string[] 
-			{
-			
-"Funny Hat"
-
-			}
-
-		);
-
-		public static TrophySheet ITEM_JESTER_2 = new TrophySheet(
-			name: "ITEM_JESTER_2",
-			sprite: "tokens/agi",
-			tooltip: @"",
-			
-			expCost: 35,
-			
-			skills: new string[]
-			{
-			
 			},
 
 			passives: new string[] 

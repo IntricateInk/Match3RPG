@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive WATER = new TargetPassive
         (
             name: "Water",
-            sprite: "skills/bash",
+            sprite: "icons/water",
             tooltip: "At the end of each turn, remove from this token and blank it, then transfer to 3 tokens below it. Dispels Wildfire",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

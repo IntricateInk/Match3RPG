@@ -61,7 +61,8 @@ namespace Match3.Encounter
         {
             if (selectedSkillIndex == -1) return;
 
-            if (!this.selectedSkill.CanPayCost(this.encounter))
+            if (!this.selectedSkill.CanPayCost(this.encounter) 
+                || this.selectedSkill.SelectPersist())
             {
                 this.selectedSkillIndex = -1;
             }

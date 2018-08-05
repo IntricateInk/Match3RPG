@@ -67,6 +67,11 @@ namespace Match3.Encounter.Effect.Skill
 
         private readonly SelectBehavior selectBehavior;
 
+        internal bool SelectPersist()
+        {
+            return this.selectBehavior == SelectBehavior.None;
+        }
+
         internal void Select(InputState input, TokenState token)
             { this.selectBehavior.Select(input, token); }
 

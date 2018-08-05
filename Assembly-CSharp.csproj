@@ -259,6 +259,7 @@
     <Compile Include="Assets\Script\Overworld\OverworldNode.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldNodeType.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldState.cs" />
+    <Compile Include="Assets\Script\Overworld\SkillController.cs" />
     <Compile Include="Assets\Script\Overworld\TrophyController.cs" />
     <Compile Include="Assets\Script\TokenType.cs" />
     <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_ApplyTargetAnimation.cs" />

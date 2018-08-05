@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static TargetPassive SIREN = new TargetPassive
         (
             name: "Siren",
-            sprite: "tokens/cha",
+            sprite: "icons/charm",
             tooltip: "At the start of your turn, move to an adjacent non-Siren tile. At the end of your turn, transform this and adjacent tokens into CHA tokens.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
