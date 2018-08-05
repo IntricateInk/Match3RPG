@@ -81,5 +81,55 @@ namespace Match3.Character
         {
             return _AllTrophies[id];
         }
+
+
+        public static List<KeyValuePair<string, TrophySheet>> getAllClasses()
+        {
+            return new List<KeyValuePair<string, TrophySheet>> {
+                new KeyValuePair<string, TrophySheet> ("Warrior", TrophySheet.CLASS_WARRIOR),
+                new KeyValuePair<string, TrophySheet> ("Thief", TrophySheet.CLASS_THIEF),
+                new KeyValuePair<string, TrophySheet> ("Tamer", TrophySheet.CLASS_TAMER),
+                new KeyValuePair<string, TrophySheet> ("Swindler", TrophySheet.CLASS_SWINDLER),
+                new KeyValuePair<string, TrophySheet> ("Strategist", TrophySheet.CLASS_STRATEGIST),
+                new KeyValuePair<string, TrophySheet> ("Shaman", TrophySheet.CLASS_SHAMAN),
+                new KeyValuePair<string, TrophySheet> ("Scholar", TrophySheet.CLASS_SCHOLAR),
+                new KeyValuePair<string, TrophySheet> ("Pyromaniac", TrophySheet.CLASS_PYROMANIAC),
+                new KeyValuePair<string, TrophySheet> ("Noble", TrophySheet.CLASS_NOBLE),
+                new KeyValuePair<string, TrophySheet> ("Necromancer", TrophySheet.CLASS_NECROMANCER),
+                new KeyValuePair<string, TrophySheet> ("Monk", TrophySheet.CLASS_MONK),
+                new KeyValuePair<string, TrophySheet> ("Jester", TrophySheet.CLASS_JESTER),
+                new KeyValuePair<string, TrophySheet> ("Captain", TrophySheet.CLASS_CAPTAIN),
+                new KeyValuePair<string, TrophySheet> ("Berseker", TrophySheet.CLASS_BERSERKER),
+
+
+            };
+        }
+
+        // warrior thief
+        // Monk Scholar
+        public static TrophySheet[] getSimpleClass(string className)
+        {
+            if (className == "Brigand")
+            {
+                TrophySheet[] t = new TrophySheet[2]
+                {
+                    TrophySheet.CLASS_WARRIOR,
+                    TrophySheet.CLASS_THIEF
+                };
+
+                return t;
+            } else if (className == "Vagabond")
+            {
+                TrophySheet[] t = new TrophySheet[2]
+                {
+                    TrophySheet.CLASS_MONK,
+                    TrophySheet.CLASS_SCHOLAR,
+                };
+                return t;
+            } else
+            {
+                throw new System.Exception("Class not supported in simple mode");
+            }
+        }
     }
 }

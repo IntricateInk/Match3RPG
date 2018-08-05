@@ -8,8 +8,8 @@ namespace Match3.Character
     {
         // Auto Generated
 
-		public static TrophySheet CLASS_PYROMANIC = new TrophySheet(
-			name: "Pyromanic",
+		public static TrophySheet CLASS_PYROMANIAC = new TrophySheet(
+			name: "Pyromaniac",
 			sprite: "tokens/agi",
 			tooltip: @"",
 			
@@ -42,7 +42,7 @@ namespace Match3.Character
 
 		);
 
-		public static TrophySheet ITEM_PYROMANIC_1 = new TrophySheet(
+		public static TrophySheet ITEM_PYROMANIAC_1 = new TrophySheet(
 			name: "Trapper's Tools",
 			sprite: "tokens/agi",
 			tooltip: @"",
@@ -65,13 +65,13 @@ namespace Match3.Character
 			upgrades: new string[] 
 			{
 			
-"Pyromanic"
+"Pyromaniac"
 
 			}
 
 		);
 
-		public static TrophySheet ITEM_PYROMANIC_2 = new TrophySheet(
+		public static TrophySheet ITEM_PYROMANIAC_2 = new TrophySheet(
 			name: "Explosive Kit",
 			sprite: "tokens/agi",
 			tooltip: @"",
@@ -94,13 +94,13 @@ namespace Match3.Character
 			upgrades: new string[] 
 			{
 			
-"Pyromanic"
+"Pyromaniac"
 
 			}
 
 		);
 
-		public static TrophySheet ITEM_PYROMANIC_3 = new TrophySheet(
+		public static TrophySheet ITEM_PYROMANIAC_3 = new TrophySheet(
 			name: "Emberstone",
 			sprite: "tokens/agi",
 			tooltip: @"",
@@ -124,13 +124,13 @@ namespace Match3.Character
 			upgrades: new string[] 
 			{
 			
-"Pyromanic"
+"Pyromaniac"
 
 			}
 
 		);
 
-		public static TrophySheet ITEM_PYROMANIC_4 = new TrophySheet(
+		public static TrophySheet ITEM_PYROMANIAC_4 = new TrophySheet(
 			name: "Emberblade",
 			sprite: "tokens/agi",
 			tooltip: @"",
@@ -153,7 +153,7 @@ namespace Match3.Character
 			upgrades: new string[] 
 			{
 			
-"Pyromanic"
+"Pyromaniac"
 
 			}
 
@@ -1047,7 +1047,7 @@ namespace Match3.Character
 			
 "Escape Artist",
 "Eagle Eyed",
-"Pyromanic",
+"Pyromaniac",
 "Strategist",
 "Lucky Die",
 "Bandana"

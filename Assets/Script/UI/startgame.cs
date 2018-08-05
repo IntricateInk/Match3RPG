@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class startgame : MonoBehaviour {
 
+    //public Button playBUttonKC
+
 	public void sstartgame()
     {
         SceneManager.LoadScene("overworld");

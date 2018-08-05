@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{BB886616-2594-C8D0-C447-70AD7D46E416}</ProjectGuid>
+    <ProjectGuid>{BB2119B7-D1F7-47DB-958B-08FA5E483155}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -241,10 +241,14 @@
     <Compile Include="Assets\Script\Event\EventManager.cs" />
     <Compile Include="Assets\Script\Event\EventState.cs" />
     <Compile Include="Assets\Script\Event\GameEvent.cs" />
+    <Compile Include="Assets\Script\Event\GameEvents\DenseThicketEvent.cs" />
+    <Compile Include="Assets\Script\Event\GameEvents\DyingManEvent.cs" />
     <Compile Include="Assets\Script\Event\GameEvents\FestivalEvent.cs" />
     <Compile Include="Assets\Script\Event\GameEvents\MerchantEvent.cs" />
     <Compile Include="Assets\Script\Event\GameEvents\PirateEvent.cs" />
+    <Compile Include="Assets\Script\Event\GameEvents\RuinsEvent.cs" />
     <Compile Include="Assets\Script\Event\GameEvents\TemplateEvent.cs" />
+    <Compile Include="Assets\Script\Event\GameEvents\TownCaptainEvent.cs" />
     <Compile Include="Assets\Script\Event\UIEventDisplay.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterObjective.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterSheet.cs" />
@@ -260,6 +264,8 @@
     <Compile Include="Assets\Script\Overworld\OverworldNodeType.cs" />
     <Compile Include="Assets\Script\Overworld\OverworldState.cs" />
     <Compile Include="Assets\Script\Overworld\TrophyController.cs" />
+    <Compile Include="Assets\Script\simpleStartGame.cs" />
+    <Compile Include="Assets\Script\startGameScript.cs" />
     <Compile Include="Assets\Script\TokenType.cs" />
     <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_ApplyTargetAnimation.cs" />
     <Compile Include="Assets\Script\UI\Animations\Animations\UIAnimation_DropTokens.cs" />
@@ -321,16 +327,16 @@
     <None Include="Assets\Script\Generated\EncounterObjective_script.txt" />
     <None Include="Assets\Script\Generated\TrophySheet_item.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Dominic/Desktop/Projects/GitHub/Match3 RPG/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/SUTD/Term 8/Game Design/Two/Match3RPG/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Dominic/Desktop/Projects/GitHub/Match3 RPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/SUTD/Term 8/Game Design/Two/Match3RPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Dominic/Desktop/Projects/GitHub/Match3 RPG/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/SUTD/Term 8/Game Design/Two/Match3RPG/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Dominic/Desktop/Projects/GitHub/Match3 RPG/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/SUTD/Term 8/Game Design/Two/Match3RPG/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -528,10 +534,10 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/Dominic/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/USER/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/Dominic/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/USER/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
