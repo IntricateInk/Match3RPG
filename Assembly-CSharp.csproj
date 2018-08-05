@@ -242,13 +242,13 @@
     <Compile Include="Assets\Script\Event\EventState.cs" />
     <Compile Include="Assets\Script\Event\GameEvent.cs" />
     <Compile Include="Assets\Script\Event\GameEvents\DenseThicketEvent.cs" />
-    <Compile Include="Assets\Script\Event\GameEvents\DyingManEvent.cs" />
     <Compile Include="Assets\Script\Event\GameEvents\FestivalEvent.cs" />
+    <Compile Include="Assets\Script\Event\GameEvents\JoustEvent.cs" />
+    <Compile Include="Assets\Script\Event\GameEvents\MentorEvent.cs" />
     <Compile Include="Assets\Script\Event\GameEvents\MerchantEvent.cs" />
     <Compile Include="Assets\Script\Event\GameEvents\PirateEvent.cs" />
     <Compile Include="Assets\Script\Event\GameEvents\RuinsEvent.cs" />
     <Compile Include="Assets\Script\Event\GameEvents\TemplateEvent.cs" />
-    <Compile Include="Assets\Script\Event\GameEvents\TownCaptainEvent.cs" />
     <Compile Include="Assets\Script\Event\UIEventDisplay.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterObjective.cs" />
     <Compile Include="Assets\Script\Generated\output\EncounterSheet.cs" />

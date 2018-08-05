@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Match3.Events.list
 {
-    public class FestivalEvent : GameEvent
+    public class test : GameEvent
     {
         public static string title = "";
         private static string result = null;
@@ -30,7 +30,7 @@ namespace Match3.Events.list
             INTRO, COMPLETE
         }
 
-        public FestivalEvent() : base(title, DIALOG_START, options_start, imageUrl, weights)
+        public test() : base(title, DIALOG_START, options_start, imageUrl, weights)
         {
 
         }

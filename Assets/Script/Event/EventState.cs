@@ -30,6 +30,7 @@ public static class EventState{
     {
         new MerchantEvent(),
         new PirateEvent(),
+        new JoustEvent(),
     };
 
     

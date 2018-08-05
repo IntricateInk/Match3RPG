@@ -126,7 +126,17 @@ namespace Match3.Character
                     TrophySheet.CLASS_SCHOLAR,
                 };
                 return t;
-            } else
+            }
+            else if (className == "Spiritualist")
+            {
+                TrophySheet[] t = new TrophySheet[2]
+                {
+                    TrophySheet.CLASS_BERSERKER,
+                    TrophySheet.CLASS_SHAMAN,
+                };
+                return t;
+            }
+            else
             {
                 throw new System.Exception("Class not supported in simple mode");
             }

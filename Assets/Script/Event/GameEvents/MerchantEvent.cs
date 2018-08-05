@@ -22,7 +22,7 @@ namespace Match3.Events.list
         private static string DIALOG_START = "You see a vessel bearing the mark of the eagle.";
 
         private static string[] options_trade = new string[] { "Trade", "Politely decline and leave"};
-        private static string DIALOG_TRADE = "The nobleman boards your vessel. His eyes immediately?. \r\n \"Hail friend, I am a curio collector, would you like to trade your {0} with my {1}?\"";
+        private static string DIALOG_TRADE = "The nobleman boards your vessel. \"Hail friend, I am a curio collector, would you like to trade your {0} with my {1}?\"";
 
         private static string[] options_trade_success = new string[] { "Thank you for your patronage" };
         private static string DIALOG_TRADE_SUCCESS = "You pondered for a moment, before deciding to trade them.";
@@ -41,13 +41,14 @@ namespace Match3.Events.list
         private static string[] options_sail = new string[] { "Back to Map" };
         private static string DIALOG_SAIL= "You ignored the merchant ship and go on your merry ways";
 
+        private static string imageUrl = "eventImage/merchant";
         /**
          * Weighted distributions
          * */
 
         private static int[] weights = new int[]
         {
-           0,100,0,0,0,0
+           0,1000,0,0,0,0
         };
        
 
@@ -62,7 +63,7 @@ namespace Match3.Events.list
             INTRO, TRADE, TRADE_SUCCESS, TRADE_FAIL, FIGHT, SAIL, END
         }
 
-        public MerchantEvent() : base (title, DIALOG_START, options_start, "eventImage/pirate", weights)
+        public MerchantEvent() : base (title, DIALOG_START, options_start, imageUrl, weights)
         {
             
         }
@@ -93,12 +94,12 @@ namespace Match3.Events.list
                             this.trophyToSell = ownedTrophy.RandomChoice();
                             this.trophynotOwned = OverworldState.Current.player.getTrophyNotOwned().RandomChoice();
                             string processed = string.Format(DIALOG_TRADE, trophyToSell.name, trophynotOwned.name);
-                            updateDialog(processed, options_trade, result, "eventImage/pirate");
+                            updateDialog(processed, options_trade, result, imageUrl);
                             this.nextState = SCREENSTATE.TRADE;
                         } else
 
                         {
-                            updateDialog(DIALOG_TRADE_FAIL, options_trade_fail, result, "eventImage/pirate");
+                            updateDialog(DIALOG_TRADE_FAIL, options_trade_fail, result, imageUrl);
                             this.nextState = SCREENSTATE.END;
                         }
 
@@ -106,11 +107,11 @@ namespace Match3.Events.list
                     } else if (buttonPressed == 1) // Plunder
                     {
                         this.nextState = SCREENSTATE.FIGHT;
-                        updateDialog(DIALOG_FIGHT, options_fight, RESULT_FIGHT, "eventImage/pirate");
+                        updateDialog(DIALOG_FIGHT, options_fight, RESULT_FIGHT, imageUrl);
 
                     } else if (buttonPressed == 2) // Sail Away
                     {
-                        updateDialog(DIALOG_SAIL, options_sail, result, "eventImage/pirate");
+                        updateDialog(DIALOG_SAIL, options_sail, result, imageUrl);
                         this.nextState = SCREENSTATE.END;
                     }
                     break;
@@ -119,7 +120,8 @@ namespace Match3.Events.list
                     {
                         OverworldState.Current.player.trophies.Remove(trophyToSell);
                         OverworldState.Current.player.AddTrophy(trophynotOwned);
-                        updateDialog(DIALOG_TRADE_SUCCESS, options_trade_success, RESULT_TRADE_SUCCESS, "eventImage/pirate");
+                        string processed = string.Format(RESULT_TRADE_SUCCESS, trophyToSell.name, trophynotOwned.name);
+                        updateDialog(DIALOG_TRADE_SUCCESS, options_trade_success, processed, imageUrl);
                         this.nextState = SCREENSTATE.END;
                     }
                     else if (buttonPressed == 1) // decline

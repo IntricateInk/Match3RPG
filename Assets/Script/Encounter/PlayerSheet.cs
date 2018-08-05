@@ -57,6 +57,11 @@ namespace Match3.Character
                 
             }
         }
+        public void GainReward(int goldReward, int expReward)
+        {
+            this.Gold += goldReward;
+            this.Experience += expReward;
+        }
 
         public void GainReward(int goldReward, int expReward, TrophySheet trophyReward)
         {

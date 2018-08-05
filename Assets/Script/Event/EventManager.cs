@@ -43,8 +43,7 @@ public class EventManager : MonoBehaviour {
     void Start()
     {
         //EventState.eventSheet = EventSheet.pirate;
-
-        EventState.gameEvent = new MerchantEvent();
+        
         // fetch event state data
         EventManager.instance = this;
         if (EventState.gameEvent == null)

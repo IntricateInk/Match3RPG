@@ -5,6 +5,7 @@ using Match3.Encounter.Encounter;
 using Match3.Encounter;
 using System.Linq;
 using Match3.Events.core;
+using Match3.Events.list;
 
 namespace Match3.Overworld
 {
@@ -68,7 +69,9 @@ namespace Match3.Overworld
             int encounter_total = encounters.Sum((e) => { return e.GetWeight(this.nodeType); });
             int event_total = events.Sum((e) => { return e.GetWeight(this.nodeType); });
             int roll = Random.Range(0, encounter_total + event_total);
-            
+
+
+
             if (roll < event_total)
             {
                 GameEvent selected = events[roll];
@@ -91,7 +94,7 @@ namespace Match3.Overworld
                     }
 
                     roll -= w;
-                } 
+                }
             }
         }
     }

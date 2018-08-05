@@ -17,12 +17,17 @@ public class simpleStartGame : MonoBehaviour {
 
     [SerializeField]
     private Button vagabondButton;
-	// Use this for initialization
-	void Start () {
+
+    [SerializeField]
+    private Button VikingButton;
+    // Use this for initialization
+    void Start () {
         playButton.onClick.AddListener(moveToCharacterScreen);
         brigandButton.onClick.AddListener(onBrigandClick);
         vagabondButton.onClick.AddListener(onVagabondClick);
-	}
+        VikingButton.onClick.AddListener(onSpiritualistClick);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -35,6 +40,7 @@ public class simpleStartGame : MonoBehaviour {
         title.SetActive(false);
         brigandButton.gameObject.SetActive(true);
         vagabondButton.gameObject.SetActive(true);
+        VikingButton.gameObject.SetActive(true);
     }
 
     void onBrigandClick()
@@ -50,6 +56,16 @@ public class simpleStartGame : MonoBehaviour {
     void onVagabondClick()
     {
         TrophySheet[] trophies = TrophySheet.getSimpleClass("Vagabond");
+        foreach (TrophySheet trophy in trophies)
+        {
+            OverworldState.Current.player.AddTrophy(trophy);
+        }
+        SceneManager.LoadScene(1);
+    }
+
+    void onSpiritualistClick()
+    {
+        TrophySheet[] trophies = TrophySheet.getSimpleClass("Spiritualist");
         foreach (TrophySheet trophy in trophies)
         {
             OverworldState.Current.player.AddTrophy(trophy);

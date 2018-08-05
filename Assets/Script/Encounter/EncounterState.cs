@@ -24,7 +24,8 @@ namespace Match3.Encounter
 
     public class EncounterState
     {
-        
+        internal object player;
+
         public static EncounterState Current { get; private set; }
         
         public PlayerSheet playerSheet { get; private set; }
