@@ -14,7 +14,7 @@ namespace Match3.Encounter.Effect.Passive
             return new CharacterPassive
             (
                 name: name,
-                sprite: "tokens/cha",
+                sprite: "icons/charm",
                 tooltip: string.Format
                 (
                     "A beautiful song washes over your ears... At the start of the encounter, gain 20 AGI and spawn {0} Crew and {1} Sirens.",

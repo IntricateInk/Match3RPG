@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive BRUTISH = new CharacterPassive
         (
             name: "Brutish",
-            sprite: "tokens/int",
+            sprite: "icons/angry_2",
             tooltip: "At the start of turn, lose 1 Energy if STR is greater than CHA.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

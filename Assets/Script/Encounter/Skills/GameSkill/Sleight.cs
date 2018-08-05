@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill SLEIGHT = new GameSkill
         (
             name: "Sleight",
-            sprite: "skills/sleight",
+            sprite: "icons/afterimage",
             tooltip: "Select two adjacent tiles and swap their positions.",
 
             energyCost: 2,

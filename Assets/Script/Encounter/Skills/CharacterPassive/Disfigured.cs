@@ -8,8 +8,8 @@ namespace Match3.Encounter.Effect.Passive
     {
         public static CharacterPassive DISFIGURED = new CharacterPassive
         (
-            name: "Disfirgued",
-            sprite: "tokens/int",
+            name: "Disfigured",
+            sprite: "icons/charm",
             tooltip: "At the start of turn, lose 1 Energy if CHA is less than 25.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

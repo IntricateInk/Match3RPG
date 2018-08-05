@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill INFUSION = new GameSkill
         (
             name: "Infusion",
-            sprite: "skills/sleight",
+            sprite: "icons/focus_2",
             tooltip: "Transform all Blank tokens to a random non-Blank token.",
 
             energyCost: 2,

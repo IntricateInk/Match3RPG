@@ -8,7 +8,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill SLAM = new GameSkill
         (
             name: "Slam",
-            sprite: "skills/sleight",
+            sprite: "icons/fist_4",
             tooltip: "Select a token. Destroy all tokens below it.",
 
             energyCost: 3,

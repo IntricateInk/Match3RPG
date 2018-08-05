@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill RICOCHET = new GameSkill
         (
             name: "Ricochet",
-            sprite: "skills/sleight",
+            sprite: "icons/slice_3",
             tooltip: "Select a token. Chain. Destroy all selected tokens.",
 
             energyCost: 2,
@@ -18,7 +18,7 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                GameEffect.ChainFromFirst(encounter, targets);
+                targets = GameEffect.ChainFromFirst(targets[0], encounter);
 
                 TokenState prev = null;
 

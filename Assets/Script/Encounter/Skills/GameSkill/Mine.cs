@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill MINE = new GameSkill
         (
             name: "Mine",
-            sprite: "skills/sleight",
+            sprite: "icons/burrow",
             tooltip: "Select a tile. Apply a buff that gains 1 Resource of that tile type at the start of each turn.",
 
             energyCost: 1,

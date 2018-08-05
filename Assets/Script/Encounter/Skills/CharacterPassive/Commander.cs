@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive COMMANDER = new CharacterPassive
         (
             name: "Commander",
-            sprite: "tokens/int",
+            sprite: "icons/command",
             tooltip: "At the start of the encounter, gain 15 STR and AGI, then spawn 1 Crew.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

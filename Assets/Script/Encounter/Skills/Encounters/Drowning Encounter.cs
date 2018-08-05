@@ -14,7 +14,7 @@ namespace Match3.Encounter.Effect.Passive
             return new CharacterPassive
             (
                 name: name,
-                sprite: "tokens/str",
+                sprite: "icons/water",
                 tooltip: string.Format
                 ("You are drowning! At the start of each turn, spawn {0} Water buffs randomly on the board.",
                 water_per_turn),

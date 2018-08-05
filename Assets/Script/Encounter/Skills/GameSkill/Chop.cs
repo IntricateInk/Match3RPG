@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill CHOP = new GameSkill
         (
             name: "Chop!",
-            sprite: "skills/bash",
+            sprite: "icons/slice_2",
             tooltip: "Destroy a column of tokens.",
 
             energyCost: 3,

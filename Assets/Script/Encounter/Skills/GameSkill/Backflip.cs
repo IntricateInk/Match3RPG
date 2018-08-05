@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill BACKFLIP = new GameSkill
         (
             name: "Backflip",
-            sprite: "skills/sleight",
+            sprite: "icons/afterimage_2",
             tooltip: "Swap the token on the left with the token on the right. Then swap the token above with the token below.",
 
             energyCost: 3,

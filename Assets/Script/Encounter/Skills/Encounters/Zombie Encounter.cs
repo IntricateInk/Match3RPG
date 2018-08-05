@@ -13,7 +13,7 @@ namespace Match3.Encounter.Effect.Passive
             return new CharacterPassive
             (
                 name: name,
-                sprite: "sprites/zombie_hand",
+                sprite: "icons/undead_2",
                 tooltip: string.Format(
                     "The dead rise again. At the start of each turn, spawn {0} Zombies.",
                     zombies_per_turn

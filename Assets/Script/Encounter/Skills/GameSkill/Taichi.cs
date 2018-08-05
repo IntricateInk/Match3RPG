@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill TAICHI = new GameSkill
         (
             name: "Taichi",
-            sprite: "skills/sleight",
+            sprite: "icons/focus_3",
             tooltip: "Select a tile. Swap all closest Blank tokens at the top, bottom, left and right to it.",
 
             energyCost: 1,

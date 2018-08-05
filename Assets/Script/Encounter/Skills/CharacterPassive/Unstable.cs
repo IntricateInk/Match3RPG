@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive UNSTABLE = new CharacterPassive
         (
             name: "Unstable",
-            sprite: "tokens/int",
+            sprite: "icons/fire_rain",
             tooltip: "At the start of every turn, spawn 3 Wildfire.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

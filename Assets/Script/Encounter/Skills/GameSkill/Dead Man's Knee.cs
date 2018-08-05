@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill DEAD_MANS_KNEE = new GameSkill
         (
             name: "Dead Man's Knee",
-            sprite: "skills/sleight",
+            sprite: "icons/undead_army",
             tooltip: "Destroy all tokens below Zombie tokens.",
 
             energyCost: 2,
@@ -19,8 +19,6 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                TokenState token = targets[0];
-
                 GameEffect.BeginAnimationBatch();
                 foreach (TokenState other in encounter.boardState.GetTokens())
                 {

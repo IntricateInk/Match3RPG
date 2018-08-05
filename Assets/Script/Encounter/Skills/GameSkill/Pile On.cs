@@ -11,7 +11,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill PILE_ON = new GameSkill
         (
             name: "Pile On",
-            sprite: "skills/sleight",
+            sprite: "icons/recruit",
             tooltip: "Spawn Crew.",
 
             energyCost: 1,

@@ -11,7 +11,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive PURITY = new CharacterPassive
         (
             name: "Purity",
-            sprite: "tokens/int",
+            sprite: "icons/gesture",
             tooltip: "At the start of every turn, gain 3 AGI and spawn 2 Water.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

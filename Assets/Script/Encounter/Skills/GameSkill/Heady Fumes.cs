@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill HEADY_FUMES = new GameSkill
         (
             name: "Heady Fumes",
-            sprite: "skills/sleight",
+            sprite: "icons/dust_1",
             tooltip: "Rotate other tokens in a 3x3 area around this token clockwise.",
 
             energyCost: 2,

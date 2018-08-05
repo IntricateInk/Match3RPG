@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill NITRO = new GameSkill
         (
             name: "Nitro",
-            sprite: "skills/sleight",
+            sprite: "icons/bomb_1",
             tooltip: "Select a token. Swap to the top and apply Brimstone.",
 
             energyCost: 2,

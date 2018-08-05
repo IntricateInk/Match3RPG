@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill CRAB_SPEAK = new GameSkill
         (
             name: "Crab Speak",
-            sprite: "skills/sleight",
+            sprite: "icons/speak",
             tooltip: "Select a token. Apply Crab buff. At the end of each turn, Crab swaps to the left. If already at the left end, swap to the right end.",
 
             energyCost: 1,

@@ -11,7 +11,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill RAISE_DEAD = new GameSkill
         (
             name: "Raise Dead",
-            sprite: "skills/sleight",
+            sprite: "icons/undead_2",
             tooltip: "Select a token. Apply Zombie.",
 
             energyCost: 1,

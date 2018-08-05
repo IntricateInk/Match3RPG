@@ -8,7 +8,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill UPPERCUT = new GameSkill
         (
             name: "Uppercut",
-            sprite: "skills/sleight",
+            sprite: "icons/fist_2",
             tooltip: "Select a token. Swap it 3 rowws up. If it was already at the top, destroy it instead.",
 
             energyCost: 2,

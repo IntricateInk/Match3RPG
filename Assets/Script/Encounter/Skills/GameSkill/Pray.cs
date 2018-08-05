@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill PRAY = new GameSkill
         (
             name: "Pray",
-            sprite: "skills/sleight",
+            sprite: "icons/bless_1",
             tooltip: "Transform all blanks to CHA.",
 
             energyCost: 2,
@@ -19,8 +19,6 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                TokenState token = targets[0];
-
                 GameEffect.BeginAnimationBatch();
                 foreach (TokenState other in encounter.boardState.GetTokens())
                 {

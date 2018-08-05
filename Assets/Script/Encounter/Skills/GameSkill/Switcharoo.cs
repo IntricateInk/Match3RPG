@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill SWITCHAROO = new GameSkill
         (
             name: "Switcharoo",
-            sprite: "skills/sleight",
+            sprite: "icons/afterimage",
             tooltip: "Select a token. Switch the tile on its left with its right.",
 
             energyCost: 2,

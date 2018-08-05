@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill CROAK = new GameSkill
         (
             name: "Croak",
-            sprite: "skills/sleight",
+            sprite: "icons/frog",
             tooltip: "Select a token. Apply Frog buff. At the end of each turn, swaps the above token to the top of the column.",
 
             energyCost: 3,

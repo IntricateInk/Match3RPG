@@ -38,7 +38,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill ADVANCE = CrewMove
         (
             "Advance",
-            "sprites/bash",
+            "icons/command",
             "Swap all Crew tokens upwards.",
 
             dx: 0, 
@@ -48,7 +48,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill RETREAT = CrewMove
         (
             "Retreat",
-            "sprites/bash",
+            "icons/command",
             "Swap all Crew tokens downwards.",
 
             dx: 0,
@@ -58,7 +58,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill FLANK = CrewMove
         (
             "Flank",
-            "sprites/bash",
+            "icons/command",
             "Swap all Crew tokens left.",
 
             dx: -1,
@@ -68,7 +68,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill MARCH = CrewMove
         (
             "March",
-            "sprites/bash",
+            "icons/command",
             "Swap all Crew tokens right.",
 
             dx: 1,

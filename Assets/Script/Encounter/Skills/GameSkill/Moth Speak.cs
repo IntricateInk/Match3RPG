@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill MOTH_SPEAK = new GameSkill
         (
             name: "Moth Speak",
-            sprite: "skills/sleight",
+            sprite: "icons/glare",
             tooltip: "Select a token. Apply Moth buff. At the end of each turn, Moth repels all adjacent tokens.",
 
             energyCost: 3,

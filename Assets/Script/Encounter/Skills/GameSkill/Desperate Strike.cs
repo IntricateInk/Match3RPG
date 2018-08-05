@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill DESPERATE_STRIKE = new GameSkill
         (
             name: "Desperate Strike",
-            sprite: "skills/bash",
+            sprite: "icons/kill",
             tooltip: "Select a token. Lose all resources of that type to destroy a random token of that type.",
 
             energyCost: 1,

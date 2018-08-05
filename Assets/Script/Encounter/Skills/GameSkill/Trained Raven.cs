@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill TRAINED_RAVEN = new GameSkill
         (
             name: "Trained Raven",
-            sprite: "skills/sleight",
+            sprite: "icons/raven",
             tooltip: "Select a token. Apply Raven. At the end of the turn, Raven swaps to the top, then moves to another token.",
 
             energyCost: 1,

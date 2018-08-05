@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill INSPECT = new GameSkill
         (
             name: "Inspect",
-            sprite: "tokens/int",
+            sprite: "icons/book_2",
             tooltip: "Gain resources of all tokens in a 3x3 area.",
 
             energyCost: 3,

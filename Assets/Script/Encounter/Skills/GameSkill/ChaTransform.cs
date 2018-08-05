@@ -35,9 +35,9 @@ namespace Match3.Encounter.Effect.Skill
 
         }
 
-        public static GameSkill THREATEN = ChaTransformPlus("Threaten", "tokens/cha", TokenType.STRENGTH);
-        public static GameSkill GUILE = ChaTransformPlus("Guile", "tokens/cha", TokenType.AGILITY);
-        public static GameSkill WIT = ChaTransformPlus("Wit", "tokens/cha", TokenType.INTELLIGENCE);
-        public static GameSkill AFFLUENCE = ChaTransformPlus("Affluence", "tokens/cha", TokenType.LUCK);
+        public static GameSkill THREATEN = ChaTransformPlus("Threaten", "icons/gesture", TokenType.STRENGTH);
+        public static GameSkill GUILE = ChaTransformPlus("Guile", "icons/gesture", TokenType.AGILITY);
+        public static GameSkill WIT = ChaTransformPlus("Wit", "icons/gesture", TokenType.INTELLIGENCE);
+        public static GameSkill AFFLUENCE = ChaTransformPlus("Affluence", "icons/gesture", TokenType.LUCK);
     }
 }

@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill STUDY = new GameSkill
         (
             name: "Study",
-            sprite: "tokens/int",
+            sprite: "icons/book_1",
             tooltip: "Gain resources of all tokens in a row.",
 
             energyCost: 3,

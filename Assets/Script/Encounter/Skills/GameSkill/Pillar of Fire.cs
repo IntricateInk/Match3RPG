@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill PILLAR_OF_FIRE = new GameSkill
         (
             name: "Pillar of Fire",
-            sprite: "skills/sleight",
+            sprite: "icons/fire_pillar",
             tooltip: "Destroy a token. If it has Wildfire, destroy the entire column instead.",
 
             energyCost: 2,

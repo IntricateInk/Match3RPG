@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill IGNITE = new GameSkill
         (
             name: "Ignite",
-            sprite: "tokens/int",
+            sprite: "icons/fire_1",
             tooltip: "Apply Wildfire to target token.",
 
             energyCost: 1,

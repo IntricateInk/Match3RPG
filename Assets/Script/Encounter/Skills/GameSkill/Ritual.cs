@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill RITUAL = new GameSkill
         (
             name: "Ritual",
-            sprite: "skills/sleight",
+            sprite: "icons/spirit",
             tooltip: "Spawn 1 Spirit.",
 
             energyCost: 3,

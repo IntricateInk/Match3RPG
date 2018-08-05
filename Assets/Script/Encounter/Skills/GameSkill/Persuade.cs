@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill PERSUADE = new GameSkill
         (
             name: "Persuade",
-            sprite: "skills/sleight",
+            sprite: "icons/convince",
             tooltip: "Transform all tokens of the target token's type to CHA tokens.",
 
             energyCost: 3,

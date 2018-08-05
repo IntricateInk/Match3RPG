@@ -1,122 +1,131 @@
 uid,name,icon,tooltip,lst_objectives,lst_passives,weight_shore,weight_sea,weight_town,weight_forest,weight_ruins,weight_boss,min_depth,max_depth
-mole_1,Minor Mole Infestation,skills/bash,"Hole-y Mole-y! That IS A LOT OF MOLES.
+mole_1,Minor Mole Infestation,icons/burrow,"Hole-y Mole-y! That IS A LOT OF MOLES.
 
 Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
 Moles can be destroyed either by using certain skills or by matching them.","mole_1_main_agi, mole_1_main_cha, mole_main_loss, mole_bonus_luk",Mole Infestation! (2),0,0,0,1000,0,0,1,2
-mole_2,Mole Infestation,skills/bash,"Hole-y Mole-y! That IS A LOT OF MOLES.
+mole_2,Mole Infestation,icons/burrow,"Hole-y Mole-y! That IS A LOT OF MOLES.
 
 Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
 Moles can be destroyed either by using certain skills or by matching them.","mole_2_main_agi, mole_2_main_cha, mole_main_loss, mole_bonus_luk",Mole Infestation! (3),0,0,0,1000,0,0,3,4
-mole_3,Major Mole Infestation!,skills/bash,"Hole-y Mole-y! That IS A LOT OF MOLES.
+mole_3,Major Mole Infestation!,icons/burrow,"Hole-y Mole-y! That IS A LOT OF MOLES.
 
 Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
 Moles can be destroyed either by using certain skills or by matching them.","mole_3_main_agi, mole_3_main_cha, mole_main_loss, mole_bonus_luk",Mole Infestation! (4),0,0,0,1000,0,0,5,99
-phantom_str,Phantom Berserker,tokens/str,"The restless spirit of a dead warrior haunts you.
+phantom_str,Phantom Berserker,icons/phantom,"The restless spirit of a dead warrior haunts you.
 
 Match STR and AGI tokens every turn to stay alive.
 Win by matching an exact amount of STR and AGI tokens on the same turn.","phantom_main_agi_str_win, phantom_main_str_loss, phantom_main_agi_loss, phantom_main_turn_loss",Phantom Berserker,0,0,200,0,200,0,1,99
-phantom_agi,Phantom Swindler,tokens/agi,"The restless spirit of a dead warrior haunts you.
+phantom_agi,Phantom Swindler,icons/phantom,"The restless spirit of a dead warrior haunts you.
 
 Match AGI and INT tokens every turn to stay alive.
 Win by matching an exact amount of AGI and INT tokens on the same turn.","phantom_main_agi_int_win, phantom_main_agi_loss, phantom_main_int_loss, phantom_main_turn_loss",Phantom Swindler,0,0,200,0,200,0,1,99
-phantom_int,Phantom Navigator,tokens/int,"The restless spirit of a dead warrior haunts you.
+phantom_int,Phantom Navigator,icons/phantom,"The restless spirit of a dead warrior haunts you.
 
 Match INT and CHA tokens every turn to stay alive.
 Win by matching an exact amount of INT and CHA tokens on the same turn.","phantom_main_int_cha_win, phantom_main_cha_loss, phantom_main_int_loss, phantom_main_turn_loss",Phantom Navigator,0,0,200,0,200,0,1,99
-phantom_luk,Phantom Jester,tokens/luk,"The restless spirit of a dead warrior haunts you.
+phantom_luk,Phantom Jester,icons/phantom,"The restless spirit of a dead warrior haunts you.
 
 Match AGI and LUK tokens every turn to stay alive.
 Win by matching an exact amount of AGI and LUK tokens on the same turn.","phantom_main_agi_luk_win, phantom_main_agi_loss, phantom_main_luk_loss, phantom_main_turn_loss",Phantom Jester,0,0,200,0,200,0,1,99
-phantom_cha,Phantom Noble,tokens/cha,"The restless spirit of a dead warrior haunts you.
+phantom_cha,Phantom Noble,icons/phantom,"The restless spirit of a dead warrior haunts you.
 
 Match CHA and LUK tokens every turn to stay alive.
 Win by matching an exact amount of CHA and LUK tokens on the same turn.","phantom_main_cha_luk_win, phantom_main_cha_loss, phantom_main_luk_loss, phantom_main_turn_loss",Phantom Noble,0,0,200,0,200,0,1,99
-monkey_1,Monkey Forest,tokens/agi,"A forest full of monkeys…… great
+monkey_1,Monkey Forest,icons/forest_1,"A forest full of monkeys…… great
 
 Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
 Keep an eye on both resource types of the goal!","monkey_luk_win, monkey_1_stragi_win, monkey_1_intcha_win, monkey_1_loss",Monkey Jungle,0,0,0,1000,0,0,1,2
-monkey_2,Monkey Jungle,tokens/agi,"A forest full of monkeys…… great
+monkey_2,Monkey Jungle,icons/forest_1,"A forest full of monkeys…… great
 
 Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
 Keep an eye on both resource types of the goal!","monkey_luk_win, monkey_2_stragi_win, monkey_2_intcha_win, monkey_2_loss",Monkey Jungle,0,0,0,1000,0,0,3,4
-monkey_3,Monkey Thicklet,tokens/agi,"A forest full of monkeys…… great
+monkey_3,Monkey Thicklet,icons/forest_1,"A forest full of monkeys…… great
 
 Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
 Keep an eye on both resource types of the goal!","monkey_luk_win, monkey_3_stragi_win, monkey_3_intcha_win, monkey_3_loss",Monkey Jungle,0,0,0,1000,0,0,5,99
-wildfire_1,Small Forest Fire,tokens/agi,"The forest is on fire! The forest is on fire!
+wildfire_1,Small Forest Fire,icons/fire_2,"The forest is on fire! The forest is on fire!
 
 Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
 Match or destroy Wildfire tokens to prevent them from spreading.","wildfire_1_turn_win, wildfire_1_agi_loss",Small Forest Fire!,0,0,0,1000,0,0,1,2
-wildfire_2,Forest Fire,tokens/agi,"The forest is on fire! The forest is on fire!
+wildfire_2,Forest Fire,icons/fire_2,"The forest is on fire! The forest is on fire!
 
 Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
 Match or destroy Wildfire tokens to prevent them from spreading.","wildfire_2_turn_win, wildfire_2_agi_loss",Forest Fire!,0,0,0,1000,0,0,3,4
-wildfire_3,Blazing Forest Fire,tokens/agi,"The forest is on fire! The forest is on fire!
+wildfire_3,Blazing Forest Fire,icons/fire_2,"The forest is on fire! The forest is on fire!
 
 Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
 Match or destroy Wildfire tokens to prevent them from spreading.","wildfire_3_turn_win, wildfire_3_agi_loss",Blazing Forest Fire!,0,0,0,1000,0,0,5,99
-dark_room_1,Dark Room,tokens/agi,"The room is really dark
+dark_room_1,Dark Room,icons/ambush,"The room is really dark
 
 Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.","dark_room_1_win, dark_room_main_loss, dark_room_1_turn_loss",Dark Room,0,0,0,0,1000,0,1,2
-dark_room_2,Bloodstained Dark Room,tokens/agi,"The room is really dark
+dark_room_2,Bloodstained Dark Room,icons/ambush,"The room is really dark
 
 Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.","dark_room_2_win, dark_room_main_loss, dark_room_2_turn_loss",Bloodstained Dark Room,0,0,0,0,1000,0,3,4
-dark_room_3,Torture Chamber,tokens/agi,"The room is really dark
+dark_room_3,Torture Chamber,icons/ambush,"The room is really dark
 
 Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.","dark_room_3_win, dark_room_main_loss, dark_room_3_turn_loss",Torture Chamber,0,0,0,0,1000,0,5,99
-siren_1,Ship Graveyard,tokens/cha,"A beautiful song washes over you.
+siren_1,Ship Graveyard,icons/charm,"A beautiful song washes over you.
 
 Match STR or INT to defeat the Sirens.
 Try to keep your Crew away from the Sirens, as they will be destroyed if they are matched.","siren_1_int_win, siren_1_str_win, siren_1_cha_loss, siren_1_agi_loss, siren_bonus_luk",Ship Graveyard,0,1000,0,0,0,0,1,2
-siren_2,Cape of the Lost,tokens/cha,"A beautiful song washes over you.
+siren_2,Cape of the Lost,icons/charm,"A beautiful song washes over you.
 
 Match STR or INT to defeat the Sirens.
 Try to keep your Crew away from the Sirens, as they will be destroyed if they are matched.","siren_2_int_win, siren_2_str_win, siren_2_cha_loss, siren_2_agi_loss, siren_bonus_luk",Cape of the Lost,0,1000,0,0,0,0,3,4
-siren_3,Basin of Sorrow,tokens/cha,"A beautiful song washes over you.
+siren_3,Basin of Sorrow,icons/charm,"A beautiful song washes over you.
 
 Match STR or INT to defeat the Sirens.
 Try to keep your Crew away from the Sirens, as they will be destroyed if they are matched.","siren_3_int_win, siren_3_str_win, siren_3_cha_loss, siren_3_agi_loss, siren_bonus_luk",Basin of Sorrow,0,1000,0,0,0,0,5,99
-zombie_1,Unearthed Graveyard,skills/bash,"The graves are empty.
+zombie_1,Unearthed Graveyard,icons/undead_2,"The graves are empty.
 
 Match resources to the goal. Zombies will delay you by consuming your resources.
 Zombies can be destroyed by using skills or matching them.","zombie_1_str_win, zombie_1_agi_win, zombie_1_stragi_lose, zombie_bonus_int, zombie_bonus_cha",Unearthed Graveyard,0,0,0,0,1000,0,1,2
-zombie_2,Desecrated Ground,skills/bash,"The graves are empty.
+zombie_2,Desecrated Ground,icons/undead_2,"The graves are empty.
 
 Match resources to the goal. Zombies will delay you by consuming your resources.
 Zombies can be destroyed by using skills or matching them.","zombie_2_str_win, zombie_2_agi_win, zombie_2_stragi_lose, zombie_bonus_int, zombie_bonus_cha",Desecrated Ground,0,0,0,0,1000,0,3,4
-zombie_3,Necropolis,skills/bash,"The graves are empty.
+zombie_3,Necropolis,icons/undead_2,"The graves are empty.
 
 Match resources to the goal. Zombies will delay you by consuming your resources.
 Zombies can be destroyed by using skills or matching them.","zombie_3_str_win, zombie_3_agi_win, zombie_3_stragi_lose, zombie_bonus_int, zombie_bonus_cha",Necropolis,0,0,0,0,1000,0,5,99
-ranger_1,Ranger,tokens/agi,"The silent ranger strikes
+ranger_1,Ranger,icons/ranger_dash,"The silent ranger strikes
 
 The Ranger switches between two modes: Dash and Arrow.
 In Dash Mode, the Ranger places Crew and Markers on the board. Markers transform token to AGI.
 In Arrow Mode, the Ranger destroys all AGI tokens and tokens nearby AGI tokens. Keep your Crew away!","ranger_1_turn_loss, ranger_1_agi_win, ranger_1_cha_win, ranger_1_int_bonus",Ranger - Dash,0,0,0,0,0,1000,1,99
-spiked_hole_1,Hidden Trap,tokens/agi,"You fall into a deep, deep hole
+spiked_hole_1,Hidden Trap,icons/spiked_hole,"You fall into a deep, deep hole
 
 Keep your Crew near the top while you gain enough AGI to win.","spiked_hole_1_agi_win, spiked_hole_1_str_loss, spiked_hole_int_bonus, spiked_hole_luk_bonus",Hidden Trap,0,0,0,0,1000,0,1,2
-spiked_hole_2,Covered Pit,tokens/agi,"You fall into a deep, deep hole
+spiked_hole_2,Covered Pit,icons/spiked_hole,"You fall into a deep, deep hole
 
 Keep your Crew near the top while you gain enough AGI to win.","spiked_hole_2_agi_win, spiked_hole_2_str_loss, spiked_hole_int_bonus, spiked_hole_luk_bonus",Covered Pit,0,0,0,0,1000,0,3,4
-spiked_hole_3,Death Trap,tokens/agi,"You fall into a deep, deep hole
+spiked_hole_3,Death Trap,icons/spiked_hole,"You fall into a deep, deep hole
 
 Keep your Crew near the top while you gain enough AGI to win.","spiked_hole_3_agi_win, spiked_hole_3_str_loss, spiked_hole_int_bonus, spiked_hole_luk_bonus",Death Trap,0,0,0,0,1000,0,5,99
-drown_1,Shipwrecked,tokens/str,"That is a lot of water?
+drown_1,Shipwrecked,icons/water,"That is a lot of water?
 
 Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.","drown_1_str_win, drown_1_turn_loss, drown_luk_bonus",Shipwrecked,1000,1000,0,0,0,0,1,2
-drown_2,Whirlpool,tokens/str,"That is a lot of water?
+drown_2,Whirlpool,icons/water,"That is a lot of water?
 
 Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.","drown_2_str_win, drown_2_turn_loss, drown_luk_bonus",Whirlpool,1000,1000,0,0,0,0,3,4
-drown_3,Bermuda Triangle?,tokens/str,"That is a lot of water?
+drown_3,Bermuda Triangle?,icons/water,"That is a lot of water?
 
 Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.","drown_3_str_win, drown_3_turn_loss, drown_luk_bonus",Bermuda Triangle?,1000,1000,0,0,0,0,5,99
-spirit_1,Whispering Forest,tokens/int,"The spirits wander freely here… perhaps you could learn something from them?
+spirit_1,Whispering Forest,icons/chakra_green,"The spirits wander freely here… perhaps you could learn something from them?
 
 Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.","spirit_1_int_win,spirit_1_turn_loss,spirit_luk_agi_bonus",Whispering Forest,0,0,0,1000,0,0,1,2
-spirit_2,Verdent Forest,tokens/int,"The spirits wander freely here… perhaps you could learn something from them?
+spirit_2,Verdent Forest,icons/chakra_green,"The spirits wander freely here… perhaps you could learn something from them?
 
 Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.","spirit_2_int_win,spirit_2_turn_loss,spirit_luk_agi_bonus",Verdent Forest,0,0,0,1000,0,0,3,4
-spirit_3,Heart of the Forest,tokens/int,"The spirits wander freely here… perhaps you could learn something from them?
+spirit_3,Heart of the Forest,icons/chakra_green,"The spirits wander freely here… perhaps you could learn something from them?
 
 Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.","spirit_3_int_win,spirit_3_turn_loss,spirit_luk_agi_bonus",Heart of the Forest,0,0,0,1000,0,0,5,99
+water_zombie_1,Bloated Corpses,icons/undead_1,"The drowned dead attack!
+
+Deal with Water by moving it downwards, and kill the zombies before the spread. But be wary of destroying Plague tokens, which spawn more Zombies.","water_zombie_win_1,water_zombie_loss_1",Bloated Corpses,1000,0,0,0,0,0,3,4
+water_zombie_2,Drowned Dead,icons/undead_1,"The drowned dead attack!
+
+Deal with Water by moving it downwards, and kill the zombies before the spread. But be wary of destroying Plague tokens, which spawn more Zombies.","water_zombie_win_2,water_zombie_loss_2",Drowned Dead,1000,0,0,0,0,0,5,99
+puck_1,Puck,icons/arcane_blast,"Puck is the master of mischief!
+
+Guide the Fairies to the Spirit Catcher, but watch out. Puck spawns Brimstone, Reagent and Wildfire which influences the board heavily.","puck_luk_win, puck_turn_loss",Puck,0,0,0,0,0,1000,1,99

@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill RIG = new GameSkill
         (
             name: "Rig",
-            sprite: "skills/sleight",
+            sprite: "icons/bomb_2",
             tooltip: "Select a token. Apply Reagent.",
 
             energyCost: 2,

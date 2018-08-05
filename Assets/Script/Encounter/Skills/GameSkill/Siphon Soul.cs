@@ -10,10 +10,10 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill SIPHON_SOUL = new GameSkill
         (
             name: "Siphon Soul",
-            sprite: "skills/sleight",
+            sprite: "icons/undead_power",
             tooltip: "Destroy all Zombie tokens and gain them as Resource.",
 
-            energyCost: 2,
+            energyCost: 1,
 
             selectBehavior: SelectBehavior.None,
 

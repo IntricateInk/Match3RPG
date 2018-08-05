@@ -11,7 +11,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive COMPULSIVE = new CharacterPassive
         (
             name: "Compulsive",
-            sprite: "tokens/luk",
+            sprite: "icons/angry",
             tooltip: "At start of each turn, lose 3 non-LUK tokens and gain 3 LUK.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

@@ -11,7 +11,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive PLANNED = new CharacterPassive
         (
             name: "Planned",
-            sprite: "tokens/int",
+            sprite: "icons/plan",
             tooltip: "At the start of turn, gain 1 Energy if you have 45 or more INT.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive BERSERKING = new CharacterPassive
         (
             name: "Berserking",
-            sprite: "tokens/int",
+            sprite: "icons/powerful",
             tooltip: "At the start of turn, gain 1 Energy if you have 30 or more STR and AGI",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

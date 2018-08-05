@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill MARK = new GameSkill
         (
             name: "Mark",
-            sprite: "skills/bash",
+            sprite: "icons/mark",
             tooltip: "Apply Marked.",
 
             energyCost: 2,

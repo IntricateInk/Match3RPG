@@ -16,7 +16,7 @@ namespace Match3.Encounter.Effect.Passive
             CharacterPassive passive = new CharacterPassive
             (
                 name: string.Format("Mole Infestation! ({0})", moles),
-                sprite: "tokens/luk",
+                sprite: "icons/burrow",
                 tooltip: string.Format
                 (
                     "Hole-y Mole-y! That is a lot of moles! You start with 15 STR. At the start of each turn, {0} tokens become moles.",

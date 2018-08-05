@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill SWING = new GameSkill
         (
             name: "Swing",
-            sprite: "skills/bash",
+            sprite: "icons/swing",
             tooltip: "Swap 3 spaces to the left.",
 
             energyCost: 1,

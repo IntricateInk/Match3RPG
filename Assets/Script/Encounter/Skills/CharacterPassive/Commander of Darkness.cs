@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive COMMANDER_OF_DARKNESS = new CharacterPassive
         (
             name: "Commander of Darkness",
-            sprite: "tokens/int",
+            sprite: "icons/undead_army",
             tooltip: "At the start of turn, gain 1 Energy if there are 5 or more Zombies.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

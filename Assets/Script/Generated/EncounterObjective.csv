@@ -91,3 +91,9 @@ spirit_1_turn_loss,Ignored,tokens/turn,The spirits lose interest in you,LOSE,0,-
 spirit_2_turn_loss,Ignored,tokens/turn,The spirits lose interest in you,LOSE,0,-10,,5,99,-1,100,-1,100,-1,100,-1,100,-1,100
 spirit_3_turn_loss,Ignored,tokens/turn,The spirits lose interest in you,LOSE,0,-15,,4,99,-1,100,-1,100,-1,100,-1,100,-1,100
 spirit_luk_agi_bonus,Fairy,tokens/luk,It's your lucky day! You found a fairy.,BONUS,50,50,,-1,100,-1,100,40,99,-1,100,-1,100,40,99
+puck_luk_win,Gain Favor,tokens/luk,You gain Puck's favor.,WIN,0,0,,-1,100,-1,100,-1,100,-1,100,-1,100,95,99
+puck_turn_loss,Lose Interest,tokens/turn,You lose Puck's interest,LOSE,0,0,,6,99,-1,100,-1,100,-1,100,-1,100,-1,100
+water_zombie_win_1,Slash,tokens/str,You slash the zombies,WIN,0,0,,-1,100,25,99,25,99,-1,100,-1,100,-1,100
+water_zombie_win_2,Slash,tokens/str,You slash the zombies,WIN,0,0,,-1,100,35,99,35,99,-1,100,-1,100,-1,100
+water_zombie_loss_1,Captured,tokens/turn,You are captured by the zombies.,LOSE,0,0,,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
+water_zombie_loss_2,Captured,tokens/turn,You are captured by the zombies.,LOSE,0,0,,8,99,-1,100,-1,100,-1,100,-1,100,-1,100

@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill ZEN = new GameSkill
         (
             name: "Zen",
-            sprite: "skills/sleight",
+            sprite: "icons/inner_peace",
             tooltip: "Destroy all Blanks and gain them as random resouces.",
 
             energyCost: 2,

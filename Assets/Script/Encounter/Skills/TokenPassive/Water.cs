@@ -44,7 +44,7 @@ namespace Match3.Encounter.Effect.Passive
                     if (adj != null)
                     {
                         adj.ApplyBuff(TargetPassive.WATER);
-                        adj.PlayAnimation("wave1", 0f);
+                        adj.PlayAnimation("wave1", 0.1f);
                     }
                 }
 

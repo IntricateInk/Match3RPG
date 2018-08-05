@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive CURSED = new CharacterPassive
         (
             name: "Cursed",
-            sprite: "tokens/int",
+            sprite: "icons/shade",
             tooltip: "At the start of every turn, spawn 3 Zombies.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive DISTRACTED = new CharacterPassive
         (
             name: "Distracted",
-            sprite: "tokens/int",
+            sprite: "icons/focus_2",
             tooltip: "At the start of every turn, Blank 3 tokens.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

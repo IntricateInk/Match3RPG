@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill FLAME_SHAPING = new GameSkill
         (
             name: "Flame Shaping",
-            sprite: "skills/sleight",
+            sprite: "icons/fire_face",
             tooltip: "Transform all tokens with Wildfire to the type of the selected token.",
 
             energyCost: 2,

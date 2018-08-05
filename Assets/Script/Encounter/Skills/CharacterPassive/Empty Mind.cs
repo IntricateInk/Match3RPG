@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive EMPTY_MIND = new CharacterPassive
         (
             name: "Empty Mind",
-            sprite: "tokens/int",
+            sprite: "icons/mind",
             tooltip: "At the start of turn, gain 1 Energy if there are 5 or more Blank tokens.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

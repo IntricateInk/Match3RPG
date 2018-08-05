@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive DRAINED = new CharacterPassive
         (
             name: "Drained",
-            sprite: "tokens/int",
+            sprite: "icons/scream",
             tooltip: "At the start of turn, lose 1 Energy if INT is less than 25.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill STRATEGIZE = new GameSkill
         (
             name: "Strategize",
-            sprite: "skills/sleight",
+            sprite: "icons/focus",
             tooltip: "Select a tile. Destroy it and gain a Resource of that type.",
 
             energyCost: 2,

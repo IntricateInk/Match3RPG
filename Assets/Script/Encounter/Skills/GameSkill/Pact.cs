@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill PACT = new GameSkill
         (
             name: "Pact",
-            sprite: "skills/sleight",
+            sprite: "icons/chakra_red",
             tooltip: "Spawn 1 Demon Soul.",
 
             energyCost: 3,

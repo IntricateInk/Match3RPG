@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill ENGINEER_EXPLOSIVE_TRAP = new GameSkill
         (
             name: "Set Explosive Trap",
-            sprite: "tokens/int",
+            sprite: "icons/part_2",
             tooltip: "Place a Explosive Trap on the target tile.",
 
             energyCost: 4,

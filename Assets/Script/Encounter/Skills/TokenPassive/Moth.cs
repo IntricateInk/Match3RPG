@@ -15,12 +15,12 @@ namespace Match3.Encounter.Effect.Passive
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].AttachAnimation("sewer_splash");
+                targets[0].AttachAnimation("glare");
             },
 
             OnRemovePassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].DettachAnimation("sewer_splash");
+                targets[0].DettachAnimation("glare");
             },
 
             OnTurnEnd: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

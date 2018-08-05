@@ -54,13 +54,7 @@ namespace Match3.Overworld
                 return _instance;
             }
         }
-
-        // to keep level data across scene changes
-        void Awake()
-        {
-            //loadingImage.SetActive(false);
-        }
-
+        
         public OverworldMap createOverworld()
         {
             return new OverworldMap(this.mapDepth, this.mapWidth, this.branches);
@@ -96,7 +90,8 @@ namespace Match3.Overworld
 
                     if (nodeInProcess.isInPath)
                     {
-                        button.GetComponentInChildren<Text>().text = nodeInProcess.nodeType.ToString();
+                        button.GetComponentInChildren<Image>().sprite = nodeInProcess.nodeType.GetSprite();
+
                         //buttonArray[i0, j0] = button;
                         // if at first floor depth
                         if (next.Contains(nodeInProcess))
@@ -117,9 +112,7 @@ namespace Match3.Overworld
                     }
                     else
                     {
-                        button.GetComponent<Image>().enabled = false;
-                        button.GetComponentInChildren<Text>().text = null;
-                        button.GetComponent<NodeButtonScript>().shouldBreathe = false;
+                        button.gameObject.SetActive(false);
                     }
 
                 }

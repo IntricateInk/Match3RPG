@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill PROFILE = new GameSkill
         (
             name: "Profile",
-            sprite: "tokens/int",
+            sprite: "icons/mind",
             tooltip: "Gain resources of all tokens in a column.",
 
             energyCost: 3,

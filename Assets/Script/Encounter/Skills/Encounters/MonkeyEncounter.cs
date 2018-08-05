@@ -11,7 +11,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive MONKEY_JUNGLE = new CharacterPassive
         (
             name: "Monkey Jungle",
-            sprite: "tokens/agi",
+            sprite: "icons/forest_1",
             tooltip: "Many, many monkeys. At the start of your turn, apply the Monkey buff to five random tokens.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

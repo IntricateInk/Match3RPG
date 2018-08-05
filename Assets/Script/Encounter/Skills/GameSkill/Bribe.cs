@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill BRIBE = new GameSkill
         (
             name: "Bribe",
-            sprite: "tokens/cha",
+            sprite: "icons/smile",
             tooltip: "Select a token. Pay a resource of that type to destroy it.",
 
             energyCost: 1,

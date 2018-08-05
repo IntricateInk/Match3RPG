@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill REPEL = new GameSkill
         (
             name: "Repel",
-            sprite: "skills/sleight",
+            sprite: "icons/fist_6",
             tooltip: "Select a tile. Swap all adjacent tiles away from it.",
 
             energyCost: 3,

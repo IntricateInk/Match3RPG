@@ -11,16 +11,16 @@ namespace Match3.Encounter.Effect.Passive
         (
             name: "Reagent",
             sprite: "sprites/mole",
-            tooltip: "When destroyed, swap all adjacent tokens 3 spaces away.",
+            tooltip: "When destroyed, swap all adjacent tokens 2 spaces away.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].AttachAnimation("plasma");
+                targets[0].AttachAnimation("blob");
             },
 
             OnRemovePassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].DettachAnimation("plasma");
+                targets[0].DettachAnimation("blob");
             },
 
             OnDestroy: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
@@ -29,8 +29,8 @@ namespace Match3.Encounter.Effect.Passive
                 GameEffect.BeginAnimationBatch();
                 foreach (TokenState adj in token.GetAllAdjacent())
                 {
-                    int dx = 3 * (adj.x - token.x);
-                    int dy = 3 * (adj.y - token.y);
+                    int dx = 2 * (adj.x - token.x);
+                    int dy = 2 * (adj.y - token.y);
 
                     int other_x = Mathf.Clamp(adj.x + dx, 0, encounter.boardState.sizeX - 1);
                     int other_y = Mathf.Clamp(adj.y + dy, 0, encounter.boardState.sizeY - 1);

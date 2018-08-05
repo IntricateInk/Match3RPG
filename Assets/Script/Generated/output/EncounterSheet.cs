@@ -9,7 +9,7 @@ namespace Match3.Encounter.Encounter
 		        public static EncounterSheet mole_1 = new EncounterSheet
             (
                 name: @"Minor Mole Infestation",
-                icon: @"skills/bash",
+                icon: @"icons/burrow",
                 tooltip: @"Hole-y Mole-y! That IS A LOT OF MOLES.
 
 Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
@@ -49,7 +49,7 @@ Moles can be destroyed either by using certain skills or by matching them.",
         public static EncounterSheet mole_2 = new EncounterSheet
             (
                 name: @"Mole Infestation",
-                icon: @"skills/bash",
+                icon: @"icons/burrow",
                 tooltip: @"Hole-y Mole-y! That IS A LOT OF MOLES.
 
 Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
@@ -89,7 +89,7 @@ Moles can be destroyed either by using certain skills or by matching them.",
         public static EncounterSheet mole_3 = new EncounterSheet
             (
                 name: @"Major Mole Infestation!",
-                icon: @"skills/bash",
+                icon: @"icons/burrow",
                 tooltip: @"Hole-y Mole-y! That IS A LOT OF MOLES.
 
 Match AGI to meet the goal while ensuring that the Moles that spawn do not reach the bottom.
@@ -129,7 +129,7 @@ Moles can be destroyed either by using certain skills or by matching them.",
         public static EncounterSheet phantom_str = new EncounterSheet
             (
                 name: @"Phantom Berserker",
-                icon: @"tokens/str",
+                icon: @"icons/phantom",
                 tooltip: @"The restless spirit of a dead warrior haunts you.
 
 Match STR and AGI tokens every turn to stay alive.
@@ -169,7 +169,7 @@ Win by matching an exact amount of STR and AGI tokens on the same turn.",
         public static EncounterSheet phantom_agi = new EncounterSheet
             (
                 name: @"Phantom Swindler",
-                icon: @"tokens/agi",
+                icon: @"icons/phantom",
                 tooltip: @"The restless spirit of a dead warrior haunts you.
 
 Match AGI and INT tokens every turn to stay alive.
@@ -209,7 +209,7 @@ Win by matching an exact amount of AGI and INT tokens on the same turn.",
         public static EncounterSheet phantom_int = new EncounterSheet
             (
                 name: @"Phantom Navigator",
-                icon: @"tokens/int",
+                icon: @"icons/phantom",
                 tooltip: @"The restless spirit of a dead warrior haunts you.
 
 Match INT and CHA tokens every turn to stay alive.
@@ -249,7 +249,7 @@ Win by matching an exact amount of INT and CHA tokens on the same turn.",
         public static EncounterSheet phantom_luk = new EncounterSheet
             (
                 name: @"Phantom Jester",
-                icon: @"tokens/luk",
+                icon: @"icons/phantom",
                 tooltip: @"The restless spirit of a dead warrior haunts you.
 
 Match AGI and LUK tokens every turn to stay alive.
@@ -289,7 +289,7 @@ Win by matching an exact amount of AGI and LUK tokens on the same turn.",
         public static EncounterSheet phantom_cha = new EncounterSheet
             (
                 name: @"Phantom Noble",
-                icon: @"tokens/cha",
+                icon: @"icons/phantom",
                 tooltip: @"The restless spirit of a dead warrior haunts you.
 
 Match CHA and LUK tokens every turn to stay alive.
@@ -329,7 +329,7 @@ Win by matching an exact amount of CHA and LUK tokens on the same turn.",
         public static EncounterSheet monkey_1 = new EncounterSheet
             (
                 name: @"Monkey Forest",
-                icon: @"tokens/agi",
+                icon: @"icons/forest_1",
                 tooltip: @"A forest full of monkeys…… great
 
 Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
@@ -369,7 +369,7 @@ Keep an eye on both resource types of the goal!",
         public static EncounterSheet monkey_2 = new EncounterSheet
             (
                 name: @"Monkey Jungle",
-                icon: @"tokens/agi",
+                icon: @"icons/forest_1",
                 tooltip: @"A forest full of monkeys…… great
 
 Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
@@ -409,7 +409,7 @@ Keep an eye on both resource types of the goal!",
         public static EncounterSheet monkey_3 = new EncounterSheet
             (
                 name: @"Monkey Thicklet",
-                icon: @"tokens/agi",
+                icon: @"icons/forest_1",
                 tooltip: @"A forest full of monkeys…… great
 
 Monkeys that spawn mimic your highest resource, but to win you will need to gather two different resource types.
@@ -449,7 +449,7 @@ Keep an eye on both resource types of the goal!",
         public static EncounterSheet wildfire_1 = new EncounterSheet
             (
                 name: @"Small Forest Fire",
-                icon: @"tokens/agi",
+                icon: @"icons/fire_2",
                 tooltip: @"The forest is on fire! The forest is on fire!
 
 Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
@@ -487,7 +487,7 @@ Match or destroy Wildfire tokens to prevent them from spreading.",
         public static EncounterSheet wildfire_2 = new EncounterSheet
             (
                 name: @"Forest Fire",
-                icon: @"tokens/agi",
+                icon: @"icons/fire_2",
                 tooltip: @"The forest is on fire! The forest is on fire!
 
 Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
@@ -525,7 +525,7 @@ Match or destroy Wildfire tokens to prevent them from spreading.",
         public static EncounterSheet wildfire_3 = new EncounterSheet
             (
                 name: @"Blazing Forest Fire",
-                icon: @"tokens/agi",
+                icon: @"icons/fire_2",
                 tooltip: @"The forest is on fire! The forest is on fire!
 
 Wildfire spreads and destroys tokens. Keep your Crew away from the Wildfire.
@@ -563,7 +563,7 @@ Match or destroy Wildfire tokens to prevent them from spreading.",
         public static EncounterSheet dark_room_1 = new EncounterSheet
             (
                 name: @"Dark Room",
-                icon: @"tokens/agi",
+                icon: @"icons/ambush",
                 tooltip: @"The room is really dark
 
 Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.",
@@ -601,7 +601,7 @@ Match tokens to get to the goal! However, be cautious when making matches on top
         public static EncounterSheet dark_room_2 = new EncounterSheet
             (
                 name: @"Bloodstained Dark Room",
-                icon: @"tokens/agi",
+                icon: @"icons/ambush",
                 tooltip: @"The room is really dark
 
 Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.",
@@ -639,7 +639,7 @@ Match tokens to get to the goal! However, be cautious when making matches on top
         public static EncounterSheet dark_room_3 = new EncounterSheet
             (
                 name: @"Torture Chamber",
-                icon: @"tokens/agi",
+                icon: @"icons/ambush",
                 tooltip: @"The room is really dark
 
 Match tokens to get to the goal! However, be cautious when making matches on top of traps as they can kill your Crew.",
@@ -677,7 +677,7 @@ Match tokens to get to the goal! However, be cautious when making matches on top
         public static EncounterSheet siren_1 = new EncounterSheet
             (
                 name: @"Ship Graveyard",
-                icon: @"tokens/cha",
+                icon: @"icons/charm",
                 tooltip: @"A beautiful song washes over you.
 
 Match STR or INT to defeat the Sirens.
@@ -718,7 +718,7 @@ Try to keep your Crew away from the Sirens, as they will be destroyed if they ar
         public static EncounterSheet siren_2 = new EncounterSheet
             (
                 name: @"Cape of the Lost",
-                icon: @"tokens/cha",
+                icon: @"icons/charm",
                 tooltip: @"A beautiful song washes over you.
 
 Match STR or INT to defeat the Sirens.
@@ -759,7 +759,7 @@ Try to keep your Crew away from the Sirens, as they will be destroyed if they ar
         public static EncounterSheet siren_3 = new EncounterSheet
             (
                 name: @"Basin of Sorrow",
-                icon: @"tokens/cha",
+                icon: @"icons/charm",
                 tooltip: @"A beautiful song washes over you.
 
 Match STR or INT to defeat the Sirens.
@@ -800,7 +800,7 @@ Try to keep your Crew away from the Sirens, as they will be destroyed if they ar
         public static EncounterSheet zombie_1 = new EncounterSheet
             (
                 name: @"Unearthed Graveyard",
-                icon: @"skills/bash",
+                icon: @"icons/undead_2",
                 tooltip: @"The graves are empty.
 
 Match resources to the goal. Zombies will delay you by consuming your resources.
@@ -841,7 +841,7 @@ Zombies can be destroyed by using skills or matching them.",
         public static EncounterSheet zombie_2 = new EncounterSheet
             (
                 name: @"Desecrated Ground",
-                icon: @"skills/bash",
+                icon: @"icons/undead_2",
                 tooltip: @"The graves are empty.
 
 Match resources to the goal. Zombies will delay you by consuming your resources.
@@ -882,7 +882,7 @@ Zombies can be destroyed by using skills or matching them.",
         public static EncounterSheet zombie_3 = new EncounterSheet
             (
                 name: @"Necropolis",
-                icon: @"skills/bash",
+                icon: @"icons/undead_2",
                 tooltip: @"The graves are empty.
 
 Match resources to the goal. Zombies will delay you by consuming your resources.
@@ -923,7 +923,7 @@ Zombies can be destroyed by using skills or matching them.",
         public static EncounterSheet ranger_1 = new EncounterSheet
             (
                 name: @"Ranger",
-                icon: @"tokens/agi",
+                icon: @"icons/ranger_dash",
                 tooltip: @"The silent ranger strikes
 
 The Ranger switches between two modes: Dash and Arrow.
@@ -964,7 +964,7 @@ In Arrow Mode, the Ranger destroys all AGI tokens and tokens nearby AGI tokens. 
         public static EncounterSheet spiked_hole_1 = new EncounterSheet
             (
                 name: @"Hidden Trap",
-                icon: @"tokens/agi",
+                icon: @"icons/spiked_hole",
                 tooltip: @"You fall into a deep, deep hole
 
 Keep your Crew near the top while you gain enough AGI to win.",
@@ -1003,7 +1003,7 @@ Keep your Crew near the top while you gain enough AGI to win.",
         public static EncounterSheet spiked_hole_2 = new EncounterSheet
             (
                 name: @"Covered Pit",
-                icon: @"tokens/agi",
+                icon: @"icons/spiked_hole",
                 tooltip: @"You fall into a deep, deep hole
 
 Keep your Crew near the top while you gain enough AGI to win.",
@@ -1042,7 +1042,7 @@ Keep your Crew near the top while you gain enough AGI to win.",
         public static EncounterSheet spiked_hole_3 = new EncounterSheet
             (
                 name: @"Death Trap",
-                icon: @"tokens/agi",
+                icon: @"icons/spiked_hole",
                 tooltip: @"You fall into a deep, deep hole
 
 Keep your Crew near the top while you gain enough AGI to win.",
@@ -1081,7 +1081,7 @@ Keep your Crew near the top while you gain enough AGI to win.",
         public static EncounterSheet drown_1 = new EncounterSheet
             (
                 name: @"Shipwrecked",
-                icon: @"tokens/str",
+                icon: @"icons/water",
                 tooltip: @"That is a lot of water?
 
 Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.",
@@ -1119,7 +1119,7 @@ Water flows downwards, blanking tokens. The flow can be controlled by using skil
         public static EncounterSheet drown_2 = new EncounterSheet
             (
                 name: @"Whirlpool",
-                icon: @"tokens/str",
+                icon: @"icons/water",
                 tooltip: @"That is a lot of water?
 
 Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.",
@@ -1157,7 +1157,7 @@ Water flows downwards, blanking tokens. The flow can be controlled by using skil
         public static EncounterSheet drown_3 = new EncounterSheet
             (
                 name: @"Bermuda Triangle?",
-                icon: @"tokens/str",
+                icon: @"icons/water",
                 tooltip: @"That is a lot of water?
 
 Water flows downwards, blanking tokens. The flow can be controlled by using skills to destroy or match tokens with Water.",
@@ -1195,7 +1195,7 @@ Water flows downwards, blanking tokens. The flow can be controlled by using skil
         public static EncounterSheet spirit_1 = new EncounterSheet
             (
                 name: @"Whispering Forest",
-                icon: @"tokens/int",
+                icon: @"icons/chakra_green",
                 tooltip: @"The spirits wander freely here… perhaps you could learn something from them?
 
 Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.",
@@ -1233,7 +1233,7 @@ Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT withi
         public static EncounterSheet spirit_2 = new EncounterSheet
             (
                 name: @"Verdent Forest",
-                icon: @"tokens/int",
+                icon: @"icons/chakra_green",
                 tooltip: @"The spirits wander freely here… perhaps you could learn something from them?
 
 Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.",
@@ -1271,7 +1271,7 @@ Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT withi
         public static EncounterSheet spirit_3 = new EncounterSheet
             (
                 name: @"Heart of the Forest",
-                icon: @"tokens/int",
+                icon: @"icons/chakra_green",
                 tooltip: @"The spirits wander freely here… perhaps you could learn something from them?
 
 Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT within the turn limit.",
@@ -1303,6 +1303,117 @@ Move the tokens with the Spirit to the Spirit Catchers to quickly gain INT withi
 					1000,
 					0,
 					0
+				}
+            );
+
+        public static EncounterSheet water_zombie_1 = new EncounterSheet
+            (
+                name: @"Bloated Corpses",
+                icon: @"icons/undead_1",
+                tooltip: @"The drowned dead attack!
+
+Deal with Water by moving it downwards, and kill the zombies before the spread. But be wary of destroying Plague tokens, which spawn more Zombies.",
+                
+				min_depth: 3,
+				max_depth: 4,
+				
+				objectives: new string[] 
+				{
+				
+"water_zombie_win_1",
+"water_zombie_loss_1"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Bloated Corpses"
+
+				},
+				
+				weights: new int[]
+				{
+					1000,
+					0,
+					0,
+					0,
+					0,
+					0
+				}
+            );
+
+        public static EncounterSheet water_zombie_2 = new EncounterSheet
+            (
+                name: @"Drowned Dead",
+                icon: @"icons/undead_1",
+                tooltip: @"The drowned dead attack!
+
+Deal with Water by moving it downwards, and kill the zombies before the spread. But be wary of destroying Plague tokens, which spawn more Zombies.",
+                
+				min_depth: 5,
+				max_depth: 99,
+				
+				objectives: new string[] 
+				{
+				
+"water_zombie_win_2",
+"water_zombie_loss_2"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Drowned Dead"
+
+				},
+				
+				weights: new int[]
+				{
+					1000,
+					0,
+					0,
+					0,
+					0,
+					0
+				}
+            );
+
+        public static EncounterSheet puck_1 = new EncounterSheet
+            (
+                name: @"Puck",
+                icon: @"icons/arcane_blast",
+                tooltip: @"Puck is the master of mischief!
+
+Guide the Fairies to the Spirit Catcher, but watch out. Puck spawns Brimstone, Reagent and Wildfire which influences the board heavily.",
+                
+				min_depth: 1,
+				max_depth: 99,
+				
+				objectives: new string[] 
+				{
+				
+"puck_luk_win",
+"puck_turn_loss"
+
+				},
+                
+				passives: new string[] 
+				{
+				
+"Puck"
+
+				},
+				
+				weights: new int[]
+				{
+					0,
+					0,
+					0,
+					0,
+					0,
+					1000
 				}
             );
 

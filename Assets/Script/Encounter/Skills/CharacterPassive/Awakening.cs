@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive AWAKENING = new CharacterPassive
         (
             name: "Awakening",
-            sprite: "tokens/int",
+            sprite: "icons/open_arm",
             tooltip: "At the start of the encounter, spawn 1 Spirit Catcher.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive HOTHEADED = new CharacterPassive
         (
             name: "Hotheaded",
-            sprite: "tokens/int",
+            sprite: "icons/fire_face",
             tooltip: "At the start of turn, gain 1 Energy if there are 5 or more Wildfire.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

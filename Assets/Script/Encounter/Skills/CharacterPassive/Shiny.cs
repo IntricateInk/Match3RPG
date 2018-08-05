@@ -29,7 +29,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive SHINY_ARMOR = ExchangeResource
         (
             name: "Shiny Armor",
-            sprite: "tokens/cha",
+            sprite: "icons/armor",
 
             from_type: TokenType.STRENGTH,
             to_type: TokenType.CHARISMA,
@@ -39,7 +39,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive SHINY_SHOES = ExchangeResource
         (
             name: "Shiny Shoes",
-            sprite: "tokens/cha",
+            sprite: "icons/kick",
 
             from_type: TokenType.AGILITY,
             to_type: TokenType.CHARISMA,
@@ -49,7 +49,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive SHINY_CAP = ExchangeResource
         (
             name: "Shiny Cap",
-            sprite: "tokens/cha",
+            sprite: "icons/shiny_cap",
 
             from_type: TokenType.INTELLIGENCE,
             to_type: TokenType.CHARISMA,

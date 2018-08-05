@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill LIFELINK = new GameSkill
         (
             name: "Lifelink",
-            sprite: "skills/bash",
+            sprite: "icons/unholy_grip",
             tooltip: "Destroy a token. Chain to Zombies and destroy them.",
 
             energyCost: 2,

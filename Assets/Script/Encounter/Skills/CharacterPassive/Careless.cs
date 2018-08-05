@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive CARELESS = new CharacterPassive
         (
             name: "Careless",
-            sprite: "tokens/int",
+            sprite: "icons/fire_1",
             tooltip: "At the the encounter, spawn 3 Wildfire.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

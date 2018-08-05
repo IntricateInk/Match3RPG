@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill PARASITIC_BURST = new GameSkill
         (
             name: "Parasitic Burst",
-            sprite: "skills/sleight",
+            sprite: "icons/portal_green",
             tooltip: "Select a token. Gain 4 Resource of that type tile, then apply a buff that loses 1 Resource of that tile type at the start of each turn.",
 
             energyCost: 1,

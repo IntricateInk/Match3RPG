@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill FIRE_WALL = new GameSkill
         (
             name: "Fire Wall",
-            sprite: "skills/sleight",
+            sprite: "icons/fire_wall",
             tooltip: "Destroy a token. If it has Wildfire, destroy the entire row instead.",
 
             energyCost: 2,

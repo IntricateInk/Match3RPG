@@ -94,7 +94,7 @@ namespace Match3.Encounter.Effect.Skill
                 return _AllSkills[name];
             } catch (Exception e)
             {
-                Debug.Log("name");
+                Debug.Log(name);
                 throw e;
             }
         }

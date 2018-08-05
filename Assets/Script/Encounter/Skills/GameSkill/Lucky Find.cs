@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill LUCKY_FIND = new GameSkill
         (
             name: "Lucky Find",
-            sprite: "skills/sleight",
+            sprite: "icons/holy_hand",
             tooltip: "Gain a random Resource.",
 
             energyCost: 1,

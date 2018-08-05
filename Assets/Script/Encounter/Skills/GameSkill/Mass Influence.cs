@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill MASS_INFLUENCE = new GameSkill
         (
             name: "Mass Influence",
-            sprite: "skills/sleight",
+            sprite: "icons/convince",
             tooltip: "Select a tile. Chain. Transform all Selected Tiles into Charisma Tiles.",
 
             energyCost: 2,
@@ -18,7 +18,7 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                GameEffect.ChainFromFirst(encounter, targets);
+                targets = GameEffect.ChainFromFirst(targets[0], encounter);
                 GameEffect.BeginAnimationBatch();
                 foreach (TokenState token in targets)
                 {

@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill OFFERING = new GameSkill
         (
             name: "Offering",
-            sprite: "skills/sleight",
+            sprite: "icons/spirit_well",
             tooltip: "Spawn a Spirit Catcher.",
 
             energyCost: 4,

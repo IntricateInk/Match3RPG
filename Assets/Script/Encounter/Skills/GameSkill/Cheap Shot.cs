@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill CHEAP_SHOT = new GameSkill
         (
             name: "Cheap Shot",
-            sprite: "skills/bash",
+            sprite: "icons/swing",
             tooltip: "Lose all STR. For each STR lost, destroy a random token.",
 
             energyCost: 1,

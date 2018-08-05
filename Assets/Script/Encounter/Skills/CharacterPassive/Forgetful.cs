@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive FORGETFUL = new CharacterPassive
         (
             name: "Forgetful",
-            sprite: "tokens/int",
+            sprite: "icons/sad",
             tooltip: "At the start of every turn, spawn 3 Amnesia.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

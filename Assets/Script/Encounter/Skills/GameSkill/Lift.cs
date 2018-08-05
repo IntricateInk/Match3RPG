@@ -8,7 +8,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill LIFT = new GameSkill
         (
             name: "Lift",
-            sprite: "skills/sleight",
+            sprite: "icons/fist_5",
             tooltip: "Select a token. Swap it and the tokens on its left and right 3 rows above. If they are already at the top row, destroy them instead.",
 
             energyCost: 3,

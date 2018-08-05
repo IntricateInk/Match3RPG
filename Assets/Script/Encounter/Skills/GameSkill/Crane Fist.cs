@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill CRANE_FIST = new GameSkill
         (
             name: "Crane Fist",
-            sprite: "skills/sleight",
+            sprite: "icons/holy_hand",
             tooltip: "Select a token. Swap upwards 3 spaces and blank it.",
 
             energyCost: 2,

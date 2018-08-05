@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill ABSOLUTION = new GameSkill
         (
             name: "Absolution",
-            sprite: "skills/sleight",
+            sprite: "icons/open_arm",
             tooltip: "Select a token. Transform to Blank.",
 
             energyCost: 1,

@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill KINDLING = new GameSkill
         (
             name: "Kindling",
-            sprite: "skills/sleight",
+            sprite: "icons/fire_spirit",
             tooltip: "Spawn 1 Flame Spirit.",
 
             energyCost: 3,

@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill LEAP = new GameSkill
         (
             name: "Leap",
-            sprite: "skills/sleight",
+            sprite: "icons/kick",
             tooltip: "Select a token. Swap all tokens of that type with the token above it.",
 
             energyCost: 3,

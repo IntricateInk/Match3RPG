@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill ARTICULATE = new GameSkill
         (
             name: "Articulate",
-            sprite: "skills/bash",
+            sprite: "icons/whisper",
             tooltip: "Transform a 1x3 block of cells to CHA.",
 
             energyCost: 3,

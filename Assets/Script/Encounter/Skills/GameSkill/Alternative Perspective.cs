@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill ALTERNATIVE_PERSPECTIVE = new GameSkill
         (
             name: "Alternative Perspective",
-            sprite: "skills/sleight",
+            sprite: "icons/eye",
             tooltip: "Select a token. Try to match it diagonally.",
 
             energyCost: 1,

@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive HYDROPHOBIA = new CharacterPassive
         (
             name: "Hydrophobia",
-            sprite: "tokens/agi",
+            sprite: "icons/afraid",
             tooltip: "At the start of each turn, -1 Energy if there are 3 or more Water.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

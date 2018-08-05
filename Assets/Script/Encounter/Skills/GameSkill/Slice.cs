@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill SLICE = new GameSkill
         (
             name: "Slice!",
-            sprite: "skills/bash",
+            sprite: "icons/slice_2",
             tooltip: "Destroy a row of tokens.",
 
             energyCost: 3,

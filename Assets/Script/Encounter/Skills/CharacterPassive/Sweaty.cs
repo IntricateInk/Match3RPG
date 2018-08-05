@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive SWEATY = new CharacterPassive
         (
             name: "Sweaty",
-            sprite: "tokens/int",
+            sprite: "icons/water",
             tooltip: "At the start of every turn, spawn 3 Water.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

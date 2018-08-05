@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill SHOVE = new GameSkill
         (
             name: "Shove",
-            sprite: "skills/bash",
+            sprite: "icons/push",
             tooltip: "Select two adjacent tokens. Swap them, then destroy the second.",
 
             energyCost: 2,

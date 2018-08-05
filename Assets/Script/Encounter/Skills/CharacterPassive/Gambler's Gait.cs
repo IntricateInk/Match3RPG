@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive GAMBLERS_GAIT = new CharacterPassive
         (
             name: "Gambler's Gait",
-            sprite: "tokens/int",
+            sprite: "icons/focus",
             tooltip: "At the start of turn, gain 1 Energy if you have 30 or more CHA and LUK.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

@@ -7,10 +7,10 @@ namespace Match3.Encounter.Effect.Skill
 {
     public sealed partial class GameSkill : ITooltip
     {
-        public static GameSkill PLAGUE = new GameSkill
+        public static GameSkill DEATH_PULSE = new GameSkill
         (
-            name: "Plague",
-            sprite: "skills/sleight",
+            name: "Death Pulse",
+            sprite: "icons/poison_1",
             tooltip: "Spawn 2 Plague.",
 
             energyCost: 2,

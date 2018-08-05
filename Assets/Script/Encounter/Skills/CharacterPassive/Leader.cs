@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive LEADER = new CharacterPassive
         (
             name: "Leader",
-            sprite: "tokens/agi",
+            sprite: "icons/recruit",
             tooltip: "At the start of each turn, +1 Energy if there are 3 or more Crew.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

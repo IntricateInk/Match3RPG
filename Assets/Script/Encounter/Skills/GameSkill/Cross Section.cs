@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill CROSS_SECTION = new GameSkill
         (
             name: "Cross Section",
-            sprite: "skills/bash",
+            sprite: "icons/fist_3",
             tooltip: "Select a tile. Destroy it and all adjacent tokens.",
 
             energyCost: 2,

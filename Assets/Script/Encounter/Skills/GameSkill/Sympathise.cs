@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill SYMPATHISE = new GameSkill
         (
             name: "Sympathise",
-            sprite: "skills/sleight",
+            sprite: "icons/happy",
             tooltip: "Transform all CHA tokens to the target token's type.",
 
             energyCost: 3,

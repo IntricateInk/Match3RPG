@@ -3043,5 +3043,203 @@ namespace Match3.Encounter.Encounter
         );
 
 
+        public static EncounterObjective puck_luk_win = new EncounterObjective
+        (
+			uid: "puck_luk_win",
+            name: "Gain Favor",
+            sprite: "tokens/luk",
+            tooltip: "You gain Puck's favor.",
+			
+			type: "WIN",
+			
+			GoldReward: 0,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: 95,
+            MaxLuck: 99,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective puck_turn_loss = new EncounterObjective
+        (
+			uid: "puck_turn_loss",
+            name: "Lose Interest",
+            sprite: "tokens/turn",
+            tooltip: "You lose Puck's interest",
+			
+			type: "LOSE",
+			
+			GoldReward: 0,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: 6,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective water_zombie_win_1 = new EncounterObjective
+        (
+			uid: "water_zombie_win_1",
+            name: "Slash",
+            sprite: "tokens/str",
+            tooltip: "You slash the zombies",
+			
+			type: "WIN",
+			
+			GoldReward: 0,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 25,
+            MaxStrength: 99, 
+			
+            MinAgility: 25,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective water_zombie_win_2 = new EncounterObjective
+        (
+			uid: "water_zombie_win_2",
+            name: "Slash",
+            sprite: "tokens/str",
+            tooltip: "You slash the zombies",
+			
+			type: "WIN",
+			
+			GoldReward: 0,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: 35,
+            MaxStrength: 99, 
+			
+            MinAgility: 35,
+            MaxAgility: 99,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: -1,
+            MaxTurn: 100
+        );
+
+
+        public static EncounterObjective water_zombie_loss_1 = new EncounterObjective
+        (
+			uid: "water_zombie_loss_1",
+            name: "Captured",
+            sprite: "tokens/turn",
+            tooltip: "You are captured by the zombies.",
+			
+			type: "LOSE",
+			
+			GoldReward: 0,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: 10,
+            MaxTurn: 99
+        );
+
+
+        public static EncounterObjective water_zombie_loss_2 = new EncounterObjective
+        (
+			uid: "water_zombie_loss_2",
+            name: "Captured",
+            sprite: "tokens/turn",
+            tooltip: "You are captured by the zombies.",
+			
+			type: "LOSE",
+			
+			GoldReward: 0,
+            ExpReward: 0,
+            TrophyReward: new string[] {},
+            
+            MinStrength: -1,
+            MaxStrength: 100, 
+			
+            MinAgility: -1,
+            MaxAgility: 100,
+
+            MinIntelligence: -1,
+            MaxIntelligence: 100,
+
+            MinCharisma: -1,
+            MaxCharisma: 100,
+
+            MinLuck: -1,
+            MaxLuck: 100,
+
+            MinTurn: 8,
+            MaxTurn: 99
+        );
+
+
     }
 }

@@ -12,7 +12,7 @@ namespace Match3.Encounter.Effect.Passive
             return new CharacterPassive
             (
                 name: name,
-                sprite: "tokens/int",
+                sprite: "icons/chakra_green",
                 tooltip: string.Format
                 ("Spirits wander freely. At the start of the encounter, spawn {0} Spirits and {1} Spirit Catchers.",
                 spirits, spirit_catchers),

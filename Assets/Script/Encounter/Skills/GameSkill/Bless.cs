@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill Bless = new GameSkill
         (
             name: "Bless",
-            sprite: "skills/sleight",
+            sprite: "icons/fairy",
             tooltip: "Spawn 1 Fairy.",
 
             energyCost: 3,

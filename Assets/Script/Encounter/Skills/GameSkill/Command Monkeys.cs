@@ -11,7 +11,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill COMMAND_MONKEYS = new GameSkill
         (
             name: "Command Monkeys",
-            sprite: "skills/sleight",
+            sprite: "icons/speak",
             tooltip: "Select a 3x3 area and spawn 3 Monkeys.",
 
             energyCost: 2,

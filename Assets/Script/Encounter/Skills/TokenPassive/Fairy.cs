@@ -15,13 +15,13 @@ namespace Match3.Encounter.Effect.Passive
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].AttachAnimation("plasma");
+                targets[0].AttachAnimation("glow_bubble");
                 targets[0].type = TokenType.BLANK;
             },
 
             OnRemovePassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].DettachAnimation("plasma");
+                targets[0].DettachAnimation("glow_bubble");
             },
 
             OnTurnEnd: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

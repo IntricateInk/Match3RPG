@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill DIVINE = new GameSkill
         (
             name: "Divine",
-            sprite: "skills/sleight",
+            sprite: "icons/divine",
             tooltip: "Spawn one of the following: Spirit, Heroic Spirit, Flame Spirit, Fairy or Demon Soul.",
 
             energyCost: 1,

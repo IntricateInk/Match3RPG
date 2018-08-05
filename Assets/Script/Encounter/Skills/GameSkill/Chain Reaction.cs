@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill CHAIN_REACTION = new GameSkill
         (
             name: "Chain Reaction",
-            sprite: "skills/sleight",
+            sprite: "icons/battlefield",
             tooltip: "Select a token and destroy it. Then, try to match all tokens.",
 
             energyCost: 2,

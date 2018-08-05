@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive LITHE = new CharacterPassive
         (
             name: "Lithe",
-            sprite: "tokens/agi",
+            sprite: "icons/boot_2",
             tooltip: "At end of the turn, Cascade.",
 
             OnTurnEnd: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

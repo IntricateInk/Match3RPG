@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive MIRED_MIND = new CharacterPassive
         (
             name: "Mired Mind",
-            sprite: "tokens/int",
+            sprite: "icons/sad",
             tooltip: "At the the encounter, Blank 6 tokens.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

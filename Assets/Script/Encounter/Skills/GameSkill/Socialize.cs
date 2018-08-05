@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill SOCIALIZE = new GameSkill
         (
             name: "Socialize",
-            sprite: "skills/sleight",
+            sprite: "icons/smile",
             tooltip: "Select a tile. Gain a Resource of that type.",
 
             energyCost: 1,

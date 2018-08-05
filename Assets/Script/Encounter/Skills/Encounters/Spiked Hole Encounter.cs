@@ -66,9 +66,9 @@ namespace Match3.Encounter.Effect.Passive
             );
         }
 
-        public static CharacterPassive SPIKED_HOLE_1 = SpikedHole("Hidden Trap", "skills/sleight", 1, 2, 2);
-        public static CharacterPassive SPIKED_HOLE_2 = SpikedHole("Covered Pit", "skills/sleight", 3, 4, 2);
-        public static CharacterPassive SPIKED_HOLE_3 = SpikedHole("Death Trap", "skills/sleight", 5, 2, 6);
+        public static CharacterPassive SPIKED_HOLE_1 = SpikedHole("Hidden Trap", "icons/spiked_hole", 1, 2, 2);
+        public static CharacterPassive SPIKED_HOLE_2 = SpikedHole("Covered Pit", "icons/spiked_hole", 3, 4, 2);
+        public static CharacterPassive SPIKED_HOLE_3 = SpikedHole("Death Trap", "icons/spiked_hole", 5, 2, 6);
     }
     
 }

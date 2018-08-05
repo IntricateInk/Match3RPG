@@ -15,7 +15,7 @@ namespace Match3.Encounter.Effect.Passive
         private static CharacterPassive RANGER_DASH_1 = new CharacterPassive
         (
             name: "Ranger - Dash",
-            sprite: "skills/sleight",
+            sprite: "icons/ranger_dash",
             tooltip: "Move! At the start of the turn, spawn 6 Marked and spawn 1 Crew. At the end of the turn, switch to Arrow mode.",
             
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
@@ -60,7 +60,7 @@ namespace Match3.Encounter.Effect.Passive
         private static CharacterPassive RANGER_ARROW_1 = new CharacterPassive
         (
             name: "Ranger - Arrow",
-            sprite: "skills/sleight",
+            sprite: "icons/ranger_shoot",
             tooltip: "Shoot! At the end of the turn, destroy all AGI and their adjacent tokens, then switch to Dash mode.",
 
             OnTurnEnd: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

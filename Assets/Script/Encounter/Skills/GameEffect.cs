@@ -124,21 +124,26 @@ namespace Match3.Encounter.Effect
             return selected;
         }
 
-        public static void ChainFromFirst(EncounterState encounter, List<TokenState> selectedTokens)
+        public static List<TokenState> ChainFromFirst(TokenState token, EncounterState encounter)
         {
-            TokenState current = selectedTokens[0];
-            List<TokenState> adj_tokens = new List<TokenState>();
+            TokenState current = token;
+            List<TokenState> selected = new List<TokenState>();
+            selected.Add(token);
 
             while (true)
             {
-                adj_tokens = current.GetAllAdjacent();
+                List<TokenState> adj_tokens = current.GetAllAdjacent();
+                adj_tokens.RemoveAll((t) => { return selected.Contains(t); });
+                adj_tokens.RemoveAll((t) => { return t.type != token.type; });
 
                 // no more tokens to chain to
                 if (adj_tokens.Count == 0) break;
 
                 current = adj_tokens.RandomChoice();
-                selectedTokens.Add(current);
+                selected.Add(current);
             }
+
+            return selected;
         }
         
         internal static void SelectRandom(EncounterState encounter, List<TokenState> selectedTokens, int n)

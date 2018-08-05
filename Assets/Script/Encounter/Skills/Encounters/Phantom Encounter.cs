@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Match3.UI.Animation;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace Match3.Encounter.Effect.Passive
             return new CharacterPassive
             (
                 name: name,
-                sprite: "tokens/str",
+                sprite: "icons/phantom",
                 tooltip: string.Format
                 ("A ghostly warrior battles. At the start of your turn, lose all {0} and {1} Resources. For each resource lost, transform a random token to that type.",
                 type1.AsStr(), type2.AsStr()),
@@ -32,7 +33,8 @@ namespace Match3.Encounter.Effect.Passive
                     foreach (TokenState token in tokens.Take(amt1))
                     {
                         GameEffect.BeginSequence();
-                        token.ShowResourceGain(type1, -1);
+                        GameEffect.LerpAnimation(type1.GetSpritePath(), 800f, type1.AsIPosition(), self.AsIPosition());
+                        GameEffect.LerpAnimation(type1.GetSpritePath(), 800f, self.AsIPosition(), token.AsIPosition());
                         token.PlayAnimation("wave1", 0f);
                         token.type = type1;
                         GameEffect.EndSequence();
@@ -45,7 +47,8 @@ namespace Match3.Encounter.Effect.Passive
                     foreach (TokenState token in tokens.Take(amt2))
                     {
                         GameEffect.BeginSequence();
-                        token.ShowResourceGain(type2, -1);
+                        GameEffect.LerpAnimation(type2.GetSpritePath(), 800f, type2.AsIPosition(), self.AsIPosition());
+                        GameEffect.LerpAnimation(type2.GetSpritePath(), 800f, self.AsIPosition(), token.AsIPosition());
                         token.PlayAnimation("wave1", 0f);
                         token.type = type2;
                         GameEffect.EndSequence();

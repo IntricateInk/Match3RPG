@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill KILL_COMMAND = new GameSkill
         (
             name: "Kill Command",
-            sprite: "skills/sleight",
+            sprite: "icons/kill",
             tooltip: "Destroy all tokens adjacent to Crew tokens.",
 
             energyCost: 2,
@@ -19,8 +19,6 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                TokenState token = targets[0];
-
                 GameEffect.BeginAnimationBatch();
                 foreach (TokenState other in encounter.boardState.GetTokens())
                 {
@@ -28,10 +26,7 @@ namespace Match3.Encounter.Effect.Skill
                     {
                         foreach (TokenState adj in other.GetAllAdjacent())
                         {
-                            if (adj.type == TokenType.STRENGTH || adj.type == TokenType.AGILITY)
-                            {
-                                adj.Destroy();
-                            }
+                            adj.Destroy();
                         }
                     }
                 }

@@ -31,7 +31,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive STRONG = ResourceAtStart
         (
             name: "Strong",
-            sprite: "tokens/str",
+            sprite: "icons/flex",
             type: TokenType.STRENGTH,
             amount: 1
         );
@@ -39,7 +39,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive AGILE = ResourceAtStart
         (
             name: "Agile",
-            sprite: "tokens/agi",
+            sprite: "icons/afterimage_2",
             type: TokenType.AGILITY,
             amount: 1
         );
@@ -47,7 +47,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive INTELLIGENT = ResourceAtStart
         (
             name: "Intelligent",
-            sprite: "tokens/int",
+            sprite: "icons/book_2",
             type: TokenType.STRENGTH,
             amount: 1
         );
@@ -55,7 +55,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive CHARISMATIC = ResourceAtStart
         (
             name: "Charismatic",
-            sprite: "tokens/cha",
+            sprite: "icons/smile",
             type: TokenType.CHARISMA,
             amount: 1
         );
@@ -63,7 +63,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive LUCKY = ResourceAtStart
         (
             name: "Lucky",
-            sprite: "tokens/luk",
+            sprite: "icons/fairy",
             type: TokenType.LUCK,
             amount: 1
         );
@@ -71,7 +71,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive SHARP_WEAPON = ResourceAtStart
         (
             name: "Sharp Weapon",
-            sprite: "tokens/str",
+            sprite: "icons/slice_1",
             type: TokenType.STRENGTH,
             amount: 2
         );
@@ -79,7 +79,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive FLEXIBLE = ResourceAtStart
         (
             name: "Flexible",
-            sprite: "tokens/agi",
+            sprite: "icons/flexible",
             type: TokenType.AGILITY,
             amount: 2
         );
@@ -87,7 +87,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive FEEBLE = ResourceAtStart
         (
             name: "Feeble",
-            sprite: "tokens/str",
+            sprite: "icons/weaken",
             type: TokenType.STRENGTH,
             amount: -1
         );
@@ -95,7 +95,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive SLOW = ResourceAtStart
         (
             name: "Slow",
-            sprite: "tokens/agi",
+            sprite: "icons/slow",
             type: TokenType.AGILITY,
             amount: -1
         );
@@ -103,7 +103,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive WEAK_WILLED = ResourceAtStart
         (
             name: "Weak Willed",
-            sprite: "tokens/int",
+            sprite: "icons/weak_willed",
             type: TokenType.INTELLIGENCE,
             amount: -1
         );
@@ -111,7 +111,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive REPULSIVE = ResourceAtStart
         (
             name: "Repulsive",
-            sprite: "tokens/cha",
+            sprite: "icons/shadow",
             type: TokenType.CHARISMA,
             amount: -1
         );
@@ -119,7 +119,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive UNFORTUNATE = ResourceAtStart
         (
             name: "Unfortunate",
-            sprite: "tokens/luk",
+            sprite: "icons/focus_5",
             type: TokenType.LUCK,
             amount: -1
         );

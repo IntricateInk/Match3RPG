@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive SPRINTER = new CharacterPassive
         (
             name: "Sprinter",
-            sprite: "tokens/agi",
+            sprite: "icons/boot_1",
             tooltip: string.Format("Gain 10 {0} at the start of the encounter. Lose 1 {0} at the start of each turn.", TokenType.AGILITY.AsStr()),
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

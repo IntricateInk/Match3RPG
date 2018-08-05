@@ -42,8 +42,8 @@ namespace Match3.Encounter.Effect.Passive
             );
         }
 
-        public static CharacterPassive WILDFIRE_1 = Wildfire("Small Forest Fire!", "tokens/agi", 2, 4);
-        public static CharacterPassive WILDFIRE_2 = Wildfire("Forest Fire!", "tokens/agi", 3, 5);
-        public static CharacterPassive WILDFIRE_3 = Wildfire("Blazing Forest Fire!", "tokens/agi", 3, 8);
+        public static CharacterPassive WILDFIRE_1 = Wildfire("Small Forest Fire!", "icons/fire_2", 2, 4);
+        public static CharacterPassive WILDFIRE_2 = Wildfire("Forest Fire!", "icons/fire_2", 3, 5);
+        public static CharacterPassive WILDFIRE_3 = Wildfire("Blazing Forest Fire!", "icons/fire_2", 3, 8);
     }
 }

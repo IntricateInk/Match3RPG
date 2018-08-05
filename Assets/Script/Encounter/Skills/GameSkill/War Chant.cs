@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill WAR_CHANT = new GameSkill
         (
             name: "War Chant",
-            sprite: "skills/sleight",
+            sprite: "icons/spirit_strong",
             tooltip: "Spawn 1 Heroic Spirit.",
 
             energyCost: 3,

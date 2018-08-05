@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive IRREGULAR = new CharacterPassive
         (
             name: "Irregular",
-            sprite: "tokens/int",
+            sprite: "icons/irregular",
             tooltip: "At the start of each turn, spawn 3 Unstable.",
 
             OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill ENRAGE = new GameSkill
         (
             name: "Enrage",
-            sprite: "skills/bash",
+            sprite: "icons/angry",
             tooltip: "Apply Bloodlust.",
 
             energyCost: 2,

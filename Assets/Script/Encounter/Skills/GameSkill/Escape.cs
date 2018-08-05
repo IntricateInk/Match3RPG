@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill ESCAPE = new GameSkill
         (
             name: "Escape",
-            sprite: "skills/bash",
+            sprite: "icons/boot_2",
             tooltip: "Swap any two tokens.",
 
             energyCost: 3,

@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill TO_ARMS = new GameSkill
         (
             name: "To Arms",
-            sprite: "skills/sleight",
+            sprite: "icons/rally",
             tooltip: "Gain (but not destroy) all STR and AGI tokens adjacent to Crew tokens.",
 
             energyCost: 3,

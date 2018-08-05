@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive LACKEY = new CharacterPassive
         (
             name: "Lackey",
-            sprite: "tokens/int",
+            sprite: "icons/rally",
             tooltip: "At the the encounter, spawn 1 Crew.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

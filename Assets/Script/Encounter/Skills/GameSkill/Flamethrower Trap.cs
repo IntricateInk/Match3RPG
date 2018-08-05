@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill ENGINEER_FLAMETHROWER_TRAP = new GameSkill
         (
             name: "Set Flamethrower Trap",
-            sprite: "tokens/int",
+            sprite: "icons/part_1",
             tooltip: "Place a Flamethrower Trap on the target tile.",
 
             energyCost: 4,

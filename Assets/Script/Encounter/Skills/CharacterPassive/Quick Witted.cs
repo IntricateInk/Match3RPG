@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Passive
         public static CharacterPassive QUICK_WITTED = new CharacterPassive
         (
             name: "Quick Witted",
-            sprite: "tokens/int",
+            sprite: "icons/glint",
             tooltip: string.Format("Gain 10 {0} at the start of the encounter. Lose 1 {0} at the start of each turn.", TokenType.INTELLIGENCE.AsStr()),
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

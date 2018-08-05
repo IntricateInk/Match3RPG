@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill UNHOLY_BASH = new GameSkill
         (
             name: "Unholy Bash",
-            sprite: "skills/bash",
+            sprite: "icons/unholy_fist",
             tooltip: "Destroy a token. If it was a Zombie, destroy a 3x3 block around it instead.",
 
             energyCost: 2,
@@ -21,7 +21,7 @@ namespace Match3.Encounter.Effect.Skill
             {
                 TokenState token = targets[0];
 
-                if (token.Passives.Contains(TargetPassive.ZOMBIE))
+                if (!token.Passives.Contains(TargetPassive.ZOMBIE))
                 {
                     token.Destroy();
                 }

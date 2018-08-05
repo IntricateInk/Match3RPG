@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill GESTURE = new GameSkill
         (
             name: "Gesture",
-            sprite: "skills/bash",
+            sprite: "icons/holy_hand_2",
             tooltip: "Transform a 3x1 block of cells to CHA.",
 
             energyCost: 3,

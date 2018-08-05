@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill PART_OF_THE_PLAN = new GameSkill
         (
             name: "Part of the Plan",
-            sprite: "skills/sleight",
+            sprite: "icons/plan",
             tooltip: "Try to match all tokens.",
 
             energyCost: 1,

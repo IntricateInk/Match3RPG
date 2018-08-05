@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill INFLUENCE = new GameSkill
         (
             name: "Influence",
-            sprite: "skills/sleight",
+            sprite: "icons/convince",
             tooltip: "Select a tile. Transform it into a Charisma Tile.",
 
             energyCost: 1,

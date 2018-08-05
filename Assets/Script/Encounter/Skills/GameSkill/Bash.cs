@@ -9,7 +9,7 @@ namespace Match3.Encounter.Effect.Skill
         public static GameSkill BASH = new GameSkill
         (
             name: "Bash",
-            sprite: "skills/bash",
+            sprite: "icons/fist_1",
             tooltip: "Destroy a 3x3 block of cells.",
 
             energyCost: 3,
