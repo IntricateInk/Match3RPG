@@ -71,7 +71,7 @@ public class UIEventDisplay : MonoBehaviour {
 
         if (EventState.gameEvent == null)
         {
-            throw new System.Exception("gameEvent not found in UIEventPrompt");
+            throw new System.Exception("gameEvent is null in UIEventPrompt");
         }
 
         this.gameEvent = EventState.gameEvent;
