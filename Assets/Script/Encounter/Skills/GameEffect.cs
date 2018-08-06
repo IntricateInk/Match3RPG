@@ -37,7 +37,32 @@ namespace Match3.Encounter.Effect
         {
             UIAnimationManager.AddAnimation(new UIAnimation_EndSequence());
         }
-        
+
+        internal static void RotateArea(BoardState board, int x_min, int y_min, int x_max, int y_max)
+        {
+            int size_x = x_max - x_min + 1;
+            int size_y = y_max - y_min + 1;
+
+            int r_x_min = size_x / 2 - 1;
+            int r_y_min = size_y / 2 - 1;
+            int r_x_max = size_x / 2 - 1;
+            int r_y_max = size_y / 2 - 1;
+
+            if (size_x % 2 == 0) r_x_max++;
+            if (size_y % 2 == 0) r_y_max++;
+
+            GameEffect.BeginAnimationBatch();
+            while (r_x_min >= 0 && r_y_min >= 0 && r_x_max >= 0 && r_y_max >= 0)
+            {
+                GameEffect.LoopSwap(board.GetTileBox(r_x_min, r_y_min, r_x_max, r_y_max), r_x_max - r_x_min);
+                r_x_min--;
+                r_y_min--;
+                r_x_max++;
+                r_y_max++;
+            }
+            GameEffect.EndAnimationBatch();
+        }
+
         internal static void LerpAnimation(string sprite, float speed, IPosition p0, IPosition p1, float play_time)
         {
             UIAnimationManager.AddAnimation(
@@ -48,6 +73,11 @@ namespace Match3.Encounter.Effect
         {
             UIAnimationManager.AddAnimation(
                 new UIAnimation_LerpIcon(sprite, speed, p0, p1));
+        }
+
+        internal static void LineAnimation(string name, IPosition target1, IPosition target2, float play_time)
+        {
+            UIAnimationManager.AddAnimation(new UIAnimation_LineAnimation(name, target1, target2), play_time);
         }
 
         internal static void LineAnimation(string name, CharacterPassive target1, TokenState target2, float play_time)
@@ -100,6 +130,25 @@ namespace Match3.Encounter.Effect
         {
             encounter.boardState.DoTokenFall();
             encounter.boardState.DoMatch();
+        }
+
+        internal static void LoopSwap(IEnumerable<TileState> tiles, int displace = 1)
+        {
+            TileState[] tiles_arr = tiles.ToArray();
+            TokenState[] tokens = new TokenState[tiles_arr.Length];
+
+            for (int i = 0; i < tiles_arr.Length; i++)
+            {
+                tokens[(i + displace) % tiles_arr.Length] = tiles_arr[i].token;
+            }
+
+            GameEffect.BeginAnimationBatch();
+            for (int j = 0; j < tiles_arr.Length; j++)
+            {
+                TileState tile = tiles_arr[j];
+                tokens[j].SetPosition(tile.x, tile.y);
+            }
+            GameEffect.EndAnimationBatch();
         }
 
         internal static List<TokenState> Chain(TokenState token, TargetPassive buff)

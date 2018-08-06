@@ -11,7 +11,7 @@ namespace Match3.Encounter.Effect.Skill
         (
             name: "Lifelink",
             sprite: "icons/unholy_grip",
-            tooltip: "Destroy a token. Chain to Zombies and destroy them.",
+            tooltip: "Destroy a token. Chain to Zombies and destroy them. Gain 1 Energy for every two tokens destroyed.",
 
             energyCost: 2,
 
@@ -22,9 +22,11 @@ namespace Match3.Encounter.Effect.Skill
                 TokenState token = targets[0];
                 List<TokenState> tokens = GameEffect.Chain(token, TargetPassive.ZOMBIE);
 
+                encounter.playerState.Energy += tokens.Count / 2;
+                
                 foreach (TokenState other in tokens)
                 {
-                    other.PlayAnimation("heartbeat");
+                    other.PlayAnimation("heartbeat", 0.1f);
                     other.Destroy();
                 }
             }

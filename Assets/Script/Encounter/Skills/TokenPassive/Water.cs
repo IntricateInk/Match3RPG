@@ -11,19 +11,13 @@ namespace Match3.Encounter.Effect.Passive
         (
             name: "Water",
             sprite: "icons/water",
-            tooltip: "At the end of each turn, remove from this token and blank it, then transfer to 3 tokens below it. Dispels Wildfire",
+            tooltip: "At the end of each turn, remove from this token and blank it, then transfer to 3 tokens below it.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
                 TokenState token = targets[0];
 
                 token.AttachAnimation("water");
-
-                if (token.Passives.Contains(TargetPassive.WILDFIRE))
-                {
-                    token.RemoveBuff(TargetPassive.WATER);
-                    token.RemoveBuff(TargetPassive.WILDFIRE);
-                }
             },
 
             OnRemovePassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
@@ -35,9 +29,10 @@ namespace Match3.Encounter.Effect.Passive
             {
                 TokenState token = targets[0];
 
+                GameEffect.BeginAnimationBatch();
                 token.PlayAnimation("wave1", 0f);
                 token.type = TokenType.BLANK;
-
+                
                 for (int dx = -1; dx <= 1; dx++)
                 {
                     TokenState adj = token.GetAdjacent(dx, -1);
@@ -47,6 +42,7 @@ namespace Match3.Encounter.Effect.Passive
                         adj.PlayAnimation("wave1", 0.1f);
                     }
                 }
+                GameEffect.EndAnimationBatch();
 
                 token.RemoveBuff(TargetPassive.WATER);
             }

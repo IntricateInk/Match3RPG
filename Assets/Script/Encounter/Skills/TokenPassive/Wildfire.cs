@@ -11,19 +11,13 @@ namespace Match3.Encounter.Effect.Passive
         (
             name: "Wildfire",
             sprite: "icons/fire_2",
-            tooltip: "At the end of each turn, destroy this token and spread to adjacent tokens. Dispels Water.",
+            tooltip: "At the end of each turn, destroy this token and spread to adjacent tokens.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
                 TokenState token = targets[0];
 
                 token.AttachAnimation("explosion1");
-
-                if (token.Passives.Contains(TargetPassive.WATER))
-                {
-                    token.RemoveBuff(TargetPassive.WATER);
-                    token.RemoveBuff(TargetPassive.WILDFIRE);
-                }
             },
 
             OnRemovePassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

@@ -28,7 +28,7 @@ namespace Match3.Encounter
 
             this.fillBoard();
         }
-
+        
         internal void DoMatch()
         {
             UIAnimationManager.AddAnimation(new UIAnimation_BeginBatch());
@@ -99,9 +99,7 @@ namespace Match3.Encounter
 
                         if (token != null)
                         {
-                            UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(token.uid, x, first_empty));
-
-                            token.SetPosition(x, first_empty, false);
+                            token.SetPosition(x, first_empty);
                             first_empty += 1;
                         }
                     }
@@ -233,6 +231,47 @@ namespace Match3.Encounter
             }
 
             return cols;
+        }
+
+        internal IEnumerable<TileState> GetTileBox(int x_min, int y_min, int x_max, int y_max)
+        {
+            int x, y;
+
+            if (y_max < sizeY)
+            {
+                y = y_max;
+                for (int x_loop = Mathf.Max(0, x_min); x_loop <= Mathf.Min(sizeX - 1, x_max); x_loop++)
+                {
+                    yield return this.tiles[x_loop, y];
+                }
+            }
+
+            if (x_max < sizeX)
+            {
+                x = x_max;
+                for (int y_loop = Mathf.Min(sizeY - 1, y_max - 1); y_loop >= Mathf.Max(0, y_min); y_loop--)
+                {
+                    yield return this.tiles[x, y_loop];
+                }
+            }
+
+            if (y_min >= 0)
+            {
+                y = y_min;
+                for (int x_loop = Mathf.Min(sizeX - 1, x_max - 1); x_loop >= Mathf.Max(0, x_min); x_loop--)
+                {
+                    yield return this.tiles[x_loop, y];
+                }
+            }
+
+            if (x_min >= 0)
+            {
+                x = x_min;
+                for (int y_loop = Mathf.Max(0, y_min + 1); y_loop <= Mathf.Min(sizeY - 1, y_max - 1); y_loop++)
+                {
+                    yield return this.tiles[x, y_loop];
+                }
+            }
         }
 
         internal TokenState GetToken(int x, int y)

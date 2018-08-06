@@ -123,20 +123,18 @@ namespace Match3.Encounter
         internal void Swap(int dx, int dy) { Swap(GetAdjacent(dx, dy)); }
         internal void Swap(TokenState other)
         {
-            UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(this.uid, other.x, other.y));
-            UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(other.uid, this.x, this.y));
-
             int this_x = this.x;
             int this_y = this.y;
 
-            this.SetPosition(other.x, other.y, false);
-            other.SetPosition(this_x, this_y, false);
+            this.SetPosition(other.x, other.y);
+            other.SetPosition(this_x, this_y);
         }
 
-        internal void SetPosition(int new_x, int new_y, bool doAnimate = true)
+        internal void SetPosition(int new_x, int new_y)
         {
-            if (doAnimate)
-                UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(this.uid, new_x, new_y));
+            if (this.IsDestroyed) return;
+            
+            UIAnimationManager.AddAnimation(new UIAnimation_MoveToken(this.uid, new_x, new_y));
             
             this.x = new_x;
             this.y = new_y;
@@ -161,8 +159,7 @@ namespace Match3.Encounter
         internal void Destroy()
         {
             if (this.IsDestroyed) return;
-
-            this.IsDestroyed = true;
+            
             board.tiles[this.x, this.y].token = null;
             
             foreach (TargetPassive passive in this.Passives.ToArray())
@@ -175,11 +172,14 @@ namespace Match3.Encounter
             {
                 passive.OnDestroy(board.encounter, new List<TokenState>() { this });
             }
+            this.IsDestroyed = true;
             UIAnimationManager.AddAnimation(new UIInstruction_RemoveToken(this.uid));
         }
         
         internal void ApplyBuff(TargetPassive buff)
         {
+            if (this.IsDestroyed) return;
+
             if (!this.Passives.Contains(buff))
             {
                 this.Passives.Add(buff);
@@ -190,6 +190,8 @@ namespace Match3.Encounter
         
         internal void RemoveBuff(TargetPassive buff)
         {
+            if (this.IsDestroyed) return;
+
             if (this.Passives.Contains(buff))
             {
                 buff.OnRemovePassive(this.board.encounter, new List<TokenState>() { this });
@@ -227,12 +229,16 @@ namespace Match3.Encounter
 
         internal void AttachAnimation(string animation_name, float normalized_size = 1f)
         {
+            if (this.IsDestroyed) return;
+
             UIAnimation anim = new UIAnimation_ApplyTargetAnimation(animation_name, this, normalized_size);
             UIAnimationManager.AddAnimation(anim);
         }
 
         internal void DettachAnimation(string animation_name)
         {
+            if (this.IsDestroyed) return;
+
             UIAnimation anim = new UIAnimation_RemoveTargetAnimation(animation_name, this);
             UIAnimationManager.AddAnimation(anim);
         }

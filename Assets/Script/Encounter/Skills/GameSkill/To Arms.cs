@@ -13,14 +13,12 @@ namespace Match3.Encounter.Effect.Skill
             sprite: "icons/rally",
             tooltip: "Gain (but not destroy) all STR and AGI tokens adjacent to Crew tokens.",
 
-            energyCost: 3,
+            energyCost: 2,
 
             selectBehavior: SelectBehavior.None,
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                TokenState token = targets[0];
-
                 GameEffect.BeginAnimationBatch();
                 foreach (TokenState other in encounter.boardState.GetTokens())
                 {

@@ -18,11 +18,11 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                TokenState token = targets[0];
+                TokenType type = targets[0].type;
 
                 foreach (TokenState other in encounter.boardState.GetTokens())
                 {
-                    if (other.type == token.type)
+                    if (other.type == type)
                         other.type = TokenType.CHARISMA;
                 }
             }

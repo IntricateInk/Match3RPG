@@ -16,7 +16,7 @@ namespace Match3.Encounter.Effect.Passive
                 name: name,
                 sprite: "icons/water",
                 tooltip: string.Format
-                ("You are drowning! At the start of each turn, spawn {0} Water buffs randomly on the board.",
+                ("You are drowning! At the start of each turn, spawn {0} Water buffs randomly on the board. Then, rotate the board clockwise.",
                 water_per_turn),
 
                 OnTurnStart: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
@@ -30,6 +30,8 @@ namespace Match3.Encounter.Effect.Passive
                         token.ApplyBuff(TargetPassive.WATER);
                     }
                     GameEffect.EndAnimationBatch();
+
+                    GameEffect.RotateArea(encounter.boardState, 0, 0, encounter.boardState.sizeX - 1, encounter.boardState.sizeY - 1);
                 }
             );
         }

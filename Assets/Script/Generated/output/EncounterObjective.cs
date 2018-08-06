@@ -16,9 +16,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -20,
-            ExpReward: -10,
-            TrophyReward: new string[] {},
+			GoldReward: 0,
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Wound"
+},
             
             MinStrength: 0,
             MaxStrength: 10, 
@@ -50,7 +52,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 50,
+            ExpReward: 25,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -83,7 +85,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 50,
+            ExpReward: 25,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -116,7 +118,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 50,
+            ExpReward: 25,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -182,7 +184,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 50,
+            ExpReward: 25,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -215,7 +217,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 100,
+            ExpReward: 50,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -247,7 +249,7 @@ namespace Match3.Encounter.Encounter
 			
 			type: "BONUS",
 			
-			GoldReward: 100,
+			GoldReward: 50,
             ExpReward: 0,
             TrophyReward: new string[] {},
             
@@ -281,7 +283,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 100,
+            ExpReward: 35,
             TrophyReward: new string[] {},
             
             MinStrength: 9,
@@ -314,7 +316,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 100,
+            ExpReward: 35,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -347,7 +349,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 100,
+            ExpReward: 35,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -380,7 +382,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 100,
+            ExpReward: 35,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -413,7 +415,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 100,
+            ExpReward: 35,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -446,8 +448,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Unlucky"
+},
             
             MinStrength: 0,
             MaxStrength: 2, 
@@ -479,8 +483,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Unlucky"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -512,8 +518,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Unlucky"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -545,8 +553,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Unlucky"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -578,8 +588,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Unlucky"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -611,8 +623,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -20,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Cursed"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -643,9 +657,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -50,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+			GoldReward: 0,
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Careless"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -676,9 +692,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -50,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+			GoldReward: -25,
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Careless"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -710,8 +728,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: -50,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Careless"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -776,7 +796,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 70,
+            ExpReward: 40,
             TrophyReward: new string[] {},
             
             MinStrength: 35,
@@ -809,7 +829,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 100,
+            ExpReward: 50,
             TrophyReward: new string[] {},
             
             MinStrength: 30,
@@ -974,8 +994,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -25,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Disfigured"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1007,8 +1029,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -40,
-            TrophyReward: new string[] {},
+            ExpReward: -15,
+            TrophyReward: new string[] {
+"Disfigured"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1040,8 +1064,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -55,
-            TrophyReward: new string[] {},
+            ExpReward: -30,
+            TrophyReward: new string[] {
+"Disfigured"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1172,8 +1198,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: -20,
+            TrophyReward: new string[] {
+"Slow"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1304,8 +1332,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: -20,
+            TrophyReward: new string[] {
+"Feeble"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1337,8 +1367,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: -30,
+            TrophyReward: new string[] {
+"Feeble"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1370,8 +1402,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: -40,
+            TrophyReward: new string[] {
+"Feeble"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1403,8 +1437,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -80,
-            TrophyReward: new string[] {},
+            ExpReward: -20,
+            TrophyReward: new string[] {
+"Lethargic"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1436,8 +1472,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+            ExpReward: -30,
+            TrophyReward: new string[] {
+"Lethargic"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1469,8 +1507,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -120,
-            TrophyReward: new string[] {},
+            ExpReward: -40,
+            TrophyReward: new string[] {
+"Lethargic"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1501,9 +1541,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -40,
+			GoldReward: -20,
             ExpReward: 0,
-            TrophyReward: new string[] {},
+            TrophyReward: new string[] {
+"Distracted"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1534,9 +1576,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -60,
+			GoldReward: -30,
             ExpReward: 0,
-            TrophyReward: new string[] {},
+            TrophyReward: new string[] {
+"Distracted"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1567,9 +1611,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -80,
+			GoldReward: -40,
             ExpReward: 0,
-            TrophyReward: new string[] {},
+            TrophyReward: new string[] {
+"Distracted"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1601,7 +1647,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 100,
+            ExpReward: 35,
             TrophyReward: new string[] {},
             
             MinStrength: 30,
@@ -1634,7 +1680,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 120,
+            ExpReward: 45,
             TrophyReward: new string[] {},
             
             MinStrength: 35,
@@ -1667,7 +1713,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 140,
+            ExpReward: 55,
             TrophyReward: new string[] {},
             
             MinStrength: 40,
@@ -1700,8 +1746,10 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 60,
-            TrophyReward: new string[] {},
+            ExpReward: 15,
+            TrophyReward: new string[] {
+"Keen Mind"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1733,8 +1781,10 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 80,
-            TrophyReward: new string[] {},
+            ExpReward: 25,
+            TrophyReward: new string[] {
+"Keen Mind"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1766,8 +1816,10 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 100,
-            TrophyReward: new string[] {},
+            ExpReward: 35,
+            TrophyReward: new string[] {
+"Keen Mind"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1798,9 +1850,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "BONUS",
 			
-			GoldReward: 100,
+			GoldReward: 30,
             ExpReward: 0,
-            TrophyReward: new string[] {},
+            TrophyReward: new string[] {
+"Lucky Die"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -1831,8 +1885,8 @@ namespace Match3.Encounter.Encounter
 			
 			type: "WIN",
 			
-			GoldReward: 20,
-            ExpReward: 80,
+			GoldReward: 5,
+            ExpReward: 20,
             TrophyReward: new string[] {},
             
             MinStrength: 25,
@@ -1864,8 +1918,8 @@ namespace Match3.Encounter.Encounter
 			
 			type: "WIN",
 			
-			GoldReward: 25,
-            ExpReward: 100,
+			GoldReward: 10,
+            ExpReward: 30,
             TrophyReward: new string[] {},
             
             MinStrength: 30,
@@ -1897,8 +1951,8 @@ namespace Match3.Encounter.Encounter
 			
 			type: "WIN",
 			
-			GoldReward: 30,
-            ExpReward: 120,
+			GoldReward: 15,
+            ExpReward: 40,
             TrophyReward: new string[] {},
             
             MinStrength: 35,
@@ -1931,7 +1985,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 80,
+            ExpReward: 30,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -1964,7 +2018,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 100,
+            ExpReward: 45,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -1997,7 +2051,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 120,
+            ExpReward: 60,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -2030,8 +2084,10 @@ namespace Match3.Encounter.Encounter
 			type: "BONUS",
 			
 			GoldReward: 0,
-            ExpReward: 100,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Unholy Knowledge"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2053,39 +2109,6 @@ namespace Match3.Encounter.Encounter
         );
 
 
-        public static EncounterObjective zombie_bonus_cha = new EncounterObjective
-        (
-			uid: "zombie_bonus_cha",
-            name: "Convince the zombies?",
-            sprite: "tokens/cha",
-            tooltip: "So um, I guess even the dead can communicate",
-			
-			type: "BONUS",
-			
-			GoldReward: 0,
-            ExpReward: 100,
-            TrophyReward: new string[] {},
-            
-            MinStrength: -1,
-            MaxStrength: 100, 
-			
-            MinAgility: -1,
-            MaxAgility: 100,
-
-            MinIntelligence: -1,
-            MaxIntelligence: 100,
-
-            MinCharisma: 70,
-            MaxCharisma: 99,
-
-            MinLuck: -1,
-            MaxLuck: 100,
-
-            MinTurn: -1,
-            MaxTurn: 100
-        );
-
-
         public static EncounterObjective zombie_1_stragi_lose = new EncounterObjective
         (
 			uid: "zombie_1_stragi_lose",
@@ -2095,9 +2118,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -30,
-            ExpReward: -50,
-            TrophyReward: new string[] {},
+			GoldReward: 0,
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Mired Mind"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2128,9 +2153,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -45,
-            ExpReward: -75,
-            TrophyReward: new string[] {},
+			GoldReward: 0,
+            ExpReward: -10,
+            TrophyReward: new string[] {
+"Mired Mind"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2161,9 +2188,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -60,
-            ExpReward: -100,
-            TrophyReward: new string[] {},
+			GoldReward: 0,
+            ExpReward: -20,
+            TrophyReward: new string[] {
+"Mired Mind"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2195,7 +2224,7 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -20,
+            ExpReward: 0,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -2251,72 +2280,6 @@ namespace Match3.Encounter.Encounter
         );
 
 
-        public static EncounterObjective ranger_1_cha_win = new EncounterObjective
-        (
-			uid: "ranger_1_cha_win",
-            name: "Convincing",
-            sprite: "tokens/cha",
-            tooltip: "You convince the ranger to join you",
-			
-			type: "WIN",
-			
-			GoldReward: 0,
-            ExpReward: 20,
-            TrophyReward: new string[] {},
-            
-            MinStrength: -1,
-            MaxStrength: 100, 
-			
-            MinAgility: -1,
-            MaxAgility: 100,
-
-            MinIntelligence: -1,
-            MaxIntelligence: 100,
-
-            MinCharisma: 60,
-            MaxCharisma: 99,
-
-            MinLuck: -1,
-            MaxLuck: 100,
-
-            MinTurn: -1,
-            MaxTurn: 100
-        );
-
-
-        public static EncounterObjective ranger_1_int_bonus = new EncounterObjective
-        (
-			uid: "ranger_1_int_bonus",
-            name: "Perceptive",
-            sprite: "tokens/int",
-            tooltip: "You learn something from the ranger's moves",
-			
-			type: "BONUS",
-			
-			GoldReward: 0,
-            ExpReward: 40,
-            TrophyReward: new string[] {},
-            
-            MinStrength: -1,
-            MaxStrength: 100, 
-			
-            MinAgility: -1,
-            MaxAgility: 100,
-
-            MinIntelligence: 40,
-            MaxIntelligence: 99,
-
-            MinCharisma: -1,
-            MaxCharisma: 100,
-
-            MinLuck: -1,
-            MaxLuck: 100,
-
-            MinTurn: -1,
-            MaxTurn: 100
-        );
-
-
         public static EncounterObjective spiked_hole_1_str_loss = new EncounterObjective
         (
 			uid: "spiked_hole_1_str_loss",
@@ -2326,9 +2289,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -10,
-            ExpReward: -20,
-            TrophyReward: new string[] {},
+			GoldReward: 0,
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Feeble"
+},
             
             MinStrength: 0,
             MaxStrength: 25, 
@@ -2359,9 +2324,11 @@ namespace Match3.Encounter.Encounter
 			
 			type: "LOSE",
 			
-			GoldReward: -20,
-            ExpReward: -40,
-            TrophyReward: new string[] {},
+			GoldReward: -15,
+            ExpReward: -10,
+            TrophyReward: new string[] {
+"Feeble"
+},
             
             MinStrength: 0,
             MaxStrength: 25, 
@@ -2393,8 +2360,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: -30,
-            ExpReward: -60,
-            TrophyReward: new string[] {},
+            ExpReward: -20,
+            TrophyReward: new string[] {
+"Feeble"
+},
             
             MinStrength: 0,
             MaxStrength: 25, 
@@ -2459,7 +2428,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 50,
+            ExpReward: 35,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -2492,7 +2461,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 75,
+            ExpReward: 45,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -2525,8 +2494,10 @@ namespace Match3.Encounter.Encounter
 			type: "BONUS",
 			
 			GoldReward: 0,
-            ExpReward: 20,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Trapper's Tools"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2591,7 +2562,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 40,
+            ExpReward: 30,
             TrophyReward: new string[] {},
             
             MinStrength: 25,
@@ -2624,7 +2595,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 60,
+            ExpReward: 40,
             TrophyReward: new string[] {},
             
             MinStrength: 30,
@@ -2657,7 +2628,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 80,
+            ExpReward: 50,
             TrophyReward: new string[] {},
             
             MinStrength: 35,
@@ -2690,8 +2661,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -40,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Hydrophobia"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2723,8 +2696,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -60,
-            TrophyReward: new string[] {},
+            ExpReward: -20,
+            TrophyReward: new string[] {
+"Hydrophobia"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2756,8 +2731,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -80,
-            TrophyReward: new string[] {},
+            ExpReward: -40,
+            TrophyReward: new string[] {
+"Hydrophobia"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2789,7 +2766,7 @@ namespace Match3.Encounter.Encounter
 			type: "BONUS",
 			
 			GoldReward: 100,
-            ExpReward: 30,
+            ExpReward: 0,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -2822,7 +2799,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 50,
+            ExpReward: 25,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -2855,7 +2832,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 80,
+            ExpReward: 35,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -2888,7 +2865,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 110,
+            ExpReward: 45,
             TrophyReward: new string[] {},
             
             MinStrength: -1,
@@ -2921,8 +2898,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -5,
-            TrophyReward: new string[] {},
+            ExpReward: 0,
+            TrophyReward: new string[] {
+"Drained"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2955,7 +2934,9 @@ namespace Match3.Encounter.Encounter
 			
 			GoldReward: 0,
             ExpReward: -10,
-            TrophyReward: new string[] {},
+            TrophyReward: new string[] {
+"Drained"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -2987,8 +2968,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: -15,
-            TrophyReward: new string[] {},
+            ExpReward: -20,
+            TrophyReward: new string[] {
+"Drained"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -3021,7 +3004,9 @@ namespace Match3.Encounter.Encounter
 			
 			GoldReward: 50,
             ExpReward: 50,
-            TrophyReward: new string[] {},
+            TrophyReward: new string[] {
+"Shiny Shoes"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -3119,7 +3104,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 0,
+            ExpReward: 30,
             TrophyReward: new string[] {},
             
             MinStrength: 25,
@@ -3152,7 +3137,7 @@ namespace Match3.Encounter.Encounter
 			type: "WIN",
 			
 			GoldReward: 0,
-            ExpReward: 0,
+            ExpReward: 60,
             TrophyReward: new string[] {},
             
             MinStrength: 35,
@@ -3185,8 +3170,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: 0,
-            TrophyReward: new string[] {},
+            ExpReward: -20,
+            TrophyReward: new string[] {
+"Dull"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 
@@ -3218,8 +3205,10 @@ namespace Match3.Encounter.Encounter
 			type: "LOSE",
 			
 			GoldReward: 0,
-            ExpReward: 0,
-            TrophyReward: new string[] {},
+            ExpReward: -40,
+            TrophyReward: new string[] {
+"Dull"
+},
             
             MinStrength: -1,
             MaxStrength: 100, 

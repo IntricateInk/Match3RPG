@@ -12,7 +12,7 @@ namespace Match3.Encounter.Effect.Skill
             sprite: "icons/holy_hand_2",
             tooltip: "Transform a 3x1 block of cells to CHA.",
 
-            energyCost: 3,
+            energyCost: 2,
 
             selectBehavior: SelectBehavior.Single,
 

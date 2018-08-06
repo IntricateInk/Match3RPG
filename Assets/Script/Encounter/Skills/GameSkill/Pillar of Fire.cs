@@ -21,13 +21,18 @@ namespace Match3.Encounter.Effect.Skill
             {
                 TokenState token = targets[0];
 
-                if (token.Passives.Contains(TargetPassive.WILDFIRE))
+                if (!token.Passives.Contains(TargetPassive.WILDFIRE))
                 {
                     token.Destroy();
                 } else
                 {
+                    GameEffect.BeginAnimationBatch();
                     foreach (TokenState col in encounter.boardState.GetTokenCol(token.x))
+                    {
+                        col.PlayAnimation("fire2");
                         col.Destroy();
+                    }
+                    GameEffect.EndAnimationBatch();
                 }
             }
         );

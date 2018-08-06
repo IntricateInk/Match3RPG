@@ -34,10 +34,12 @@ namespace Match3.Encounter
         {
             if (IsBlockInput) return;
 
-            if (isSelected && !this.selectedTokens.Contains(selected))
-                this.selectedTokens.Add(selected);
-            else if (!isSelected && this.selectedTokens.Contains(selected))
+            if (this.selectedTokens.Contains(selected)) {
                 this.selectedTokens.Remove(selected);
+            } else if (isSelected && !this.selectedTokens.Contains(selected))
+            {
+                this.selectedTokens.Add(selected);
+            }
 
             selected.isSelected = isSelected;
         }

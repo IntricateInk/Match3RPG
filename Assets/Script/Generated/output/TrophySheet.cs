@@ -740,7 +740,7 @@ namespace Match3.Character
 			upgrades: new string[] 
 			{
 			
-"ITEM_BERSERKER_1",
+"Raw Power",
 "Fast Hands",
 "Combat Training"
 
@@ -749,7 +749,7 @@ namespace Match3.Character
 		);
 
 		public static TrophySheet ITEM_BERSERKER_1 = new TrophySheet(
-			name: "ITEM_BERSERKER_1",
+			name: "Raw Power",
 			sprite: "tokens/agi",
 			tooltip: @"",
 			
@@ -833,7 +833,7 @@ namespace Match3.Character
 			upgrades: new string[] 
 			{
 			
-"ITEM_JESTER_1",
+"Jester's Overalls",
 "Emblem"
 
 			}
@@ -841,7 +841,7 @@ namespace Match3.Character
 		);
 
 		public static TrophySheet ITEM_JESTER_1 = new TrophySheet(
-			name: "ITEM_JESTER_1",
+			name: "Jester's Overalls",
 			sprite: "tokens/agi",
 			tooltip: @"",
 			

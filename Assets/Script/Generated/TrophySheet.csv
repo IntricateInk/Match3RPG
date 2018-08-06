@@ -21,11 +21,11 @@ CLASS_NOBLE,Emblem,tokens/agi,,100,"Bribe, Gesture, Articulate",Charismatic,"Gol
 ITEM_NOBLE_1,Golden Tongue,tokens/agi,,35,"Persuade, Sympathise",,Emblem
 CLASS_SWINDLER,Lucky Die,tokens/agi,,100,"Switcharoo, Alternative Perspective",Gambler's Gait,"Incense, Fast Hands, Emblem"
 ITEM_SWINDLER_1,Incense,tokens/agi,,35,"Heady Fumes, Divine",,Lucky Die
-CLASS_BERSERKER,Bandana,tokens/agi,,100,"Shove, Enrage, Smash",Berserking,"ITEM_BERSERKER_1, Fast Hands, Combat Training"
-ITEM_BERSERKER_1,ITEM_BERSERKER_1,tokens/agi,,35,Slam,Sprinter,Bandana
+CLASS_BERSERKER,Bandana,tokens/agi,,100,"Shove, Enrage, Smash",Berserking,"Raw Power, Fast Hands, Combat Training"
+ITEM_BERSERKER_1,Raw Power,tokens/agi,,35,Slam,Sprinter,Bandana
 CLASS_STRATEGIST,Strategist,tokens/agi,,100,Part of the Plan,Planned,"Fast Hands, Keen Mind"
-CLASS_JESTER,Funny Hat,tokens/agi,,70,Tumble,Irregular,"ITEM_JESTER_1, Emblem"
-ITEM_JESTER_1,ITEM_JESTER_1,tokens/agi,,35,Backflip,Lithe,Funny Hat
+CLASS_JESTER,Funny Hat,tokens/agi,,70,Tumble,Irregular,"Jester's Overalls, Emblem"
+ITEM_JESTER_1,Jester's Overalls,tokens/agi,,35,Backflip,Lithe,Funny Hat
 SHOP_ITEM_1,Sharp Weapon,tokens/agi,,0,,Sharp Weapon,
 SHOP_ITEM_2,Flexible,tokens/agi,,0,,Flexible,
 SHOP_ITEM_3,Shiny Armor,tokens/agi,,0,,Shiny Armor,

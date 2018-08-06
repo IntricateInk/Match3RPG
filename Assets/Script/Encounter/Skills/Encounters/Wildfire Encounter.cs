@@ -22,9 +22,7 @@ namespace Match3.Encounter.Effect.Passive
 
                     List<TokenState> tokens = encounter.boardState.GetTokens();
                     tokens.Shuffle();
-
-                    GameEffect.BeginAnimationBatch();
-
+                    
                     foreach (TokenState token in tokens.Take(lives))
                     {
                         token.ApplyBuff(TargetPassive.CREW);
@@ -49,8 +47,6 @@ namespace Match3.Encounter.Effect.Passive
                         n--;
                         if (n < 0) break;
                     }
-
-                    GameEffect.EndAnimationBatch();
                 }
             );
         }

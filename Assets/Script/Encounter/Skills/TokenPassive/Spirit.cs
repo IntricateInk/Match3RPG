@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         (
             name: "Spirit",
             sprite: "icons/spirit",
-            tooltip: "When applied, blank the token. At the end of each turn, if on a tile with Spirit Catcher, destroy this token and gain 20 INT and 20 CHA.",
+            tooltip: "When applied, blank the token. At the end of each turn, if on a tile with Spirit Catcher, destroy this token and gain 12 INT and 12 CHA.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
@@ -28,11 +28,11 @@ namespace Match3.Encounter.Effect.Passive
                 TokenState token = targets[0];
                 if (token.tile.Passives.Contains(TargetPassive.SPIRIT_CATCHER))
                 {
-                    encounter.playerState.GainResource(TokenType.INTELLIGENCE, 20);
-                    encounter.playerState.GainResource(TokenType.CHARISMA, 20);
+                    encounter.playerState.GainResource(TokenType.INTELLIGENCE, 12);
+                    encounter.playerState.GainResource(TokenType.CHARISMA, 12);
                     targets[0].PlayAnimation("beam1");
-                    targets[0].ShowResourceGain(TokenType.INTELLIGENCE, 20);
-                    targets[0].ShowResourceGain(TokenType.CHARISMA, 20);
+                    targets[0].ShowResourceGain(TokenType.INTELLIGENCE, 12);
+                    targets[0].ShowResourceGain(TokenType.CHARISMA, 12);
                     targets[0].Destroy();
                 }
             }

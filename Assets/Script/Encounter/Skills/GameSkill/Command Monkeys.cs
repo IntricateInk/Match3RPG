@@ -12,7 +12,7 @@ namespace Match3.Encounter.Effect.Skill
         (
             name: "Command Monkeys",
             sprite: "icons/speak",
-            tooltip: "Select a 3x3 area and spawn 3 Monkeys.",
+            tooltip: "Select a 3x3 area and spawn 5 Monkeys.",
 
             energyCost: 2,
 
@@ -20,7 +20,7 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                GameEffect.SpawnTokenBuff(targets[0].GetSurrounding(-1, -1, 1, 1), TargetPassive.MONKEY, 3);
+                GameEffect.SpawnTokenBuff(targets[0].GetSurrounding(-1, -1, 1, 1), TargetPassive.MONKEY, 5);
             }
         );
     }

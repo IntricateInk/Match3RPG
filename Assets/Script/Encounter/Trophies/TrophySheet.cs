@@ -24,8 +24,8 @@ namespace Match3.Character
                 string passive_desc = "<size=16><b>Passives</b></size>\n";
                 foreach (string passive in this.passives)
                 {
-                    skill_desc += passive;
-                    skill_desc += "\n"; 
+                    passive_desc += passive;
+                    passive_desc += "\n"; 
                 }
 
                 return string.Format("{0}{1}\n<i><size=10>{2}</size></i>", skill_desc, passive_desc, this._tooltip);

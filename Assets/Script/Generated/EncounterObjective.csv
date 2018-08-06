@@ -1,99 +1,96 @@
 uid,name,sprite,tooltip,type,gold,exp,lst_TrophyReward,Turn_Min,Turn_Max,Str_Min,Str_Max,Agi_Min,Agi_Max,Int_Min,Int_Max,Cha_Min,Cha_Max,Luk_Min,Luk_Max
-mole_main_loss,Burried alive,tokens/agi,"You were slower than a bunch of moles, and got burried alive. RIP",LOSE,-20,-10,,-1,100,0,10,-1,100,-1,100,-1,100,-1,100
-mole_1_main_agi,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",WIN,0,50,,-1,100,-1,100,20,99,-1,100,-1,100,-1,100
-mole_2_main_agi,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",WIN,0,50,,-1,100,-1,100,30,99,-1,100,-1,100,-1,100
-mole_3_main_agi,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",WIN,0,50,,-1,100,-1,100,40,99,-1,100,-1,100,-1,100
+mole_main_loss,Burried alive,tokens/agi,"You were slower than a bunch of moles, and got burried alive. RIP",LOSE,0,0,Wound,-1,100,0,10,-1,100,-1,100,-1,100,-1,100
+mole_1_main_agi,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",WIN,0,25,,-1,100,-1,100,20,99,-1,100,-1,100,-1,100
+mole_2_main_agi,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",WIN,0,25,,-1,100,-1,100,30,99,-1,100,-1,100,-1,100
+mole_3_main_agi,Escape the moles!,tokens/agi,"Jack be nimble, Jack be quick, Jack jump over all the holes, wow there are a lot of holes.",WIN,0,25,,-1,100,-1,100,40,99,-1,100,-1,100,-1,100
 mole_1_main_cha,Befriend the Mole,tokens/cha,"Moles are friends, not food. Am I doing this right?",WIN,0,0,,-1,100,-1,100,-1,100,-1,100,50,99,-1,100
-mole_2_main_cha,Befriend the Mole,tokens/cha,"Moles are friends, not food. Am I doing this right?",WIN,0,50,,-1,100,-1,100,-1,100,-1,100,60,99,-1,100
-mole_3_main_cha,Befriend the Mole,tokens/cha,"Moles are friends, not food. Am I doing this right?",WIN,0,100,,-1,100,-1,100,-1,100,-1,100,70,99,-1,100
-mole_bonus_luk,Unearthed Treasure,tokens/luk,"Would you look at that, it's treasure!",BONUS,100,0,,-1,100,-1,100,-1,100,-1,100,-1,100,80,99
-phantom_main_agi_str_win,Ward,tokens/int,Defeat the phantom!,WIN,0,100,,-1,100,9,13,9,13,-1,100,-1,100,-1,100
-phantom_main_agi_int_win,Ward,tokens/int,Defeat the phantom!,WIN,0,100,,-1,100,-1,100,9,13,9,13,-1,100,-1,100
-phantom_main_int_cha_win,Ward,tokens/int,Defeat the phantom!,WIN,0,100,,-1,100,-1,100,-1,100,9,13,9,13,-1,100
-phantom_main_agi_luk_win,Ward,tokens/int,Defeat the phantom!,WIN,0,100,,-1,100,-1,100,9,13,-1,100,-1,100,9,13
-phantom_main_cha_luk_win,Ward,tokens/int,Defeat the phantom!,WIN,0,100,,-1,100,-1,100,-1,100,-1,100,9,13,9,13
-phantom_main_str_loss,Cursed,tokens/str,Cursed by the phantom……,LOSE,0,-100,,-1,100,0,2,-1,100,-1,100,-1,100,-1,100
-phantom_main_agi_loss,Cursed,tokens/agi,Cursed by the phantom……,LOSE,0,-100,,-1,100,-1,100,0,2,-1,100,-1,100,-1,100
-phantom_main_int_loss,Cursed,tokens/int,Cursed by the phantom……,LOSE,0,-100,,-1,100,-1,100,-1,100,0,2,-1,100,-1,100
-phantom_main_cha_loss,Cursed,tokens/cha,Cursed by the phantom……,LOSE,0,-100,,-1,100,-1,100,-1,100,-1,100,0,2,-1,100
-phantom_main_luk_loss,Cursed,tokens/luk,Cursed by the phantom……,LOSE,0,-100,,-1,100,-1,100,-1,100,-1,100,-1,100,0,2
-phantom_main_turn_loss,Haunted,tokens/luk,"You toss and turn, unable to shake off the terrible feeling",LOSE,0,-20,,5,99,-1,100,-1,100,-1,100,-1,100,-1,100
-monkey_1_loss,Robbed,tokens/agi,Robbed by monkeys…,LOSE,-50,-100,,12,99,-1,100,-1,100,-1,100,-1,100,-1,100
-monkey_2_loss,Robbed,tokens/agi,Robbed by monkeys…,LOSE,-50,-100,,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
-monkey_3_loss,Robbed,tokens/agi,Robbed by monkeys…,LOSE,-50,-100,,8,99,-1,100,-1,100,-1,100,-1,100,-1,100
+mole_2_main_cha,Befriend the Mole,tokens/cha,"Moles are friends, not food. Am I doing this right?",WIN,0,25,,-1,100,-1,100,-1,100,-1,100,60,99,-1,100
+mole_3_main_cha,Befriend the Mole,tokens/cha,"Moles are friends, not food. Am I doing this right?",WIN,0,50,,-1,100,-1,100,-1,100,-1,100,70,99,-1,100
+mole_bonus_luk,Unearthed Treasure,tokens/luk,"Would you look at that, it's treasure!",BONUS,50,0,,-1,100,-1,100,-1,100,-1,100,-1,100,80,99
+phantom_main_agi_str_win,Ward,tokens/int,Defeat the phantom!,WIN,0,35,,-1,100,9,13,9,13,-1,100,-1,100,-1,100
+phantom_main_agi_int_win,Ward,tokens/int,Defeat the phantom!,WIN,0,35,,-1,100,-1,100,9,13,9,13,-1,100,-1,100
+phantom_main_int_cha_win,Ward,tokens/int,Defeat the phantom!,WIN,0,35,,-1,100,-1,100,-1,100,9,13,9,13,-1,100
+phantom_main_agi_luk_win,Ward,tokens/int,Defeat the phantom!,WIN,0,35,,-1,100,-1,100,9,13,-1,100,-1,100,9,13
+phantom_main_cha_luk_win,Ward,tokens/int,Defeat the phantom!,WIN,0,35,,-1,100,-1,100,-1,100,-1,100,9,13,9,13
+phantom_main_str_loss,Cursed,tokens/str,Cursed by the phantom……,LOSE,0,0,Unlucky,-1,100,0,2,-1,100,-1,100,-1,100,-1,100
+phantom_main_agi_loss,Cursed,tokens/agi,Cursed by the phantom……,LOSE,0,0,Unlucky,-1,100,-1,100,0,2,-1,100,-1,100,-1,100
+phantom_main_int_loss,Cursed,tokens/int,Cursed by the phantom……,LOSE,0,0,Unlucky,-1,100,-1,100,-1,100,0,2,-1,100,-1,100
+phantom_main_cha_loss,Cursed,tokens/cha,Cursed by the phantom……,LOSE,0,0,Unlucky,-1,100,-1,100,-1,100,-1,100,0,2,-1,100
+phantom_main_luk_loss,Cursed,tokens/luk,Cursed by the phantom……,LOSE,0,0,Unlucky,-1,100,-1,100,-1,100,-1,100,-1,100,0,2
+phantom_main_turn_loss,Haunted,tokens/luk,"You toss and turn, unable to shake off the terrible feeling",LOSE,0,0,Cursed,5,99,-1,100,-1,100,-1,100,-1,100,-1,100
+monkey_1_loss,Robbed,tokens/agi,Robbed by monkeys…,LOSE,0,0,Careless,12,99,-1,100,-1,100,-1,100,-1,100,-1,100
+monkey_2_loss,Robbed,tokens/agi,Robbed by monkeys…,LOSE,-25,0,Careless,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
+monkey_3_loss,Robbed,tokens/agi,Robbed by monkeys…,LOSE,-50,0,Careless,8,99,-1,100,-1,100,-1,100,-1,100,-1,100
 monkey_1_stragi_win,Beat Up,tokens/str,SHOO,WIN,0,30,,-1,100,25,50,25,50,-1,100,-1,100,-1,100
-monkey_2_stragi_win,Beat Up,tokens/str,SHOO,WIN,0,70,,-1,100,35,45,35,45,-1,100,-1,100,-1,100
-monkey_3_stragi_win,Beat Up,tokens/str,SHOO,WIN,0,100,,-1,100,30,40,30,40,-1,100,-1,100,-1,100
+monkey_2_stragi_win,Beat Up,tokens/str,SHOO,WIN,0,40,,-1,100,35,45,35,45,-1,100,-1,100,-1,100
+monkey_3_stragi_win,Beat Up,tokens/str,SHOO,WIN,0,50,,-1,100,30,40,30,40,-1,100,-1,100,-1,100
 monkey_1_intcha_win,Tame,tokens/int,"I mean, you are almost a monkey right? Be nice.",WIN,0,10,,-1,100,-1,100,-1,100,25,50,25,50,-1,100
 monkey_2_intcha_win,Tame,tokens/int,"I mean, you are almost a monkey right? Be nice.",WIN,0,20,,-1,100,-1,100,-1,100,35,45,35,45,-1,100
 monkey_3_intcha_win,Tame,tokens/int,"I mean, you are almost a monkey right? Be nice.",WIN,0,30,,-1,100,-1,100,-1,100,30,40,30,40,-1,100
 monkey_luk_win,Lucky Break,tokens/luk,Something else caught the monkeys' attention… but what?,WIN,0,0,,-1,100,-1,100,-1,100,-1,100,-1,100,70,99
-wildfire_1_agi_loss,Burnt,tokens/agi,"You were too slow, and got burnt by the flames",LOSE,0,-25,,-1,100,-1,100,0,20,-1,100,-1,100,-1,100
-wildfire_2_agi_loss,Burnt,tokens/agi,"You were too slow, and got burnt by the flames",LOSE,0,-40,,-1,100,-1,100,0,25,-1,100,-1,100,-1,100
-wildfire_3_agi_loss,Burnt,tokens/agi,"You were too slow, and got burnt by the flames",LOSE,0,-55,,-1,100,-1,100,0,30,-1,100,-1,100,-1,100
+wildfire_1_agi_loss,Burnt,tokens/agi,"You were too slow, and got burnt by the flames",LOSE,0,0,Disfigured,-1,100,-1,100,0,20,-1,100,-1,100,-1,100
+wildfire_2_agi_loss,Burnt,tokens/agi,"You were too slow, and got burnt by the flames",LOSE,0,-15,Disfigured,-1,100,-1,100,0,25,-1,100,-1,100,-1,100
+wildfire_3_agi_loss,Burnt,tokens/agi,"You were too slow, and got burnt by the flames",LOSE,0,-30,Disfigured,-1,100,-1,100,0,30,-1,100,-1,100,-1,100
 wildfire_1_turn_win,Survive!,tokens/agi,You escape the flames! Phew.,WIN,0,20,,5,99,-1,100,-1,100,-1,100,-1,100,-1,100
 wildfire_2_turn_win,Survive!,tokens/agi,You escape the flames! Phew.,WIN,0,40,,6,99,-1,100,-1,100,-1,100,-1,100,-1,100
 wildfire_3_turn_win,Survive!,tokens/agi,You escape the flames! Phew.,WIN,0,60,,7,99,-1,100,-1,100,-1,100,-1,100,-1,100
-dark_room_main_loss,Trapped!,tokens/agi,Caught by traps in the dark room,LOSE,0,-100,,-1,100,-1,100,0,25,-1,100,-1,100,-1,100
+dark_room_main_loss,Trapped!,tokens/agi,Caught by traps in the dark room,LOSE,0,-20,Slow,-1,100,-1,100,0,25,-1,100,-1,100,-1,100
 dark_room_1_win,Escape,tokens/int,You escape the room and find a small treasure,WIN,40,40,,-1,100,-1,100,-1,100,15,99,-1,100,-1,100
 dark_room_2_win,Escape,tokens/int,You escape the room and find a small treasure,WIN,60,60,,-1,100,-1,100,-1,100,25,99,-1,100,-1,100
 dark_room_3_win,Escape,tokens/int,You escape the room and find a small treasure,WIN,80,80,,-1,100,-1,100,-1,100,35,99,-1,100,-1,100
-dark_room_1_turn_loss,Suffocate,tokens/agi,You ran out of air,LOSE,0,-100,,12,99,-1,100,-1,100,-1,100,-1,100,-1,100
-dark_room_2_turn_loss,Suffocate,tokens/agi,You ran out of air,LOSE,0,-100,,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
-dark_room_3_turn_loss,Suffocate,tokens/agi,You ran out of air,LOSE,0,-100,,8,99,-1,100,-1,100,-1,100,-1,100,-1,100
-siren_1_cha_loss,Charmed,tokens/cha,You give in to the allure of the sirens,LOSE,0,-80,,-1,100,-1,100,-1,100,-1,100,80,99,-1,100
-siren_2_cha_loss,Charmed,tokens/cha,You give in to the allure of the sirens,LOSE,0,-100,,-1,100,-1,100,-1,100,-1,100,75,99,-1,100
-siren_3_cha_loss,Charmed,tokens/cha,You give in to the allure of the sirens,LOSE,0,-120,,-1,100,-1,100,-1,100,-1,100,70,99,-1,100
-siren_1_agi_loss,Distracted,tokens/agi,"Distracted by the sirens, you slip and fall into the water",LOSE,-40,0,,-1,100,-1,100,0,10,-1,100,-1,100,-1,100
-siren_2_agi_loss,Distracted,tokens/agi,"Distracted by the sirens, you slip and fall into the water",LOSE,-60,0,,-1,100,-1,100,0,15,-1,100,-1,100,-1,100
-siren_3_agi_loss,Distracted,tokens/agi,"Distracted by the sirens, you slip and fall into the water",LOSE,-80,0,,-1,100,-1,100,0,15,-1,100,-1,100,-1,100
-siren_1_str_win,Force of Will,tokens/str,"With a strong will, you ignore the cries of the siren",WIN,0,100,,-1,100,30,99,-1,100,-1,100,-1,100,-1,100
-siren_2_str_win,Force of Will,tokens/str,"With a strong will, you ignore the cries of the siren",WIN,0,120,,-1,100,35,99,-1,100,-1,100,-1,100,-1,100
-siren_3_str_win,Force of Will,tokens/str,"With a strong will, you ignore the cries of the siren",WIN,0,140,,-1,100,40,99,-1,100,-1,100,-1,100,-1,100
-siren_1_int_win,Cunning Ploy,tokens/int,You devise a plan that will allow you to escape the sirens,WIN,0,60,,-1,100,-1,100,-1,100,20,99,-1,100,-1,100
-siren_2_int_win,Cunning Ploy,tokens/int,You devise a plan that will allow you to escape the sirens,WIN,0,80,,-1,100,-1,100,-1,100,25,99,-1,100,-1,100
-siren_3_int_win,Cunning Ploy,tokens/int,You devise a plan that will allow you to escape the sirens,WIN,0,100,,-1,100,-1,100,-1,100,30,99,-1,100,-1,100
-siren_bonus_luk,Unexpected Treasure!,tokens/luk,Treasure….?,BONUS,100,0,,-1,100,-1,100,-1,100,-1,100,-1,100,65,99
-zombie_1_str_win,Fight,tokens/str,"Through sheer force, you beat your way through the dead.",WIN,20,80,,-1,100,25,99,-1,100,-1,100,-1,100,-1,100
-zombie_2_str_win,Fight,tokens/str,"Through sheer force, you beat your way through the dead.",WIN,25,100,,-1,100,30,99,-1,100,-1,100,-1,100,-1,100
-zombie_3_str_win,Fight,tokens/str,"Through sheer force, you beat your way through the dead.",WIN,30,120,,-1,100,35,99,-1,100,-1,100,-1,100,-1,100
-zombie_1_agi_win,Escape,tokens/agi,"With nimble feet, you escape the zombies",WIN,0,80,,-1,100,-1,100,25,99,-1,100,-1,100,-1,100
-zombie_2_agi_win,Escape,tokens/agi,"With nimble feet, you escape the zombies",WIN,0,100,,-1,100,-1,100,30,99,-1,100,-1,100,-1,100
-zombie_3_agi_win,Escape,tokens/agi,"With nimble feet, you escape the zombies",WIN,0,120,,-1,100,-1,100,35,99,-1,100,-1,100,-1,100
-zombie_bonus_int,Learn by Observation,tokens/int,Your keen eyes pick up some information about the dead.,BONUS,0,100,,-1,100,-1,100,-1,100,70,99,-1,100,-1,100
-zombie_bonus_cha,Convince the zombies?,tokens/cha,"So um, I guess even the dead can communicate",BONUS,0,100,,-1,100,-1,100,-1,100,-1,100,70,99,-1,100
-zombie_1_stragi_lose,Captured by the unliving,tokens/str,The grasp of the dead does not relent,LOSE,-30,-50,,12,99,-1,100,-1,100,-1,100,-1,100,-1,100
-zombie_2_stragi_lose,Captured by the unliving,tokens/str,The grasp of the dead does not relent,LOSE,-45,-75,,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
-zombie_3_stragi_lose,Captured by the unliving,tokens/str,The grasp of the dead does not relent,LOSE,-60,-100,,8,99,-1,100,-1,100,-1,100,-1,100,-1,100
-ranger_1_turn_loss,Retreat,tokens/turn,The ranger escapes,LOSE,0,-20,,12,99,-1,100,-1,100,-1,100,-1,100,-1,100
+dark_room_1_turn_loss,Suffocate,tokens/agi,You ran out of air,LOSE,0,-20,Feeble,12,99,-1,100,-1,100,-1,100,-1,100,-1,100
+dark_room_2_turn_loss,Suffocate,tokens/agi,You ran out of air,LOSE,0,-30,Feeble,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
+dark_room_3_turn_loss,Suffocate,tokens/agi,You ran out of air,LOSE,0,-40,Feeble,8,99,-1,100,-1,100,-1,100,-1,100,-1,100
+siren_1_cha_loss,Charmed,tokens/cha,You give in to the allure of the sirens,LOSE,0,-20,Lethargic,-1,100,-1,100,-1,100,-1,100,80,99,-1,100
+siren_2_cha_loss,Charmed,tokens/cha,You give in to the allure of the sirens,LOSE,0,-30,Lethargic,-1,100,-1,100,-1,100,-1,100,75,99,-1,100
+siren_3_cha_loss,Charmed,tokens/cha,You give in to the allure of the sirens,LOSE,0,-40,Lethargic,-1,100,-1,100,-1,100,-1,100,70,99,-1,100
+siren_1_agi_loss,Distracted,tokens/agi,"Distracted by the sirens, you slip and fall into the water",LOSE,-20,0,Distracted,-1,100,-1,100,0,10,-1,100,-1,100,-1,100
+siren_2_agi_loss,Distracted,tokens/agi,"Distracted by the sirens, you slip and fall into the water",LOSE,-30,0,Distracted,-1,100,-1,100,0,15,-1,100,-1,100,-1,100
+siren_3_agi_loss,Distracted,tokens/agi,"Distracted by the sirens, you slip and fall into the water",LOSE,-40,0,Distracted,-1,100,-1,100,0,15,-1,100,-1,100,-1,100
+siren_1_str_win,Force of Will,tokens/str,"With a strong will, you ignore the cries of the siren",WIN,0,35,,-1,100,30,99,-1,100,-1,100,-1,100,-1,100
+siren_2_str_win,Force of Will,tokens/str,"With a strong will, you ignore the cries of the siren",WIN,0,45,,-1,100,35,99,-1,100,-1,100,-1,100,-1,100
+siren_3_str_win,Force of Will,tokens/str,"With a strong will, you ignore the cries of the siren",WIN,0,55,,-1,100,40,99,-1,100,-1,100,-1,100,-1,100
+siren_1_int_win,Cunning Ploy,tokens/int,You devise a plan that will allow you to escape the sirens,WIN,0,15,Keen Mind,-1,100,-1,100,-1,100,20,99,-1,100,-1,100
+siren_2_int_win,Cunning Ploy,tokens/int,You devise a plan that will allow you to escape the sirens,WIN,0,25,Keen Mind,-1,100,-1,100,-1,100,25,99,-1,100,-1,100
+siren_3_int_win,Cunning Ploy,tokens/int,You devise a plan that will allow you to escape the sirens,WIN,0,35,Keen Mind,-1,100,-1,100,-1,100,30,99,-1,100,-1,100
+siren_bonus_luk,Unexpected Treasure!,tokens/luk,Treasure….?,BONUS,30,0,Lucky Die,-1,100,-1,100,-1,100,-1,100,-1,100,65,99
+zombie_1_str_win,Fight,tokens/str,"Through sheer force, you beat your way through the dead.",WIN,5,20,,-1,100,25,99,-1,100,-1,100,-1,100,-1,100
+zombie_2_str_win,Fight,tokens/str,"Through sheer force, you beat your way through the dead.",WIN,10,30,,-1,100,30,99,-1,100,-1,100,-1,100,-1,100
+zombie_3_str_win,Fight,tokens/str,"Through sheer force, you beat your way through the dead.",WIN,15,40,,-1,100,35,99,-1,100,-1,100,-1,100,-1,100
+zombie_1_agi_win,Escape,tokens/agi,"With nimble feet, you escape the zombies",WIN,0,30,,-1,100,-1,100,25,99,-1,100,-1,100,-1,100
+zombie_2_agi_win,Escape,tokens/agi,"With nimble feet, you escape the zombies",WIN,0,45,,-1,100,-1,100,30,99,-1,100,-1,100,-1,100
+zombie_3_agi_win,Escape,tokens/agi,"With nimble feet, you escape the zombies",WIN,0,60,,-1,100,-1,100,35,99,-1,100,-1,100,-1,100
+zombie_bonus_int,Learn by Observation,tokens/int,Your keen eyes pick up some information about the dead.,BONUS,0,0,Unholy Knowledge,-1,100,-1,100,-1,100,70,99,-1,100,-1,100
+zombie_1_stragi_lose,Captured by the unliving,tokens/str,The grasp of the dead does not relent,LOSE,0,0,Mired Mind,12,99,-1,100,-1,100,-1,100,-1,100,-1,100
+zombie_2_stragi_lose,Captured by the unliving,tokens/str,The grasp of the dead does not relent,LOSE,0,-10,Mired Mind,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
+zombie_3_stragi_lose,Captured by the unliving,tokens/str,The grasp of the dead does not relent,LOSE,0,-20,Mired Mind,8,99,-1,100,-1,100,-1,100,-1,100,-1,100
+ranger_1_turn_loss,Retreat,tokens/turn,The ranger escapes,LOSE,0,0,,12,99,-1,100,-1,100,-1,100,-1,100,-1,100
 ranger_1_agi_win,Feat of Skill,tokens/agi,You best the ranger at her craft,WIN,30,60,,-1,100,-1,100,80,99,-1,100,-1,100,-1,100
-ranger_1_cha_win,Convincing,tokens/cha,You convince the ranger to join you,WIN,0,20,,-1,100,-1,100,-1,100,-1,100,60,99,-1,100
-ranger_1_int_bonus,Perceptive,tokens/int,You learn something from the ranger's moves,BONUS,0,40,,-1,100,-1,100,-1,100,40,99,-1,100,-1,100
-spiked_hole_1_str_loss,Fall,tokens/str,Your grip weakens… and you fall.,LOSE,-10,-20,,-1,100,0,25,-1,100,-1,100,-1,100,-1,100
-spiked_hole_2_str_loss,Fall,tokens/str,Your grip weakens… and you fall.,LOSE,-20,-40,,-1,100,0,25,-1,100,-1,100,-1,100,-1,100
-spiked_hole_3_str_loss,Fall,tokens/str,Your grip weakens… and you fall.,LOSE,-30,-60,,-1,100,0,25,-1,100,-1,100,-1,100,-1,100
+spiked_hole_1_str_loss,Fall,tokens/str,Your grip weakens… and you fall.,LOSE,0,0,Feeble,-1,100,0,25,-1,100,-1,100,-1,100,-1,100
+spiked_hole_2_str_loss,Fall,tokens/str,Your grip weakens… and you fall.,LOSE,-15,-10,Feeble,-1,100,0,25,-1,100,-1,100,-1,100,-1,100
+spiked_hole_3_str_loss,Fall,tokens/str,Your grip weakens… and you fall.,LOSE,-30,-20,Feeble,-1,100,0,25,-1,100,-1,100,-1,100,-1,100
 spiked_hole_1_agi_win,Nimble,skills/sleight,You climb out,WIN,0,25,,-1,100,-1,100,40,99,-1,100,-1,100,-1,100
-spiked_hole_2_agi_win,Nimble,skills/sleight,You climb out,WIN,0,50,,-1,100,-1,100,45,99,-1,100,-1,100,-1,100
-spiked_hole_3_agi_win,Nimble,skills/sleight,You climb out,WIN,0,75,,-1,100,-1,100,50,99,-1,100,-1,100,-1,100
-spiked_hole_int_bonus,Observe,tokens/int,You learn something about traps,BONUS,0,20,,-1,100,-1,100,-1,100,30,99,-1,100,-1,100
+spiked_hole_2_agi_win,Nimble,skills/sleight,You climb out,WIN,0,35,,-1,100,-1,100,45,99,-1,100,-1,100,-1,100
+spiked_hole_3_agi_win,Nimble,skills/sleight,You climb out,WIN,0,45,,-1,100,-1,100,50,99,-1,100,-1,100,-1,100
+spiked_hole_int_bonus,Observe,tokens/int,You learn something about traps,BONUS,0,0,Trapper's Tools,-1,100,-1,100,-1,100,30,99,-1,100,-1,100
 spiked_hole_luk_bonus,Lucky Find,tokens/luk,Some gold? Perhaps it belongs to the previous unfortunate victim,BONUS,40,0,,-1,100,-1,100,-1,100,-1,100,-1,100,40,99
-drown_1_str_win,Swim to Shore,tokens/str,You swim to land,WIN,0,40,,-1,100,25,99,-1,100,-1,100,-1,100,-1,100
-drown_2_str_win,Swim to Shore,tokens/str,You swim to land,WIN,0,60,,-1,100,30,99,-1,100,-1,100,-1,100,-1,100
-drown_3_str_win,Swim to Shore,tokens/str,You swim to land,WIN,0,80,,-1,100,35,99,-1,100,-1,100,-1,100,-1,100
-drown_1_turn_loss,Drown,tokens/str,You drown,LOSE,0,-40,,12,99,-1,100,-1,100,-1,100,-1,100,-1,100
-drown_2_turn_loss,Drown,tokens/str,You drown,LOSE,0,-60,,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
-drown_3_turn_loss,Drown,tokens/str,You drown,LOSE,0,-80,,8,99,-1,100,-1,100,-1,100,-1,100,-1,100
-drown_luk_bonus,Hidden Treasure,tokens/luk,You find some hidden treasure,BONUS,100,30,,-1,100,-1,100,70,99,-1,100,-1,100,70,99
-spirit_1_int_win,Commune,tokens/int,Gain the wisdom of the forest,WIN,0,50,,-1,100,-1,100,-1,100,40,99,-1,100,-1,100
-spirit_2_int_win,Commune,tokens/int,Gain the wisdom of the forest,WIN,0,80,,-1,100,-1,100,-1,100,60,99,-1,100,-1,100
-spirit_3_int_win,Commune,tokens/int,Gain the wisdom of the forest,WIN,0,110,,-1,100,-1,100,-1,100,90,99,-1,100,-1,100
-spirit_1_turn_loss,Ignored,tokens/turn,The spirits lose interest in you,LOSE,0,-5,,6,99,-1,100,-1,100,-1,100,-1,100,-1,100
-spirit_2_turn_loss,Ignored,tokens/turn,The spirits lose interest in you,LOSE,0,-10,,5,99,-1,100,-1,100,-1,100,-1,100,-1,100
-spirit_3_turn_loss,Ignored,tokens/turn,The spirits lose interest in you,LOSE,0,-15,,4,99,-1,100,-1,100,-1,100,-1,100,-1,100
-spirit_luk_agi_bonus,Fairy,tokens/luk,It's your lucky day! You found a fairy.,BONUS,50,50,,-1,100,-1,100,40,99,-1,100,-1,100,40,99
+drown_1_str_win,Swim to Shore,tokens/str,You swim to land,WIN,0,30,,-1,100,25,99,-1,100,-1,100,-1,100,-1,100
+drown_2_str_win,Swim to Shore,tokens/str,You swim to land,WIN,0,40,,-1,100,30,99,-1,100,-1,100,-1,100,-1,100
+drown_3_str_win,Swim to Shore,tokens/str,You swim to land,WIN,0,50,,-1,100,35,99,-1,100,-1,100,-1,100,-1,100
+drown_1_turn_loss,Drown,tokens/str,You drown,LOSE,0,0,Hydrophobia,12,99,-1,100,-1,100,-1,100,-1,100,-1,100
+drown_2_turn_loss,Drown,tokens/str,You drown,LOSE,0,-20,Hydrophobia,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
+drown_3_turn_loss,Drown,tokens/str,You drown,LOSE,0,-40,Hydrophobia,8,99,-1,100,-1,100,-1,100,-1,100,-1,100
+drown_luk_bonus,Hidden Treasure,tokens/luk,You find some hidden treasure,BONUS,100,0,,-1,100,-1,100,70,99,-1,100,-1,100,70,99
+spirit_1_int_win,Commune,tokens/int,Gain the wisdom of the forest,WIN,0,25,,-1,100,-1,100,-1,100,40,99,-1,100,-1,100
+spirit_2_int_win,Commune,tokens/int,Gain the wisdom of the forest,WIN,0,35,,-1,100,-1,100,-1,100,60,99,-1,100,-1,100
+spirit_3_int_win,Commune,tokens/int,Gain the wisdom of the forest,WIN,0,45,,-1,100,-1,100,-1,100,90,99,-1,100,-1,100
+spirit_1_turn_loss,Ignored,tokens/turn,The spirits lose interest in you,LOSE,0,0,Drained,6,99,-1,100,-1,100,-1,100,-1,100,-1,100
+spirit_2_turn_loss,Ignored,tokens/turn,The spirits lose interest in you,LOSE,0,-10,Drained,5,99,-1,100,-1,100,-1,100,-1,100,-1,100
+spirit_3_turn_loss,Ignored,tokens/turn,The spirits lose interest in you,LOSE,0,-20,Drained,4,99,-1,100,-1,100,-1,100,-1,100,-1,100
+spirit_luk_agi_bonus,Fairy,tokens/luk,It's your lucky day! You found a fairy.,BONUS,50,50,Shiny Shoes,-1,100,-1,100,40,99,-1,100,-1,100,40,99
 puck_luk_win,Gain Favor,tokens/luk,You gain Puck's favor.,WIN,0,0,,-1,100,-1,100,-1,100,-1,100,-1,100,95,99
 puck_turn_loss,Lose Interest,tokens/turn,You lose Puck's interest,LOSE,0,0,,6,99,-1,100,-1,100,-1,100,-1,100,-1,100
-water_zombie_win_1,Slash,tokens/str,You slash the zombies,WIN,0,0,,-1,100,25,99,25,99,-1,100,-1,100,-1,100
-water_zombie_win_2,Slash,tokens/str,You slash the zombies,WIN,0,0,,-1,100,35,99,35,99,-1,100,-1,100,-1,100
-water_zombie_loss_1,Captured,tokens/turn,You are captured by the zombies.,LOSE,0,0,,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
-water_zombie_loss_2,Captured,tokens/turn,You are captured by the zombies.,LOSE,0,0,,8,99,-1,100,-1,100,-1,100,-1,100,-1,100
+water_zombie_win_1,Slash,tokens/str,You slash the zombies,WIN,0,30,,-1,100,25,99,25,99,-1,100,-1,100,-1,100
+water_zombie_win_2,Slash,tokens/str,You slash the zombies,WIN,0,60,,-1,100,35,99,35,99,-1,100,-1,100,-1,100
+water_zombie_loss_1,Captured,tokens/turn,You are captured by the zombies.,LOSE,0,-20,Dull,10,99,-1,100,-1,100,-1,100,-1,100,-1,100
+water_zombie_loss_2,Captured,tokens/turn,You are captured by the zombies.,LOSE,0,-40,Dull,8,99,-1,100,-1,100,-1,100,-1,100,-1,100

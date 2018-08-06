@@ -13,7 +13,7 @@ namespace Match3.Encounter.Effect.Skill
             sprite: "icons/glare",
             tooltip: "Select a token. Apply Moth buff. At the end of each turn, Moth repels all adjacent tokens.",
 
-            energyCost: 3,
+            energyCost: 2,
 
             selectBehavior: SelectBehavior.Single,
 

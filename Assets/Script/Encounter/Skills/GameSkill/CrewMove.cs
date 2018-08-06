@@ -15,7 +15,7 @@ namespace Match3.Encounter.Effect.Skill
                 sprite: sprite,
                 tooltip: tooltip,
 
-                energyCost: 3,
+                energyCost: 1,
 
                 selectBehavior: SelectBehavior.None,
 

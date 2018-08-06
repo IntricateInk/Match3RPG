@@ -14,12 +14,12 @@ namespace Match3.Encounter.Effect.Passive
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].tile.AttachAnimation("explosion5");
+                targets[0].AttachAnimation("explosion5");
             },
 
             OnRemovePassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].tile.DettachAnimation("explosion5");
+                targets[0].DettachAnimation("explosion5");
             },
 
             OnTurnEnd: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>

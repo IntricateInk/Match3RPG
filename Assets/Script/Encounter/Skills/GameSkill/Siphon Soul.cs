@@ -1,4 +1,5 @@
 ﻿using Match3.Encounter.Effect.Passive;
+using Match3.UI.Animation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,8 +25,10 @@ namespace Match3.Encounter.Effect.Skill
                 {
                     if (token.Passives.Contains(TargetPassive.ZOMBIE))
                     {
+                        if (token.type != TokenType.BLANK)
+                            GameEffect.LineAnimation("line_white", token.AsIPosition(), token.type.AsIPosition(), 0f);
+                        token.PlayAnimation("beam1", 0f);
                         GameEffect.BeginSequence();
-                        token.PlayAnimation("beam1");
                         token.ShowResourceGain(1);
                         encounter.playerState.GainResource(token.type, 1);
                         token.Destroy();

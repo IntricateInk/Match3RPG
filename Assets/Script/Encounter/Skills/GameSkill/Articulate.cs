@@ -12,7 +12,7 @@ namespace Match3.Encounter.Effect.Skill
             sprite: "icons/whisper",
             tooltip: "Transform a 1x3 block of cells to CHA.",
 
-            energyCost: 3,
+            energyCost: 2,
 
             selectBehavior: SelectBehavior.Single,
 

@@ -79,20 +79,20 @@ Try to keep your Crew away from the Sirens, as they will be destroyed if they ar
 zombie_1,Unearthed Graveyard,icons/undead_2,"The graves are empty.
 
 Match resources to the goal. Zombies will delay you by consuming your resources.
-Zombies can be destroyed by using skills or matching them.","zombie_1_str_win, zombie_1_agi_win, zombie_1_stragi_lose, zombie_bonus_int, zombie_bonus_cha",Unearthed Graveyard,0,0,0,0,1000,0,1,2
+Zombies can be destroyed by using skills or matching them.","zombie_1_str_win, zombie_1_agi_win, zombie_1_stragi_lose, zombie_bonus_int",Unearthed Graveyard,0,0,0,0,1000,0,1,2
 zombie_2,Desecrated Ground,icons/undead_2,"The graves are empty.
 
 Match resources to the goal. Zombies will delay you by consuming your resources.
-Zombies can be destroyed by using skills or matching them.","zombie_2_str_win, zombie_2_agi_win, zombie_2_stragi_lose, zombie_bonus_int, zombie_bonus_cha",Desecrated Ground,0,0,0,0,1000,0,3,4
+Zombies can be destroyed by using skills or matching them.","zombie_2_str_win, zombie_2_agi_win, zombie_2_stragi_lose, zombie_bonus_int",Desecrated Ground,0,0,0,0,1000,0,3,4
 zombie_3,Necropolis,icons/undead_2,"The graves are empty.
 
 Match resources to the goal. Zombies will delay you by consuming your resources.
-Zombies can be destroyed by using skills or matching them.","zombie_3_str_win, zombie_3_agi_win, zombie_3_stragi_lose, zombie_bonus_int, zombie_bonus_cha",Necropolis,0,0,0,0,1000,0,5,99
+Zombies can be destroyed by using skills or matching them.","zombie_3_str_win, zombie_3_agi_win, zombie_3_stragi_lose, zombie_bonus_int",Necropolis,0,0,0,0,1000,0,5,99
 ranger_1,Ranger,icons/ranger_dash,"The silent ranger strikes
 
 The Ranger switches between two modes: Dash and Arrow.
 In Dash Mode, the Ranger places Crew and Markers on the board. Markers transform token to AGI.
-In Arrow Mode, the Ranger destroys all AGI tokens and tokens nearby AGI tokens. Keep your Crew away!","ranger_1_turn_loss, ranger_1_agi_win, ranger_1_cha_win, ranger_1_int_bonus",Ranger - Dash,0,0,0,0,0,1000,1,99
+In Arrow Mode, the Ranger destroys all AGI tokens and tokens nearby AGI tokens. Keep your Crew away!","ranger_1_agi_win, ranger_1_turn_loss",Ranger - Dash,0,0,0,0,0,1000,1,99
 spiked_hole_1,Hidden Trap,icons/spiked_hole,"You fall into a deep, deep hole
 
 Keep your Crew near the top while you gain enough AGI to win.","spiked_hole_1_agi_win, spiked_hole_1_str_loss, spiked_hole_int_bonus, spiked_hole_luk_bonus",Hidden Trap,0,0,0,0,1000,0,1,2

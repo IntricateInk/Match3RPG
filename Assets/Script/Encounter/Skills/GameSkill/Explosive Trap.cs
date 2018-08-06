@@ -19,7 +19,7 @@ namespace Match3.Encounter.Effect.Skill
 
             runEffects: (GameSkill self, EncounterState encounter, List<TokenState> targets) =>
             {
-                targets[0].ApplyBuff(TargetPassive.EXPLOSIVE_TRAP);
+                targets[0].tile.ApplyBuff(TargetPassive.EXPLOSIVE_TRAP);
             }
         );
     }

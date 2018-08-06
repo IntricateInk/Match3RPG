@@ -10,7 +10,7 @@ namespace Match3.Encounter.Effect.Passive
         (
             name: "Spirit Catcher",
             sprite: "icons/spirit_well",
-            tooltip: "At the end of the turn, captures tokens with the Spirit buff, gaining 20 INT and CHA.",
+            tooltip: "At the end of the turn, captures various types of spirits.",
 
             OnApplyPassive: (BasePassive self, EncounterState encounter, List<TokenState> targets) =>
             {

@@ -815,8 +815,7 @@ Zombies can be destroyed by using skills or matching them.",
 "zombie_1_str_win",
 "zombie_1_agi_win",
 "zombie_1_stragi_lose",
-"zombie_bonus_int",
-"zombie_bonus_cha"
+"zombie_bonus_int"
 
 				},
                 
@@ -856,8 +855,7 @@ Zombies can be destroyed by using skills or matching them.",
 "zombie_2_str_win",
 "zombie_2_agi_win",
 "zombie_2_stragi_lose",
-"zombie_bonus_int",
-"zombie_bonus_cha"
+"zombie_bonus_int"
 
 				},
                 
@@ -897,8 +895,7 @@ Zombies can be destroyed by using skills or matching them.",
 "zombie_3_str_win",
 "zombie_3_agi_win",
 "zombie_3_stragi_lose",
-"zombie_bonus_int",
-"zombie_bonus_cha"
+"zombie_bonus_int"
 
 				},
                 
@@ -936,10 +933,8 @@ In Arrow Mode, the Ranger destroys all AGI tokens and tokens nearby AGI tokens. 
 				objectives: new string[] 
 				{
 				
-"ranger_1_turn_loss",
 "ranger_1_agi_win",
-"ranger_1_cha_win",
-"ranger_1_int_bonus"
+"ranger_1_turn_loss"
 
 				},
                 
