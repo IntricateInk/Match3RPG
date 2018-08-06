@@ -20,12 +20,25 @@ public class simpleStartGame : MonoBehaviour {
 
     [SerializeField]
     private Button VikingButton;
+
+    [SerializeField]
+    private Button UndeadTamerButton;
+
     // Use this for initialization
     void Start () {
         playButton.onClick.AddListener(moveToCharacterScreen);
         brigandButton.onClick.AddListener(onBrigandClick);
         vagabondButton.onClick.AddListener(onVagabondClick);
         VikingButton.onClick.AddListener(onSpiritualistClick);
+        UndeadTamerButton.onClick.AddListener(onUndeadTamerClick);
+
+
+        playButton.gameObject.SetActive(true);
+        title.SetActive(true);
+        brigandButton.gameObject.SetActive(false);
+        vagabondButton.gameObject.SetActive(false);
+        VikingButton.gameObject.SetActive(false);
+        UndeadTamerButton.gameObject.SetActive(false);
 
     }
 	
@@ -41,6 +54,7 @@ public class simpleStartGame : MonoBehaviour {
         brigandButton.gameObject.SetActive(true);
         vagabondButton.gameObject.SetActive(true);
         VikingButton.gameObject.SetActive(true);
+        UndeadTamerButton.gameObject.SetActive(true);
     }
 
     void onBrigandClick()
@@ -66,6 +80,16 @@ public class simpleStartGame : MonoBehaviour {
     void onSpiritualistClick()
     {
         TrophySheet[] trophies = TrophySheet.getSimpleClass("Spiritualist");
+        foreach (TrophySheet trophy in trophies)
+        {
+            OverworldState.Current.player.AddTrophy(trophy);
+        }
+        SceneManager.LoadScene(1);
+    }
+
+    void onUndeadTamerClick()
+    {
+        TrophySheet[] trophies = TrophySheet.getSimpleClass("UndeadTamer");
         foreach (TrophySheet trophy in trophies)
         {
             OverworldState.Current.player.AddTrophy(trophy);

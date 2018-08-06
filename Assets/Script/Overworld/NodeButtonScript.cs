@@ -9,7 +9,7 @@ public class NodeButtonScript : MonoBehaviour {
 
 
     private float _currentScale = InitScale;
-    private const float TargetScale = 1.3f;
+    private const float TargetScale = 1.4f;
     private const float InitScale = 1f;
     private const int FramesCount = 100;
     private const float AnimationTimeSeconds = 1.5f;

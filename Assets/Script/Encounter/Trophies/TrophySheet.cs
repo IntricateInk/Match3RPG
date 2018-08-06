@@ -135,6 +135,14 @@ namespace Match3.Character
                     TrophySheet.CLASS_SHAMAN,
                 };
                 return t;
+            } else if (className == "UndeadTamer")
+            {
+                TrophySheet[] t = new TrophySheet[2]
+                {
+                    TrophySheet.CLASS_NECROMANCER,
+                    TrophySheet.CLASS_TAMER,
+                };
+                return t;
             }
             else
             {

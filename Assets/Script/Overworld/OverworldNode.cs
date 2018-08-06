@@ -16,6 +16,8 @@ namespace Match3.Overworld
         private bool obfuscated;
 
         public bool isInPath = false;
+        public bool isTraversed = false;
+
         private int prevNode;
 
         public readonly int x;
@@ -64,20 +66,36 @@ namespace Match3.Overworld
         {
 
             IEnumerable<EncounterSheet> encounters = EncounterSheet.GetEncounters(this.x);
-            List<GameEvent> events = EventState._AllEvents;
+            IEnumerable<GameEvent> events = EventState._AllEvents;
             
             int encounter_total = encounters.Sum((e) => { return e.GetWeight(this.nodeType); });
             int event_total = events.Sum((e) => { return e.GetWeight(this.nodeType); });
             int roll = Random.Range(0, encounter_total + event_total);
 
-
+            //Debug.Log("Event total = " + event_total);
+            //Debug.Log("roll = " + roll);
 
             if (roll < event_total)
             {
-                GameEvent selected = events[roll];
-                //GameEvent selected = events[0];
-                EventState.NewEvent(selected);
-                return;
+                try
+                {
+                    //GameEvent selected = events[roll];
+                    //GameEvent selected = events[0];
+                    foreach (GameEvent selectedEvent in events)
+                    {
+                        int w = selectedEvent.GetWeight(this.nodeType);
+                        if (roll < w)
+                        {
+
+                            EventState.NewEvent(selectedEvent);
+                            return;
+                        }
+                    }
+                } catch
+                {
+                    Debug.Log("Passing events because list out of range");
+                }
+                
             }
 
             roll -= event_total;

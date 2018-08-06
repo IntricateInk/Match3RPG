@@ -98,8 +98,12 @@ namespace Match3.Overworld
                         {
                             // highlight all
                             button.onClick.AddListener(() => this.loadLevel(nodeInProcess));
-                            button.GetComponent<Image>().color = Color.green;
                             button.GetComponent<NodeButtonScript>().shouldBreathe = true;
+                        }
+
+                        if (nodeInProcess.isTraversed)
+                        {
+                            button.GetComponent<Image>().color = Color.green;
                         }
 
                         foreach (OverworldNode nextNode in map.GetNextNodes(nodeInProcess.x, nodeInProcess.y))
@@ -128,7 +132,7 @@ namespace Match3.Overworld
         public void loadLevel(OverworldNode node)
         {
             //Debug.Log(i + " , " +j);
-
+            node.isTraversed = true;
             _map.LoadLevel(node.x, node.y);
         }
        
